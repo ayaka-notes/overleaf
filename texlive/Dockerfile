@@ -3,7 +3,7 @@ FROM phusion/baseimage:focal-1.2.0
 LABEL \
     org.opencontainers.image.title="Docker Image of TeXLive" \
     org.opencontainers.image.authors="Ayaka-notes <public@ayaka.space>" \
-    org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf" \
+    org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf/tree/main/texlive" \
     org.opencontainers.image.licenses="MIT"
 
 # 参数-年份
