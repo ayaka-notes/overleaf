@@ -2,6 +2,55 @@ name: Texlive Docker Image
 
 on:
   workflow_dispatch:
+    # 选择是否构建最新镜像
+    inputs:
+      build-latest:
+        description: "Build latest image"
+        required: true
+        default: true
+      # 选择是否构建历史镜像
+      build-image:
+        description: "Build Archive image"
+        required: true
+        default: true
+      # 构建历史镜像的起始版本
+      tex-version:
+        description: "Build Start version"
+        required: true
+        enum:
+          [
+            2022,
+            2021,
+            2020,
+            2019,
+            2018,
+            2017,
+            2016,
+            2015,
+            2014,
+            2013,
+            2012,
+            2011,
+          ]
+      # 构建历史镜像的结束版本
+      tex-version-end:
+        description: "Build End version"
+        required: true
+        enum:
+          [
+            2022,
+            2021,
+            2020,
+            2019,
+            2018,
+            2017,
+            2016,
+            2015,
+            2014,
+            2013,
+            2012,
+            2011,
+          ]
 
 env:
   DOCKER_REGISTRY: ghcr.io
@@ -10,6 +59,7 @@ env:
 jobs:
   build-latest:
     runs-on: ubuntu-latest
+    if: github.event.inputs.build-latest == 'true'
     name: TeXLive latest
     steps:
       - name: "Checkout GitHub Action"
@@ -33,10 +83,12 @@ jobs:
 
   build-image:
     runs-on: ubuntu-latest
+    if: github.event.inputs.build-image == 'true'
     strategy:
       matrix:
         # tex-version: [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011]
-        tex-version: [2019, 2018, 2017]
+        # tex-version: 根据输入的起始版本和结束版本构建
+        tex-version: ${{ fromJson(format('[%s]', join(',', range(fromJson(github.event.inputs.tex-version), fromJson(github.event.inputs.tex-version-end))))) }}
     name: TeXLive ${{ matrix.tex-version }}
     steps:
       - name: "Checkout GitHub Action"
