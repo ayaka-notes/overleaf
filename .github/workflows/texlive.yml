@@ -8,49 +8,48 @@ on:
         description: "Build latest image"
         required: true
         default: true
+        type: boolean
       # 选择是否构建历史镜像
       build-image:
         description: "Build Archive image"
         required: true
         default: true
+        type: boolean
       # 构建历史镜像的起始版本
       tex-version:
         description: "Build Start version"
         required: true
-        enum:
-          [
-            2022,
-            2021,
-            2020,
-            2019,
-            2018,
-            2017,
-            2016,
-            2015,
-            2014,
-            2013,
-            2012,
-            2011,
-          ]
+        type: choice
+        options:
+          - 2022
+          - 2021
+          - 2020
+          - 2019
+          - 2018
+          - 2017
+          - 2016
+          - 2015
+          - 2014
+          - 2013
+          - 2012
+          - 2011
       # 构建历史镜像的结束版本
       tex-version-end:
         description: "Build End version"
         required: true
-        enum:
-          [
-            2022,
-            2021,
-            2020,
-            2019,
-            2018,
-            2017,
-            2016,
-            2015,
-            2014,
-            2013,
-            2012,
-            2011,
-          ]
+        options:
+          - 2022
+          - 2021
+          - 2020
+          - 2019
+          - 2018
+          - 2017
+          - 2016
+          - 2015
+          - 2014
+          - 2013
+          - 2012
+          - 2011
 
 env:
   DOCKER_REGISTRY: ghcr.io
