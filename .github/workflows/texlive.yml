@@ -104,7 +104,6 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
 
       - name: Build and push Docker image
-        depends-on: docker_login
         if: steps.docker_login.outcome == 'success'
         id: docker_build
         uses: docker/build-push-action@v5.1.0
