@@ -15,13 +15,6 @@ Thanks to Github Action, we can build all tex image parallel, which includes:
 - `ghcr.io/ayaka-notes/overleaf/texlive:2019`
 - `ghcr.io/ayaka-notes/overleaf/texlive:2018`
 - `ghcr.io/ayaka-notes/overleaf/texlive:2017`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2016`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2015`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2014`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2013`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2012`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2011`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2010`
 
 We use mirror archive from [utah university](https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/), which includes almost all texlive image ranging from 1996 to 2023. And thankes to Overleaf's Dockerfile, we can build this project faster.
 
