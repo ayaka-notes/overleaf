@@ -20,6 +20,7 @@ on:
         description: "Build Start version"
         required: true
         type: choice
+        default: 2017
         options:
           - 2022
           - 2021
@@ -32,6 +33,7 @@ on:
         description: "Build End version"
         required: true
         type: choice
+        default: 2022
         options:
           - 2022
           - 2021
