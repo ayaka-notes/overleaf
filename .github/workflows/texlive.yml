@@ -16,7 +16,7 @@ on:
         default: true
         type: boolean
       # 构建历史镜像的起始版本
-      tex-version:
+      tex-version-start:
         description: "Build Start version"
         required: true
         type: choice
@@ -57,8 +57,26 @@ env:
   IMAGE_NAME: ayaka-notes/overleaf/texlive
 
 jobs:
+  matrix-prepare:
+    runs-on: ubuntu-latest
+    name: Prepare Build Matrix
+    outputs:
+      matrix: ${{ steps.prepare-matrix.outputs.matrix }}
+    steps:
+      - name: "Prepare Build Matrix"
+        id: prepare-matrix
+        run: |
+            # 如果起始版本小于结束版本，则直接终止
+            if [ ${{ fromJson(github.event.inputs.tex-version-start) }} -gt ${{ fromJson(github.event.inputs.tex-version-end) }} ]; then
+              echo "Start version must be less than end version"
+              exit 1
+            fi
+            echo "::set-output name=matrix::$(echo ${{ fromJson(format('[%s]', join(',', range(fromJson(github.event.inputs.tex-version-start), fromJson(github.event.inputs.tex-version-end))))) }})"
+
   build-latest:
     runs-on: ubuntu-latest
+    # 等待 matrix-prepare 完成后再执行
+    needs: matrix-prepare
     if: github.event.inputs.build-latest == 'true'
     name: TeXLive latest
     steps:
@@ -84,6 +102,7 @@ jobs:
   build-image:
     runs-on: ubuntu-latest
     if: github.event.inputs.build-image == 'true'
+    needs: matrix-prepare
     strategy:
       matrix:
         # tex-version: [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011]
