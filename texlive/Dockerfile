@@ -7,8 +7,8 @@ LABEL \
     org.opencontainers.image.licenses="MIT"
 
 # 参数-年份
-ARG TexLiveVersion=2022
-ARG TEXLIVE_MIRROR=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TexLiveVersion}/tlnet-final
+ARG TEXLIVE_Version=2022
+ARG TEXLIVE_MIRROR=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -49,4 +49,4 @@ RUN mkdir /install-tl-unx \
 &&  rm -rf /install-tl-unx
 
 # 设置环境变量
-ENV PATH="/usr/local/texlive/${TexLiveVersion}/bin/x86_64-linux:${PATH}"
+ENV PATH="/usr/local/texlive/${TEXLIVE_Version}/bin/x86_64-linux:${PATH}"
