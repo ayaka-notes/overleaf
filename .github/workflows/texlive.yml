@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         tex-version: [2022, 2021, 2020, 2019]
-    name: Build Docker image for TeXLive ${{ matrix.tex-version }}
+    name: TeXLive ${{ matrix.tex-version }}
     steps:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@main
@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./texlive
-          file: ./Dockerfile
+          file: ./texlive/Dockerfile
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}
           args: |
