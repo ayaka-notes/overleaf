@@ -75,6 +75,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.inputs.build-image == 'true'
     strategy:
+      fail-fast: false
+      max-parallel: 3
       matrix:
         tex-version: [2022, 2021, 2020, 2019, 2018, 2017]
     name: TeXLive ${{ matrix.tex-version }}
