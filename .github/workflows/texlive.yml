@@ -37,6 +37,7 @@ on:
       tex-version-end:
         description: "Build End version"
         required: true
+        type: choice
         options:
           - 2022
           - 2021
