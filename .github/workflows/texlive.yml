@@ -5,13 +5,13 @@ on:
     # 选择是否构建最新镜像
     inputs:
       build-latest:
-        description: "Build latest image"
+        description: "Build latest(2023)"
         required: true
         default: true
         type: boolean
       # 选择是否构建历史镜像
       build-image:
-        description: "Build Archive image"
+        description: "Build Archive(Before 2022)"
         required: true
         default: true
         type: boolean
@@ -57,26 +57,8 @@ env:
   IMAGE_NAME: ayaka-notes/overleaf/texlive
 
 jobs:
-  matrix-prepare:
-    runs-on: ubuntu-latest
-    name: Prepare Build Matrix
-    outputs:
-      matrix: ${{ steps.prepare-matrix.outputs.matrix }}
-    steps:
-      - name: "Prepare Build Matrix"
-        id: prepare-matrix
-        run: |
-            # 如果起始版本小于结束版本，则直接终止
-            if [ ${{ fromJson(github.event.inputs.tex-version-start) }} -gt ${{ fromJson(github.event.inputs.tex-version-end) }} ]; then
-              echo "Start version must be less than end version"
-              exit 1
-            fi
-            echo "::set-output name=matrix::$(echo ${{ fromJson(format('[%s]', join(',', range(fromJson(github.event.inputs.tex-version-start), fromJson(github.event.inputs.tex-version-end))))) }})"
-
   build-latest:
     runs-on: ubuntu-latest
-    # 等待 matrix-prepare 完成后再执行
-    needs: matrix-prepare
     if: github.event.inputs.build-latest == 'true'
     name: TeXLive latest
     steps:
@@ -101,17 +83,15 @@ jobs:
 
   build-image:
     runs-on: ubuntu-latest
-    if: github.event.inputs.build-image == 'true'
-    needs: matrix-prepare
+    if: github.event.inputs.build-image == 'true' 
     strategy:
       matrix:
-        # tex-version: [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011]
-        # tex-version: 根据输入的起始版本和结束版本构建
-        tex-version: ${{ fromJson(format('[%s]', join(',', range(fromJson(github.event.inputs.tex-version), fromJson(github.event.inputs.tex-version-end))))) }}
+        tex-version: [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011]
     name: TeXLive ${{ matrix.tex-version }}
     steps:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@main
+        if: github.event.inputs.tex-version-start <= matrix.tex-version && github.event.inputs.tex-version-end >= matrix.tex-version
 
       - name: "Login to GitHub Container Registry"
         uses: docker/login-action@v3.0.0
