@@ -1,0 +1,8 @@
+version: "2.2"
+services:
+  TeXLive2023:
+    image: "ghcr.io/ayaka-notes/overleaf/texlive:2023"
+  TeXLive2022:
+    image: "ghcr.io/ayaka-notes/overleaf/texlive:2022"
+  TeXLive2021:
+    image: "ghcr.io/ayaka-notes/overleaf/texlive:2021"
