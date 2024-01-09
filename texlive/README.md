@@ -19,3 +19,7 @@ Thanks to Github Action, we can build all tex image parallel, which includes:
 We use mirror archive from [utah university](https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/), which includes almost all texlive image ranging from 1996 to 2023. And thankes to Overleaf's Dockerfile, we can build this project faster.
 
 
+> Why texlive 2016 and earlier are not supported ?
+>
+> Because Git-Action can't finish it as 2017,2018..., and we believe you may not use it any more since it's too old
+
