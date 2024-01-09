@@ -41,8 +41,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v5.1.0
         with:
-          context: ./texlive
-          file: ./texlive/Dockerfile.latest
+          context: ./patches/docker-in-docker
+          file: ./patches/docker-in-docker/Dockerfile
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
