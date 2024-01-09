@@ -27,12 +27,6 @@ on:
           - 2019
           - 2018
           - 2017
-          - 2016
-          - 2015
-          - 2014
-          - 2013
-          - 2012
-          - 2011
       # 构建历史镜像的结束版本
       tex-version-end:
         description: "Build End version"
@@ -45,12 +39,6 @@ on:
           - 2019
           - 2018
           - 2017
-          - 2016
-          - 2015
-          - 2014
-          - 2013
-          - 2012
-          - 2011
 
 env:
   DOCKER_REGISTRY: ghcr.io
@@ -86,21 +74,7 @@ jobs:
     if: github.event.inputs.build-image == 'true'
     strategy:
       matrix:
-        tex-version:
-          [
-            2022,
-            2021,
-            2020,
-            2019,
-            2018,
-            2017,
-            2016,
-            2015,
-            2014,
-            2013,
-            2012,
-            2011,
-          ]
+        tex-version: [2022, 2021, 2020, 2019, 2018, 2017]
     name: TeXLive ${{ matrix.tex-version }}
     steps:
       - name: "Checkout GitHub Action"
