@@ -90,10 +90,13 @@ jobs:
     name: TeXLive ${{ matrix.tex-version }}
     steps:
       - name: "Checkout GitHub Action"
+        id: checkout
         uses: actions/checkout@main
         if: github.event.inputs.tex-version-start <= matrix.tex-version && github.event.inputs.tex-version-end >= matrix.tex-version
 
       - name: "Login to GitHub Container Registry"
+        depends-on: checkout
+        id: docker_login
         uses: docker/login-action@v3.0.0
         with:
           registry: ${{env.DOCKER_REGISTRY}}
@@ -101,6 +104,7 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
 
       - name: Build and push Docker image
+        depends-on: docker_login
         id: docker_build
         uses: docker/build-push-action@v5.1.0
         with:
