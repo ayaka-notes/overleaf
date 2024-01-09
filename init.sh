@@ -2,6 +2,8 @@
 
 docker-compose -f docker-compose.image.yml pull
 
+docker-compose -f docker-compose.yml pull
+
 docker-compose up -d
 
 
