@@ -48,5 +48,10 @@ RUN mkdir /install-tl-unx \
 &&  tlmgr path add \
 &&  rm -rf /install-tl-unx
 
+# 配置 /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf, 使得LaTeX可以使用shell-escape
+RUN echo "shell_escape = t" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
+    echo "openout_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
+    echo "openin_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf
+
 # 设置环境变量
 ENV PATH="/usr/local/texlive/${TEXLIVE_Version}/bin/x86_64-linux:${PATH}"
