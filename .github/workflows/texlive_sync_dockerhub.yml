@@ -17,14 +17,6 @@ jobs:
       matrix:
         tex-version: [2023, 2022, 2021, 2020, 2019]
     steps:
-      - name: Login to GitHub Container Registry
-        if: steps.checkout.outcome == 'success'
-        id: docker_login
-        uses: docker/login-action@v3.0.0
-        with:
-          registry: ${{env.GHCR_REGISTRY}}
-          username: ${{github.actor}}
-          password: ${{secrets.GITHUB_TOKEN}}
       - name: Pull image
         run: |
           docker pull ${{ env.GHCR_REGISTRY }}/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}
