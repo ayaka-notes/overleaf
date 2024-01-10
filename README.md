@@ -16,5 +16,7 @@ Overleaf CE can be run with Texlive Image, For more infomation, find [this](./te
 > To finish the Patches of overleaf, 
 
 - Unlock The Limit of `50M`
+- Use docker to compile Project
+- Use Any texlive you want
 
 
