@@ -10,6 +10,13 @@ Overleaf CE can be run with Texlive Image, For more infomation, find [this](./te
 - `ghcr.io/ayaka-notes/overleaf/texlive:2019`
 - `ghcr.io/ayaka-notes/overleaf/texlive:2018`
 - `ghcr.io/ayaka-notes/overleaf/texlive:2017`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2016`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2015`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2014`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2013`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2012`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2011`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2010`
 
 ## Some Patches
 
