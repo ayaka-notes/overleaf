@@ -3,7 +3,7 @@ if (process.env.SANDBOXED_COMPILES === "true") {
   imageRootPath = process.env.IMAGE_ROOT || "ghcr.io/ayaka-notes/overleaf";
   // 获取 ALL_TEX_LIVE_DOCKER_IMAGES
   // ALL_TEX_LIVE_DOCKER_IMAGES =
-  allTexImages = ALL_TEX_LIVE_DOCKER_IMAGES.split(",") || [
+  allTexImages = process.env.ALL_TEX_LIVE_DOCKER_IMAGES.split(",") || [
     "ghcr.io/ayaka-notes/overleaf/texlive:2023.1",
   ];
 
