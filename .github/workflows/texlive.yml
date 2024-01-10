@@ -61,9 +61,80 @@ env:
   IMAGE_NAME: ayaka-notes/overleaf/texlive
 
 jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.build-image == 'true'
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        # tex-version: [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010]
+        tex-version:
+          [
+            2010,
+            2011,
+            2012,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+          ]
+    name: TeXLive ${{ matrix.tex-version }}
+    steps:
+      - name: "Checkout GitHub Action"
+        id: checkout
+        uses: actions/checkout@main
+        if: github.event.inputs.tex-version-start <= matrix.tex-version && github.event.inputs.tex-version-end >= matrix.tex-version
+
+      - name: "Login to GitHub Container Registry"
+        if: steps.checkout.outcome == 'success'
+        id: docker_login
+        uses: docker/login-action@v3.0.0
+        with:
+          registry: ${{env.DOCKER_REGISTRY}}
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+
+      # 只有 2017 版本及以上才能构建
+      - name: Build and push Docker image(>=2017)
+        if: steps.docker_login.outcome == 'success' && matrix.tex-version >= 2017
+        id: docker_build_2017_later
+        uses: docker/build-push-action@v5.1.0
+        with:
+          context: ./texlive
+          file: ./texlive/Dockerfile
+          push: true
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}
+          #   参数
+          build-args: |
+            TEXLIVE_Version=${{ matrix.tex-version }}
+            TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${{ matrix.tex-version }}/tlnet-final
+
+      # 2017 版本以下的镜像构建
+      - name: Build and push Docker image(<2017)
+        if: steps.docker_login.outcome == 'success' && matrix.tex-version < 2017
+        id: docker_build_2016_before
+        uses: docker/build-push-action@v5.1.0
+        with:
+          context: ./texlive
+          file: ./texlive/Dockerfile.old
+          push: true
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}
+          #   参数
+          build-args: |
+            TEXLIVE_Version=${{ matrix.tex-version }}
+            TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${{ matrix.tex-version }}/tlnet-final
   build-latest:
     runs-on: ubuntu-latest
     if: github.event.inputs.build-latest == 'true'
+    # 最新的版本构建，等上面的构建完成后再构建，这样就会出现在仓库的最上面
+    depends-on: build-image
     name: TeXLive latest
     steps:
       - name: "Checkout GitHub Action"
@@ -84,58 +155,3 @@ jobs:
           file: ./texlive/Dockerfile.latest
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest,${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:2023
-
-  build-image:
-    runs-on: ubuntu-latest
-    if: github.event.inputs.build-image == 'true'
-    strategy:
-      fail-fast: false
-      max-parallel: 3
-      matrix:
-        # tex-version: [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010]
-        tex-version: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
-    name: TeXLive ${{ matrix.tex-version }}
-    steps:
-      - name: "Checkout GitHub Action"
-        id: checkout
-        uses: actions/checkout@main
-        if: github.event.inputs.tex-version-start <= matrix.tex-version && github.event.inputs.tex-version-end >= matrix.tex-version
-
-      - name: "Login to GitHub Container Registry"
-        if: steps.checkout.outcome == 'success'
-        id: docker_login
-        uses: docker/login-action@v3.0.0
-        with:
-          registry: ${{env.DOCKER_REGISTRY}}
-          username: ${{github.actor}}
-          password: ${{secrets.GITHUB_TOKEN}}
-      
-      # 只有 2017 版本及以上才能构建
-      - name: Build and push Docker image(>=2017)
-        if: steps.docker_login.outcome == 'success' && matrix.tex-version >= 2017
-        id: docker_build_2017_later
-        uses: docker/build-push-action@v5.1.0
-        with:
-          context: ./texlive
-          file: ./texlive/Dockerfile
-          push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}
-          #   参数
-          build-args: |
-            TEXLIVE_Version=${{ matrix.tex-version }}
-            TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${{ matrix.tex-version }}/tlnet-final
-      
-      # 2017 版本以下的镜像构建
-      - name: Build and push Docker image(<2017)
-        if: steps.docker_login.outcome == 'success' && matrix.tex-version < 2017
-        id: docker_build_2016_before
-        uses: docker/build-push-action@v5.1.0
-        with:
-          context: ./texlive
-          file: ./texlive/Dockerfile.old
-          push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}
-          #   参数
-          build-args: |
-            TEXLIVE_Version=${{ matrix.tex-version }}
-            TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${{ matrix.tex-version }}/tlnet-final
