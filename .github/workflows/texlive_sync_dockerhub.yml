@@ -13,21 +13,21 @@ jobs:
     name: Sync With Dockerhub
     strategy:
       fail-fast: false
-      max-parallel: 3
+    #   max-parallel: 3
       matrix:
         tex-version: [2023, 2022, 2021, 2020, 2019]
     steps:
       - name: Pull image
         run: |
           docker pull ${{ env.GHCR_REGISTRY }}/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}
-          docker tag ${{ env.GHCR_REGISTRY }}/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }} ${{ env.DOCKER_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/texlive:${{ matrix.tex-version }}
+          docker tag ${{ env.GHCR_REGISTRY }}/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }} ${{ env.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/texlive:${{ matrix.tex-version }}
       - name: Login to Dockerhub
         if: steps.docker_login.outcome == 'success'
         uses: docker/login-action@v3.0.0
         with:
           registry: ${{env.DOCKER_REGISTRY}}
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_TOKEN}}
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
       - name: Push image
         run: |
           docker push ${{ env.DOCKER_REGISTRY }}/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}
