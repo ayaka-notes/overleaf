@@ -2,13 +2,13 @@ FROM phusion/baseimage:focal-1.2.0
 
 LABEL \
     org.opencontainers.image.title="Docker Image of TeXLive" \
-    org.opencontainers.image.authors="Ayaka-notes <public@ayaka.space>" \
+    org.opencontainers.image.authors="ayaka-notes <public@ayaka.space>" \
     org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf" \
     org.opencontainers.image.licenses="MIT"
 
 # 参数-年份
 ARG TEXLIVE_Version=2022
-ARG TEXLIVE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/tex-historic-archive/systems/texlive/${TEXLIVE_Version}/tlnet-final
+ARG TEXLIVE_MIRROR=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 # https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 
 # 安装依赖

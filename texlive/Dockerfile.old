@@ -2,7 +2,7 @@ FROM phusion/baseimage:18.04-1.0.0
 
 LABEL \
     org.opencontainers.image.title="Docker Image of TeXLive" \
-    org.opencontainers.image.authors="Ayaka-notes <public@ayaka.space>" \
+    org.opencontainers.image.authors="ayaka-notes <public@ayaka.space>" \
     org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf" \
     org.opencontainers.image.licenses="MIT"
 

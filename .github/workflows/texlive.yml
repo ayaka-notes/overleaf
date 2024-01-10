@@ -121,4 +121,5 @@ jobs:
           #   参数
           build-args: |
             TEXLIVE_Version=${{ matrix.tex-version }}
-            TEXLIVE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/tex-historic-archive/systems/texlive/${{ matrix.tex-version }}/tlnet-final
+            TEXLIVE_MIRROR=https://texlive.info/tlnet-archive/${{ matrix.tex-version }}/12/31/tlnet
+            # https://mirrors.tuna.tsinghua.edu.cn/tex-historic-archive/systems/texlive/${{ matrix.tex-version }}/tlnet-final
