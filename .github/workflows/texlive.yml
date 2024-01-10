@@ -110,7 +110,7 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
       
       # 只有 2017 版本及以上才能构建
-      - name: Build and push Docker image
+      - name: Build and push Docker image(>=2017)
         if: steps.docker_login.outcome == 'success' && matrix.tex-version >= 2017
         id: docker_build_2017_later
         uses: docker/build-push-action@v5.1.0
@@ -125,7 +125,7 @@ jobs:
             TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${{ matrix.tex-version }}/tlnet-final
       
       # 2017 版本以下的镜像构建
-      - name: Build and push Docker image
+      - name: Build and push Docker image(<2017)
         if: steps.docker_login.outcome == 'success' && matrix.tex-version < 2017
         id: docker_build_2016_before
         uses: docker/build-push-action@v5.1.0
