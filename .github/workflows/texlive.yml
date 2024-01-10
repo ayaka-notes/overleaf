@@ -134,7 +134,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.inputs.build-latest == 'true'
     # 最新的版本构建，等上面的构建完成后再构建，这样就会出现在仓库的最上面
-    depends-on: build-image
+    needs: build-image
     name: TeXLive latest
     steps:
       - name: "Checkout GitHub Action"
