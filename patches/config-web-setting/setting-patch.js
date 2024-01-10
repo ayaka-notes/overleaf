@@ -7,7 +7,7 @@ if (process.env.SANDBOXED_COMPILES === "true") {
     "ghcr.io/ayaka-notes/overleaf/texlive:2023.1",
   ];
 
-  this.mergeWith({
+  module.exports.mergeWith({
     imageRoot: imageRootPath,
     allowedImageNames: allTexImages.map((texImage) => {
       // imageName是形如texlive:2021.1的字符串，也就是最后一个/后面的字符串
