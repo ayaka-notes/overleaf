@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM phusion/baseimage:focal-1.2.0
 
 LABEL \
     org.opencontainers.image.title="Docker Image of TeXLive" \
