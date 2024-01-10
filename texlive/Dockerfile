@@ -8,8 +8,8 @@ LABEL \
 
 # 参数-年份
 ARG TEXLIVE_Version=2022
-ARG TEXLIVE_MIRROR=https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
-# 
+ARG TEXLIVE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/tex-historic-archive/systems/texlive/${TEXLIVE_Version}/tlnet-final/
+# https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
