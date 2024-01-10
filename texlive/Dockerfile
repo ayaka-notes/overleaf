@@ -6,10 +6,9 @@ LABEL \
     org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf" \
     org.opencontainers.image.licenses="MIT"
 
-# 参数-年份
+# 参数-年份, github action中单独传递参数
 ARG TEXLIVE_Version=2022
 ARG TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
-# https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
