@@ -30,5 +30,5 @@ jobs:
           password: ${{secrets.DOCKER_PASSWORD}}
       - name: Push image
         run: |
-          docker push ${{ env.DOCKER_REGISTRY }}/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}
+          docker push ${{ env.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/texlive:${{ matrix.tex-version }}
 
