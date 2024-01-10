@@ -6,3 +6,5 @@ services:
     image: "ghcr.io/ayaka-notes/overleaf/texlive:2022"
   TeXLive2021:
     image: "ghcr.io/ayaka-notes/overleaf/texlive:2021"
+  # 后面有需要的自行添加，但是千万不要用texlive的dockerhub镜像，有问题
+  # 大概原因是linux内核太老，导致熵不够

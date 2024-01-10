@@ -98,13 +98,19 @@ services:
       # SHARELATEX_TEMPLATES_USER_ID: "578773160210479700917ee5"
       # SHARELATEX_NEW_PROJECT_TEMPLATE_LINKS: '[ {"name":"All Templates","url":"/templates/all"}]'
 
-      # SHARELATEX_PROXY_LEARN: "true"
+      # 学习页面
+      SHARELATEX_PROXY_LEARN: "true"
+      
+      # 注意：COMPILE_TIMEOUT必须在所有数据初始化之前生效
+      # 因为编译时间是和用户强相关的，每个用户有自己的编译时间限制
+      # 如果你服务器运行很久了，需要手动写脚本，更新mongo数据库中的用户编译时间限制
+      COMPILE_TIMEOUT: "600"
       DOCKER_RUNNER: "true"
       SANDBOXED_COMPILES: "true"
       SANDBOXED_COMPILES_SIBLING_CONTAINERS: "true"
       # 记得改/workspaces/overleaf为你的克隆下来的仓库的路径
-      SANDBOXED_COMPILES_HOST_DIR: "/workspaces/overleaf/data/sharelatex/data/compiles"
-      SYNCTEX_BIN_HOST_PATH: "/workspaces/overleaf/data/sharelatex/bin" 
+      SANDBOXED_COMPILES_HOST_DIR: "/workspaces/overleaf/data/sharelatex_data/data/compiles"
+      SYNCTEX_BIN_HOST_PATH: "/workspaces/overleaf/data/sharelatex_data/bin" 
       TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/overleaf/texlive:2023"
       ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/overleaf/texlive:2023,ghcr.io/ayaka-notes/overleaf/texlive:2022,ghcr.io/ayaka-notes/overleaf/texlive:2021"
 
