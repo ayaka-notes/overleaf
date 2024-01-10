@@ -10,7 +10,7 @@ env:
 jobs:
   sync-with-dockerhub:
     runs-on: ubuntu-latest
-    nameL: Sync With Dockerhub
+    name: Sync With Dockerhub
     strategy:
       fail-fast: false
       max-parallel: 3
