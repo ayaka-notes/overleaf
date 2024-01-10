@@ -1,4 +1,4 @@
-FROM phusion/baseimage:18.04-1.0.0
+FROM ubuntu:16.04
 
 LABEL \
     org.opencontainers.image.title="Docker Image of TeXLive" \
@@ -9,12 +9,14 @@ LABEL \
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig inkscape pandoc python3-pygments wget python3 \
-    gnupg gnuplot perl-modules perl
+    gnupg gnuplot perl-modules perl ca-certificates
 
 # 参数-年份
 ARG TEXLIVE_Version=2016
-ARG TEXLIVE_MIRROR=ftp://tug.org/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 
+# 这里必须用http或者ftp，因为https在perl中会被认为不匹配
+ARG TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
+# ftp://tug.org/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 
 # 感谢Overleaf的Dockerfile
 # 安装 texlive
@@ -39,19 +41,13 @@ RUN mkdir /install-tl-unx \
       -repository ${TEXLIVE_MIRROR} \
     \
 &&  $(find /usr/local/texlive -name tlmgr) path add \
-&&  tlmgr install --repository ${TEXLIVE_MIRROR} \
-      latexmk \
-      texcount \
-      synctex \
-      etoolbox \
-      xetex \
 &&  tlmgr path add \
 &&  rm -rf /install-tl-unx
 
 # 配置 /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf, 使得LaTeX可以使用shell-escape
-RUN echo "shell_escape = t" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
-    echo "openout_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
-    echo "openin_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf
+# RUN echo "shell_escape = t" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
+#     echo "openout_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
+#     echo "openin_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf
 
 # 设置环境变量
 ENV PATH="/usr/local/texlive/${TEXLIVE_Version}/bin/x86_64-linux:${PATH}"
