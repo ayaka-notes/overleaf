@@ -1,11 +1,9 @@
-# 本Dockerfile用来构建最新版本的TeXLive的Docker镜像，用于构建LaTeX文档。
-
-FROM phusion/baseimage:focal-1.2.0
+FROM phusion/baseimage:18.04-1.0.0
 
 LABEL \
     org.opencontainers.image.title="Docker Image of TeXLive" \
     org.opencontainers.image.authors="Ayaka-notes <public@ayaka.space>" \
-    org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf/" \
+    org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf" \
     org.opencontainers.image.licenses="MIT"
 
 # 安装依赖
@@ -13,9 +11,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig inkscape pandoc python3-pygments wget python3 \
     gnupg gnuplot perl-modules perl
 
-
-ARG TEXLIVE_Version=2023
-ARG TEXLIVE_MIRROR=https://mirrors.mit.edu/CTAN/systems/texlive/tlnet/
+# 参数-年份
+ARG TEXLIVE_Version=2016
+ARG TEXLIVE_MIRROR=ftp://tug.org/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 
 
 # 感谢Overleaf的Dockerfile
@@ -53,8 +51,7 @@ RUN mkdir /install-tl-unx \
 # 配置 /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf, 使得LaTeX可以使用shell-escape
 RUN echo "shell_escape = t" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
     echo "openout_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
-    echo "openin_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf 
-
+    echo "openin_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf
 
 # 设置环境变量
 ENV PATH="/usr/local/texlive/${TEXLIVE_Version}/bin/x86_64-linux:${PATH}"
