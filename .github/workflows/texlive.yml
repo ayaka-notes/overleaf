@@ -154,4 +154,4 @@ jobs:
           context: ./texlive
           file: ./texlive/Dockerfile.latest
           push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest,${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:2023
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:2023,  ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
