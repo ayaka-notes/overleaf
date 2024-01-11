@@ -74,7 +74,7 @@ jobs:
       - name: "Clean ghcr.io texlive"
         uses: pcasteran/ghcr-cleaning-action@v1.4.0
         with:
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.ORGTOKEN }}
           repository: ayaka-notes/overleaf
           package: overleaf/texlive
           dry-run: true
