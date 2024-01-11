@@ -79,8 +79,7 @@ jobs:
           account-type: org
           org-name: ayaka-notes
           untagged-only: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          token-type: github-token
+          token: ${{ secrets.ORGTOKEN }}
           dry-run: true
 
   build-image:
