@@ -1,11 +1,12 @@
 # Overleaf Texlive 
 
-> Attention! This image doesn't contain any sharelatex component. 
+> ⚠️ ⚠️ ⚠️ Attention! 
 > 
-> If you want to use Sharelatex CE with inner texlive, refer to [Overleaf official](github.com/overleaf/overleaf) to find more tutorials.
+> This Docker Image **doesn't contain** any sharelatex component.
+> 
+> If you want to use Sharelatex CE with inner contained texlive, refer to [Overleaf official](github.com/overleaf/overleaf) to find more tutorials.
 
 This folder includes Texlive images Dockerfile for Overleaf. You can also use it for your personal Tex-Writing, or mount it to your sharelatex container.
-
 
 ## TeXLive Version
 
@@ -27,8 +28,30 @@ Thanks to Github Action, we can build all tex image parallel, which includes:
 
 We use mirror archive from [utah university](https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/), which includes almost all texlive image ranging from 1996 to 2023. And thankes to Overleaf's Dockerfile, we can build this project faster.
 
-
 > Why texlive 2016 and earlier are not supported ?
 >
 > Because Git-Action can't finish it as 2017,2018..., and we believe you may not use it any more since it's too old
+
+## Contained Component
+
+The following things are contained in the docker image.
+- fontconfig 
+- inkscape 
+- pandoc 
+- python3-pygments 
+- wget
+- python3
+- gnupg 
+- gnuplot
+- perl-modules 
+- perl 
+- ca-certificates 
+- git
+
+
+## Tech Reminder
+
+While install texlive image, you may need to pay attention to the following problems:
+- Only `http`/`ftp` is supported before 2017, so you can't use `https`, unless you modify the `peal` script.
+- Before 2015, only sha256 file is provided. So you can't use sha512 to check.
 
