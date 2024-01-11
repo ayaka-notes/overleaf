@@ -173,3 +173,16 @@ jobs:
           file: ./texlive/Dockerfile.latest
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:2023,  ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+  
+  post-clean-ghcr-texlive:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.clean-ghcr-texlive == 'true'
+    needs: [build-image, build-latest]
+    steps:
+      - name: "Clean ghcr.io texlive"
+        uses: pcasteran/ghcr-cleaning-action@v1.4.0
+        with:
+          password: ${{ secrets.GITHUB_TOKEN }}
+          repository: ayaka-notes/overleaf/texlive
+          package: overleaf/texlive
+          dry-run: true
