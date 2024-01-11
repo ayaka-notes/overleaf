@@ -2,16 +2,19 @@
 Overleaf CE Patch Version, Include more functions.
 
 ## Quick Setup 
-You need **8 core 64GB storage Machine** to run this APP. Run the following command to start.
+You need **8 core, 32GB Ram, 64GB storage Machine** to run this APP. Run the following command to start.
 ```bash
 ./init.sh
 ```
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ayaka-notes/overleaf)
 
-
 <img width="1222" alt="截屏2024-01-11 09 32 07" src="https://github.com/ayaka-notes/overleaf/assets/84625273/8ce1894d-764f-4337-b67f-1794eafc856d">
 
+Github Codespace Version include the following texlive:
+- `ghcr.io/ayaka-notes/overleaf/texlive:2023` (Also `latest` tag)
+- `ghcr.io/ayaka-notes/overleaf/texlive:2022`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2021`
 
 ## Texlive Image
 Overleaf CE can be run with Texlive Image, For more infomation, check [this doc](./texlive). The following images are supported.(You can also use it as your own tex-writing)
