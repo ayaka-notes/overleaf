@@ -1,7 +1,8 @@
 # Overleaf
 Overleaf CE Patch Version, Include more functions.
 
-![image](https://github.com/ayaka-notes/overleaf/assets/84625273/0c4b4aa6-74b1-4692-b83b-d9e99a06bbbb)
+<img width="1222" alt="截屏2024-01-11 09 32 07" src="https://github.com/ayaka-notes/overleaf/assets/84625273/8ce1894d-764f-4337-b67f-1794eafc856d">
+
 
 
 ## Texlive Image
