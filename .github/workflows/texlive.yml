@@ -75,7 +75,6 @@ jobs:
         uses: pcasteran/ghcr-cleaning-action@v1.4.0
         with:
           password: ${{ secrets.ORGTOKEN }}
-          repository: ayaka-notes/overleaf
           package: overleaf/texlive
           dry-run: true
 
@@ -184,6 +183,5 @@ jobs:
         uses: pcasteran/ghcr-cleaning-action@v1.4.0
         with:
           password: ${{ secrets.GITHUB_TOKEN }}
-          repository: ayaka-notes/overleaf/texlive
           package: overleaf/texlive
           dry-run: true
