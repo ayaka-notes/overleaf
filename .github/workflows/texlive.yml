@@ -4,6 +4,12 @@ on:
   workflow_dispatch:
     # 选择是否构建最新镜像
     inputs:
+      clean-ghcr-texlive:
+        description: "Clean ghcr.io texlive"
+        required: true
+        default: true
+        type: boolean
+      
       build-latest:
         description: "Build latest(2023)"
         required: true
@@ -61,6 +67,18 @@ env:
   IMAGE_NAME: ayaka-notes/overleaf/texlive
 
 jobs:
+  clean-ghcr-texlive:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.clean-ghcr-texlive == 'true'
+    steps:
+      - name: "Clean ghcr.io texlive"
+        uses: pcasteran/ghcr-cleaning-action@v1.4.0
+        with:
+          password: ${{ secrets.GITHUB_TOKEN }}
+          repository: ayaka-notes/overleaf/texlive
+          package: overleaf/texlive
+          dry-run: true
+
   build-image:
     runs-on: ubuntu-latest
     if: github.event.inputs.build-image == 'true'
@@ -134,7 +152,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.inputs.build-latest == 'true'
     # 最新的版本构建，等上面的构建完成后再构建，这样就会出现在仓库的最上面
-    needs: build-image
+    needs: build-image 
     name: TeXLive latest
     steps:
       - name: "Checkout GitHub Action"
