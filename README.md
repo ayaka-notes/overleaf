@@ -16,6 +16,8 @@ Github Codespace Version include the following texlive:
 - `ghcr.io/ayaka-notes/overleaf/texlive:2022`
 - `ghcr.io/ayaka-notes/overleaf/texlive:2021`
 
+By the way, you can't use **Text Sync** if you use direct Codespace Port Forwarding. I suggest that you use your local vscode.
+
 ## Texlive Image
 Overleaf CE can be run with Texlive Image, For more infomation, check [this doc](./texlive). The following images are supported.(You can also use it as your own tex-writing)
 - `ghcr.io/ayaka-notes/overleaf/texlive:2023` (Also `latest` tag)
