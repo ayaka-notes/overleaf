@@ -71,11 +71,15 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.inputs.clean-ghcr-texlive == 'true'
     steps:
-      - name: "Clean ghcr.io texlive"
-        uses: pcasteran/ghcr-cleaning-action@v1.4.0
+      - name: Delete 'dev' containers older than a week
+        uses: snok/container-retention-policy@v2
         with:
-          password: ${{ secrets.GITHUB_TOKEN }}
-          package: overleaf%2Ftexlive
+          image-names: overleaf/texlive
+          cut-off: 1 min ago UTC
+          account-type: org
+          org-name: ayaka-notes
+          untagged-only: true
+          token: ${{ secrets.GITHUB_TOKEN }}
           dry-run: true
 
   build-image:
