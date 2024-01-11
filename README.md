@@ -1,8 +1,16 @@
 # Overleaf
 Overleaf CE Patch Version, Include more functions.
 
-<img width="1222" alt="截屏2024-01-11 09 32 07" src="https://github.com/ayaka-notes/overleaf/assets/84625273/8ce1894d-764f-4337-b67f-1794eafc856d">
+## Quick Setup 
+You need **8 core 64GB storage Machine** to run this APP. Run the following command to start.
+```bash
+./init.sh
+```
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ayaka-notes/overleaf)
+
+
+<img width="1222" alt="截屏2024-01-11 09 32 07" src="https://github.com/ayaka-notes/overleaf/assets/84625273/8ce1894d-764f-4337-b67f-1794eafc856d">
 
 
 ## Texlive Image
