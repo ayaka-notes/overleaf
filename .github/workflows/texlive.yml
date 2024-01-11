@@ -80,6 +80,7 @@ jobs:
           org-name: ayaka-notes
           untagged-only: true
           token: ${{ secrets.GITHUB_TOKEN }}
+          token-type: github-token
           dry-run: true
 
   build-image:
