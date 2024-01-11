@@ -80,7 +80,7 @@ jobs:
           org-name: ayaka-notes
           untagged-only: true
           token: ${{ secrets.ORGTOKEN }}
-          dry-run: true
+
 
   build-image:
     runs-on: ubuntu-latest
@@ -181,11 +181,13 @@ jobs:
   post-clean-ghcr-texlive:
     runs-on: ubuntu-latest
     if: github.event.inputs.clean-ghcr-texlive == 'true'
-    needs: [build-image, build-latest]
     steps:
-      - name: "Clean ghcr.io texlive"
-        uses: pcasteran/ghcr-cleaning-action@v1.4.0
+      - name: Delete 'untaged' containers
+        uses: snok/container-retention-policy@v2
         with:
-          password: ${{ secrets.GITHUB_TOKEN }}
-          package: overleaf%2Ftexlive
-          dry-run: true
+          image-names: overleaf/*
+          cut-off: 1 min ago UTC
+          account-type: org
+          org-name: ayaka-notes
+          untagged-only: true
+          token: ${{ secrets.ORGTOKEN }}
