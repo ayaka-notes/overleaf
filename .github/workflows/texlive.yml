@@ -74,7 +74,7 @@ jobs:
       - name: Delete 'untaged' containers
         uses: snok/container-retention-policy@v2
         with:
-          image-names: overleaf%2Ftexlive
+          image-names: overleaf/*
           cut-off: 1 min ago UTC
           account-type: org
           org-name: ayaka-notes
