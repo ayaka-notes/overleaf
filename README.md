@@ -2,7 +2,7 @@
 Overleaf CE Patch Version, Include more functions.
 
 ## Quick Setup 
-You need **8 core, 32GB Ram, 64GB storage Machine** to run this APP. Run the following command to start.
+You need **8 core, 32GB Ram, 64GB storage Github Codespace** to run this APP. Run the following command to start.
 ```bash
 ./init.sh
 ```
