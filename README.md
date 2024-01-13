@@ -2,7 +2,7 @@
 Overleaf CE Patch Version, Include more functions.
 
 ## Quick Setup 
-You need **8 core, 32GB Ram, 64GB storage Github Codespace** to run this APP. Run the following command to start.
+Run the following command to start.
 ```bash
 ./init.sh
 ```
@@ -13,10 +13,9 @@ You need **8 core, 32GB Ram, 64GB storage Github Codespace** to run this APP. Ru
 
 Github Codespace Version include the following texlive:
 - `ghcr.io/ayaka-notes/overleaf/texlive:2023` (Also `latest` tag)
-- `ghcr.io/ayaka-notes/overleaf/texlive:2022`
 - `ghcr.io/ayaka-notes/overleaf/texlive:2021`
 
-By the way, you can't use **Text Sync** if you use direct Codespace Port Forwarding. I suggest that you use your local vscode, use local Port Forwarding with URL like `127.0.0.1`.
+By the way, you can't use **Text Sync** if you use direct Codespace Port Forwarding. I suggest that you launch your local vscode, use local Port Forwarding with URL like `127.0.0.1`.
 
 ## Texlive Image
 Overleaf CE can be run with Texlive Image, For more infomation, check [this doc](./texlive). The following images are supported.(You can also use it as your own tex-writing)

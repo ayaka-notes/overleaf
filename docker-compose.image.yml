@@ -2,9 +2,15 @@ version: "2.2"
 services:
   TeXLive2023:
     image: "ghcr.io/ayaka-notes/overleaf/texlive:2023"
-  TeXLive2022:
-    image: "ghcr.io/ayaka-notes/overleaf/texlive:2022"
+  # 如果Codespace空间只有32G，那么后面的镜像请适度下载
+  # 为了演示，这里打开2021、2023的镜像
+  # TeXLive2022:
+  #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2022"
   TeXLive2021:
     image: "ghcr.io/ayaka-notes/overleaf/texlive:2021"
+  # TeXLive2020:
+  #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2020"
+  # TeXLive2019:
+  #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2019"
   # 后面有需要的自行添加，但是千万不要用texlive的dockerhub镜像，有问题
   # 大概原因是linux内核太老，导致熵不够
