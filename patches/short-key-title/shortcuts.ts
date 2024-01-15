@@ -1,58 +1,74 @@
-import { Prec } from '@codemirror/state'
-import { keymap } from '@codemirror/view'
-import { toggleRanges } from '../../commands/ranges'
+import { Prec } from "@codemirror/state";
+import { keymap } from "@codemirror/view";
+import { toggleRanges } from "../../commands/ranges";
+import { setSectionHeadingLevel } from "../../../../features/source-editor/extensions/toolbar/sections";
+import { useCodeMirrorViewContext } from "../../../../features/source-editor/components/codemirror-editor";
+
+// @/features/source-editor/extensions/toolbar/sections
+
+// 左边的是level，右边的是对应的label
+// const levels = new Map([
+//     ['text', 'Normal text'],
+//     ['section', 'Section'],
+//     ['subsection', 'Subsection'],
+//     ['subsubsection', 'Subsubsection'],
+//     ['paragraph', 'Paragraph'],
+//     ['subparagraph', 'Subparagraph'],
+// ])
 
 export const shortcuts = () => {
+  const view = useCodeMirrorViewContext();
+
   return Prec.high(
     keymap.of([
       {
-        key: 'Ctrl-b',
-        mac: 'Mod-b',
+        key: "Ctrl-b",
+        mac: "Mod-b",
         preventDefault: true,
-        run: toggleRanges('\\textbf'),
+        run: toggleRanges("\\textbf"),
       },
       {
-        key: 'Ctrl-i',
-        mac: 'Mod-i',
+        key: "Ctrl-i",
+        mac: "Mod-i",
         preventDefault: true,
-        run: toggleRanges('\\textit'),
+        run: toggleRanges("\\textit"),
       },
       {
-        key: 'Ctrl-1',
-        mac: 'Mod-1',
+        key: "Ctrl-1",
+        mac: "Mod-1",
         preventDefault: true,
-        run: toggleRanges('\\part'),
+        run: setSectionHeadingLevel(view, "part"),
       },
       {
-        key: 'Ctrl-2',
-        mac: 'Mod-2',
+        key: "Ctrl-2",
+        mac: "Mod-2",
         preventDefault: true,
-        run: toggleRanges('\\chapter'),
+        run: setSectionHeadingLevel(view, "chapter"),
       },
       {
-        key: 'Ctrl-3',
-        mac: 'Mod-3',
+        key: "Ctrl-3",
+        mac: "Mod-3",
         preventDefault: true,
-        run: toggleRanges('\\section'),
+        run: setSectionHeadingLevel(view, "section"),
       },
       {
-        key: 'Ctrl-4',
-        mac: 'Mod-4',
+        key: "Ctrl-4",
+        mac: "Mod-4",
         preventDefault: true,
-        run: toggleRanges('\\subsection'),
+        run: setSectionHeadingLevel(view, "subsection"),
       },
       {
-        key: 'Ctrl-5',
-        mac: 'Mod-5',
+        key: "Ctrl-5",
+        mac: "Mod-5",
         preventDefault: true,
-        run: toggleRanges('\\subsubsection'),
+        run: setSectionHeadingLevel(view, "subsubsection"),
       },
       {
-        key: 'Ctrl-6',
-        mac: 'Mod-6',
+        key: "Ctrl-6",
+        mac: "Mod-6",
         preventDefault: true,
-        run: toggleRanges('\\paragraph'),
-      }
+        run: setSectionHeadingLevel(view, "paragraph"),
+      },
     ])
-  )
-}
+  );
+};
