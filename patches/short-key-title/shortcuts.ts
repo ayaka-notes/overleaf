@@ -1,5 +1,6 @@
 import { Prec } from "@codemirror/state";
 import { keymap } from "@codemirror/view";
+import { EditorView } from '@codemirror/view'
 import { toggleRanges } from "../../commands/ranges";
 import { setSectionHeadingLevel } from "../../../../features/source-editor/extensions/toolbar/sections";
 import { useCodeMirrorViewContext } from "../../../../features/source-editor/components/codemirror-editor";
@@ -15,6 +16,13 @@ import { useCodeMirrorViewContext } from "../../../../features/source-editor/com
 //     ['paragraph', 'Paragraph'],
 //     ['subparagraph', 'Subparagraph'],
 // ])
+
+const setLevel = (level: string) => {
+  return (view: EditorView): boolean => {
+    setSectionHeadingLevel(view, level);
+    return true;
+  }
+}
 
 export const shortcuts = () => {
   const view = useCodeMirrorViewContext();
@@ -37,44 +45,20 @@ export const shortcuts = () => {
         key: "Ctrl-1",
         mac: "Mod-1",
         preventDefault: true,
-        run: () => setSectionHeadingLevel(view, "part"),
+        run: setLevel("part"),
       },
       {
         key: "Ctrl-2",
         mac: "Mod-2",
         preventDefault: true,
-        run: () => setSectionHeadingLevel(view, "chapter"),
+        run: setLevel("chapter"),
       },
       {
         key: "Ctrl-3",
         mac: "Mod-3",
         preventDefault: true,
-        run: () => setSectionHeadingLevel(view, "section"),
-      },
-      {
-        key: "Ctrl-4",
-        mac: "Mod-4",
-        preventDefault: true,
-        run: () => setSectionHeadingLevel(view, "subsection"),
-      },
-      {
-        key: "Ctrl-5",
-        mac: "Mod-5",
-        preventDefault: true,
-        run: () => setSectionHeadingLevel(view, "subsubsection"),
-      },
-      {
-        key: "Ctrl-6",
-        mac: "Mod-6",
-        preventDefault: true,
-        run: () => setSectionHeadingLevel(view, "paragraph"),
-      },
-      {
-        key: "Ctrl-7",
-        mac: "Mod-7",
-        preventDefault: true,
-        run: () => setSectionHeadingLevel(view, "subparagraph"),
-      },
+        run: setLevel("section"),
+      }
     ])
   );
 };
