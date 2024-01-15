@@ -3,7 +3,6 @@ import { keymap } from "@codemirror/view";
 import { EditorView } from '@codemirror/view'
 import { toggleRanges } from "../../commands/ranges";
 import { setSectionHeadingLevel } from "../../../../features/source-editor/extensions/toolbar/sections";
-import { useCodeMirrorViewContext } from "../../../../features/source-editor/components/codemirror-editor";
 
 // @/features/source-editor/extensions/toolbar/sections
 
@@ -25,7 +24,6 @@ const setLevel = (level: string) => {
 }
 
 export const shortcuts = () => {
-  const view = useCodeMirrorViewContext();
 
   return Prec.high(
     keymap.of([
