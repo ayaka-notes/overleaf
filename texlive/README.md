@@ -1,10 +1,8 @@
 # Overleaf Texlive 
 
-> ⚠️ ⚠️ ⚠️ Attention! 
-> 
-> This Docker Image **doesn't contain** any sharelatex component.
-> 
-> If you want to use Sharelatex CE with inner contained texlive, refer to [Overleaf official](github.com/overleaf/overleaf) to find more tutorials.
+> [!WARNING]  
+> - This Docker Image **doesn't contain** any sharelatex/overleaf component.
+> - If you want to use Sharelatex CE with inner contained texlive, refer to [Overleaf official](github.com/overleaf/overleaf) to find more tutorials.
 
 This folder includes Texlive images Dockerfile for Overleaf. You can also use it for your personal Tex-Writing, or mount it to your sharelatex container.
 
