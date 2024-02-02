@@ -22,9 +22,10 @@ RUN mkdir -p /overleaf/services/web/data/dumpFolder \
     &&  chown -R node:node /overleaf/services/web/data \
     &&  chown -R node:node /overleaf
 
+
 # the deps image is used for caching npm ci
 FROM base as deps-prod
-
+USER node
 COPY package.json package-lock.json /overleaf/
 COPY services/web/package.json /overleaf/services/web/
 COPY libraries/ /overleaf/libraries/
@@ -43,7 +44,7 @@ RUN cd /overleaf \
 
 # the web image with only production dependencies but no webpack production build, for development
 FROM deps-prod as app-only
-USER node
+
 COPY services/web /overleaf/services/web
 
 
@@ -51,7 +52,7 @@ CMD ["node", "--expose-gc", "app.js"]
 
 # the dev is suitable for running tests
 FROM deps as dev
-
+USER root
 ARG SENTRY_RELEASE
 ENV SENTRY_RELEASE=$SENTRY_RELEASE
 COPY services/web /overleaf/services/web
@@ -59,6 +60,7 @@ COPY services/web /overleaf/services/web
 # Build the latex parser
 RUN cd /overleaf/services/web && npm run 'lezer-latex:generate'
 
+RUN mkdir -p /overleaf/services/web/node_modules/.cache && chown -R node:node /overleaf/services/web/node_modules/.cache
 USER node
 
 
