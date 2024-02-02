@@ -20,10 +20,11 @@ RUN mkdir -p /overleaf/services/web/data/dumpFolder \
     &&  mkdir -p /overleaf/services/web/data/projectHistories \
     &&  chmod -R 0755 /overleaf/services/web/data \
     &&  chown -R node:node /overleaf/services/web/data
+    &&  chown -R node:node /overleaf
 
 # the deps image is used for caching npm ci
 FROM base as deps-prod
-USER root
+USER node
 COPY package.json package-lock.json /overleaf/
 COPY services/web/package.json /overleaf/services/web/
 COPY libraries/ /overleaf/libraries/
