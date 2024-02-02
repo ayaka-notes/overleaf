@@ -40,5 +40,5 @@ jobs:
           bin/build ${{matrix.image-name}}
       - name: "Push Image"
         run: |
-          docker tag ${{matrix.image-name}} ${{env.GHCR_REGISTRY}}/overleaf/dev/develop-${{matrix.image-name}}:latest
-          docker push ${{env.GHCR_REGISTRY}}/overleaf/dev/develop-${{matrix.image-name}}:latest
+          docker tag develop-${{matrix.image-name}} ${{env.GHCR_REGISTRY}}/overleaf/dev/${{matrix.image-name}}:latest
+          docker push ${{env.GHCR_REGISTRY}}/overleaf/dev/${{matrix.image-name}}:latest
