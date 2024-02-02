@@ -5,14 +5,27 @@ on:
 env:
   GHCR_REGISTRY: ghcr.io
 
-
 jobs:
   build-image:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix: 
-        image-name: [web]
+      matrix:
+        image-name:
+          [
+            web,
+            webpack,
+            real-time,
+            project-history,
+            notifications,
+            history-v1,
+            filestore,
+            document-updater,
+            docstore,
+            contacts,
+            chat,
+            clsi,
+          ]
     steps:
       - name: "Clone Overleaf And Build"
         run: |
@@ -22,12 +35,10 @@ jobs:
       - name: "Login to GitHub Container Registry"
         uses: docker/login-action@v3.0.0
         with:
-          registry: ${{env.DOCKER_REGISTRY}}
+          registry: ${{env.GHCR_REGISTRY}}
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
       - name: "Push Image"
         run: |
           docker tag ${{matrix.image-name}} ${{env.GHCR_REGISTRY}}/overleaf/dev/develop-${{matrix.image-name}}:latest
           docker push ${{env.GHCR_REGISTRY}}/overleaf/dev/develop-${{matrix.image-name}}:latest
-
-        
