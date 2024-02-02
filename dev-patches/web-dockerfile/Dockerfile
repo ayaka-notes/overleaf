@@ -23,7 +23,7 @@ RUN mkdir -p /overleaf/services/web/data/dumpFolder \
 
 # the deps image is used for caching npm ci
 FROM base as deps-prod
-USER node
+USER root
 COPY package.json package-lock.json /overleaf/
 COPY services/web/package.json /overleaf/services/web/
 COPY libraries/ /overleaf/libraries/
