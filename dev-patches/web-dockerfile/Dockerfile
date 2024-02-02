@@ -2,7 +2,7 @@
 # mounted
 FROM node:18.18.2 as base
 
-USER node 
+
 WORKDIR /overleaf/services/web
 
 # install_deps changes app files and installs npm packages
@@ -24,7 +24,7 @@ RUN mkdir -p /overleaf/services/web/data/dumpFolder \
 
 # the deps image is used for caching npm ci
 FROM base as deps-prod
-USER root
+
 COPY package.json package-lock.json /overleaf/
 COPY services/web/package.json /overleaf/services/web/
 COPY libraries/ /overleaf/libraries/
