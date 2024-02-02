@@ -40,6 +40,7 @@ Overleaf CE can be run with Texlive Image, For more infomation, check [this doc]
 
 - Unlock The Limit of `50M`
 - Use docker to compile Project
+- Compileout Time set to 600s(10min)
 - Use Any texlive you want
 
 ## How To Enable Docker Compile?
