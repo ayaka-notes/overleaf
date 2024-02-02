@@ -19,7 +19,7 @@ RUN mkdir -p /overleaf/services/web/data/dumpFolder \
     &&  mkdir -p /overleaf/services/web/data/zippedProjects \
     &&  mkdir -p /overleaf/services/web/data/projectHistories \
     &&  chmod -R 0755 /overleaf/services/web/data \
-    &&  chown -R node:node /overleaf/services/web/data
+    &&  chown -R node:node /overleaf/services/web/data \
     &&  chown -R node:node /overleaf
 
 # the deps image is used for caching npm ci
