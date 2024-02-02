@@ -38,7 +38,7 @@ jobs:
       - name: "Clone Overleaf And Build"
         run: |
           git clone https://github.com/overleaf/overleaf ./overleaf
-          cp ./dev-patches/Dockerfile ./overleaf/services/web/Dockerfile
+          cp ./dev-patches/web-dockerfile/Dockerfile ./overleaf/services/web/Dockerfile
           cd ./overleaf/develop/
           bin/build ${{matrix.image-name}}
       - name: "Push Image"
