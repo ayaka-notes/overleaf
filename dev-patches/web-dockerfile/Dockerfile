@@ -51,7 +51,7 @@ CMD ["node", "--expose-gc", "app.js"]
 
 # the dev is suitable for running tests
 FROM deps as dev
-USER node
+
 ARG SENTRY_RELEASE
 ENV SENTRY_RELEASE=$SENTRY_RELEASE
 COPY services/web /overleaf/services/web
@@ -59,7 +59,7 @@ COPY services/web /overleaf/services/web
 # Build the latex parser
 RUN cd /overleaf/services/web && npm run 'lezer-latex:generate'
 
-
+USER node
 
 
 # the webpack image has deps+src+webpack artifacts
