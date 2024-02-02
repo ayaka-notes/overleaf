@@ -25,6 +25,7 @@ jobs:
             contacts,
             chat,
             clsi,
+            spelling
           ]
     steps:
       - name: "Check out code"
