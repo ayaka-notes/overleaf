@@ -56,12 +56,12 @@ CMD ["node", "--expose-gc", "app.js"]
 
 # the dev is suitable for running tests
 FROM deps as dev
-USER root
+USER node
 ARG SENTRY_RELEASE
 ENV SENTRY_RELEASE=$SENTRY_RELEASE
 COPY services/web /overleaf/services/web
 
-RUN USER root
+USER root
 RUN chown -R node:node /overleaf/services/web
 USER node
 
