@@ -2,7 +2,7 @@
 # mounted
 FROM node:18.18.2 as base
 
-
+USER node
 WORKDIR /overleaf/services/web
 
 # install_deps changes app files and installs npm packages
@@ -31,6 +31,10 @@ COPY services/web/package.json /overleaf/services/web/
 COPY libraries/ /overleaf/libraries/
 COPY patches/ /overleaf/patches/
 
+USER root
+RUN chown -R node:node /overleaf
+
+USER node
 RUN cd /overleaf && NODE_ENV=production npm ci --quiet
 
 FROM deps-prod as deps
@@ -56,6 +60,10 @@ USER root
 ARG SENTRY_RELEASE
 ENV SENTRY_RELEASE=$SENTRY_RELEASE
 COPY services/web /overleaf/services/web
+
+RUN USER root
+RUN chown -R node:node /overleaf/services/web
+USER node
 
 # Build the latex parser
 RUN cd /overleaf/services/web && npm run 'lezer-latex:generate'
