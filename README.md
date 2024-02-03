@@ -67,3 +67,16 @@ Overleaf CE can be run with Texlive Image, For more infomation, check [this doc]
       ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/overleaf/texlive:2023,ghcr.io/ayaka-notes/overleaf/texlive:2022,ghcr.io/ayaka-notes/overleaf/texlive:2021"
 
 ```
+
+
+## How To Develop overleaf
+
+To run overleaf, ayaka-notes provide you with `Dev Container`, all you need to do is run `./dev.sh` and continue as the reminder.
+
+After run `./dev.sh`, you will see:
+
+> Now you can visit http://localhost:80/launchpad to create your admin account.
+> 
+> Only After creating your admin account, can you continue to develop Overleaf.
+> 
+> Then, to see real-time changes, run 'bin/down' and 'bin/up' again.
