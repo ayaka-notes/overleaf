@@ -18,17 +18,19 @@ jobs:
           git clone https://github.com/overleaf/overleaf ./overleaf
       - name: "Patch Files"
         run: |
-          cp ./patches/config-clsi-match/* ./overleaf
+          cp -r ./patches/config-clsi-match/* ./overleaf
           cd ./overleaf && ./run.sh && cd ..
-          cp ./patches/config-web-setting/* ./overleaf
+          cp -r ./patches/config-web-setting/* ./overleaf
           cd ./overleaf && ./run.sh && cd ..
-          cp ./patches/cron-setting/* ./overleaf
+          cp -r ./patches/cron-setting/* ./overleaf
           cd ./overleaf && ./run.sh && cd ..
-          cp ./patches/unlock-50M-limit/* ./overleaf
+          cp -r ./patches/unlock-50M-limit/* ./overleaf
           cd ./overleaf && ./run.sh && cd ..
-          cp ./patches/nginx-learn-config/* ./overleaf
+          cp -r ./patches/nginx-learn-config/* ./overleaf
           cd ./overleaf && ./run.sh && cd ..
-          cp ./patches/short-key-title/* ./overleaf
+          cp -r ./patches/short-key-title/* ./overleaf
+          cd ./overleaf && ./run.sh && cd ..
+          cp -r ./patches/symbol-palette/* ./overleaf
           cd ./overleaf && ./run.sh && cd ..
           cp ./patches/more-theme/* ./overleaf
           cd ./overleaf && ./run.sh && rm -rf ./run.sh && cd ..
