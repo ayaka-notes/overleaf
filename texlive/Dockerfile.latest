@@ -11,7 +11,7 @@ LABEL \
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig inkscape pandoc python3-pygments wget python3 \
-    gnupg gnuplot perl-modules perl ca-certificates git
+    gnupg gnuplot perl-modules perl ca-certificates git ghostscript
 
 
 ARG TEXLIVE_Version=2023
