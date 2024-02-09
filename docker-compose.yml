@@ -98,6 +98,9 @@ services:
       # SHARELATEX_TEMPLATES_USER_ID: "578773160210479700917ee5"
       # SHARELATEX_NEW_PROJECT_TEMPLATE_LINKS: '[ {"name":"All Templates","url":"/templates/all"}]'
 
+      # 用来设置references的API
+      SHARELATEX_IS_SERVER_PRO: "true"
+
       # 学习页面
       SHARELATEX_PROXY_LEARN: "true"
       
