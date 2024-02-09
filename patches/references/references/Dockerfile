@@ -21,7 +21,7 @@ USER root
 RUN chown -R node:node /overleaf
 
 USER node
-RUN  cd /overleaf && npm install --quiet
+RUN  cd /overleaf && npm ci --quiet
 
 COPY services/references/ /overleaf/services/references/
 
