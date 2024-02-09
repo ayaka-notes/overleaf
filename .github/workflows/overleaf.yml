@@ -43,7 +43,7 @@ jobs:
           cd ./overleaf && ./run.sh && cd ..
           cp ./patches/more-theme/* ./overleaf
           cd ./overleaf && ./run.sh && rm -rf ./run.sh && cd ..
-          cd ./overleaf && rm -rf ./package-lock.json && npm install --package-lock-only 
+          cd ./overleaf && rm -rf ./package-lock.json && npm install
           echo ./package-lock.json
       - name: "Make CE Docker Image"
         run: |
