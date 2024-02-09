@@ -13,13 +13,14 @@ jobs:
     steps:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@main
+      - name: "Clone Overleaf"
+        run: |
+          git clone https://github.com/overleaf/overleaf ./overleaf
       - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
-      - name: "Clone Overleaf"
-        run: |
-          git clone https://github.com/overleaf/overleaf ./overleaf
+          cache-dependency-path: overleaf/package-lock.json
       - name: "Patch Files"
         run: |
           cp -r ./patches/config-clsi-match/* ./overleaf
