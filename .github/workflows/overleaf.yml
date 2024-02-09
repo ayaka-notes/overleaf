@@ -13,6 +13,10 @@ jobs:
     steps:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
       - name: "Clone Overleaf"
         run: |
           git clone https://github.com/overleaf/overleaf ./overleaf
@@ -38,6 +42,8 @@ jobs:
           cd ./overleaf && ./run.sh && cd ..
           cp ./patches/more-theme/* ./overleaf
           cd ./overleaf && ./run.sh && rm -rf ./run.sh && cd ..
+          cd ./overleaf && rm -rf ./package-lock.json && npm install --package-lock-only 
+          echo ./package-lock.json
       - name: "Make CE Docker Image"
         run: |
           cd ./overleaf/server-ce && make
