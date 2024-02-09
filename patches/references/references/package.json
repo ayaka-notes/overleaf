@@ -1,0 +1,42 @@
+{
+  "name": "@overleaf/reference",
+  "description": "An API for reference index",
+  "private": true,
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test:acceptance:_run": "LOG_LEVEL=fatal mocha --loader=esmock --recursive --reporter spec --timeout 15000 --exit $@ test/acceptance/js",
+    "test:acceptance": "npm run test:acceptance:_run -- --grep=$MOCHA_GREP",
+    "test:unit:_run": "LOG_LEVEL=fatal mocha --loader=esmock --recursive --reporter spec $@ test/unit/js",
+    "test:unit": "npm run test:unit:_run -- --grep=$MOCHA_GREP",
+    "nodemon": "node --watch app.js",
+    "lint": "eslint --max-warnings 0 --format unix .",
+    "format": "prettier --list-different $PWD/'**/*.js'",
+    "format:fix": "prettier --write $PWD/'**/*.js'",
+    "lint:fix": "eslint --fix .",
+    "types:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orcid/bibtex-parse-js": "^0.0.25",
+    "@overleaf/logger": "*",
+    "@overleaf/metrics": "*",
+    "@overleaf/settings": "*",
+    "async": "^3.2.2",
+    "body-parser": "^1.19.0",
+    "bunyan": "^1.8.15",
+    "express": "^4.18.2",
+    "mongodb": "^6.1.0",
+    "request": "~2.88.2",
+    "underscore": "~1.13.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "esmock": "^2.1.0",
+    "mocha": "^10.2.0",
+    "sinon": "~9.0.1",
+    "sinon-chai": "^3.7.0",
+    "typescript": "^5.0.4"
+  }
+}
