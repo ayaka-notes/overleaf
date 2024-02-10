@@ -122,7 +122,7 @@ jobs:
           context: ./texlive
           file: ./texlive/Dockerfile
           push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}.1
           #   参数
           build-args: |
             TEXLIVE_Version=${{ matrix.tex-version }}
@@ -137,7 +137,7 @@ jobs:
           context: ./texlive
           file: ./texlive/Dockerfile.old
           push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tex-version }}.1
           #   参数
           build-args: |
             TEXLIVE_Version=${{ matrix.tex-version }}
@@ -166,7 +166,7 @@ jobs:
           context: ./texlive
           file: ./texlive/Dockerfile.latest
           push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:2023,  ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:2023.1,  ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
   post-clean-ghcr-texlive:
     runs-on: ubuntu-latest
@@ -205,5 +205,5 @@ jobs:
 
       - name: Pull and push Docker image
         run: |
-          docker pull ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}
-          docker push ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}
+          docker pull ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}.1
+          docker push ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}.1
