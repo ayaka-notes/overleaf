@@ -19,20 +19,14 @@ By the way, you can't use **Text Sync** if you use direct Codespace Port Forward
 
 ## Texlive Image
 Overleaf CE can be run with Texlive Image, For more infomation, check [this doc](./texlive). The following images are supported.(You can also use it as your own tex-writing)
-- `ghcr.io/ayaka-notes/overleaf/texlive:2023` (Also `latest` tag)
-- `ghcr.io/ayaka-notes/overleaf/texlive:2022`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2021`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2020`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2019`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2018`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2017`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2016`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2015`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2014`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2013`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2012`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2011`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2010`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2023.1` (Also `latest` tag)
+- `ghcr.io/ayaka-notes/overleaf/texlive:2022.1`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2021.1`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2020.1`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2019.1`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2018.1`
+- `ghcr.io/ayaka-notes/overleaf/texlive:2017.1`
+
 
 ## Some Patches
 
