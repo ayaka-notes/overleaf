@@ -23,28 +23,7 @@ jobs:
           cache-dependency-path: overleaf/package-lock.json
       - name: "Patch Files"
         run: |
-          cp -r ./patches/config-clsi-match/* ./overleaf
-          cd ./overleaf && ./run.sh && cd ..
-          cp -r ./patches/config-web-setting/* ./overleaf
-          cd ./overleaf && ./run.sh && cd ..
-          cp -r ./patches/cron-setting/* ./overleaf
-          cd ./overleaf && ./run.sh && cd ..
-          cp -r ./patches/unlock-50M-limit/* ./overleaf
-          cd ./overleaf && ./run.sh && cd ..
-          cp -r ./patches/nginx-learn-config/* ./overleaf
-          cd ./overleaf && ./run.sh && cd ..
-          cp -r ./patches/short-key-title/* ./overleaf
-          cd ./overleaf && ./run.sh && cd ..
-          cp -r ./patches/symbol-palette/* ./overleaf
-          cd ./overleaf && ./run.sh && cd ..
-          cp -r ./patches/track-change/* ./overleaf
-          cd ./overleaf && ./run.sh && cd ..
-          # cp -r ./patches/references/* ./overleaf
-          # cd ./overleaf && ./run.sh && cd ..
-          cp ./patches/more-theme/* ./overleaf
-          cd ./overleaf && ./run.sh && rm -rf ./run.sh && cd ..
-          # cd ./overleaf && rm -rf ./package-lock.json && npm install --package-lock-only --ignore-scripts
-          # echo ./package-lock.json
+          ./patch.sh
       - name: "Make CE Docker Image"
         run: |
           cd ./overleaf/server-ce && make
