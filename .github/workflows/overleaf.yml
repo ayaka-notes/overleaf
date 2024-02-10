@@ -32,9 +32,5 @@ jobs:
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
       - name: Build and push Docker image
-        id: docker_build
-        uses: docker/build-push-action@v5.1.0
-        with:
-          push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-
+        run: |
+          docker push ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
