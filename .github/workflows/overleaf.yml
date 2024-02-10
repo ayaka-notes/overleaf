@@ -22,7 +22,9 @@ jobs:
           path: './overleaf'
       - name: "Make CE Docker Image"
         run: |
-          cd ./overleaf/server-ce && make
+          cd ./overleaf/server-ce
+          make
+          docker tag sharelatex/sharelatex:latest ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
       - name: "Login to GitHub Container Registry"
         uses: docker/login-action@v3.0.0
         with:
@@ -33,8 +35,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v5.1.0
         with:
-          context: ./patches/docker-in-docker
-          file: ./patches/docker-in-docker/Dockerfile
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
