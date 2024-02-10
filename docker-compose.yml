@@ -21,7 +21,7 @@ services:
       - ./data/sharelatex_data:/var/lib/sharelatex
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      OVERLEAF_APP_NAME: Overleaf Community Edition
+      OVERLEAF_APP_NAME: Overleaf(Pro) Ayaka-notes Edition
 
       OVERLEAF_MONGO_URL: mongodb://mongo/sharelatex
 
