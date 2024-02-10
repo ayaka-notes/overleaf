@@ -13,9 +13,13 @@ jobs:
     steps:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@main
-      - name: "Clone Overleaf"
-        run: |
-          git clone https://${{secrets.ORGTOKEN}}@github.com/ayaka-notes/overleaf-internal ./overleaf
+      - name: "Checkout Internal Overleaf Action"
+        uses: actions/checkout@main
+        with:
+          repository: ayaka-notes/overleaf-internal
+          ref: dev
+          token: ${{secrets.ORGTOKEN}}
+          path: './overleaf'
       - name: "Make CE Docker Image"
         run: |
           cd ./overleaf/server-ce && make
@@ -25,7 +29,6 @@ jobs:
           registry: ${{env.DOCKER_REGISTRY}}
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
-
       - name: Build and push Docker image
         id: docker_build
         uses: docker/build-push-action@v5.1.0
