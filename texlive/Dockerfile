@@ -13,7 +13,8 @@ ARG TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${T
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig inkscape pandoc python3-pygments wget python3 \
-    gnupg gnuplot perl-modules perl ca-certificates git ghostscript
+    gnupg gnuplot perl-modules perl ca-certificates git ghostscript \
+    qpdf
 
 
 # 感谢Overleaf的Dockerfile
