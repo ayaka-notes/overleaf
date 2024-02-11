@@ -12,7 +12,7 @@ LABEL \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig inkscape pandoc python3-pygments wget python3 \
     gnupg gnuplot perl-modules perl ca-certificates git ghostscript \
-    qpdf
+    qpdf r-base-core
 
 
 ARG TEXLIVE_Version=2023
