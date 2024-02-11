@@ -10,6 +10,15 @@ LABEL \
 ARG TEXLIVE_Version=2022
 ARG TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
 
+# 拷贝LatexMk文件到/usr/local/share/latexmk/LatexMk
+COPY LatexMk /usr/local/share/latexmk/LatexMk
+COPY patchSynctex.R /usr/local/bin/
+COPY run-chktex.sh /usr/local/bin/
+
+# 设置权限
+RUN chmod 777 -R /usr/local/bin/ && \
+    chmod 777 -R /usr/local/share/latexmk/
+
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig inkscape pandoc python3-pygments wget python3 \

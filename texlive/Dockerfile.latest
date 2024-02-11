@@ -8,6 +8,15 @@ LABEL \
     org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf/" \
     org.opencontainers.image.licenses="MIT"
 
+# 拷贝LatexMk文件到/usr/local/share/latexmk/LatexMk
+COPY LatexMk /usr/local/share/latexmk/LatexMk
+COPY patchSynctex.R /usr/local/bin/
+COPY run-chktex.sh /usr/local/bin/
+
+# 设置权限
+RUN chmod 777 -R /usr/local/bin/ && \
+    chmod 777 -R /usr/local/share/latexmk/
+
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig inkscape pandoc python3-pygments wget python3 \
@@ -55,7 +64,6 @@ RUN mkdir /install-tl-unx \
 RUN echo "shell_escape = t" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
     echo "openout_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf && \
     echo "openin_any = a" >> /usr/local/texlive/${TEXLIVE_Version}/texmf.cnf 
-
 
 # 设置环境变量
 ENV PATH="/usr/local/texlive/${TEXLIVE_Version}/bin/x86_64-linux:${PATH}"
