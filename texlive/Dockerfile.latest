@@ -5,8 +5,9 @@ FROM phusion/baseimage:jammy-1.0.1
 LABEL \
     org.opencontainers.image.title="Docker Image of TeXLive" \
     org.opencontainers.image.authors="ayaka-notes <public@ayaka.space>" \
-    org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf/" \
-    org.opencontainers.image.licenses="MIT"
+    org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.description="Overleaf TeXLive Image by ayaka-notes"
 
 # 非交互模式
 ENV DEBIAN_FRONTEND noninteractive
@@ -31,7 +32,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
 && apt-get update && apt-get install -y ttf-mscorefonts-installer \
 && apt update && apt search ^fonts | grep -o '^fonts[^/]*' | xargs apt install -y \
-&& wget https://github.com/google/fonts/archive/main.tar.gz -O gf.tar.gz \
+&& wget --quiet https://github.com/google/fonts/archive/main.tar.gz -O gf.tar.gz \
 && tar -xf gf.tar.gz \
 && mkdir -p /usr/share/fonts/truetype/google-fonts \
 && find $PWD/fonts-main/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/google-fonts/ \; || return 1 \
