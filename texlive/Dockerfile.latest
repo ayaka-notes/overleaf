@@ -1,6 +1,6 @@
 # 本Dockerfile用来构建最新版本的TeXLive的Docker镜像，用于构建LaTeX文档。
 
-FROM phusion/baseimage:focal-1.2.0
+FROM phusion/baseimage:jammy-1.0.1
 
 LABEL \
     org.opencontainers.image.title="Docker Image of TeXLive" \
@@ -19,6 +19,7 @@ COPY run-chktex.sh /usr/local/bin/
 # 设置权限
 RUN chmod 777 -R /usr/local/bin/ && \
     chmod 777 -R /usr/local/share/latexmk/
+
 
 # 安装依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
