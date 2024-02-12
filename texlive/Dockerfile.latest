@@ -8,6 +8,9 @@ LABEL \
     org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf/" \
     org.opencontainers.image.licenses="MIT"
 
+# 非交互模式
+ENV DEBIAN_FRONTEND noninteractive
+
 # 拷贝LatexMk文件到/usr/local/share/latexmk/LatexMk
 COPY LatexMk /usr/local/share/latexmk/LatexMk
 COPY patchSynctex.R /usr/local/bin/
@@ -22,6 +25,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig inkscape pandoc python3-pygments wget python3 \
     gnupg gnuplot perl-modules perl ca-certificates git ghostscript \
     qpdf r-base-core
+
+# 安装字体
+RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
+&& apt-get update && apt-get install -y ttf-mscorefonts-installer \
+&& apt update && apt search ^fonts | grep -o '^fonts[^/]*' | xargs apt install -y
 
 
 ARG TEXLIVE_Version=2023

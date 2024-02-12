@@ -6,6 +6,9 @@ LABEL \
     org.opencontainers.image.source="https://github.com/ayaka-notes/overleaf" \
     org.opencontainers.image.licenses="MIT"
 
+# 非交互模式
+ENV DEBIAN_FRONTEND noninteractive
+
 # 参数-年份, github action中单独传递参数
 ARG TEXLIVE_Version=2022
 ARG TEXLIVE_MIRROR=http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TEXLIVE_Version}/tlnet-final
@@ -25,6 +28,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gnupg gnuplot perl-modules perl ca-certificates git ghostscript \
     qpdf r-base-core
 
+# 安装字体
+RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
+&& apt-get update && apt-get install -y ttf-mscorefonts-installer \
+&& apt update && apt search ^fonts | grep -o '^fonts[^/]*' | xargs apt install -y
 
 # 感谢Overleaf的Dockerfile
 # 安装 texlive
