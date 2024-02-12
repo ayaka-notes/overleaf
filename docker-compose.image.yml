@@ -6,8 +6,8 @@ services:
   # 为了演示，这里打开2021、2023的镜像
   # TeXLive2022:
   #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2022.1"
-  TeXLive2021:
-    image: "ghcr.io/ayaka-notes/overleaf/texlive:2021.1"
+  # TeXLive2021:
+  #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2021.1"
   # TeXLive2020:
   #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2020.1"
   # TeXLive2019:
