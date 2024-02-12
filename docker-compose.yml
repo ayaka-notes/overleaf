@@ -115,11 +115,11 @@ services:
       SANDBOXED_COMPILES_HOST_DIR: "/workspaces/overleaf/data/sharelatex_data/data/compiles"
       SYNCTEX_BIN_HOST_PATH: "/workspaces/overleaf/data/sharelatex_data/bin" 
       TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/overleaf/texlive:2023.1"
-      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/overleaf/texlive:2023.1,ghcr.io/ayaka-notes/overleaf/texlive:2021.1"
+      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/overleaf/texlive:2023.1"
 
   mongo:
     restart: always
-    image: mongo:4.4
+    image: mongo:5.0
     # build:
     #     context: ./init-mongo
     #     dockerfile: .devcontainer/init-mongo/Dockerfile

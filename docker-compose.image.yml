@@ -3,7 +3,7 @@ services:
   TeXLive2023:
     image: "ghcr.io/ayaka-notes/overleaf/texlive:2023.1"
   # 如果Codespace空间只有32G，那么后面的镜像请适度下载
-  # 为了演示，这里打开2021、2023的镜像
+  # 为了演示，这里打开2023的镜像
   # TeXLive2022:
   #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2022.1"
   # TeXLive2021:
