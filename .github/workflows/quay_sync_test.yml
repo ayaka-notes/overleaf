@@ -1,0 +1,27 @@
+name: Overleaf Development Image
+on:
+  workflow_dispatch:
+
+env:
+  GHCR_REGISTRY: ghcr.io
+
+jobs:
+  sync-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check out code"
+        uses: actions/checkout@main
+      - name: "Install skopen"
+        run: |
+          # Debian Bullseye, Testing or Unstable/Sid
+          sudo apt-get update
+          sudo apt-get -y install skopeo
+      - name: "Sync Docker Image"
+        run: |
+          skopeo login -u ayaka -p ${{ secrets.QUAY_IO_TOKEN }} quay.io
+          skopeo copy docker://ghcr.io/ayaka/overleaf/texlive:latest docker://quay.io/ayaka/overleaf/texlive:latest
+          skopeo copy docker://ghcr.io/ayaka/overleaf/texlive:2023.1 docker://quay.io/ayaka/overleaf/texlive:2023.1
+          skopeo copy docker://ghcr.io/ayaka/overleaf/texlive:2022.1 docker://quay.io/ayaka/overleaf/texlive:2022.1
+          skopeo copy docker://ghcr.io/ayaka/overleaf/texlive:2021.1 docker://quay.io/ayaka/overleaf/texlive:2021.1
+          skopeo copy docker://ghcr.io/ayaka/overleaf/texlive:2020.1 docker://quay.io/ayaka/overleaf/texlive:2020.1
+
