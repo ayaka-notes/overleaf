@@ -19,9 +19,9 @@ jobs:
       - name: "Sync Docker Image"
         run: |
           skopeo login -u ayaka -p ${{ secrets.QUAY_IO_TOKEN }} quay.io
-          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:latest docker://quay.io/ayaka/texlive:latest
-          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:2023.1 docker://quay.io/ayaka/texlive:2023.1
-          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:2022.1 docker://quay.io/ayaka/texlive:2022.1
-          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:2021.1 docker://quay.io/ayaka/texlive:2021.1
           skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:2020.1 docker://quay.io/ayaka/texlive:2020.1
-
+          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:2021.1 docker://quay.io/ayaka/texlive:2021.1
+          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:2022.1 docker://quay.io/ayaka/texlive:2022.1
+          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:2023.1 docker://quay.io/ayaka/texlive:2023.1
+          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:latest docker://quay.io/ayaka/texlive:latest
+          
