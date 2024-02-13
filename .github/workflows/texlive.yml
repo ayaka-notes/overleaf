@@ -202,8 +202,14 @@ jobs:
           registry: ${{env.DOCKER_REGISTRY}}
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
-
+      - name: "Install skopen"
+        run: |
+          # Debian Bullseye, Testing or Unstable/Sid
+          sudo apt-get update
+          sudo apt-get -y install skopeo
       - name: Pull and push Docker image
         run: |
-          docker pull ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}.1
-          docker push ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}.1
+          # docker pull ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}.1
+          # docker push ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}.1
+          skopeo login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+          skopeo copy docker://ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}.1 docker://ghcr.io/ayaka-notes/overleaf/texlive:${{ matrix.tex-version }}.1
