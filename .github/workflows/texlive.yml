@@ -185,7 +185,7 @@ jobs:
 
   reorder-ghcr:
     runs-on: ubuntu-latest
-    needs: [build-image, build-latest]
+    # needs: [build-image, build-latest]
     if: github.event.inputs.sort-ghcr-texlive == 'true'
     strategy:
       fail-fast: false
