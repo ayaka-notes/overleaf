@@ -1,4 +1,4 @@
-name: Overleaf Development Image
+name: Quay Sync Test
 on:
   workflow_dispatch:
 
