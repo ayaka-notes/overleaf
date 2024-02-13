@@ -193,15 +193,6 @@ jobs:
       matrix:
         tex-version: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, latest]
     steps:
-      - name: "Checkout GitHub Action"
-        uses: actions/checkout@main
-
-      - name: "Login to GitHub Container Registry"
-        uses: docker/login-action@v3.0.0
-        with:
-          registry: ${{env.DOCKER_REGISTRY}}
-          username: ${{github.actor}}
-          password: ${{secrets.GITHUB_TOKEN}}
       - name: "Install skopen"
         run: |
           # Debian Bullseye, Testing or Unstable/Sid
