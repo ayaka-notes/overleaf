@@ -1,0 +1,25 @@
+name: Merge Upstream Code
+on:
+  workflow_dispatch:
+
+env:
+  GHCR_REGISTRY: ghcr.io
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Internal Overleaf Action"
+        uses: actions/checkout@main
+        with:
+          repository: ayaka-notes/overleaf-internal
+          ref: main
+          token: ${{secrets.ORGTOKEN}}
+      - name: "Merge Upstream Code"
+        run: |
+          git remote add upstream https://github.com/overleaf/overleaf.git
+          git fetch upstream
+          git merge upstream/main
+          git push
+
+
