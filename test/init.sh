@@ -1,7 +1,6 @@
 # /bin/bash
 
-
-export CURRENT_DIR=$(PWD)
+export CURRENT_DIR=$(pwd)
 
 docker-compose -f docker-compose.texlive.yml pull
 
