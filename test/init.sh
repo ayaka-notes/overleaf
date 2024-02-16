@@ -2,7 +2,7 @@
 
 export CURRENT_DIR=$(pwd)
 
-docker-compose -f docker-compose.texlive.yml pull
+docker-compose -f docker-compose.image.yml pull
 
 docker-compose -f docker-compose.yml pull
 

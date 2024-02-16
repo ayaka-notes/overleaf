@@ -8,4 +8,9 @@ services:
   #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2021.1"
   # TeXLive2020:
   #   image: "ghcr.io/ayaka-notes/overleaf/texlive:2020.1"
-
+  overleaf:
+    image: "ghcr.io/ayaka-notes/overleaf:latest"
+  mongo:
+    image: mongo:5.0
+  redis:
+    image: redis:6.2
