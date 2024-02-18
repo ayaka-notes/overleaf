@@ -6,15 +6,16 @@ on:
     - cron: '0 0 * * *'  
     # run every day
 
-clean-ghcr-texlive:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Delete 'untaged' containers
-      uses: snok/container-retention-policy@v2
-      with:
-        image-names: overleaf/*,overleaf
-        cut-off: 1 min ago UTC
-        account-type: org
-        org-name: ayaka-notes
-        untagged-only: true
-        token: ${{ secrets.ORGTOKEN }}
+jobs:
+  clean-ghcr-texlive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete 'untaged' containers
+        uses: snok/container-retention-policy@v2
+        with:
+          image-names: overleaf/*,overleaf
+          cut-off: 1 min ago UTC
+          account-type: org
+          org-name: ayaka-notes
+          untagged-only: true
+          token: ${{ secrets.ORGTOKEN }}
