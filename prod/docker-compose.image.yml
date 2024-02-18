@@ -1,15 +1,15 @@
 version: "2.2"
 services:
   TeXLive2023:
-    image: "ghcr.io/ayaka-notes/texlive-full:2023.1"
+    image: ghcr.io/ayaka-notes/texlive-full:2023.1
   TeXLive2022:
-    image: "ghcr.io/ayaka-notes/overleaf/texlive:2022.1"
+    image: ghcr.io/ayaka-notes/texlive-full:2022.1
   TeXLive2021:
-    image: "ghcr.io/ayaka-notes/overleaf/texlive:2021.1"
+    image: ghcr.io/ayaka-notes/texlive-full:2021.1
   TeXLive2020:
-    image: "ghcr.io/ayaka-notes/overleaf/texlive:2020.1"
+    image: ghcr.io/ayaka-notes/texlive-full:2020.1
   overleaf:
-    image: "ghcr.io/ayaka-notes/overleaf:latest"
+    image: ghcr.io/ayaka-notes/overleaf:latest
   mongo:
     image: mongo:5.0
   redis:
