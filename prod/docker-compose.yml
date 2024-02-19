@@ -145,7 +145,19 @@ services:
       - 6379
     volumes:
       - ./data/redis_data:/data
+  
 
+  # Sleep Container, incase that you remove texlive-full image
+  # 
+  TeXLive2023:
+    image: ghcr.io/ayaka-notes/texlive-full:2023.1
+  TeXLive2022:
+    image: ghcr.io/ayaka-notes/texlive-full:2022.1
+  TeXLive2021:
+    image: ghcr.io/ayaka-notes/texlive-full:2021.1
+  TeXLive2020:
+    image: ghcr.io/ayaka-notes/texlive-full:2020.1
+  
   # ldap:
   #    restart: always
   #    image: rroemhild/test-openldap
