@@ -12,7 +12,7 @@ services:
       redis:
         condition: service_started
     ports:
-      - 10080:80
+      - 80:80
     links:
       - mongo
       - redis
@@ -117,6 +117,23 @@ services:
       TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/texlive-full:2023.1"
       ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2023.1"
 
+      # s3的配置，不用的话自行注释掉
+      OVERLEAF_FILESTORE_BACKEND: s3
+      OVERLEAF_FILESTORE_USER_FILES_BUCKET_NAME: overleaf-user-files
+      OVERLEAF_FILESTORE_TEMPLATE_FILES_BUCKET_NAME: overleaf-template-files
+      OVERLEAF_FILESTORE_S3_ACCESS_KEY_ID: minioadmin
+      OVERLEAF_FILESTORE_S3_SECRET_ACCESS_KEY: minioadmin
+      OVERLEAF_FILESTORE_S3_ENDPOINT: http://minio:9000
+      OVERLEAF_FILESTORE_S3_PATH_STYLE: "true"
+      OVERLEAF_FILESTORE_S3_REGION: ""
+      OVERLEAF_HISTORY_BACKEND: s3
+      OVERLEAF_HISTORY_PROJECT_BLOBS_BUCKET: overleaf-project-blobs
+      OVERLEAF_HISTORY_CHUNKS_BUCKET: overleaf-chunks
+      OVERLEAF_HISTORY_S3_ACCESS_KEY_ID: minioadmin
+      OVERLEAF_HISTORY_S3_SECRET_ACCESS_KEY: minioadmin
+      OVERLEAF_HISTORY_S3_ENDPOINT: http://minio:9000
+      OVERLEAF_HISTORY_S3_PATH_STYLE: "true"
+      OVERLEAF_HISTORY_S3_REGION: ""
   mongo:
     restart: always
     image: mongo:5.0
@@ -146,6 +163,36 @@ services:
     volumes:
       - ./data/redis_data:/data
 
+
+  minio:
+    restart: always
+    image: minio/minio:latest
+    command: server --console-address ':9001' /data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./data/minio_data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  init-minio:
+    image: minio/mc
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc alias set s3 http://minio:9000 minioadmin minioadmin
+      /usr/bin/mc mb --ignore-existing s3/overleaf-user-files
+      /usr/bin/mc mb --ignore-existing s3/overleaf-template-files
+      /usr/bin/mc mb --ignore-existing s3/overleaf-project-blobs
+      /usr/bin/mc mb --ignore-existing s3/overleaf-chunks
+      exit 0;
+      "
+  
   # ldap:
   #    restart: always
   #    image: rroemhild/test-openldap
