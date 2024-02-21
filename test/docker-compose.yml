@@ -1,7 +1,7 @@
 version: "2.2"
 services:
   sharelatex:
-    restart: always
+    # restart: always
     # Server Pro users:
     # image: quay.io/sharelatex/sharelatex-pro
     image: ghcr.io/ayaka-notes/overleaf:latest
@@ -135,7 +135,7 @@ services:
       OVERLEAF_HISTORY_S3_PATH_STYLE: "true"
       OVERLEAF_HISTORY_S3_REGION: ""
   mongo:
-    restart: always
+    # restart: always
     image: mongo:5.0
     # build:
     #     context: ./init-mongo
@@ -155,7 +155,7 @@ services:
       retries: 5
 
   redis:
-    restart: always
+    # restart: always
     image: redis:6.2
     container_name: redis
     expose:
@@ -165,7 +165,7 @@ services:
 
 
   minio:
-    restart: always
+    # restart: always
     image: minio/minio:latest
     command: server --console-address ':9001' /data
     ports:
@@ -184,12 +184,12 @@ services:
     depends_on:
       - minio
     entrypoint: >
-      /bin/sh -c "
-      /usr/bin/mc alias set s3 http://minio:9000 minioadmin minioadmin
-      /usr/bin/mc mb --ignore-existing s3/overleaf-user-files
-      /usr/bin/mc mb --ignore-existing s3/overleaf-template-files
-      /usr/bin/mc mb --ignore-existing s3/overleaf-project-blobs
-      /usr/bin/mc mb --ignore-existing s3/overleaf-chunks
+      /bin/bash -c "
+      /usr/bin/mc alias set s3 http://minio:9000 minioadmin minioadmin;
+      /usr/bin/mc mb --ignore-existing s3/overleaf-user-files;
+      /usr/bin/mc mb --ignore-existing s3/overleaf-template-files;
+      /usr/bin/mc mb --ignore-existing s3/overleaf-project-blobs;
+      /usr/bin/mc mb --ignore-existing s3/overleaf-chunks;
       exit 0;
       "
   
