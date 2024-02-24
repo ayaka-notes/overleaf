@@ -23,7 +23,7 @@ docker-compose exec -T mongo sh -c '
 
 docker-compose up -d minio
 
-
+# 使用环境变量
 # MINIO_ROOT_USER
 # MINIO_ROOT_PASSWORD
 docker-compose exec -T minio sh -c '
@@ -31,7 +31,7 @@ docker-compose exec -T minio sh -c '
       echo "Waiting for Minio..."
       sleep 1
     done
-    mc alias set s3 http://minio:9000 $MINIO_ROOT_USER $MINIO_ROOT_PASSWORD;
+    mc alias set s3 http://minio:9000 minioadmin minioadmin;
     mc mb --ignore-existing s3/overleaf-user-files;
     mc mb --ignore-existing s3/overleaf-template-files;
     mc mb --ignore-existing s3/overleaf-project-blobs;
