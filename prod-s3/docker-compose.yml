@@ -1,0 +1,254 @@
+version: "2.2"
+services:
+  sharelatex:
+    restart: always
+    # Server Pro users:
+    # image: quay.io/sharelatex/sharelatex-pro
+    image: ghcr.io/ayaka-notes/overleaf:latest
+    container_name: sharelatex
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    ports:
+      - 80:80
+    links:
+      - mongo
+      - redis
+    stop_grace_period: 60s
+    volumes:
+      - ./data/sharelatex_data:/var/lib/overleaf
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      OVERLEAF_APP_NAME: Overleaf Pro
+
+      OVERLEAF_MONGO_URL: mongodb://mongo/sharelatex
+
+      OVERLEAF_SITE_LANGUAGE: zh-CN
+
+      # Same property, unfortunately with different names in
+      # different locations
+      OVERLEAF_REDIS_HOST: redis
+      REDIS_HOST: redis
+
+      ENABLED_LINKED_FILE_TYPES: "project_file,project_output_file"
+
+      # Enables Thumbnail generation using ImageMagick
+      ENABLE_CONVERSIONS: "true"
+
+      # Disables email confirmation requirement
+      EMAIL_CONFIRMATION_DISABLED: "true"
+
+      # temporary fix for LuaLaTex compiles
+      # see https://github.com/overleaf/overleaf/issues/695
+      TEXMFVAR: /var/lib/overleaf/tmp/texmf-var
+
+      ## Set for SSL via nginx-proxy
+      #VIRTUAL_HOST: 103.112.212.22
+
+      # OVERLEAF_SITE_URL: http://sharelatex.mydomain.com
+      # OVERLEAF_NAV_TITLE: Our ShareLaTeX Instance
+      # OVERLEAF_HEADER_IMAGE_URL: http://somewhere.com/mylogo.png
+      # OVERLEAF_ADMIN_EMAIL: support@it.com
+
+      # OVERLEAF_LEFT_FOOTER: '[{"text": "Powered by <a href=\"https://www.sharelatex.com\">ShareLaTeX</a> 2016"},{"text": "Another page I want to link to can be found <a href=\"here\">here</a>"} ]'
+      # OVERLEAF_RIGHT_FOOTER: '[{"text": "Hello I am on the Right"} ]'
+
+      # OVERLEAF_EMAIL_FROM_ADDRESS: "team@sharelatex.com"
+
+      # OVERLEAF_EMAIL_AWS_SES_ACCESS_KEY_ID:
+      # OVERLEAF_EMAIL_AWS_SES_SECRET_KEY:
+
+      # OVERLEAF_EMAIL_SMTP_HOST: smtp.mydomain.com
+      # OVERLEAF_EMAIL_SMTP_PORT: 587
+      # OVERLEAF_EMAIL_SMTP_SECURE: false
+      # OVERLEAF_EMAIL_SMTP_USER:
+      # OVERLEAF_EMAIL_SMTP_PASS:
+      # OVERLEAF_EMAIL_SMTP_TLS_REJECT_UNAUTH: true
+      # OVERLEAF_EMAIL_SMTP_IGNORE_TLS: false
+      # OVERLEAF_EMAIL_SMTP_NAME: '127.0.0.1'
+      # OVERLEAF_EMAIL_SMTP_LOGGER: true
+      # OVERLEAF_CUSTOM_EMAIL_FOOTER: "This system is run by department x"
+
+      # ENABLE_CRON_RESOURCE_DELETION: true
+
+      ################
+      ## Server Pro ##
+      ################
+
+      # SANDBOXED_COMPILES: 'true'
+
+      # SANDBOXED_COMPILES_SIBLING_CONTAINERS: 'true'
+      # SANDBOXED_COMPILES_HOST_DIR: '/var/sharelatex_data/data/compiles'
+
+      # DOCKER_RUNNER: 'false'
+
+      ## Works with test LDAP server shown at bottom of docker compose
+      # OVERLEAF_LDAP_URL: 'ldap://ldap:389'
+      # OVERLEAF_LDAP_SEARCH_BASE: 'ou=people,dc=planetexpress,dc=com'
+      # OVERLEAF_LDAP_SEARCH_FILTER: '(uid={{username}})'
+      # OVERLEAF_LDAP_BIND_DN: 'cn=admin,dc=planetexpress,dc=com'
+      # OVERLEAF_LDAP_BIND_CREDENTIALS: 'GoodNewsEveryone'
+      # OVERLEAF_LDAP_EMAIL_ATT: 'mail'
+      # OVERLEAF_LDAP_NAME_ATT: 'cn'
+      # OVERLEAF_LDAP_LAST_NAME_ATT: 'sn'
+      # OVERLEAF_LDAP_UPDATE_USER_DETAILS_ON_LOGIN: 'true'
+
+      # OVERLEAF_TEMPLATES_USER_ID: "578773160210479700917ee5"
+      # OVERLEAF_NEW_PROJECT_TEMPLATE_LINKS: '[ {"name":"All Templates","url":"/templates/all"}]'
+
+      # 用来设置references的API
+      OVERLEAF_IS_SERVER_PRO: "true"
+
+      # 学习页面
+      OVERLEAF_PROXY_LEARN: "true"
+      
+      # 注意：COMPILE_TIMEOUT必须在所有数据初始化之前生效
+      # 因为编译时间是和用户强相关的，每个用户有自己的编译时间限制
+      # 如果你服务器运行很久了，需要手动写脚本，更新mongo数据库中的用户编译时间限制
+      COMPILE_TIMEOUT: "600"
+      DOCKER_RUNNER: "true"
+      SANDBOXED_COMPILES: "true"
+      SANDBOXED_COMPILES_SIBLING_CONTAINERS: "true"
+      # 记得改/workspaces/overleaf为你的克隆下来的仓库的路径
+      SANDBOXED_COMPILES_HOST_DIR: "${CURRENT_DIR}/data/sharelatex_data/data/compiles"
+      SYNCTEX_BIN_HOST_PATH: "${CURRENT_DIR}/data/sharelatex_data/bin" 
+      TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/texlive-full:2023.1"
+      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2023.1,ghcr.io/ayaka-notes/texlive-full:2022.1,ghcr.io/ayaka-notes/texlive-full:2021.1,ghcr.io/ayaka-notes/texlive-full:2020.1"
+
+      # s3的配置开始，不用的话自行注释掉
+      OVERLEAF_FILESTORE_BACKEND: s3
+      OVERLEAF_FILESTORE_USER_FILES_BUCKET_NAME: overleaf-user-files
+      OVERLEAF_FILESTORE_TEMPLATE_FILES_BUCKET_NAME: overleaf-template-files
+      OVERLEAF_FILESTORE_S3_ACCESS_KEY_ID: minioadmin
+      OVERLEAF_FILESTORE_S3_SECRET_ACCESS_KEY: minioadmin
+      OVERLEAF_FILESTORE_S3_ENDPOINT: http://minio:9000
+      OVERLEAF_FILESTORE_S3_PATH_STYLE: "true"
+      OVERLEAF_FILESTORE_S3_REGION: ""
+      OVERLEAF_HISTORY_BACKEND: s3
+      OVERLEAF_HISTORY_PROJECT_BLOBS_BUCKET: overleaf-project-blobs
+      OVERLEAF_HISTORY_CHUNKS_BUCKET: overleaf-chunks
+      OVERLEAF_HISTORY_S3_ACCESS_KEY_ID: minioadmin
+      OVERLEAF_HISTORY_S3_SECRET_ACCESS_KEY: minioadmin
+      OVERLEAF_HISTORY_S3_ENDPOINT: http://minio:9000
+      OVERLEAF_HISTORY_S3_PATH_STYLE: "true"
+      OVERLEAF_HISTORY_S3_REGION: ""
+      # s3的配置结束，不用的话自行注释掉
+
+
+      # 自动删除过期的资源
+      ENABLE_CRON_RESOURCE_DELETION: "true"
+
+  mongo:
+    restart: always
+    image: mongo:5.0
+    # build:
+    #     context: ./init-mongo
+    #     dockerfile: .devcontainer/init-mongo/Dockerfile
+    container_name: mongo
+    command: "--replSet overleaf"
+    expose:
+      - 27017
+    volumes:
+      - ./data/mongo_data:/data/db
+      # - ./initdb/:/docker-entrypoint-initdb.d/:ro
+      # ./mongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    healthcheck:
+      test: echo 'db.stats().ok' | mongo localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  redis:
+    restart: always
+    image: redis:6.2
+    container_name: redis
+    expose:
+      - 6379
+    volumes:
+      - ./data/redis_data:/data
+  
+
+  # Sleep Container, incase that you remove texlive-full image
+  # 
+  TeXLive2023:
+    image: ghcr.io/ayaka-notes/texlive-full:2023.1
+  TeXLive2022:
+    image: ghcr.io/ayaka-notes/texlive-full:2022.1
+  TeXLive2021:
+    image: ghcr.io/ayaka-notes/texlive-full:2021.1
+  TeXLive2020:
+    image: ghcr.io/ayaka-notes/texlive-full:2020.1
+  
+  # minio s3存储
+  minio:
+    # restart: always
+    image: minio/minio:latest
+    command: server --console-address ':9001' /data
+    expose:
+      - 9000
+      - 9001
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./data/minio_data:/data
+    # environment:
+      # 自行修改
+      # MINIO_ROOT_USER: 
+      # MINIO_ROOT_PASSWORD: 
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+  # # 初始化minio的程序，执行完后自动退出
+  # 现在改用脚本了，不需要本部分
+  # init-minio:
+  #   image: minio/mc
+  #   depends_on:
+  #     - minio
+  #   entrypoint: >
+  #     /bin/bash -c "
+  #     /usr/bin/mc alias set s3 http://minio:9000 minioadmin minioadmin;
+  #     /usr/bin/mc mb --ignore-existing s3/overleaf-user-files;
+  #     /usr/bin/mc mb --ignore-existing s3/overleaf-template-files;
+  #     /usr/bin/mc mb --ignore-existing s3/overleaf-project-blobs;
+  #     /usr/bin/mc mb --ignore-existing s3/overleaf-chunks;
+  #     exit 0;
+  #     "
+  
+  
+  # mongo-express
+  # basicAuth credentials are "admin:pass"
+  # mongo-express:
+  #   image: mongo-express
+  #   ports:
+  #     - "8081:8081"
+  #   environment:
+  #     ME_CONFIG_MONGODB_SERVER: mongo
+
+  # ldap:
+  #    restart: always
+  #    image: rroemhild/test-openldap
+  #    container_name: ldap
+  #    expose:
+  #        - 389
+
+  # See https://github.com/jwilder/nginx-proxy for documentation on how to configure the nginx-proxy container,
+  # and https://github.com/overleaf/overleaf/wiki/HTTPS-reverse-proxy-using-Nginx for an example of some recommended
+  # settings. We recommend using a properly managed nginx instance outside of the Overleaf Server Pro setup,
+  # but the example here can be used if you'd prefer to run everything with docker-compose
+
+  # nginx-proxy:
+  #     image: jwilder/nginx-proxy
+  #     container_name: nginx-proxy
+  #     ports:
+  #       #- "80:80"
+  #       - "443:443"
+  #     volumes:
+  #       - /var/run/docker.sock:/tmp/docker.sock:ro
+  #       - /home/sharelatex/tmp:/etc/nginx/certs
