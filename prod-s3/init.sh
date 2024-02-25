@@ -1,5 +1,6 @@
 # /bin/bash
 
+# sudo rm -rf ./data/
 
 export CURRENT_DIR=$(pwd)
 
@@ -20,17 +21,15 @@ docker-compose exec -T mongo sh -c '
 # 或者手动执行下面的命令
 # docker exec -it mongo mongo --eval "rs.initiate({ _id: \"overleaf\", members: [ { _id: 0, host: \"mongo:27017\" } ] })" > /dev/null
 
-
 docker-compose up -d minio
+
+echo "Waiting for Minio... (10s)"
+sleep 10
 
 # 使用环境变量
 # MINIO_ROOT_USER
 # MINIO_ROOT_PASSWORD
 docker-compose exec -T minio sh -c '
-    while ! mc ls minio; do
-      echo "Waiting for Minio..."
-      sleep 1
-    done
     mc alias set s3 http://minio:9000 minioadmin minioadmin;
     mc mb --ignore-existing s3/overleaf-user-files;
     mc mb --ignore-existing s3/overleaf-template-files;

@@ -20,6 +20,8 @@ services:
     volumes:
       - ./data/sharelatex_data:/var/lib/overleaf
       - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - secrets.env
     environment:
       OVERLEAF_APP_NAME: Overleaf Pro
 
