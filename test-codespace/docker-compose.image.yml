@@ -1,0 +1,12 @@
+version: "2.2"
+services:
+  TeXLive2023:
+    image: ghcr.io/ayaka-notes/texlive-full:2023.1.slim
+  overleaf:
+    image: ghcr.io/ayaka-notes/overleaf:latest
+  mongo:
+    image: mongo:5.0
+  redis:
+    image: redis:6.2
+  minio:
+    image: minio/minio:latest

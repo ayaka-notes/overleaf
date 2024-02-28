@@ -1,9 +1,13 @@
 # Overleaf
-Overleaf CE Patch Version, Include more functions.
+Overleaf Pro Version, Include more functions.
 
 ## Quick Setup 
-Run the following command to start.
+Run the following command to start in Github codespace.
 ```bash
+# use test-codespace for github codespace!
+# 2core 8G is enouth
+cd test-codespace
+# you need to wait for at least 3 mins. 
 ./init.sh
 ```
 
@@ -12,31 +16,17 @@ Run the following command to start.
 <img width="1222" alt="截屏2024-01-11 09 32 07" src="https://github.com/ayaka-notes/overleaf/assets/84625273/8ce1894d-764f-4337-b67f-1794eafc856d">
 
 Github Codespace Version include the following texlive:
-- `ghcr.io/ayaka-notes/overleaf/texlive:2023` (Also `latest` tag)
-- `ghcr.io/ayaka-notes/overleaf/texlive:2021`
+- `ghcr.io/ayaka-notes/texlive-full:slim`
 
-By the way, you can't use **Text Sync** if you use direct Codespace Port Forwarding. I suggest that you launch your local vscode, use local Port Forwarding with URL like `127.0.0.1`.
 
-## Texlive Image
-Overleaf CE can be run with Texlive Image, For more infomation, check [this doc](./texlive). The following images are supported.(You can also use it as your own tex-writing)
-- `ghcr.io/ayaka-notes/overleaf/texlive:2023.1` (Also `latest` tag)
-- `ghcr.io/ayaka-notes/overleaf/texlive:2022.1`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2021.1`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2020.1`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2019.1`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2018.1`
-- `ghcr.io/ayaka-notes/overleaf/texlive:2017.1`
+> [!WARNING]
+> You can't use **Text Sync** if you use direct Codespace Port Forwarding. It is suggested that you launch your local vscode, use local Port Forwarding with URL like `127.0.0.1`.
+
 
 
 ## Some Patches
 
-> To finish the Patches of overleaf, 
 
-- Unlock The Limit of `50M`
-- Use docker to compile Project
-- Compileout Time set to 600s(10min)
-- Use Any texlive you want
-- Add new theme for overleaf
 
 
 ## How To Enable Docker Compile?

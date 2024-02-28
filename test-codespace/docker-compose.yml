@@ -114,8 +114,8 @@ services:
       # 记得改/workspaces/overleaf为你的克隆下来的仓库的路径
       SANDBOXED_COMPILES_HOST_DIR: "${CURRENT_DIR}/data/sharelatex_data/data/compiles"
       SYNCTEX_BIN_HOST_PATH: "${CURRENT_DIR}/data/sharelatex_data/bin" 
-      TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/texlive-full:2023.1"
-      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2023.1"
+      TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/texlive-full:2023.1.slim"
+      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2023.1.slim"
 
       # s3的配置，不用的话自行注释掉
       OVERLEAF_FILESTORE_BACKEND: s3
@@ -137,9 +137,6 @@ services:
   mongo:
     # restart: always
     image: mongo:5.0
-    # build:
-    #     context: ./init-mongo
-    #     dockerfile: .devcontainer/init-mongo/Dockerfile
     container_name: mongo
     command: "--replSet overleaf"
     expose:
@@ -178,21 +175,11 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-
-  init-minio:
-    image: minio/mc
-    depends_on:
-      - minio
-    entrypoint: >
-      /bin/bash -c "
-      /usr/bin/mc alias set s3 http://minio:9000 minioadmin minioadmin;
-      /usr/bin/mc mb --ignore-existing s3/overleaf-user-files;
-      /usr/bin/mc mb --ignore-existing s3/overleaf-template-files;
-      /usr/bin/mc mb --ignore-existing s3/overleaf-project-blobs;
-      /usr/bin/mc mb --ignore-existing s3/overleaf-chunks;
-      exit 0;
-      "
   
+  TeXLive2023:
+    image: ghcr.io/ayaka-notes/texlive-full:2023.1.slim
+
+
   # ldap:
   #    restart: always
   #    image: rroemhild/test-openldap
