@@ -13,20 +13,18 @@ cd test-codespace
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ayaka-notes/overleaf)
 
-<img width="1222" alt="截屏2024-01-11 09 32 07" src="https://github.com/ayaka-notes/overleaf/assets/84625273/8ce1894d-764f-4337-b67f-1794eafc856d">
+And then, open `/launchpad` to create first admin account, like this:
+
+![](./image/launchpad.png)
 
 Github Codespace Version include the following texlive:
 - `ghcr.io/ayaka-notes/texlive-full:slim`
-
 
 > [!WARNING]
 > You can't use **Text Sync** if you use direct Codespace Port Forwarding. It is suggested that you launch your local vscode, use local Port Forwarding with URL like `127.0.0.1`.
 
 
-
 ## Some Patches
-
-
 
 
 ## How To Enable Docker Compile?
