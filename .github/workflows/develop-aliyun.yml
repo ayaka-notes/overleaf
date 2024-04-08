@@ -44,8 +44,8 @@ jobs:
       - name: "Clone Overleaf And Build"
         run: |
           cd ./develop-pro/
-          docker compose -f ./docker-compose.aliyun build ${{matrix.image-name}}
-          docker compose -f ./docker-compose.aliyun push ${{matrix.image-name}}
+          docker compose -f ./docker-compose.aliyun.yml build ${{matrix.image-name}}
+          docker compose -f ./docker-compose.aliyun.yml push ${{matrix.image-name}}
 
   clean-image:
     runs-on: ubuntu-latest
