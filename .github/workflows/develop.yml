@@ -43,7 +43,7 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
       - name: "Clone Overleaf And Build"
         run: |
-          cd ./overleaf/develop-pro/
+          cd ./overleaf-internal/develop-pro/
           bin/build ${{matrix.image-name}}
           bin/push ${{matrix.image-name}}
 
