@@ -44,6 +44,7 @@ jobs:
       - name: "Clone Overleaf And Build"
         run: |
           cd ./develop-pro/
+          make ghcr
           bin/build ${{matrix.image-name}}
           bin/push ${{matrix.image-name}}
 
