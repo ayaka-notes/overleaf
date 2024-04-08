@@ -1,0 +1,62 @@
+name: Overleaf Development Image
+on:
+  workflow_dispatch:
+
+env:
+  GHCR_REGISTRY: registry.cn-hangzhou.aliyuncs.com
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        image-name:
+          [
+            web,
+            webpack,
+            real-time,
+            project-history,
+            notifications,
+            history-v1,
+            filestore,
+            document-updater,
+            docstore,
+            contacts,
+            chat,
+            clsi,
+            spelling,
+            references
+          ]
+    steps:
+      - name: "Checkout Internal Overleaf Action"
+        uses: actions/checkout@main
+        with:
+          repository: ayaka-notes/overleaf-internal
+          ref: dev
+          token: ${{secrets.ORGTOKEN}}
+      - name: "Login to GitHub Container Registry"
+        uses: docker/login-action@v3.0.0
+        with:
+          registry: ${{env.GHCR_REGISTRY}}
+          username: "musicminion"
+          password: ${{secrets.ALIYUN_DOCKER_TOKEN}}
+      - name: "Clone Overleaf And Build"
+        run: |
+          cd ./develop-pro/
+          docker compose -f ./docker-compose.aliyun build ${{matrix.image-name}}
+          docker compose -f ./docker-compose.aliyun push ${{matrix.image-name}}
+
+  clean-image:
+    runs-on: ubuntu-latest
+    needs: build-image
+    steps:
+      - name: Delete 'untaged' containers
+        uses: snok/container-retention-policy@v2
+        with:
+          image-names: overleaf/dev/*
+          cut-off: 1 min ago UTC
+          account-type: org
+          org-name: ayaka-notes
+          untagged-only: true
+          token: ${{ secrets.ORGTOKEN }}      
