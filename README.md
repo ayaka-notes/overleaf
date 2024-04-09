@@ -1,6 +1,12 @@
 # Overleaf
 Overleaf Pro Version, Include more functions.
 
+## Latest News!
+
+Git integration is under dev!(2024/04/09)
+![93d720c5980c780bc799f28b2f081e86](https://github.com/ayaka-notes/overleaf/assets/84625273/7b2d00bd-fe6f-44de-9e1b-df213ae95d7a)
+
+
 ## Quick Setup 
 Run the following command to start in Github codespace.
 ```bash
