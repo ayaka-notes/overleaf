@@ -57,23 +57,3 @@ Github Codespace Version include the following texlive:
       ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/overleaf/texlive:2023,ghcr.io/ayaka-notes/overleaf/texlive:2022,ghcr.io/ayaka-notes/overleaf/texlive:2021"
 
 ```
-
-
-## How To Develop Overleaf
-
-To run overleaf, ayaka-notes provide you with `Dev Container` [package](https://github.com/orgs/ayaka-notes/packages?repo_name=overleaf), all you need to do is run `./dev.sh` and continue as the reminder.
-
-After run `./dev.sh`, you will see:
-
-> Now you can visit http://localhost:80/launchpad to create your admin account.
-> 
-> Only After creating your admin account, can you continue to develop Overleaf.
-> 
-> Then, to see real-time changes, run 'bin/down' and 'bin/up' again.
-
-By the way, overleaf's Dockerfile has something wrong, so use my Dockerfile is a good solution for your time.
-
-Machine for dev:
-- At least: 2 core 8GB
-- Recommended: 4 core 16GB or more
-- Local Dev: access to ghcr, no need to build dev image.
