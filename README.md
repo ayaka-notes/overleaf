@@ -1,6 +1,9 @@
 # Overleaf
 Overleaf Pro Version, Include more functions.
 
+> [!WARNING]
+> No need to fork this repo. This repo only serves as a toolkit.
+
 ## Latest News!
 
 Git integration is under dev!(2024/04/09)
@@ -33,9 +36,6 @@ Github Codespace Version include the following texlive:
 > You can't use **Text Sync** if you use direct Codespace Port Forwarding. It is suggested that you launch your local vscode, use local Port Forwarding with URL like `127.0.0.1`.
 
 
-## Some Patches
-
-
 ## How To Enable Docker Compile?
 - modify `docker-compose.yml` file
 - Pay attention to `/workspaces/overleaf/`, this is an **Absolute PATH**, which shoule be where your repo(ayaka-notes/overleaf) is located.
@@ -60,3 +60,7 @@ Github Codespace Version include the following texlive:
       ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/overleaf/texlive:2023,ghcr.io/ayaka-notes/overleaf/texlive:2022,ghcr.io/ayaka-notes/overleaf/texlive:2021"
 
 ```
+
+## TeXLive
+
+We use [texlive-full@ayaka-notes](https://github.com/ayaka-notes/texlive-full), to provice support for overleaf Pro version, related image has been adjusted the same as overleaf SaaS.
