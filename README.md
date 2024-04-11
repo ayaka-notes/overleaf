@@ -6,6 +6,9 @@ Overleaf Pro Version, Include more functions.
 Git integration is under dev!(2024/04/09)
 ![93d720c5980c780bc799f28b2f081e86](https://github.com/ayaka-notes/overleaf/assets/84625273/7b2d00bd-fe6f-44de-9e1b-df213ae95d7a)
 
+Git integration demo can use mock data to finish git clone!(2024/04/11)
+![d785d2d138a749b0262779a510e968fd](https://github.com/ayaka-notes/overleaf/assets/84625273/cb443d10-3586-40ec-b16d-ac402f167825)
+
 
 ## Quick Setup 
 Run the following command to start in Github codespace.
