@@ -2,6 +2,8 @@ name: Overleaf Pro Image(Aliyun)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 env:
   DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
