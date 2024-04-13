@@ -1,10 +1,10 @@
-name: Overleaf Pro Image
+name: Overleaf Pro Image(Aliyun)
 
 on:
   workflow_dispatch:
 
 env:
-  DOCKER_REGISTRY: ghcr.io
+  DOCKER_REGISTRY: registry.cn-hongkong.aliyuncs.com
   IMAGE_NAME: ayaka-notes/overleaf
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
         with:
           repository: ayaka-notes/overleaf-internal
           ref: dev
-          token: ${{secrets.ORGTOKEN}}
+          token: ${{secrets.ALIYUN_REGISTRY_TOKEN}}
           path: './overleaf'
       - name: "Make CE Docker Image"
         run: |
