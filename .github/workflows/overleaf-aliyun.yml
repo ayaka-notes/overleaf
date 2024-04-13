@@ -18,7 +18,7 @@ jobs:
         with:
           repository: ayaka-notes/overleaf-internal
           ref: dev
-          token: ${{secrets.ALIYUN_REGISTRY_TOKEN}}
+          token: ${{secrets.ORGTOKEN}}
           path: './overleaf'
       - name: "Make CE Docker Image"
         run: |
@@ -30,7 +30,7 @@ jobs:
         with:
           registry: ${{env.DOCKER_REGISTRY}}
           username: ${{github.actor}}
-          password: ${{secrets.GITHUB_TOKEN}}
+          password: ${{secrets.ALIYUN_DOCKER_TOKEN}}
       - name: Build and push Docker image
         run: |
           docker push ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
