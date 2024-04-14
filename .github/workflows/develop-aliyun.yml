@@ -2,7 +2,7 @@ name: Overleaf Development Image(Aliyun)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 */3 * * *'
 
 env:
   GHCR_REGISTRY: registry.cn-hangzhou.aliyuncs.com
