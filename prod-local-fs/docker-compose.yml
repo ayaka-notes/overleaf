@@ -115,7 +115,7 @@ services:
       SANDBOXED_COMPILES_HOST_DIR: "${CURRENT_DIR}/data/sharelatex_data/data/compiles"
       SYNCTEX_BIN_HOST_PATH: "${CURRENT_DIR}/data/sharelatex_data/bin" 
       TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/texlive-full:2023.1"
-      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2023.1,ghcr.io/ayaka-notes/texlive-full:2022.1,ghcr.io/ayaka-notes/texlive-full:2021.1,ghcr.io/ayaka-notes/texlive-full:2020.1"
+      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2024.1,ghcr.io/ayaka-notes/texlive-full:2023.1,ghcr.io/ayaka-notes/texlive-full:2022.1,ghcr.io/ayaka-notes/texlive-full:2021.1,ghcr.io/ayaka-notes/texlive-full:2020.1"
 
       # s3的配置开始，不用的话自行注释掉
       # OVERLEAF_FILESTORE_BACKEND: s3
@@ -172,6 +172,8 @@ services:
 
   # Sleep Container, incase that you remove texlive-full image
   # 
+  TeXLive2024:
+    image: ghcr.io/ayaka-notes/texlive-full:2024.1
   TeXLive2023:
     image: ghcr.io/ayaka-notes/texlive-full:2023.1
   TeXLive2022:

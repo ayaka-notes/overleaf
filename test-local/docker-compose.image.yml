@@ -1,7 +1,9 @@
 version: "2.2"
 services:
-  TeXLive2023:
-    image: ghcr.io/ayaka-notes/texlive-full:2023.1
+  TeXLive2024:
+    image: ghcr.io/ayaka-notes/texlive-full:2024.1
+  # TeXLive2023:
+  #   image: ghcr.io/ayaka-notes/texlive-full:2023.1
   # TeXLive2022:
   #   image: ghcr.io/ayaka-notes/texlive-full:2022.1
   # TeXLive2021:

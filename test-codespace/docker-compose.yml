@@ -114,8 +114,8 @@ services:
       # 记得改/workspaces/overleaf为你的克隆下来的仓库的路径
       SANDBOXED_COMPILES_HOST_DIR: "${CURRENT_DIR}/data/sharelatex_data/data/compiles"
       SYNCTEX_BIN_HOST_PATH: "${CURRENT_DIR}/data/sharelatex_data/bin" 
-      TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/texlive-full:2023.1.slim"
-      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2023.1.slim"
+      TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/texlive-full:2024.1.slim"
+      ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2024.1.slim"
 
       # s3的配置，不用的话自行注释掉
       OVERLEAF_FILESTORE_BACKEND: s3
