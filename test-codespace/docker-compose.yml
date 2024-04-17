@@ -176,8 +176,8 @@ services:
       timeout: 5s
       retries: 5
   
-  TeXLive2023:
-    image: ghcr.io/ayaka-notes/texlive-full:2023.1.slim
+  TeXLive2024:
+    image: ghcr.io/ayaka-notes/texlive-full:2024.1.slim
 
 
   # ldap:
