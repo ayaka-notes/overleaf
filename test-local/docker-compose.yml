@@ -153,7 +153,7 @@ services:
       # - ./initdb/:/docker-entrypoint-initdb.d/:ro
       # ./mongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     healthcheck:
-      test: echo 'db.stats().ok' | mongo localhost:27017/test --quiet
+      test: echo 'db.stats().ok' | mongosh localhost:27017/test --quiet
       interval: 10s
       timeout: 10s
       retries: 5
