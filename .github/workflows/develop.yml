@@ -25,7 +25,6 @@ jobs:
             contacts,
             chat,
             clsi,
-            spelling,
             references,
             linked-url-proxy
           ]
@@ -46,6 +45,13 @@ jobs:
           else
             echo "eslint-plugin-overleaf found."
           fi
+      - name: "Setup node environment"
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+      - name: "Sync node"
+        run: |
+          npm install --package-lock-only --ignore-scripts
 
       - name: "Login to GitHub Container Registry"
         uses: docker/login-action@v3.0.0
