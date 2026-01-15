@@ -35,6 +35,18 @@ jobs:
         with:
           repository: yu-i-i/overleaf-cep
           ref: ext-ce
+
+      - name: "Check eslint-plugin present"
+        run: |
+          if [ ! -d "./libraries/eslint-plugin" ]; then
+            echo "eslint-plugin-overleaf not found, installing..."
+            git clone https://github.com/overleaf/overleaf.git ../overleaf-temp
+            cp -r ../overleaf-temp/libraries/eslint-plugin ./libraries/eslint-plugin
+            rm -rf ../overleaf-temp
+          else
+            echo "eslint-plugin-overleaf found."
+          fi
+
       - name: "Login to GitHub Container Registry"
         uses: docker/login-action@v3.0.0
         with:
