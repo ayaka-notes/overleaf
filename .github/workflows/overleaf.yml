@@ -26,7 +26,7 @@ jobs:
         run: |
           cd ./overleaf/server-ce
           make
-          docker tag sharelatex/sharelatex:latest ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          docker tag sharelatex/sharelatex:v6.0.0-ext-v3.3-git ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
       - name: "Login to GitHub Container Registry"
         uses: docker/login-action@v3.0.0
         with:
