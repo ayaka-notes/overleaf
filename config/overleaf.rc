@@ -1,0 +1,47 @@
+#### Overleaf RC ####
+
+PROJECT_NAME=overleaf
+
+# Sharelatex container
+# Uncomment the OVERLEAF_IMAGE_NAME variable to use a user-defined image.
+# OVERLEAF_IMAGE_NAME=sharelatex/sharelatex
+OVERLEAF_DATA_PATH=data/overleaf
+SERVER_PRO=true
+OVERLEAF_LISTEN_IP=0.0.0.0
+OVERLEAF_PORT=80
+
+# Sibling Containers
+SIBLING_CONTAINERS_ENABLED=true
+DOCKER_SOCKET_PATH=/var/run/docker.sock
+
+# Mongo configuration
+MONGO_ENABLED=true
+MONGO_DATA_PATH=data/mongo
+MONGO_IMAGE=mongo
+MONGO_VERSION=8.0
+
+# Redis configuration
+REDIS_ENABLED=true
+REDIS_DATA_PATH=data/redis
+REDIS_IMAGE=redis:7.4
+REDIS_AOF_PERSISTENCE=true
+
+# Git-bridge configuration (Server Pro only)
+GIT_BRIDGE_ENABLED=true
+GIT_BRIDGE_DATA_PATH=data/git-bridge
+
+# TLS proxy configuration (optional)
+# See documentation in doc/tls-proxy.md
+NGINX_ENABLED=false
+NGINX_CONFIG_PATH=config/nginx/nginx.conf
+NGINX_HTTP_PORT=80
+# Replace these IP addresses with the external IP address of your host
+NGINX_HTTP_LISTEN_IP=127.0.1.1
+NGINX_TLS_LISTEN_IP=127.0.1.1
+TLS_PRIVATE_KEY_PATH=config/nginx/certs/overleaf_key.pem
+TLS_CERTIFICATE_PATH=config/nginx/certs/overleaf_certificate.pem
+TLS_PORT=443
+
+# In Air-gapped setups, skip pulling images
+# PULL_BEFORE_UPGRADE=false
+# SIBLING_CONTAINERS_PULL=false
