@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@main
         with:
           repository: ayaka-notes/overleaf-internal
-          ref: dev
+          ref: v6.0.0-ext-v3.3-git
           token: ${{secrets.ORGTOKEN}}
           path: './overleaf'
       - name: "Make CE Docker Image"
