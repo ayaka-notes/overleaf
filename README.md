@@ -9,4 +9,4 @@ run:
 ./run.sh
 ```
 
-you 
+You should go `http://localhost/launchpad` to set your admin account.
