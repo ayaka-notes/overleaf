@@ -1,6 +1,6 @@
 ---
 services:
     sharelatex:
-        image: ghcr.io/ayaka-notes/overleaf:v6.0.0
+        image: ghcr.io/ayaka-notes/overleaf:latest
         environment:
           V2_HISTORY_URL: "http://sharelatex:3054"
