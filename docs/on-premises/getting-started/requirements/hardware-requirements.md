@@ -13,7 +13,7 @@ For example, if you have a license for 100 total users, but only expect \~5 to b
 A minimum base requirement of 2 cores and 3GB memory is required for basic operations with around 5 concurrent users. This minimum requirement will also be sufficient for larger groups where there is less concurrent usage, or where it is OK for compile times to be longer during heavier usage.
 
 {% hint style="warning" %}
-If you are considering using a NFS (Network File System) based file system for your small instance please have a look at this section in the Troubleshooting section: https://docs.overleaf.com/on-premises/support/troubleshooting
+If you are considering using a NFS (Network File System) based file system for your small instance please have a look at this section in the Troubleshooting section: [troubleshooting.md](../../troubleshooting.md "mention")
 {% endhint %}
 
 ### Scaling
