@@ -2,6 +2,8 @@
 
 Overleaf Pro Version, Include Git-Bridge.(Based on Overleaf CEP From yu-i-i)
 
+For documents, visit https://overleaf-pro.ayaka.space/
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ayaka-notes/overleaf)
 
 ## Git Bridge Features
