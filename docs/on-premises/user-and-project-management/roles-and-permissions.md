@@ -1,10 +1,14 @@
+---
+icon: list-check
+---
+
 # Roles and permissions
 
-### [Account](roles-and-permissions.md#account)
+### Account
 
 From the perspective of managing their own account, **all** users are treated as regular users — `Site Admins` and `Template Users` do **not** get any additional permissions. There are, however, restrictions on what actions regular users can do based on how they authenticate.
 
-#### [Settings](roles-and-permissions.md#settings)
+#### Settings
 
 **Authentication types: Internal Accounts | SSO (SAML/LDAP)**
 
@@ -20,7 +24,7 @@ From the perspective of managing their own account, **all** users are treated as
 The Git Bridge integration is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../welcome/cep-community-edition-vs.-server-pro.md) for more information.
 {% endhint %}
 
-#### [Your Sessions](roles-and-permissions.md#your-sessions)
+#### Your Sessions
 
 | Action               | User |
 | -------------------- | ---: |
@@ -30,11 +34,11 @@ The Git Bridge integration is **only** available in Server Pro. Check out the [S
 
 ***
 
-### [Project Dashboard](roles-and-permissions.md#project-dashboard)
+### Project Dashboard
 
 From the perspective of the project dashboard, **all** users are treated as regular users — Site Admins and Template users do not get any additional permissions.
 
-#### [Project management and collaboration](roles-and-permissions.md#project-management-and-collaboration)
+#### Project management and collaboration
 
 | Action                                      | User |
 | ------------------------------------------- | ---: |
@@ -53,7 +57,7 @@ From the perspective of the project dashboard, **all** users are treated as regu
 | Leave a project                             |  Yes |
 | Leave multiple projects                     |  Yes |
 
-#### [Organizing and finding projects](roles-and-permissions.md#organizing-and-finding-projects)
+#### Organizing and finding projects
 
 | Action                                                                                     | User |
 | ------------------------------------------------------------------------------------------ | ---: |
@@ -67,7 +71,7 @@ From the perspective of the project dashboard, **all** users are treated as regu
 | Archive a project                                                                          |  Yes |
 | Archive multiple projects                                                                  |  Yes |
 
-#### [Account actions and navigation](roles-and-permissions.md#account-actions-and-navigation)
+#### Account actions and navigation
 
 | Action                | User |
 | --------------------- | ---: |
@@ -76,7 +80,7 @@ From the perspective of the project dashboard, **all** users are treated as regu
 
 ***
 
-### [Editor IDE](roles-and-permissions.md#editor-ide)
+### Editor IDE
 
 From the perspective of the Overleaf Editor IDE, you can be one of the following roles: `Project Owner`, `Editor`, `Reviewer`, `Viewer`, `Site Administrator` or `Template User`.
 
@@ -86,21 +90,21 @@ In Server Pro and Community Edition, there is support for providing anonymous **
 For more information on this check out the `OVERLEAF_ALLOW_PUBLIC_ACCESS` and `OVERLEAF_ALLOW_ANONYMOUS_READ_AND_WRITE_SHARING` environment variables [here](../environment-variables.md).
 {% endhint %}
 
-#### [Text operations](roles-and-permissions.md#text-operations)
+#### Text operations
 
 | Operation                | Owner | Editor | Reviewer | Viewer | Viewer (named collaborator) | Link Sharing |
 | ------------------------ | ----: | -----: | -------: | -----: | --------------------------: | -----------: |
 | Edit text                |   Yes |    Yes |        — |      — |                           — |            — |
 | Edits become suggestions |    No |     No |        — |      — |                           — |            — |
 
-#### [Sharing](roles-and-permissions.md#sharing)
+#### Sharing
 
 | Action                                                | Owner | Editor | Reviewer | Viewer | Viewer (named collaborator) | Link Sharing |
 | ----------------------------------------------------- | ----: | -----: | -------: | -----: | --------------------------: | -----------: |
 | Invite new users or update sharing permissions        |   Yes |     No |       No |     No |                          No |           No |
 | See named collaborator who the project is shared with |   Yes |    Yes |      Yes |    Yes |                          No |            — |
 
-#### [Project & file operations](roles-and-permissions.md#project-and-file-operations)
+#### Project & file operations
 
 | Action                          | Owner | Editor | Reviewer | Viewer | Viewer (named collaborator) | Link sharing |
 | ------------------------------- | ----: | -----: | -------: | -----: | --------------------------: | -----------: |
@@ -109,7 +113,7 @@ For more information on this check out the `OVERLEAF_ALLOW_PUBLIC_ACCESS` and `O
 | Download project or files       |   Yes |    Yes |      Yes |    Yes |                         Yes |            — |
 | Duplicate the project           |   Yes |    Yes |      Yes |    Yes |                         Yes |            — |
 
-#### [Collaborating](roles-and-permissions.md#collaborating)
+#### Collaborating
 
 | Action                                        | Owner | Editor | Reviewer | Viewer | Viewer (named collaborator) | Link sharing |
 | --------------------------------------------- | ----: | -----: | -------: | -----: | --------------------------: | -----------: |
@@ -127,7 +131,7 @@ Commenting and Real-time tracked changes are **only** available in Server Pro. C
 The in-project chat feature can be disabled by setting `OVERLEAF_DISABLE_CHAT=true`. See the [Environment variables](../environment-variables.md) section for more information on customizing your deployment.
 {% endhint %}
 
-#### [History](roles-and-permissions.md#history)
+#### History
 
 | Action                               | Owner | Editor | Reviewer | Viewer | Viewer (named collaborator) | Link sharing |
 | ------------------------------------ | ----: | -----: | -------: | -----: | --------------------------: | -----------: |
@@ -135,7 +139,7 @@ The in-project chat feature can be disabled by setting `OVERLEAF_DISABLE_CHAT=tr
 | Restore file or project from history |   Yes |    Yes |       No |     No |                          No |            — |
 | Add labels                           |   Yes |    Yes |      Yes |     No |                          No |            — |
 
-#### [Integrations](roles-and-permissions.md#integrations)
+#### Integrations
 
 | Action                          | Owner | Editor | Reviewer | Viewer | Viewer (named collaborator) | Link sharing |
 | ------------------------------- | ----: | -----: | -------: | -----: | --------------------------: | -----------: |
@@ -146,7 +150,7 @@ The in-project chat feature can be disabled by setting `OVERLEAF_DISABLE_CHAT=tr
 The Git Bridge integration is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../welcome/cep-community-edition-vs.-server-pro.md) for more information.
 {% endhint %}
 
-#### [Manage template](roles-and-permissions.md#manage-template)
+#### Manage template
 
 | Action                                  | User | Template User | Admin |
 | --------------------------------------- | ---: | ------------: | ----: |
@@ -163,7 +167,7 @@ The `Template User` role is **specific** to Server Pro. For more information on 
 
 ***
 
-### [Template Gallery](roles-and-permissions.md#template-gallery)
+### Template Gallery
 
 | Action                        | User | Template User | Admin |
 | ----------------------------- | ---: | ------------: | ----: |
@@ -179,18 +183,18 @@ The `Template User` role is **specific** to Server Pro, it is **not** available 
 
 ***
 
-### [Admin Panel](roles-and-permissions.md#admin-panel)
+### Admin Panel
 
-#### [Manage Site](roles-and-permissions.md#manage-site)
+#### Manage Site
 
-[**System Messages**](roles-and-permissions.md#system-messages)
+**System Messages**
 
 | Action             | Server Pro | Community Edition |
 | ------------------ | ---------: | ----------------: |
 | Post Message       |        Yes |               Yes |
 | Clear all messages |        Yes |               Yes |
 
-[**Open/Close Editor**](roles-and-permissions.md#open-close-editor)
+**Open/Close Editor**
 
 | Action               | Server Pro | Community Edition |
 | -------------------- | ---------: | ----------------: |
@@ -198,7 +202,7 @@ The `Template User` role is **specific** to Server Pro, it is **not** available 
 | Disconnect all users |        Yes |               Yes |
 | Reopen Editor        |        Yes |               Yes |
 
-#### [Manage Users](roles-and-permissions.md#manage-users)
+#### Manage Users
 
 {% hint style="info" %}
 The Admin Portal in the Community Edition **only** supports registering users. Full user management is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../welcome/cep-community-edition-vs.-server-pro.md) for more information.
@@ -288,14 +292,8 @@ The Admin Portal in the Community Edition **only** supports registering users. F
 | ---------------------- | ---------: | ----------------: |
 | View active user count |        Yes |                No |
 
-#### [Project URL Lookup](roles-and-permissions.md#project-url-lookup)
+#### Project URL Lookup
 
 | Action                    | Server Pro | Community Edition |
 | ------------------------- | ---------: | ----------------: |
 | Search for project by URL |        Yes |                No |
-
-***
-
-Last updated 7 months ago
-
-For more details, see the original links embedded in each section.

@@ -1,3 +1,7 @@
+---
+icon: lock
+---
+
 # Username migration
 
 From a login perspective, the primary identifier for a user is their email address. If you are migrating from locally based authentication to SSO or you're migrating from one IdP to another, you may be required to update users' email addresses.

@@ -4,7 +4,7 @@ icon: toolbox
 
 # What is the Overleaf Toolkit?
 
-The Overleaf Toolkit is the recommended deployment method for on-premises installations of the Community Edition and Server Pro and has been designed to work with the most common environment: a single physical server or virtual machine. The Toolkit uses `docker compose` to manage your server's Docker containers and provides a set of scripts which wrap `docker` commands to assist with the more technical side of managing an on-premises version of Overleaf.
+The Overleaf Toolkit is the recommended deployment method for on-premises installations of the Community Edition, Server Pro or CEP, it has been designed to work with the most common environment: a single physical server or virtual machine. The Toolkit uses `docker compose` to manage your server's Docker containers and provides a set of scripts which wrap `docker` commands to assist with the more technical side of managing an on-premises version of Overleaf.
 
 #### The `bin/docker-compose` wrapper
 

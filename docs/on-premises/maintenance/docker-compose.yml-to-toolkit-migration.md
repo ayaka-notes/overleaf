@@ -34,7 +34,7 @@ services:
 
 When using the Toolkit, the image name is automatically resolved; the only requirement is to set `SERVER_PRO=true` in **config/overleaf.rc** to pick the Server Pro image or `SERVER_PRO=false` to use Community Edition.
 
-The desired Server Pro/Community Edition version number is set in the **config/version** file. The Toolkit requires a specific version number like `4.2.3`. If you are using `latest`, you can use `bin/images` to find the image id of your local `latest` version, then use the release notes for [2.x.x](../release-notes-2.x.x.md), [3.x.x](../release-notes-3.x.x.md), [4.x.x](../release-notes-4.x.x.md) or [5.x.x](../release-notes/release-notes-5.x.x/) to map the image id to the version.
+The desired Server Pro/Community Edition version number is set in the **config/version** file. The Toolkit requires a specific version number like `4.2.3`. If you are using `latest`, you can use `bin/images` to find the image id of your local `latest` version, then use the release notes for [2.x.x](../release-notes-2.x.x.md), [3.x.x](../release-notes-3.x.x.md), [4.x.x](../release-notes-4.x.x.md) or [5.x.x](/broken/pages/e634d866f140a771c7e14451c6e6312d53ea79ab) to map the image id to the version.
 
 If you are sourcing the image from your own internal registry you can override the image the Toolkit uses by setting `OVERLEAF_IMAGE_NAME`. You do not need to specify the tag as the Toolkit will automatically add it based on your **config/version** file.
 {% endstep %}

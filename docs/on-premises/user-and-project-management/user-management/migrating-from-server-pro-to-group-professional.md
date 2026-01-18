@@ -1,3 +1,7 @@
+---
+icon: rectangle-pro
+---
+
 # Migrating from Server Pro to Group Professional
 
 Switching from a self-hosted Server Pro instance to a new cloud-based Overleaf Group Professional subscription is a big change, so to make this process as smooth as possible we've put together the following guidance.

@@ -4,9 +4,7 @@ icon: git-alt
 
 # Git integration
 
-
-
-
+The Git integration is available for Overleaf CEP
 
 {% stepper %}
 {% step %}
@@ -50,20 +48,17 @@ git-bridge:
 {% step %}
 ### Update the sharelatex container configuration
 
-You’ll also need to link the `git-bridge` container in the `sharelatex` container and define the following environment variables:
+You’ll also need to link the `git-bridge` container in the `sharelatex` container and define the following environment variables, please pay attention to `V2_HISTORY_URL`:
 
-{% code title="docker-compose.yml (sharelatex service)" %}
-```yaml
-sharelatex:
+<pre class="language-yaml" data-title="docker-compose.yml (sharelatex service)"><code class="lang-yaml">sharelatex:
     links:
         - git-bridge
     environment:
          GIT_BRIDGE_ENABLED: true
          GIT_BRIDGE_HOST: "git-bridge"
          GIT_BRIDGE_PORT: "8000"
-         V2_HISTORY_URL: "http://sharelatex:3054"
-```
-{% endcode %}
+<strong>         V2_HISTORY_URL: "http://sharelatex:3054"
+</strong></code></pre>
 {% endstep %}
 
 {% step %}
@@ -80,45 +75,17 @@ When authenticating a git client, users need a Personal Access Token. Users can 
 We recommend you monitor your host resources after enabling the `git-bridge`. The load increase will depend on:
 
 * the number of users accessing the feature
-* the types of projects hosted in your instance (larger projects are generally more resource intensive).
+* the types of projects hosted in your instance (larger projects are generally more resource intensive)
 {% endstep %}
 {% endstepper %}
 
 ### Swapping projects to S3
 
-(Original reference: https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/git-integration#swapping-projects-to-s3)
+The Git integration stores a complete git repository on disk for each project that gets cloned by a user. If you have limited disk space, you can activate a swap job that will move repositories that are less used to AWS S3. If a swapped repository is needed again, it gets moved back to the disk. The following environment variables control the swap job:
 
-The Git integration stores a complete git repository on disk for each project that gets cloned by a user. If disk space is limited, you can activate a swap job that moves less-used repositories to AWS S3. When a swapped repository is needed again, it is moved back to disk.
 
-The following environment variables control the swap job:
 
-* GIT\_BRIDGE\_SWAPSTORE\_TYPE\
-  Set this to "s3" to activate the swap job.
-* GIT\_BRIDGE\_SWAPSTORE\_AWS\_ACCESS\_KEY\
-  Your AWS access key
-* GIT\_BRIDGE\_SWAPSTORE\_AWS\_SECRET\
-  Your AWS secret
-* GIT\_BRIDGE\_SWAPSTORE\_S3\_BUCKET\_NAME\
-  This bucket will contain the zipped git repositories
-* GIT\_BRIDGE\_SWAPSTORE\_AWS\_REGION\
-  The bucket’s region
-* GIT\_BRIDGE\_SWAPJOB\_MIN\_PROJECTS\
-  How many projects to keep on disk, at a minimum.
-  * Default: 50
-* GIT\_BRIDGE\_SWAPJOB\_LOW\_GIB\
-  Low watermark for swapping. The swap job will move projects until disk usage is below this value.
-  * Default: 128 GB
-* GIT\_BRIDGE\_SWAPJOB\_HIGH\_GIB\
-  High watermark for swapping. The swap job will start swapping when disk usage reaches this value.
-  * Default: 256 GB
-* GIT\_BRIDGE\_SWAPJOB\_INTERVAL\_MILLIS\
-  The amount of time between checking disk usage and running the swap job.
-  * Default: 3600000 ms = 1 hour
 
-***
 
-Last updated 1 year ago
 
-User documentation for the git integration: https://www.overleaf.com/learn/how-to/Using\_Git\_and\_GitHub#The\_Overleaf\_Git-Bridge
 
-Privacy policy: https://www.overleaf.com/legal

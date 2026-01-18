@@ -1,3 +1,7 @@
+---
+icon: rectangle-pro
+---
+
 # Migrating to LDAP or SAML
 
 ```
@@ -50,7 +54,7 @@ Once everyone's email addresses are updated, it's time to flick the switch! You'
 This swaps out the standard Overleaf login form for your new LDAP or SAML one.
 
 {% hint style="info" %}
-You can find the relevant information for enabling LDAP [here](ldap.md), and SAML 2.0 [here](saml-2.0.md).
+You can find the relevant information for enabling LDAP [here](../../ldap.md), and SAML 2.0 [here](../../saml-2.0.md).
 {% endhint %}
 {% endstep %}
 
@@ -59,16 +63,16 @@ You can find the relevant information for enabling LDAP [here](ldap.md), and SAM
 
 The next time Alice goes to log in, they'll see the new form.
 
-![LDAP/Active Directory Log in page](<.gitbook/assets/image (4)>)
+![LDAP/Active Directory Log in page](<../../.gitbook/assets/image (4)>)
 
 They can enter their LDAP username (`alicejones`) and password, and because their email address now matches the one in LDAP, they'll be logged right into their existing Overleaf account. All their projects will be exactly where they left them.
 
 If you've enabled SAML 2.0, users will see a button that when clicked, will redirect them to your IdP to enter their credentials. On successful authentication, they'll be redirected back to your Overleaf instance and logged into their account.
 
-![SAML Log in page](<.gitbook/assets/image (5)>)
+![SAML Log in page](<../../.gitbook/assets/image (5)>)
 
 {% hint style="info" %}
-See the [Environment Variables](environment-variables.md) page for information on customizing the login page experience.
+See the [Environment Variables](../../environment-variables.md) page for information on customizing the login page experience.
 
 And if you ever need to roll-back, just comment out the LDAP/SAML configuration and recreate the **sharelatex** container using the `bin/up -d` command. Users will then be able to log in using their current email address and Overleaf-specific password.
 {% endhint %}
@@ -91,7 +95,7 @@ Your users' accounts are already linked to their LDAP or SAML email addresses. T
 
 Simply remove or unset the LDAP/SAML configuration settings and recreate the **sharelatex** container using the `bin/up -d` command. This will bring back the native Overleaf email and password login form.
 
-![Native authentication Log in page](<.gitbook/assets/image (6)>)
+![Native authentication Log in page](<../../.gitbook/assets/image (6)>)
 {% endstep %}
 
 {% step %}
@@ -106,7 +110,7 @@ Since they may never have had a native Overleaf password, they'll need to create
 * Follow the link in the password-reset email to set a new password.
 
 {% hint style="info" %}
-If you haven't already done so, check out our guide on enabling [Email delivery](email-delivery.md).
+If you haven't already done so, check out our guide on enabling [Email delivery](../../email-delivery.md).
 {% endhint %}
 
 Once that's done, they can log in with their email and their new Overleaf-specific password to access all their projects.

@@ -1,10 +1,14 @@
+---
+icon: users-between-lines
+---
+
 # User management
 
 ## Creating an administrator user
 
 Overleaf Toolkit deployments:
 
-{% code title="Overleaf Toolkit" %}
+{% code title="Overleaf Toolkit" overflow="wrap" %}
 ```bash
 $ bin/docker-compose exec sharelatex /bin/bash -ce "cd /overleaf/services/web && node modules/server-ce-scripts/scripts/create-user --admin --email=joe@example.com"
 ```
@@ -12,7 +16,7 @@ $ bin/docker-compose exec sharelatex /bin/bash -ce "cd /overleaf/services/web &&
 
 Legacy docker-compose.yml deployments:
 
-{% code title="Legacy docker-compose" %}
+{% code title="Legacy docker-compose" overflow="wrap" %}
 ```bash
 $ docker exec sharelatex /bin/bash -ce "cd /overleaf/services/web && node modules/server-ce-scripts/scripts/create-user --admin --email=joe@example.com"
 ```

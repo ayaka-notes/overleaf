@@ -56,7 +56,7 @@ When performing an upgrade we recommend upgrading to the latest release of the c
 {% endstep %}
 {% endstepper %}
 
-To avoid any upgrade issues we recommend consulting our [Release notes](../release-notes/) prior to performing any upgrades as certain versions may require additional steps. Such as, making manual changes to the Toolkit, upgrading databases or running migration scripts.
+To avoid any upgrade issues we recommend consulting our [Release notes](/broken/pages/bec04e5dc7d926ef372820bf767af13f918b8166) prior to performing any upgrades as certain versions may require additional steps. Such as, making manual changes to the Toolkit, upgrading databases or running migration scripts.
 
 If you haven't already done so, signing up to our [mailing list↗](https://mailchi.mp/overleaf.com/community-edition-and-server-pro) so that you can be notified when new versions/updates are released. This would allow you to schedule regular maintenance windows that closely follow our release schedule.
 

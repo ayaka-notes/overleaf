@@ -38,21 +38,18 @@
   * [External URL](configuration/overleaf-toolkit/external-url.md)
   * [Redis](configuration/overleaf-toolkit/redis.md)
 
-## rest
+## User and project management
 
-* [Page 1](rest/page-1.md)
+* [Roles and permissions](user-and-project-management/roles-and-permissions.md)
+* [User management](user-and-project-management/user-management/README.md)
+  * [Username migration](user-and-project-management/user-management/username-migration.md)
+  * [Migrating to LDAP or SAML](user-and-project-management/user-management/migrating-to-ldap-or-saml.md)
+  * [Migrating from Server Pro to Group Professional](user-and-project-management/user-management/migrating-from-server-pro-to-group-professional.md)
+* [project-management](user-and-project-management/project-management/README.md)
+  * [Bulk transfer of project ownership](user-and-project-management/project-management/bulk-transfer-of-project-ownership.md)
 
 ***
 
-* [configuration](configuration-1/README.md)
-  * [Overleaf Toolkit](configuration-1/overleaf-toolkit/README.md)
-    * [Server Pro-only configuration](configuration-1/overleaf-toolkit/server-pro-only-configuration.md)
-* [Release notes](release-notes/README.md)
-  * [Release notes 1.x.x](release-notes/release-notes-1.x.x.md)
-  * [Release notes 5.x.x](release-notes/release-notes-5.x.x/README.md)
-    * [Binary files migration](release-notes/release-notes-5.x.x/binary-files-migration.md)
-* [Release notes 6.x.x](release-notes-6.x.x.md)
-* [Release notes 0.x.x](release-notes-0.x.x.md)
 * [Upgrading TeX Live](upgrading-tex-live.md)
 * [Before you start](before-you-start.md)
 * [Release notes 4.x.x](release-notes-4.x.x.md)
@@ -77,12 +74,6 @@
   * [Support guides](support/support-guides/README.md)
     * [Using templates as an individual](support/support-guides/using-templates-as-an-individual.md)
 * [Project limits](project-limits.md)
-* [user-and-project-management](user-and-project-management/README.md)
-  * [User management](user-and-project-management/user-management/README.md)
-    * [Migrating from Server Pro to Group Professional](user-and-project-management/user-management/migrating-from-server-pro-to-group-professional.md)
-  * [Roles and permissions](user-and-project-management/roles-and-permissions.md)
-  * [project-management](user-and-project-management/project-management/README.md)
-    * [Bulk transfer of project ownership](user-and-project-management/project-management/bulk-transfer-of-project-ownership.md)
 * [maintenance](maintenance/README.md)
   * [Data and backups](maintenance/data-and-backups/README.md)
     * [Exporting projects](maintenance/data-and-backups/exporting-projects.md)
@@ -92,7 +83,5 @@
   * [Updating MongoDB](maintenance/updating-mongodb.md)
 * [S3](s3.md)
 * [Extending TeX Live](extending-tex-live.md)
-* [Username migration](username-migration.md)
 * [Troubleshooting](troubleshooting.md)
 * [Horizontal scaling](horizontal-scaling.md)
-* [Migrating to LDAP or SAML](migrating-to-ldap-or-saml.md)

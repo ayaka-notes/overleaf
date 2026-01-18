@@ -18,13 +18,13 @@ We have **pre-configured** the following features:
 {% step %}
 ### Create Your GitHub Codespace
 
-Click the following button to create you GitHub Codespace. As for Machine type, the minimum 2-core can fulfill personal,&#x20;
+Click the following button to create you GitHub Codespace. In terms of server configuration, **2 cores with 8 GB of RAM** are generally sufficient for individual daily editing. If you plan to collaborate within a **small team**, we recommend choosing a configuration with **4 cores or more**.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ayaka-notes/overleaf)
 {% endstep %}
 
 {% step %}
-### Initialize Overleaf
+### Initialize Overleaf Instance
 
 When your codespace is ready, run the following command in your bash to Initialize your overleaf instance.
 
