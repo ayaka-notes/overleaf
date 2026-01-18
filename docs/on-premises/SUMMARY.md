@@ -54,6 +54,13 @@
 ## Maintenance
 
 * [docker-compose.yml to Toolkit migration](maintenance/docker-compose.yml-to-toolkit-migration.md)
+* [Upgrading your deployment](maintenance/upgrading-your-deployment.md)
+* [Data and backups](maintenance/data-and-backups/README.md)
+  * [Exporting projects](maintenance/data-and-backups/exporting-projects.md)
+* [Extending TeX Live](maintenance/extending-tex-live.md)
+* [Horizontal scaling](maintenance/horizontal-scaling.md)
+* [S3 migration](maintenance/s3-migration.md)
+* [Updating MongoDB](maintenance/updating-mongodb.md)
 
 ## User and project management
 
@@ -78,11 +85,4 @@
 
 ***
 
-* [maintenance](maintenance-1/README.md)
-  * [Data and backups](maintenance-1/data-and-backups/README.md)
-    * [Exporting projects](maintenance-1/data-and-backups/exporting-projects.md)
-  * [Upgrading your deployment](maintenance-1/upgrading-your-deployment.md)
-  * [S3 migration](maintenance-1/s3-migration.md)
-  * [Updating MongoDB](maintenance-1/updating-mongodb.md)
-* [Extending TeX Live](extending-tex-live.md)
-* [Horizontal scaling](horizontal-scaling.md)
+* [maintenance](maintenance-1.md)
