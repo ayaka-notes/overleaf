@@ -26,6 +26,8 @@
   * [4. Get Overleaf CEP Images](installation/using-the-toolkit/4.-get-overleaf-cep-images.md)
   * [5. Personalizing your instance](installation/using-the-toolkit/5.-personalizing-your-instance.md)
   * [6. Post-installation tasks](installation/using-the-toolkit/6.-post-installation-tasks.md)
+* [Air-gapped/offline deployments](installation/air-gapped-offline-deployments.md)
+* [Upgrading TeX Live](installation/upgrading-tex-live.md)
 
 ## Configuration
 
@@ -33,17 +35,25 @@
   * [Files and locations](configuration/overleaf-toolkit/files-and-locations.md)
   * [Toolkit settings](configuration/overleaf-toolkit/toolkit-settings.md)
   * [Environment variables](configuration/overleaf-toolkit/environment-variables.md)
+  * [OIDC Authentication](configuration/overleaf-toolkit/oidc-authentication.md)
+  * [SAML Authentication](configuration/overleaf-toolkit/saml-authentication.md)
+  * [LDAP Authentication](configuration/overleaf-toolkit/ldap-authentication.md)
   * [Sandboxed Compiles](configuration/overleaf-toolkit/sandboxed-compiles.md)
   * [Git integration](configuration/overleaf-toolkit/git-integration.md)
   * [Templates](configuration/overleaf-toolkit/templates.md)
   * [External URL](configuration/overleaf-toolkit/external-url.md)
-  * [Logging](configuration/overleaf-toolkit/logging.md)
+  * [Logging](logging.md)
   * [TLS proxy](configuration/overleaf-toolkit/tls-proxy.md)
-  * [Branding](configuration/overleaf-toolkit/branding.md)
+  * [Branding](branding.md)
   * [Localization](configuration/overleaf-toolkit/localization.md)
-  * [Password restrictions](configuration/overleaf-toolkit/password-restrictions.md)
+  * [Email delivery](configuration/overleaf-toolkit/email-delivery.md)
+  * [Password restrictions](password-restrictions.md)
   * [Redis](configuration/overleaf-toolkit/redis.md)
-  * [S3(need modification)](configuration/overleaf-toolkit/s3.md)
+  * [S3](s3.md)
+
+## Maintenance
+
+* [docker-compose.yml to Toolkit migration](maintenance/docker-compose.yml-to-toolkit-migration.md)
 
 ## User and project management
 
@@ -52,35 +62,27 @@
   * [Username migration](user-and-project-management/user-management/username-migration.md)
   * [Migrating to LDAP or SAML](user-and-project-management/user-management/migrating-to-ldap-or-saml.md)
   * [Migrating from Server Pro to Group Professional](user-and-project-management/user-management/migrating-from-server-pro-to-group-professional.md)
-* [project-management](user-and-project-management/project-management/README.md)
+* [Project management](user-and-project-management/project-management/README.md)
   * [Bulk transfer of project ownership](user-and-project-management/project-management/bulk-transfer-of-project-ownership.md)
 
 ## Support
 
 * [Project limits](support/project-limits.md)
-* [Troubleshooting](support/troubleshooting.md)
+* [Troubleshooting](troubleshooting.md)
 * [Getting help](support/getting-help.md)
 * [Support guides](support/support-guides/README.md)
   * [Using templates as an individual](support/support-guides/using-templates-as-an-individual.md)
+  * [(v5.0.1 Migration) Doc version recovery](support/support-guides/doc-version-recovery.md)
+  * [(v5.5.7 Migration) Binary files migration](support/support-guides/v5.5.7-migration-binary-files-migration.md)
+  * [(v3.5.13 Migration)  Full project history migration](support/support-guides/full-project-history-migration.md)
 
 ***
 
-* [Upgrading TeX Live](upgrading-tex-live.md)
-* [SAML 2.0](saml-2.0.md)
-* [Email delivery](email-delivery.md)
-* [Introduction](introduction.md)
-* [Doc version recovery](doc-version-recovery.md)
-* [Air-gapped/offline deployments](air-gapped-offline-deployments.md)
-* [Full project history migration](full-project-history-migration.md)
-* [LDAP](ldap.md)
-* [Adding LaTeX user help](adding-latex-user-help.md)
-* [Environment variables](environment-variables.md)
-* [maintenance](maintenance/README.md)
-  * [Data and backups](maintenance/data-and-backups/README.md)
-    * [Exporting projects](maintenance/data-and-backups/exporting-projects.md)
-  * [docker-compose.yml to Toolkit migration](maintenance/docker-compose.yml-to-toolkit-migration.md)
-  * [Upgrading your deployment](maintenance/upgrading-your-deployment.md)
-  * [S3 migration](maintenance/s3-migration.md)
-  * [Updating MongoDB](maintenance/updating-mongodb.md)
+* [maintenance](maintenance-1/README.md)
+  * [Data and backups](maintenance-1/data-and-backups/README.md)
+    * [Exporting projects](maintenance-1/data-and-backups/exporting-projects.md)
+  * [Upgrading your deployment](maintenance-1/upgrading-your-deployment.md)
+  * [S3 migration](maintenance-1/s3-migration.md)
+  * [Updating MongoDB](maintenance-1/updating-mongodb.md)
 * [Extending TeX Live](extending-tex-live.md)
 * [Horizontal scaling](horizontal-scaling.md)

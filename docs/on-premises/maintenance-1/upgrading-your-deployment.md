@@ -27,7 +27,7 @@ You should **never** skip major versions (3.5.10 -> 5.5.4). If you are using the
 {% hint style="info" %}
 For air-gapped setups that manually import Docker images, please set `PULL_BEFORE_UPGRADE=false` in your `config/overleaf.rc` file.
 
-Please check [here](../air-gapped-offline-deployments.md) for more infomration on deploying in an air-gapped/offline environments.
+Please check [here](../installation/air-gapped-offline-deployments.md) for more infomration on deploying in an air-gapped/offline environments.
 {% endhint %}
 
 ### [Upgrade path](upgrading-your-deployment.md#upgrade-path)

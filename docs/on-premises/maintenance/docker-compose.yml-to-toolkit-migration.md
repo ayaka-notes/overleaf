@@ -1,4 +1,14 @@
+---
+icon: right-left
+---
+
 # docker-compose.yml to Toolkit migration
+
+If you're currently using Docker Compose via a `docker-compose.yml` file, migrating to the Toolkit can make running an on-premises version of Overleaf easier to deploy, upgrade and maintain.
+
+To migrate, you'll need to convert your existing Docker Compose setup into the format used by the Toolkit. This process involves copying existing configuration into the Toolkit.
+
+This guide will walk you through each step of this process, ensuring a smooth migration from Docker Compose to the Toolkit.
 
 {% hint style="info" %}
 These instructions are for v4.x and earlier. Therefore all variables use the `SHARELATEX_` prefix instead of `OVERLEAF_`.
@@ -34,7 +44,7 @@ services:
 
 When using the Toolkit, the image name is automatically resolved; the only requirement is to set `SERVER_PRO=true` in **config/overleaf.rc** to pick the Server Pro image or `SERVER_PRO=false` to use Community Edition.
 
-The desired Server Pro/Community Edition version number is set in the **config/version** file. The Toolkit requires a specific version number like `4.2.3`. If you are using `latest`, you can use `bin/images` to find the image id of your local `latest` version, then use the release notes for [2.x.x](/broken/pages/feb29583707671142ff031939bdd07535af5facc), [3.x.x](/broken/pages/226d07880dc8580908892f5243f02f139d7f41f2), [4.x.x](/broken/pages/b63031c5487f8cfb24e76192e58b645292f155a9) or [5.x.x](/broken/pages/e634d866f140a771c7e14451c6e6312d53ea79ab) to map the image id to the version.
+The desired Server Pro/Community Edition version number is set in the **config/version** file. The Toolkit requires a specific version number like `4.2.3`. If you are using `latest`, you can use `bin/images` to find the image id of your local `latest` version, then use the release notes for 2.x.x, 3.x.x, 4.x.x or 5.x.x to map the image id to the version.
 
 If you are sourcing the image from your own internal registry you can override the image the Toolkit uses by setting `OVERLEAF_IMAGE_NAME`. You do not need to specify the tag as the Toolkit will automatically add it based on your **config/version** file.
 {% endstep %}
@@ -44,7 +54,7 @@ If you are sourcing the image from your own internal registry you can override t
 
 By default, Overleaf will listen on `127.0.0.1:80`, only allowing traffic from the Docker host machine.
 
-To allow external access, set the `OVERLEAF_LISTEN_IP` and `OVERLEAF_PORT` in the [**config/overleaf.rc**](/broken/pages/21166f71d6ba0aaaf1e8e2a6560e7fdb8342f01e) file.
+To allow external access, set the `OVERLEAF_LISTEN_IP` and `OVERLEAF_PORT` in the [**config/overleaf.rc**](../configuration/overleaf-toolkit/environment-variables.md) file.
 {% endstep %}
 
 {% step %}
@@ -59,7 +69,7 @@ environment:
     …
 ```
 
-Copy these variables into the Toolkit’s [**config/variables.env**](../environment-variables.md) file, ensuring the following form (use `=` instead of `:`):
+Copy these variables into the Toolkit’s [**config/variables.env**](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46) file, ensuring the following form (use `=` instead of `:`):
 
 ```env
 OVERLEAF_APP_NAME=Overleaf Community Edition
@@ -71,15 +81,13 @@ Exceptions / differences when using the Toolkit:
 * Variables starting with `SANDBOXED_COMPILES_` and `DOCKER_RUNNER` are no longer needed. To enable Sandboxed Compiles, set `SIBLING_CONTAINERS_ENABLED=true` in your **config/overleaf.rc** file.
 * Variables starting with `OVERLEAF_MONGO_`, `OVERLEAF_REDIS_` and the `REDIS_HOST` variable are no longer needed. MongoDB and Redis are now configured in the **config/overleaf.rc** file using `MONGO_URL`, `REDIS_HOST` and `REDIS_PORT`.
 
-For advanced configuration options, refer to the [config/overleaf.rc](/broken/pages/21166f71d6ba0aaaf1e8e2a6560e7fdb8342f01e) documentation.
+For advanced configuration options, refer to the [config/overleaf.rc](../configuration/overleaf-toolkit/environment-variables.md) documentation.
 {% endstep %}
 
 {% step %}
 ### NGINX Proxy
 
-For instructions on how to migrate `nginx`, see the TLS Proxy documentation:
-
-https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/tls-proxy
+For instructions on how to migrate `nginx`, see the [TLS Proxy documentation](../configuration/overleaf-toolkit/tls-proxy.md):
 {% endstep %}
 
 {% step %}

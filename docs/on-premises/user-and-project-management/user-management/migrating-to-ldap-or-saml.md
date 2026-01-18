@@ -54,7 +54,7 @@ Once everyone's email addresses are updated, it's time to flick the switch! You'
 This swaps out the standard Overleaf login form for your new LDAP or SAML one.
 
 {% hint style="info" %}
-You can find the relevant information for enabling LDAP [here](../../ldap.md), and SAML 2.0 [here](../../saml-2.0.md).
+You can find the relevant information for enabling LDAP [here](/broken/pages/f4506677de6b63078c05a043c53577eefdcd1ce9), and SAML 2.0 [here](/broken/pages/0678ecc6373795657b07ffa4a4c4674a38832096).
 {% endhint %}
 {% endstep %}
 
@@ -72,7 +72,7 @@ If you've enabled SAML 2.0, users will see a button that when clicked, will redi
 ![SAML Log in page](<../../.gitbook/assets/image (5)>)
 
 {% hint style="info" %}
-See the [Environment Variables](../../environment-variables.md) page for information on customizing the login page experience.
+See the [Environment Variables](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46) page for information on customizing the login page experience.
 
 And if you ever need to roll-back, just comment out the LDAP/SAML configuration and recreate the **sharelatex** container using the `bin/up -d` command. Users will then be able to log in using their current email address and Overleaf-specific password.
 {% endhint %}
@@ -110,7 +110,7 @@ Since they may never have had a native Overleaf password, they'll need to create
 * Follow the link in the password-reset email to set a new password.
 
 {% hint style="info" %}
-If you haven't already done so, check out our guide on enabling [Email delivery](../../email-delivery.md).
+If you haven't already done so, check out our guide on enabling [Email delivery](/broken/pages/f4f4378313d4e447bdb94a05ae0af0c3d87521e6).
 {% endhint %}
 
 Once that's done, they can log in with their email and their new Overleaf-specific password to access all their projects.

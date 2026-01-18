@@ -22,6 +22,6 @@ Before initiating the installation process, ensure you have administrative acces
 Please note that we are **not** able to provide support for local installations of the free Community Edition.
 {% endhint %}
 
-If you encounter any problems, we recommend first consulting the [troubleshooting](../support/troubleshooting.md) section of the documentation as it contains common issues and required information needed by the support team if you need to reach out for assistance.
+If you encounter any problems, we recommend first consulting the [troubleshooting](../troubleshooting.md) section of the documentation as it contains common issues and required information needed by the support team if you need to reach out for assistance.
 
 By following these steps and thoroughly reading the documentation, you'll be well-prepared to install, configure, and maintain Overleaf according to your organization's requirements. Remember that a solid understanding of your infrastructure and the installation process is key to a successful deployment.

@@ -2,7 +2,7 @@
 icon: rectangle-history
 ---
 
-# project-management
+# Project management
 
 ### Viewing a projects audit log
 
@@ -53,7 +53,7 @@ Setting this environment variable will update the timeout value for new users on
 
 To adjust the timeout for existing users, you'll need to change each user record in the database. We advise being very cautious about doing this, and recommend taking a consistent backup before making any changes.
 
-You can find information about performing back-ups [here](../../maintenance/data-and-backups/).
+You can find information about performing back-ups [here](../../maintenance-1/data-and-backups/).
 
 To update the compile timeout value on all existing users you'll need to run the following shell command on the Docker host:
 

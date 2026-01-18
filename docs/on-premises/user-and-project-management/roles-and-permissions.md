@@ -87,7 +87,7 @@ From the perspective of the Overleaf Editor IDE, you can be one of the following
 {% hint style="info" %}
 In Server Pro and Community Edition, there is support for providing anonymous **read-only** and **read-write** access to projects.
 
-For more information on this check out the `OVERLEAF_ALLOW_PUBLIC_ACCESS` and `OVERLEAF_ALLOW_ANONYMOUS_READ_AND_WRITE_SHARING` environment variables [here](../environment-variables.md).
+For more information on this check out the `OVERLEAF_ALLOW_PUBLIC_ACCESS` and `OVERLEAF_ALLOW_ANONYMOUS_READ_AND_WRITE_SHARING` environment variables [here](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46).
 {% endhint %}
 
 #### Text operations
@@ -128,7 +128,7 @@ For more information on this check out the `OVERLEAF_ALLOW_PUBLIC_ACCESS` and `O
 {% hint style="info" %}
 Commenting and Real-time tracked changes are **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../welcome/cep-community-edition-vs.-server-pro.md) for more information.
 
-The in-project chat feature can be disabled by setting `OVERLEAF_DISABLE_CHAT=true`. See the [Environment variables](../environment-variables.md) section for more information on customizing your deployment.
+The in-project chat feature can be disabled by setting `OVERLEAF_DISABLE_CHAT=true`. See the [Environment variables](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46) section for more information on customizing your deployment.
 {% endhint %}
 
 #### History

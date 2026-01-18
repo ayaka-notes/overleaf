@@ -69,7 +69,7 @@ Switching preserves the database of users and projects with full project history
 {% endstepper %}
 
 {% hint style="info" %}
-The Community Edition does NOT include [Sandboxed Compilesarrow-up-right](https://docs.overleaf.com/on-premises#overview-of-server-pro-and-community-edition) nor [LDAP](../../ldap.md)/[SAML](../../saml-2.0.md). If you need to revert back to native authentication (username/password), see: https://docs.overleaf.com/on-premises/user-and-project-management/user-management/migrating-to-ldap-or-saml#going-the-other-way-switching-from-ldap-saml-back-to-native-authentication
+The Community Edition does NOT include [Sandboxed Compilesarrow-up-right](https://docs.overleaf.com/on-premises#overview-of-server-pro-and-community-edition) nor [LDAP](/broken/pages/f4506677de6b63078c05a043c53577eefdcd1ce9)/[SAML](/broken/pages/0678ecc6373795657b07ffa4a4c4674a38832096). If you need to revert back to native authentication (username/password), see: https://docs.overleaf.com/on-premises/user-and-project-management/user-management/migrating-to-ldap-or-saml#going-the-other-way-switching-from-ldap-saml-back-to-native-authentication
 
 For a comparison of Server CE vs. Server Pro see: https://docs.overleaf.com/on-premises/welcome/server-pro-vs.-community-edition
 {% endhint %}

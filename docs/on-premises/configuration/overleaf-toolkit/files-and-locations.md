@@ -40,7 +40,7 @@ To see a breakdown of all available configuration options see our settings secti
 
 The `config/variables.env` file contains environment variables that are loaded into the `sharelatex` container, and used to configure the Overleaf microservices. These include the name of the application, as displayed in the header of the web interface, settings for sending emails, and other premium settings such as SSO for use with Server Pro.
 
-To see a breakdown of all available environment variables see the [Environment variables](../../environment-variables.md) section.
+To see a breakdown of all available environment variables see the [Environment variables](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46) section.
 
 ### The `version` file
 
