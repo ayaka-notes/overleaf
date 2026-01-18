@@ -2,15 +2,19 @@
 
 {% tabs %}
 {% tab title="Overleaf Toolkit users" %}
+{% code overflow="wrap" %}
 ```bash
 $ bin/docker-compose exec sharelatex /bin/bash -c "cd /overleaf/services/web; VERBOSE_LOGGING=true node scripts/history/migrate_history.js --force-clean --fix-invalid-characters --convert-large-docs-to-file"
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="legacy docker-compose.yml users" %}
+{% code overflow="wrap" %}
 ```bash
 $ docker exec sharelatex /bin/bash -c "cd /overleaf/services/web; VERBOSE_LOGGING=true node scripts/history/migrate_history.js --force-clean --fix-invalid-characters --convert-large-docs-to-file"
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -179,8 +183,3 @@ $ bin/docker-compose exec sharelatex /bin/bash -c "cd /overleaf/services/web; PR
 
 </details>
 
-Last updated 9 months ago
-
-Was this helpful?
-
-This site uses cookies to deliver its service and to analyze traffic. By browsing this site, you accept the privacy policy: https://www.overleaf.com/legal

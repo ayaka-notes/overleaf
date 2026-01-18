@@ -14,7 +14,7 @@ Point `OVERLEAF_REDIS_HOST` (`SHARELATEX_REDIS_HOST` for versions `4.x` and earl
 
 ## S3 compatible storage for project and history files
 
-Please see the documentation on [S3 compatible storage](s3.md) for details.
+Please see the documentation on [S3 compatible storage](configuration/overleaf-toolkit/s3.md) for details.
 
 ## Ephemeral files
 

@@ -1,3 +1,7 @@
+---
+icon: memo-circle-info
+---
+
 # Logging
 
 You can use the `bin/logs` script to view logs for the services.

@@ -2,9 +2,15 @@
 icon: github
 ---
 
-# Using the GitHub Codespace
+# Using GitHub Codespace
 
 The easiest way to setup your Overleaf CEP is to use GitHub Codespace, where all environment variables are pre-configured to ensure you can use it out of the box.
+
+{% hint style="warning" %}
+When you run Docker containers using GitHub Codespaces, the Codespace will not automatically shut down and will continue to be **billed**. For GitHub Codespaces billing rules, please refer to [github codespaces billing rules](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces).
+
+To manage your GitHub Codespaces, please visit [https://github.com/codespaces](https://github.com/codespaces). When you no longer need it, please delete your Codespace in time.
+{% endhint %}
 
 We have **pre-configured** the following features:
 
@@ -38,7 +44,7 @@ When your codespace is ready, run the following command in your bash to Initiali
 You may need to wait for at least 3 mins before we pull all the docker images you need.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -64,7 +70,7 @@ Input your admin account and password, then click Register button.
 
 Now, time to enjoy your $$\LaTeX$$ writing!
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 

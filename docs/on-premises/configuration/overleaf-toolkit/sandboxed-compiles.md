@@ -30,7 +30,7 @@ As Server Pro has been architected to work offline, there isn't an automated way
 Sandboxed Compiles requires that the `sharelatex` container has access to the Docker socket on the host machine (via a bind mount) so it can manage these sibling compile containers.
 {% endhint %}
 
-### How it works
+## How it works
 
 When Sandboxed Compiles are enabled, the Docker socket will be mounted from the host machine into the `sharelatex` container, so that the compiler service in the container can create new Docker containers on the host. Then for each run of the compiler in each project, the LaTeX compiler service (CLSI) will do the following:
 
@@ -105,6 +105,10 @@ If you use official texlive image `texlive/texlive:latest-full` , you may encoun
 The three biggest issues with the official texlive image are ❶ re-compile errors, ❷ glossaries not working, and ❸ missing fonts. So we highly recommend [ayaka-notes/texlive-full](https://github.com/ayaka-notes/texlive-full), which can provide you with extreme excellent experience.
 {% endhint %}
 
+{% hint style="danger" %}
+It's highly recommended to set **at least 2 texlive-full images**. For detailed reason, see [#known-issues](sandboxed-compiles.md#known-issues "mention")
+{% endhint %}
+
 When the compilation takes place in a dedicated container, it is relatively safe to permit running external commands from inside the TeX file during compilation. This is required for packages like `minted`. For this purpose, the following environment variable can be used:
 
 * `TEX_COMPILER_EXTRA_FLAGS`
@@ -124,3 +128,55 @@ These are a series of TeX Live images that are specially optimized for Overleaf,
 {% hint style="warning" %}
 There is a strict schema concerning how images **must** be tagged (the following regex applies `^[0-9]+.[0-9]+`, for which the first number determines the TeX Live year and the second the patch version).
 {% endhint %}
+
+### Known Issues
+
+> Using `6.0.1-ext-v3.3`, I have these settings in `variables.env`:
+>
+> ```dotenv
+> TEX_LIVE_DOCKER_IMAGE=texlive/texlive:latest-full
+> ALL_TEX_LIVE_DOCKER_IMAGES=texlive/texlive:latest-full
+> ```
+>
+> This works fine with `texlive/texlive:latest-full`. However, i pulled another texlive image `danteev/texlive:2025-10-15` and changed both of these variables to the new image name but it doesn't work:
+>
+> ```dotenv
+> TEX_LIVE_DOCKER_IMAGE=danteev/texlive:2025-10-15
+> ALL_TEX_LIVE_DOCKER_IMAGES=danteev/texlive:2025-10-15
+> ```
+>
+> In the logs, i see the following:
+>
+> {% code overflow="wrap" %}
+> ```
+> {"name":"clsi","level":50,"err":{"message":"(HTTP code 404) no such container - No such image: texlive/texlive:latest-full ","name":"Error","stack":"Error: (HTTP code 404) no such container - No such image: texlive/texlive:latest-full ... 
+> ```
+> {% endcode %}
+>
+> It seems that the updated settings in `variables.env` are not taking effect. Compile still tries to run the `texlive/texlive:latest-full` image, not the new image.
+>
+> I tried rebooting, deleting the containers and re-run, but still the same issue.
+>
+> Any solutions?
+
+Due to some technical limitations, if you only set up a single Docker TeXLive image, such as `texlive-fullA:latest`&#x20;
+
+```
+ALL_TEX_LIVE_DOCKER_IMAGES=texlive/texliveA:latest-full
+ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=TeXLiveA
+TEX_LIVE_DOCKER_IMAGE=texlive/texliveA:latest-full
+```
+
+And after running your overleaf instance for a while, you might want to modify the TeXLive image to `texlive-fullB:latest`. Then, you will see that your users are unable to compile all projects.
+
+```
+ALL_TEX_LIVE_DOCKER_IMAGES=texlive/texliveA:latest-full
+ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=TeXLiveA
+TEX_LIVE_DOCKER_IMAGE=texlive/texliveA:latest-full
+```
+
+This is because the name of TeXLive-Full image(for sandbox compile) in each project is persisted in the database. When user switch his project's TeXLive verion, for example, from 2024 to 2025, will the  image name be changed.
+
+When CLSI compiles a project, it uses the container image name found in the database to directly compile the project.
+
+If you only provide one Docker image, users will not be able to modify the image used to compile the project. In this case, you need to write a script to **manually modify** the TeXLive image for all user projects in mongoDB.

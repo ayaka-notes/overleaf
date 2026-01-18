@@ -1,3 +1,7 @@
+---
+icon: truck-medical
+---
+
 # Getting help
 
 ### The Doctor
@@ -5,26 +9,20 @@
 The Overleaf Toolkit comes with a handy `doctor` script to help with debugging. Run `bin/doctor` and the script will print information about your host environment, your configuration, and the dependencies the Toolkit needs. This output can also help the Overleaf support team diagnose issues for Server Pro installations.
 
 {% hint style="info" %}
-Users of the free Community Edition should open an issue on GitHub: https://github.com/overleaf/toolkit/issues
+Users of the Overleaf CEP can [open an issue on GitHub](https://github.com/ayaka-notes/overleaf/issues).
 
-Users of Server Pro should contact support+serverpro@overleaf.com for assistance.
-
-In both cases, include the output of the `bin/doctor` script in your message.
+it is a good idea to include the output of the `bin/doctor` script in your message.
 {% endhint %}
 
-{% stepper %}
-{% step %}
-### Run the doctor script
+### Consulting with the Doctor <a href="#consulting-with-the-doctor" id="consulting-with-the-doctor"></a>
 
-Execute:
+Run the doctor script:
 
 {% code title="Run doctor" %}
 ```bash
 bin/doctor
 ```
 {% endcode %}
-{% endstep %}
-{% endstepper %}
 
 You will see output similar to the example below.
 

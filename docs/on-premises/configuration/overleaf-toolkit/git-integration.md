@@ -66,7 +66,7 @@ You’ll also need to link the `git-bridge` container in the `sharelatex` contai
 
 When authenticating a git client, users need a Personal Access Token. Users can manage Personal Access Tokens through the application UI (see the documentation):
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Git Intergration Personal Access Token</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Git Intergration Personal Access Token</p></figcaption></figure>
 {% endstep %}
 
 {% step %}

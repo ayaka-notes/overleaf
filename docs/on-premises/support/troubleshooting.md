@@ -1,3 +1,7 @@
+---
+icon: comments-question-check
+---
+
 # Troubleshooting
 
 {% hint style="info" %}

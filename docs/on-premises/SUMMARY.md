@@ -18,7 +18,7 @@
 ## installation
 
 * [Introduction](installation/introduction.md)
-* [Using the GitHub Codespace](installation/using-the-github-codespace.md)
+* [Using GitHub Codespace](installation/using-the-github-codespace.md)
 * [Using the Toolkit](installation/using-the-toolkit/README.md)
   * [1. Download the Toolkit](installation/using-the-toolkit/1.-download-the-toolkit.md)
   * [2. Familiarize yourself with the Toolkit](installation/using-the-toolkit/2.-familiarize-yourself-with-the-toolkit.md)
@@ -31,12 +31,19 @@
 
 * [Overleaf Toolkit](configuration/overleaf-toolkit/README.md)
   * [Files and locations](configuration/overleaf-toolkit/files-and-locations.md)
+  * [Toolkit settings](configuration/overleaf-toolkit/toolkit-settings.md)
+  * [Environment variables](configuration/overleaf-toolkit/environment-variables.md)
   * [Sandboxed Compiles](configuration/overleaf-toolkit/sandboxed-compiles.md)
-  * [Localization](configuration/overleaf-toolkit/localization.md)
   * [Git integration](configuration/overleaf-toolkit/git-integration.md)
   * [Templates](configuration/overleaf-toolkit/templates.md)
   * [External URL](configuration/overleaf-toolkit/external-url.md)
+  * [Logging](configuration/overleaf-toolkit/logging.md)
+  * [TLS proxy](configuration/overleaf-toolkit/tls-proxy.md)
+  * [Branding](configuration/overleaf-toolkit/branding.md)
+  * [Localization](configuration/overleaf-toolkit/localization.md)
+  * [Password restrictions](configuration/overleaf-toolkit/password-restrictions.md)
   * [Redis](configuration/overleaf-toolkit/redis.md)
+  * [S3(need modification)](configuration/overleaf-toolkit/s3.md)
 
 ## User and project management
 
@@ -48,32 +55,26 @@
 * [project-management](user-and-project-management/project-management/README.md)
   * [Bulk transfer of project ownership](user-and-project-management/project-management/bulk-transfer-of-project-ownership.md)
 
+## Support
+
+* [Project limits](support/project-limits.md)
+* [Troubleshooting](support/troubleshooting.md)
+* [Getting help](support/getting-help.md)
+* [Support guides](support/support-guides/README.md)
+  * [Using templates as an individual](support/support-guides/using-templates-as-an-individual.md)
+
 ***
 
 * [Upgrading TeX Live](upgrading-tex-live.md)
-* [Before you start](before-you-start.md)
-* [Release notes 4.x.x](release-notes-4.x.x.md)
-* [TLS proxy](tls-proxy.md)
-* [Release notes 3.x.x](release-notes-3.x.x.md)
-* [Toolkit settings](toolkit-settings.md)
 * [SAML 2.0](saml-2.0.md)
 * [Email delivery](email-delivery.md)
-* [Logging](logging.md)
-* [Branding](branding.md)
 * [Introduction](introduction.md)
 * [Doc version recovery](doc-version-recovery.md)
 * [Air-gapped/offline deployments](air-gapped-offline-deployments.md)
 * [Full project history migration](full-project-history-migration.md)
 * [LDAP](ldap.md)
-* [Release notes 2.x.x](release-notes-2.x.x.md)
 * [Adding LaTeX user help](adding-latex-user-help.md)
 * [Environment variables](environment-variables.md)
-* [Password restrictions](password-restrictions.md)
-* [support](support/README.md)
-  * [Getting help](support/getting-help.md)
-  * [Support guides](support/support-guides/README.md)
-    * [Using templates as an individual](support/support-guides/using-templates-as-an-individual.md)
-* [Project limits](project-limits.md)
 * [maintenance](maintenance/README.md)
   * [Data and backups](maintenance/data-and-backups/README.md)
     * [Exporting projects](maintenance/data-and-backups/exporting-projects.md)
@@ -81,7 +82,5 @@
   * [Upgrading your deployment](maintenance/upgrading-your-deployment.md)
   * [S3 migration](maintenance/s3-migration.md)
   * [Updating MongoDB](maintenance/updating-mongodb.md)
-* [S3](s3.md)
 * [Extending TeX Live](extending-tex-live.md)
-* [Troubleshooting](troubleshooting.md)
 * [Horizontal scaling](horizontal-scaling.md)

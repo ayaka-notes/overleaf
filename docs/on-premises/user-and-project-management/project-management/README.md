@@ -37,7 +37,7 @@ The admin panel in Server Pro has a dedicated page per project. You can either g
 Note that the previous owner will be added as a collaborator with read-and-write access to the project as part of the ownership transfer process.
 {% endhint %}
 
-\## Updating project compile timeout
+### Updating project compile timeout&#x20;
 
 The default compile timeout for projects is currently set to 180 seconds. Changing this value is possible and requires a two-step process.
 
@@ -58,7 +58,7 @@ You can find information about performing back-ups [here](../../maintenance/data
 To update the compile timeout value on all existing users you'll need to run the following shell command on the Docker host:
 
 {% code overflow="wrap" %}
-```
+```bash
 echo 'db.users.updateMany({}, {$set: {"features.compileTimeout": <value>}})' | docker exec -i mongo mongosh --quiet localhost/sharelatex
 ```
 {% endcode %}
@@ -72,7 +72,7 @@ After the command completes, you should see an acknowledgement with the number o
 It is possible to see who and when a project is loaded with the following command:
 
 {% code overflow="wrap" %}
-```</div>
+```bash
 docker exec sharelatex bash -c 'grep "join project request" /var/log/overleaf/web.log'
 ```
 {% endcode %}

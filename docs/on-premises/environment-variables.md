@@ -29,10 +29,10 @@ The name to display when talking about the running application. Defaults to 'Ove
 The URL of the Mongo database to use.
 
 `OVERLEAF_REDIS_HOST` and `REDIS_HOST`\
-The host name of the Redis instance to use. Both are required (see [release notes](release-notes-2.x.x.md#changes-to-the-docker-compose-file-format)).
+The host name of the Redis instance to use. Both are required (see [release notes](/broken/pages/feb29583707671142ff031939bdd07535af5facc#changes-to-the-docker-compose-file-format)).
 
 `OVERLEAF_REDIS_PORT` and `REDIS_PORT`\
-The port of the Redis instance to use. Both are required (see [release notes](release-notes-2.x.x.md#changes-to-the-docker-compose-file-format)).
+The port of the Redis instance to use. Both are required (see [release notes](/broken/pages/feb29583707671142ff031939bdd07535af5facc#changes-to-the-docker-compose-file-format)).
 
 `OVERLEAF_REDIS_PASS` and `REDIS_PASSWORD`\
 The password to use when connecting to Redis (if applicable). **Both** environment variables need to be set. See [enabling password authentication](configuration/overleaf-toolkit/redis.md) for more infomration.
