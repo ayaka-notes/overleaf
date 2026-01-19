@@ -90,11 +90,11 @@ cd toolkit && bin/init
 
 
 {% columns %}
-{% column width="41.666666666666664%" %}
+{% column width="33.33333333333333%" %}
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FvnT8IAADTAThJZZpvM7Q%2Fuploads%2FMVJjuRaBQnhqbqkw8YpL%2Fvisual-editor.mp4?alt=media&token=13e11fa4-e682-460f-9555-ad9b419fe953" %}
 {% endcolumn %}
 
-{% column width="58.333333333333336%" %}
+{% column width="66.66666666666667%" %}
 ### <i class="fa-globe">:globe:</i>  Enjoy Online $$\LaTeX$$ Editor
 
 No downloads, no setup, and no need to know $$\LaTeX$$ before you start.
@@ -104,7 +104,7 @@ No downloads, no setup, and no need to know $$\LaTeX$$ before you start.
 * Detailed guidance and LaTeX learning
 * Stellar support from real-life TeXperts
 
-<p align="right"><a href="https://www.overleaf.com/" class="button primary" data-icon="leaf">Go Overleaf Official</a></p>
+<p align="right"><a href="https://www.overleaf.com/" class="button primary" data-icon="leaf">Go Overleaf Official</a><a href="https://www.overleaf.com/learn" class="button secondary" data-icon="book-open">Learn LaTeX</a></p>
 {% endcolumn %}
 {% endcolumns %}
 
@@ -152,7 +152,7 @@ Say goodbye to endless rounds of email feedback.
 
 There aren't many Overleaf `developer` resources available online.
 
-Here you can find the most of Overleaf's architecture and developer tools.
+Here you can find the most of Overleaf's architecture and developer tools, also some debug skills.
 
 <p align="right"><a href="https://app.gitbook.com/o/aXieu2C3Ngt9u0fFRG9K/s/I2qEfJyb19sFvDmuZcCm/" class="button secondary" data-icon="book">Developer Documentation</a> </p>
 {% endcolumn %}
