@@ -33,7 +33,7 @@ metaLinks:
 
 <p align="center"><mark style="color:$primary;"><strong>No Compile Limit | No Storage Limit  | Easy Collaborative | Instant Setup</strong></mark></p>
 
-<p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/installation/using-the-github-codespace" class="button primary" data-icon="rocket-launch">Get Started</a> <a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
+<p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/getting-started" class="button primary" data-icon="rocket-launch">Get Started</a> <a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
 
 <p align="center"></p>
 
