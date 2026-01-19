@@ -1,5 +1,5 @@
 ---
-icon: dev
+icon: envira
 ---
 
 # Setup Develop Environment
