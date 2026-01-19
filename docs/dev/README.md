@@ -1,9 +1,11 @@
-# For Developers
+---
+icon: atom-simple
+---
 
-Here we provide some resources for Overleaf developers, such as how to set up an Overleaf development environment, to help more community contributors understand the Overleaf architecture.
+# TeXLive
 
-* [setup-develop-environment.md](environment/setup-develop-environment.md "mention")
-* [setup-develop-tools.md](environment/setup-develop-tools.md "mention")
+[TeX Live](https://www.tug.org/texlive/) is a free software distribution published annually by [The TeX Users Group](https://www.tug.org/). It provides the LaTeX packages, fonts, TeX engines, and numerous software tools required to support LaTeX-based typesetting on all standard operating systems.
 
+TeX Live is an important component of Overleaf because our servers use it to compile your LaTeX code and generate the real-time PDF preview. It also provides Overleaf’s users with easy access to over 5,000 LaTeX packages contained in each TeX Live release.
 
-
+You are not restricted to using the latest version of TeX Live to compile your projects because Overleaf’s servers provide access to previous TeX Live releases. Projects can easily be switched to use an earlier version of TeX Live — for example, due to issues with package compatibility.<br>
