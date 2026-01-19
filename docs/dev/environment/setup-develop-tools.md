@@ -12,7 +12,7 @@ These optional services are not required to run Overleaf, but they are highly re
   * Frontend: [http://localhost:3000](http://localhost:3000/)
   * Proxy (for CORS bypass): [http://localhost:9159](http://localhost:9159/)
 * **RedisInsight** provides a visual interface for inspecting Redis data. UI available at: [http://localhost:5540](http://localhost:5540/)
-* **Mongo Express** is a web-based UI for MongoDB. You can visit [http://localhost:8081](http://localhost:8081/) with **credentials**: `admin/pass` &#x20;
+* **Mongo Express** is a web-based UI for MongoDB. You can visit [http://localhost:8081](http://localhost:8081/) with **credentials**: `admin:pass`
 
 ### Setup Hoppscotch
 
