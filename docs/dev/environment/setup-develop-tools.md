@@ -38,7 +38,76 @@ In your console, you may see:
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-To deal with this in your overleaf development, you need to setup your csrf token.
+To deal with this in your overleaf development, you need to setup your csrf token. Here is the detailed tutorial.
+
+{% stepper %}
+{% step %}
+### Add Pre Request
+
+Add the following code to Pre-Request
+
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+The script is as list:
+
+{% code overflow="wrap" %}
+```js
+pm.sendRequest("http://web:3000/dev/csrf", function (err, res) {
+    if (err) {
+        console.log(err);
+        return;
+    }
+
+    // 1) Save CSRF token (/dev/csrf)
+    const token = res.text().trim();
+    pw.env.set("csrftoken", token);
+    console.log("csrftoken =", token);
+
+    const setCookieHeader = (res.headers || []).find(h => h.key?.toLowerCase() === "set-cookie")?.value;
+    console.log("set-cookie =", setCookieHeader);
+
+    if (!setCookieHeader) return;
+
+    const cookiePair = setCookieHeader.split(";")[0].trim(); // overleaf.sid=...
+    pw.env.set("cookie_header", cookiePair);
+    console.log("cookie_header =", cookiePair);
+});
+```
+{% endcode %}
+{% endstep %}
+
+{% step %}
+### Add Request Header
+
+You need to add the following headers:
+
+| Header Name  | Header Value        |
+| ------------ | ------------------- |
+| Content-Type | `application/json`  |
+| X-Csrf-Token | `<<csrftoken>>`     |
+| Cookie       | `<<cookie_header>>` |
+
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Login with API Tools
+
+Now you can login with your username and password.
+
+```json5
+{
+  "_csrf": "<<csrftoken>>",
+  "email": "admin@overleaf.com",
+  "password": "xxxxxx"
+}
+```
+
+Here is the response when you input the wrong username or password.
+
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+{% endstepper %}
 
 ## Example
 
