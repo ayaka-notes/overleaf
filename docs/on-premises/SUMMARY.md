@@ -35,6 +35,7 @@
   * [Files and locations](configuration/overleaf-toolkit/files-and-locations.md)
   * [Toolkit settings](configuration/overleaf-toolkit/toolkit-settings.md)
   * [Environment variables](configuration/overleaf-toolkit/environment-variables.md)
+  * [Public Registration](configuration/overleaf-toolkit/public-registration.md)
   * [OIDC Authentication](configuration/overleaf-toolkit/oidc-authentication.md)
   * [SAML Authentication](configuration/overleaf-toolkit/saml-authentication.md)
   * [LDAP Authentication](configuration/overleaf-toolkit/ldap-authentication.md)
@@ -82,7 +83,3 @@
   * [(v5.0.1 Migration) Doc version recovery](support/support-guides/doc-version-recovery.md)
   * [(v5.5.7 Migration) Binary files migration](support/support-guides/v5.5.7-migration-binary-files-migration.md)
   * [(v3.5.13 Migration)  Full project history migration](support/support-guides/full-project-history-migration.md)
-
-***
-
-* [maintenance](maintenance-1.md)

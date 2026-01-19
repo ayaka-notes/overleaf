@@ -4,7 +4,7 @@ icon: git-alt
 
 # Git integration
 
-The Git integration is available for Overleaf CEP
+The Git integration is only available at [ayaka-notes/overleaf](https://github.com/ayaka-notes/overleaf) currently.
 
 {% stepper %}
 {% step %}

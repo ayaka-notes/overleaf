@@ -94,7 +94,7 @@ To remain on a supported track, you should be running one of the supported relea
 | ~~0.2~~ |       -      |    EOL    |         [~~0.2.0~~](/broken/pages/a773165fd2a954a4cd1632a74234c537029adf5d#release-notes-0.2.0)         |
 | ~~0.1~~ |       -      |    EOL    |    [~~0.1.4~~](/broken/pages/a773165fd2a954a4cd1632a74234c537029adf5d#release-notes-0.1.3-and-0.1.4)    |
 
-You can confirm what version of Server Pro / Community Edition you're running by comparing the output of the command below against the Image ID's published in the release notes.
+You can confirm what version of Overleaf you're running by comparing the output of the command below against the Image ID's published in the release notes.
 
 ```bash
 docker inspect --format '{{.Image}}' sharelatex | awk -F: '{print substr($2, 1, 12)}'
