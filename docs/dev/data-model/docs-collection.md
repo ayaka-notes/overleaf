@@ -1,0 +1,248 @@
+---
+icon: file-lines
+---
+
+# Docs Collection
+
+`Docs`: Docs is overleaf's internal term of an editable file, for example, a pure `tex` file, or a `.bib` file.  It stores the file content, revision information, and deletion state.
+
+#### Core Identification
+
+* `_id`: Unique MongoDB ObjectId identifying this document record.
+* `project_id`: Reference to the project (`Project._id`) this file belongs to.
+* `name`: Filename as shown in the project file tree (e.g., `main.tex`, `sample.bib`).
+
+#### Revision & Versioning
+
+* `rev`: Revision number of this document within the project history.
+* `version`: Internal schema or format version used by the editor backend.
+
+These fields are used by Overleaf’s custom versioning system to track incremental edits and support history and rollback.
+
+#### File Content
+
+*   `lines`:\
+    Array of strings representing the file content line by line.\
+    Each element corresponds to one logical line in the source file.
+
+    In this example, it stores a BibTeX entry:
+
+    * `@article{greenwade93, ... }`
+* `ranges`: Data structure reserved for editor annotations or tracked ranges\
+  (e.g., selections, comments, or change tracking). Empty when no active ranges are present. `op` Operation object that binds the comment to a specific position in the document.
+  * `op.c` — Comment Selected Text (Character Contents)
+  * `op.p` — Anchor Position (Character Offset)
+  * `id` Unique ObjectId of this comment entry.
+  * `metadata` Author and timestamp information.
+
+#### Deletion State
+
+* `deleted`:\
+  Indicates whether this document has been deleted from the project.
+* `deletedAt`:\
+  Timestamp recording when the document was deleted.
+
+Deleted documents are usually kept for history recovery and version browsing rather than being immediately removed from the database.
+
+Here is an real example for an Overleaf `docs`.
+
+<details>
+
+<summary>A Simple Example</summary>
+
+```json5
+{
+    _id: ObjectId('696b8377933aeebb3d3cc25e'),
+    project_id: ObjectId('696b8377933aeebb3d3cc252'),
+    rev: 1,
+    lines: [
+        '@article{greenwade93,',
+        '    author  = "George D. Greenwade",',
+        '    title   = "The {C}omprehensive {T}ex {A}rchive {N}etwork ({CTAN})",',
+        '    year    = "1993",',
+        '    journal = "TUGBoat",',
+        '    volume  = "14",',
+        '    number  = "3",',
+        '    pages   = "342--351"',
+        '}',
+        ''
+    ],
+    ranges: {},
+    version: 0,
+    deleted: true,
+    deletedAt: ISODate('2026-01-17T13:11:42.580Z'),
+    name: 'sample.bib'
+}
+```
+
+
+
+</details>
+
+<details>
+
+<summary>A Complicated Example</summary>
+
+```json5
+{
+    _id: ObjectId('69678eeec17c56232dd8930a'),
+    project_id: ObjectId('69678eeec17c56232dd89305'),
+    rev: 2,
+    lines: [
+        '\\documentclass{article}',
+        '',
+        '% Language setting',
+        '% Replace `english\' with e.g. `spanish\' to change the document language',
+        '\\usepackage[english]{babel}',
+        '',
+        '% Set page size and margins',
+        '% Replace `letterpaper\' with `a4paper\' for UK/EU standard size',
+        '\\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}',
+        '',
+        '% Useful packages',
+        '\\usepackage{amsmath}',
+        '\\usepackage{graphicx}',
+        '\\usepackage[colorlinks=true, allcolors=blue]{hyperref}',
+        '',
+        '\\title{Your Paper}',
+        '\\author{You}',
+        '',
+        '\\begin{document}',
+        '\\maketitle',
+        '',
+        '\\begin{abstract}',
+        'Your abstract.',
+        '\\end{abstract}',
+        '',
+        '\\section{Introduction}',
+        '',
+        'Your introduction goes here! Simply start writing your document and use the Recompile button to view the updated PDF preview. Examples of commonly used commands and features are listed below, to help you get started.',
+        '',
+        'Once you\'re familiar with the editor, you can find various project settings in the Overleaf menu, accessed via the button in the very top left of the editor.',
+        '',
+        '\\section{Some examples to get started}',
+        '',
+        '\\subsection{How to create Sections and Subsections}',
+        '',
+        'Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you\'ve chosen. If you\'re using Rich Text mode, you can also create new section and subsections via the buttons in the editor toolbar.',
+        '',
+        '\\subsection{How to include Figures}',
+        '',
+        'First you have to upload the image file from your computer using the upload link in the file-tree menu. Then use the includegraphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \\ref{fig:frog} in this section for an example.',
+        '',
+        'Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by.',
+        '',
+        '\\begin{figure}',
+        '\\centering',
+        '\\includegraphics[width=0.25\\linewidth]{frog.jpg}',
+        '\\caption{\\label{fig:frog}This frog was uploaded via the file-tree menu.}',
+        '\\end{figure}',
+        '',
+        '\\subsection{How to add Tables}',
+        '',
+        'Use the table and tabular environments for basic tables --- see Table~\\ref{tab:widgets}, for example.',
+        '',
+        '\\begin{table}',
+        '\\centering',
+        '\\begin{tabular}{l|r}',
+        'Item & Quantity \\\\\\hline',
+        'Widgets & 42 \\\\',
+        'Gadgets & 13',
+        '\\end{tabular}',
+        '\\caption{\\label{tab:widgets}An example table.}',
+        '\\end{table}',
+        '',
+        '\\subsection{How to add Comments and Track Changes}',
+        '',
+        'Comments can be added to your project by highlighting some text and clicking ``Add comment\'\' in the top right of the editor pane. To view existing comments, click on the Review menu in the toolbar above. To reply to a comment, click on the Reply button in the lower right corner of the comment. You can close the Review pane by clicking its name on the toolbar when you\'re done reviewing for the time being.',
+        '',
+        'Track changes are available on all our premium plans, and can be toggled on or off using the option at the top of the Review pane. Track changes allow you to keep track of every change made to the document, along with the person making the change.',
+        '',
+        '\\subsection{How to add Lists}',
+        '',
+        'You can make lists with automatic numbering \\dots',
+        '',
+        '\\begin{enumerate}',
+        '\\item Like this,',
+        '\\item and like this.',
+        '\\end{enumerate}',
+        '\\dots or bullet points \\dots',
+        '\\begin{itemize}',
+        '\\item Like this,',
+        '\\item and like this.',
+        '\\end{itemize}',
+        '',
+        '\\subsection{How to write Mathematics}',
+        '',
+        '\\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \\ldots, X_n$ be a sequence of independent and identically distributed random variables with $\\text{E}[X_i] = \\mu$ and $\\text{Var}[X_i] = \\sigma^2 < \\infty$, and let',
+        '\\[S_n = \\frac{X_1 + X_2 + \\cdots + X_n}{n}',
+        '      = \\frac{1}{n}\\sum_{i}^{n} X_i\\]',
+        'denote their mean. Then as $n$ approaches infinity, the random variables $\\sqrt{n}(S_n - \\mu)$ converge in distribution to a normal $\\mathcal{N}(0, \\sigma^2)$.',
+        '',
+        '',
+        '\\subsection{How to change the margins and paper size}',
+        '',
+        'Usually the template you\'re using will have the page margins and paper size set correctly for that use-case. For example, if you\'re using a journal article template provided by the journal publisher, that template will be formatted according to their requirements. In these cases, it\'s best not to alter the margins directly.',
+        '',
+        'If however you\'re using a more general template, such as this one, and would like to alter the margins, a common way to do so is via the geometry package. You can find the geometry package loaded in the preamble at the top of this example file.',
+        '',
+        '\\subsection{How to change the document language and spell check settings}',
+        '',
+        'Overleaf supports many different languages, including multiple different languages within one document.',
+        '',
+        'To configure the document language, simply edit the option provided to the babel package in the preamble at the top of this example project.',
+        '',
+        'To change the spell check language, simply open the Overleaf menu at the top left of the editor window, scroll down to the spell check setting, and adjust accordingly.',
+        '',
+        '\\subsection{How to add Citations and a References List}',
+        '',
+        'You can simply upload a \\verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this: \\cite{greenwade93}. Just remember to specify a bibliography style, as well as the filename of the \\verb|.bib|.',
+        '',
+        '\\subsection{Good luck!}',
+        '',
+        'We hope you find Overleaf useful!',
+        '',
+        '\\bibliographystyle{alpha}',
+        '\\bibliography{sample}',
+        '',
+        '\\end{document}',
+        ''
+    ],
+    ranges: {
+        comments: [
+            {
+                id: ObjectId('696e0d122841260199000001'),
+                op: {
+                    c: 'Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you\'ve chosen. If you\'re using Rich Text mode, you can also create new section and subsections via the buttons in the editor toolbar.',
+                    p: 1053,
+                    t: ObjectId('696e0d122841260199000001')
+                },
+                metadata: {
+                    user_id: ObjectId('69661f10432ad80d8a7de39d'),
+                    ts: ISODate('2026-01-19T10:53:08.859Z')
+                }
+            },
+            {
+                id: ObjectId('696e0d158250b82ffb000001'),
+                op: {
+                    c: 'Once you\'re familiar with the editor, you can find various project settings in the Overleaf menu, accessed via the button in the very top left of the editor.',
+                    p: 801,
+                    t: ObjectId('696e0d158250b82ffb000001')
+                },
+                metadata: {
+                    user_id: ObjectId('69661f10432ad80d8a7de39d'),
+                    ts: ISODate('2026-01-19T10:53:10.909Z')
+                }
+            }
+        ]
+    },
+    version: 2
+}
+```
+
+
+
+</details>
+
+
+

@@ -2,9 +2,9 @@
 icon: user
 ---
 
-# User Schema
+# Users Collection
 
-This document represents a single user account in the Overleaf system. It stores authentication data, feature flags, editor preferences, access permissions, and activity metadata.
+`User` represents a single user account in the Overleaf system. It stores authentication data, feature flags, editor preferences, access permissions, and activity metadata.
 
 #### Core Identity & Authentication
 
@@ -87,7 +87,7 @@ Here is an real example for Overleaf User.
 
 <summary>User Example</summary>
 
-```json
+```json5
 {
     _id: ObjectId('69661f10432ad80d8a7de39d'),
     enrollment: {

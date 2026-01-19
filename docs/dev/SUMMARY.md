@@ -10,4 +10,6 @@
 ## Data Model
 
 * [Schemas In MongoDB](data-model/schemas-in-mongodb.md)
-* [User Schema](data-model/user-schema.md)
+* [Users Collection](data-model/users-collection.md)
+* [Projects Collection](data-model/projects-collection.md)
+* [Docs Collection](data-model/docs-collection.md)

@@ -14,8 +14,16 @@ Once you have setup your Mongo Express, you can login [http://localhost:8081/](h
 
 There are a ranges of schemas in mongoDB, here we mainly focus on Overleaf CE related:
 
-{% content-ref url="user-schema.md" %}
-[user-schema.md](user-schema.md)
+{% content-ref url="users-collection.md" %}
+[users-collection.md](users-collection.md)
+{% endcontent-ref %}
+
+{% content-ref url="projects-collection.md" %}
+[projects-collection.md](projects-collection.md)
+{% endcontent-ref %}
+
+{% content-ref url="docs-collection.md" %}
+[docs-collection.md](docs-collection.md)
 {% endcontent-ref %}
 
 
