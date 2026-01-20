@@ -1,8 +1,33 @@
 ---
+description: How to invite guests to join your Overleaf instance?
 icon: lock-open
 ---
 
-# Public Registration
+# Public Access
+
+You can offer your Overleaf instance to guests in two methods:
+
+* The first is through a project sharing link
+* The second is through public registration
+
+### Guest Access
+
+{% hint style="info" %}
+By default, even if a user obtains a project sharing link, they must **log in** before they can join a collaborative project editing session.
+{% endhint %}
+
+By default, even if a user obtains a project sharing link, they must **log in** before they can join a collaborative project editing session. If you want to disable this, there are 2 variables concerned:
+
+{% code title="config/variables.env" %}
+```dotenv
+OVERLEAF_ALLOW_ANONYMOUS_READ_AND_WRITE_SHARING=true
+OVERLEAF_ALLOW_PUBLIC_ACCESS=true
+```
+{% endcode %}
+
+After restart your instance with `bin/up`, you should be able to access any shared project without authentication.
+
+### Public Registration
 
 Public Registration is only available at [ayaka-notes/overleaf](https://github.com/ayaka-notes/overleaf) currently.
 

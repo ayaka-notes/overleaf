@@ -11,7 +11,7 @@ Here we offer some guidelines to install new packages or fonts, but the configur
 The TeX Live images receive infrequent updates. We suggest rebuilding custom images when upgrading Server Pro.
 
 {% hint style="danger" %}
-The following sections apply to Server Pro and [Sandboxed Compiles](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles) only.
+The following sections apply to Server Pro and [Sandboxed Compiles](../configuration/overleaf-toolkit/sandboxed-compiles.md) only.
 {% endhint %}
 
 ### Installing and updating new packages
@@ -19,7 +19,7 @@ The following sections apply to Server Pro and [Sandboxed Compiles](https://docs
 You can use `tlmgr` commands such as `tlmgr install` and `tlmgr update` to manage Tex Live packages as in the following example:
 
 ```dockerfile
-FROM quay.io/sharelatex/texlive-full:2023.1
+FROM ghcr.io/ayaka-notes/texlive-full:2023.1
 
 RUN tlmgr update --force ebproof
 ```
@@ -29,7 +29,7 @@ RUN tlmgr update --force ebproof
 By default `tlmgr` downloads resources from the latest TeX Live release. When patching an older TeX Live image, the downloads need to be switched to the respective archive. See the list in [https://www.tug.org/historic/](https://www.tug.org/historic/) for mirrors of archives.
 
 ```dockerfile
-FROM quay.io/sharelatex/texlive-full:2022.1
+FROM ghcr.io/ayaka-notes/texlive-full:2022.1
 
 RUN tlmgr option repository <MIRROR>/systems/texlive/<YEAR>/tlnet-final
 # e.g. RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2022/tlnet-final
@@ -44,7 +44,7 @@ There are different procedures to install new fonts in a Tex Live distribution, 
 The following `Dockerfile` shows an example of installing a TrueType font over an existing Tex Live 2022 image:
 
 ```dockerfile
-FROM quay.io/sharelatex/texlive-full:2022.1
+FROM ghcr.io/ayaka-notes/texlive-full:2022.1
 
 COPY ./myfonts/*.ttf /usr/share/fonts/truetype/myfont/
 
@@ -54,18 +54,18 @@ RUN fc-cache
 
 ### Configuring Server Pro to use the new images
 
-Use the name `quay.io/sharelatex/texlive-full` and a custom tag to build the new image, as in:
+Use the name `ghcr.io/ayaka-notes/texlive-full` and a custom tag to build the new image, as in:
 
 ```bash
-docker build -t quay.io/sharelatex/texlive-full:2023.1-custom
+docker build -t ghcr.io/ayaka-notes/texlive-full:2023.1-custom
 ```
 
 We can now configure Server Pro to use the new `2023.1-custom` image updating the `TEX_LIVE_DOCKER_IMAGE` and `ALL_TEX_LIVE_DOCKER_IMAGES` environment variables:
 
 {% code overflow="wrap" %}
 ```
-TEX_LIVE_DOCKER_IMAGE: "quay.io/sharelatex/texlive-full:2023.1-custom"
-ALL_TEX_LIVE_DOCKER_IMAGES: "quay.io/sharelatex/texlive-full:2023.1,quay.io/sharelatex/texlive-full:2023.1-custom"
+TEX_LIVE_DOCKER_IMAGE: "ghcr.io/ayaka-notes/texlive-full:2023.1-custom"
+ALL_TEX_LIVE_DOCKER_IMAGES: "ghcr.io/ayaka-notes/texlive-full:2023.1,ghcr.io/ayaka-notes/texlive-full:2023.1-custom"
 ```
 {% endcode %}
 

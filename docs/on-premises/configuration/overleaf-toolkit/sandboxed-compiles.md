@@ -21,9 +21,9 @@ To avoid manually installing packages, we recommend enabling Sandboxed Compiles.
 Enabling Sandboxed Compiles allows you to configure which TeX Live versions users are able to choose from within their project along with setting a default TeX Live image version for new projects.
 
 {% hint style="info" %}
-If you attempt to run Server Pro without Sandboxed Compiles, your instance will default to using a basic scheme version of TeX Live for compiles. This basic version is lightweight and only contains a very limited subset of LaTeX packages, which will most likely result in missing package errors for your users, especially if they try to use pre-built templates.
+If you attempt to run Overleaf CEP without Sandboxed Compiles, your instance will default to using a basic scheme version of TeX Live for compiles. This basic version is lightweight and only contains a very limited subset of LaTeX packages, which will most likely result in missing package errors for your users, especially if they try to use pre-built templates.
 
-As Server Pro has been architected to work offline, there isn't an automated way to integrate overleaf.com gallery templates into your on-premise installation; it is, however, possible to do this manually on a per-template basis. For more information on how this works, please check out our transferring templates from overleaf.com guide: https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/templates#transferring-templates-from-overleaf.com
+As Server Pro has been architected to work offline, there isn't an automated way to integrate overleaf.com gallery templates into your on-premise installation; it is, however, possible to do this manually on a per-template basis. For more information on how this works, please check out our transferring templates from overleaf.com guide: [#transferring-templates-from-overleaf.com](templates.md#transferring-templates-from-overleaf.com "mention")
 {% endhint %}
 
 {% hint style="info" %}

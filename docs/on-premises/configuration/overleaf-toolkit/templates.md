@@ -99,3 +99,24 @@ TEMPLATE_ALL_NAME=All templates
 TEMPLATE_ALL_DESCRIPTION=Browse a collection of all available LaTeX templates, categorized by document type, style, and purpose.
 
 ```
+
+### Transferring templates from overleaf.com <a href="#transferring-templates-from-overleaf.com" id="transferring-templates-from-overleaf.com"></a>
+
+As Overleaf CEP has been architected to work offline, there isn't an automated way to integrate [overleaf.com](https://www.overleaf.com/) gallery templates into your on-premise installation, it is however possible to do this manually on a per template basis.
+
+By default, CEP is configured to use a basic scheme version of TeXLive for compiles. This basic version is lightweight and only contains a very limited subset of LaTeX packages which, will most likely result in missing package errors for your users when attempting to use templates from [overleaf.com](https://www.overleaf.com/) on your local on-premise instance.
+
+Unfortunately, whilst there isn't an automatic way to install missing packages, we do have a configurable setting within Server Pro that will allow your users to compile projects with access to more packages, and in a more secure way. This feature is called [Sandbox Compiles](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles) (also known as Sibling Containers).
+
+To ensure that downloaded templates are compatible with your on-premise Server Pro instance, we highly recommend that you enable [Sandbox Compiles](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles) as this feature will provide your users with access to the same TeX Live environment as that on [overleaf.com](https://www.overleaf.com/). These images contain the most popular packages and fonts and have already been tested against our gallery templates.
+
+You can find additional information about configuring what TeX Live versions users are able to choose from within their project along with setting the default TeX Live image version for new projects in the [Changing the TeX Live Image](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles#changing-the-tex-live-image) section of our documentation.
+
+1. Navigate to the [Template Gallery](https://www.overleaf.com/latex/templates) on [overleaf.com](https://www.overleaf.com/) and locate the required template, for example [IEEE Photonics Journal Paper Template - Example Submission](https://www.overleaf.com/latex/examples/ieee-photonics-journal-paper-template-example-submission/bsfjjfkdsjds)
+2. Click on the **Open as Template** button
+3. Click on the project menu and choose **Download Source**
+4. Next, log into the on-premise Server Pro account
+5. Click the **New Project** button from the projects dashboard and choose **Upload Project**
+6. Click the **Select a .zip file** button and choose the downloaded template zip file
+
+The user can then use this newly uploaded template within their own account, or, as the templates user, you can publish it for other users to use.

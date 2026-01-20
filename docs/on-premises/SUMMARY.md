@@ -35,7 +35,7 @@
   * [Files and locations](configuration/overleaf-toolkit/files-and-locations.md)
   * [Toolkit settings](configuration/overleaf-toolkit/toolkit-settings.md)
   * [Environment variables](configuration/overleaf-toolkit/environment-variables.md)
-  * [Public Registration](configuration/overleaf-toolkit/public-registration.md)
+  * [Public Access](configuration/overleaf-toolkit/public-access.md)
   * [OIDC Authentication](configuration/overleaf-toolkit/oidc-authentication.md)
   * [SAML Authentication](configuration/overleaf-toolkit/saml-authentication.md)
   * [LDAP Authentication](configuration/overleaf-toolkit/ldap-authentication.md)
