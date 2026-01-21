@@ -99,6 +99,14 @@ Once the services are running, open [http://localhost/launchpad](http://localhos
 {% endstep %}
 {% endstepper %}
 
+{% hint style="info" %}
+By default admin privilege is not available. you need to add this to `develop/dev.env`. After that, you can have access to Admin panel.
+
+```
+ADMIN_PRIVILEGE_AVAILABLE=true
+```
+{% endhint %}
+
 ### TeX Live
 
 Compiling a PDF requires building a TeX Live image to handle the compilation inside Docker:
