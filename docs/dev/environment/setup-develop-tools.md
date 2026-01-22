@@ -14,6 +14,58 @@ These optional services are not required to run Overleaf, but they are highly re
 * **RedisInsight** provides a visual interface for inspecting Redis data. UI available at: [http://localhost:5540](http://localhost:5540/)
 * **Mongo Express** is a web-based UI for MongoDB. You can visit [http://localhost:8081](http://localhost:8081/) with **credentials**: `admin:pass`
 
+Please add the following to your `docker-compose.yml` :
+
+<details>
+
+<summary>develop/docker-compose.yml</summary>
+
+{% code title="develop/docker-compose.yml" %}
+```yml
+services: 
+  # Overleaf Dev Containers
+  # ...
+  
+  # Add those for your development
+  # API debug
+  hoppscotch-frontend:
+    image: hoppscotch/hoppscotch-frontend:latest
+    ports:
+      - "3000:3000"
+
+  hoppscotch-proxy:
+    image: hoppscotch/proxyscotch:latest
+    environment:
+      - PORT=9159
+    ports:
+      - "9159:9159"
+
+
+  # Redis-insight
+  redis-insight:
+    image: redislabs/redisinsight:latest
+    ports:
+      - "5540:5540"
+    depends_on:
+      - redis
+    volumes:
+      - ./data/redis-insight:/data
+
+  # mongo-express
+  # basicAuth credentials are "admin:pass"
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+```
+{% endcode %}
+
+
+
+</details>
+
 ### Setup Hoppscotch
 
 #### Proxy API Request
@@ -109,56 +161,3 @@ Here is the response when you input the wrong username or password.
 {% endstep %}
 {% endstepper %}
 
-## Example
-
-Add the following to your `develop/docker-compose.yml`
-
-<details>
-
-<summary>develop/docker-compose.yml</summary>
-
-{% code title="develop/docker-compose.yml" %}
-```yml
-services: 
-  # Overleaf Dev Containers
-  # ...
-  
-  # Add those for your development
-  # API debug
-  hoppscotch-frontend:
-    image: hoppscotch/hoppscotch-frontend:latest
-    ports:
-      - "3000:3000"
-
-  hoppscotch-proxy:
-    image: hoppscotch/proxyscotch:latest
-    environment:
-      - PORT=9159
-    ports:
-      - "9159:9159"
-
-
-  # Redis-insight
-  redis-insight:
-    image: redislabs/redisinsight:latest
-    ports:
-      - "5540:5540"
-    depends_on:
-      - redis
-    volumes:
-      - ./data/redis-insight:/data
-
-  # mongo-express
-  # basicAuth credentials are "admin:pass"
-  mongo-express:
-    image: mongo-express
-    ports:
-      - "8081:8081"
-    environment:
-      ME_CONFIG_MONGODB_SERVER: mongo
-```
-{% endcode %}
-
-
-
-</details>

@@ -2,6 +2,10 @@
 
 * [For Developers](README.md)
 
+## Before Start
+
+* [Understand Branch Model](before-start/understand-branch-model.md)
+
 ## Environment
 
 * [Setup Develop Environment](environment/setup-develop-environment.md)

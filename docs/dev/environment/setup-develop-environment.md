@@ -10,6 +10,7 @@ Overleaf is a typical open-source project for microservice architecture, with al
 
 * The Official Community Edition source code is on [GitHub Overleaf Official](https://github.com/overleaf/overleaf/tree).&#x20;
 * The source code for Overleaf-CEP is available on [GitHub Yu-i-i/Overleaf](https://github.com/yu-i-i/overleaf-cep).
+* Overleaf @Ayaka-notes Edition is availabe on [GitHub Ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
 
 To set up an Overleaf development environment, you'll need a powerful server; a configuration of at least 8 cores and 16GB of RAM is recommended, as you'll need to run more than 20 containers simultaneously.
 
