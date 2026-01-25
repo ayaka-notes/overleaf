@@ -4,7 +4,7 @@
 
 ## Before Start
 
-* [Understand Branch Model](before-start/understand-branch-model.md)
+* [Development Guidelines](before-start/development-guidelines.md)
 
 ## Environment
 

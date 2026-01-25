@@ -38,7 +38,7 @@ First of all let's clone the repo:
 
 {% code title="bash" %}
 ```bash
-git clone https://github.com/yu-i-i/overleaf-cep.git
+git clone https://github.com/ayaka-notes/overleaf-pro.git
 cd overleaf-cep
 ```
 {% endcode %}
@@ -86,7 +86,7 @@ If Docker is running out of RAM while building the services in parallel, create 
 {% endstep %}
 
 {% step %}
-### Start  All Services
+### Start  All Micro Services
 
 Then start the services:
 
@@ -117,6 +117,8 @@ docker build texlive -t texlive-full
 ```
 
 To compile on a macOS host, you may need to override the path to the Docker socket by creating a `.env` file in this directory, containing `DOCKER_SOCKET_PATH=/var/run/docker.sock.raw`
+
+Also, you are welcome to use [ayaka-notes/texlive-full](https://github.com/ayaka-notes/texlive-full), but you can use base tag, which is the minium version of texlive.
 
 ### Development
 
