@@ -8,8 +8,10 @@
 
 ## Environment
 
-* [Setup Develop Environment](environment/setup-develop-environment.md)
+* [Setup Develop Environment (Local)](environment/setup-develop-environment-local.md)
+* [Setup Develop Environment (Codespace)](environment/setup-develop-environment-codespace.md)
 * [Setup Develop Tools](environment/setup-develop-tools.md)
+* [Setup Sandbox Compiles](environment/setup-sandbox-compiles.md)
 
 ## Data Model
 

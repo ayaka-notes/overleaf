@@ -1,8 +1,9 @@
 ---
+description: Setup your development environment with your local server or desktop.
 icon: envira
 ---
 
-# Setup Develop Environment
+# Setup Develop Environment (Local)
 
 ## Prerequisites
 
@@ -97,6 +98,10 @@ bin/up
 {% endcode %}
 
 Once the services are running, open [http://localhost/launchpad](http://localhost/launchpad) to create the first admin account.
+
+{% hint style="danger" %}
+You must run `bin/up` before run `bin/dev` commnad. Otherwise you may encounter a series of permission problems.
+{% endhint %}
 {% endstep %}
 {% endstepper %}
 

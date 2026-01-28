@@ -22,7 +22,7 @@ Please add the following to your `docker-compose.yml` :
 
 {% code title="develop/docker-compose.yml" %}
 ```yml
-services: 
+# services: 
   # Overleaf Dev Containers
   # ...
   
@@ -72,11 +72,11 @@ services:
 
 To setup Hoppscotch, you can visit [http://localhost:3000](http://localhost:3000/), then go to setting tab. You need to set `Proxy` to [http://localhost:9159](http://localhost:9159/), so that your debug tools can interact with container internal Networks.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now you can test with [http://web:3000/status](http://web:3000/status) to check if web is alive:
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### CSRF Problems
 
