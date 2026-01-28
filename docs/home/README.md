@@ -1,7 +1,7 @@
 ---
 description: Welcome to your team’s developer platform
 layout:
-  width: wide
+  width: default
   title:
     visible: false
   description:
@@ -33,7 +33,7 @@ metaLinks:
 
 <p align="center"><mark style="color:$primary;"><strong>No Compile Limit | No Storage Limit  | Easy Collaborative | Instant Setup</strong></mark></p>
 
-<p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/getting-started" class="button primary" data-icon="rocket-launch">Get Started</a> <a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
+<p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/installation/using-the-github-codespace" class="button primary" data-icon="rocket-launch">Get Started</a> <a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
 
 <p align="center"></p>
 
@@ -90,11 +90,11 @@ cd toolkit && bin/init
 
 
 {% columns %}
-{% column width="33.33333333333333%" %}
+{% column width="41.66666666666667%" %}
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FvnT8IAADTAThJZZpvM7Q%2Fuploads%2FMVJjuRaBQnhqbqkw8YpL%2Fvisual-editor.mp4?alt=media&token=13e11fa4-e682-460f-9555-ad9b419fe953" %}
 {% endcolumn %}
 
-{% column width="66.66666666666667%" %}
+{% column width="58.33333333333333%" %}
 ### <i class="fa-globe">:globe:</i>  Enjoy Online $$\LaTeX$$ Editor
 
 No downloads, no setup, and no need to know $$\LaTeX$$ before you start.
