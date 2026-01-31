@@ -109,10 +109,18 @@ The three biggest issues with the official texlive image are ❶ re-compile erro
 It's highly recommended to set **at least 2 texlive-full images**. For detailed reason, see [#known-issues](sandboxed-compiles.md#known-issues "mention")
 {% endhint %}
 
+Environment Var: `TEX_COMPILER_EXTRA_FLAGS` is deprecated now by ayaka-notes/overleaf-pro, since we will do most optimization directly in TeXLive Full Docker Image. For instance, shell escape is enabled by default.
+
+<details>
+
+<summary>Deprecated <code>TEX_COMPILER_EXTRA_FLAGS</code>.</summary>
+
 When the compilation takes place in a dedicated container, it is relatively safe to permit running external commands from inside the TeX file during compilation. This is required for packages like `minted`. For this purpose, the following environment variable can be used:
 
 * `TEX_COMPILER_EXTRA_FLAGS`
   * A list of extra flags for TeX compiler. Example: `-shell-escape -file-line-error`&#x20;
+
+</details>
 
 ### Recommended TeX Live images
 
@@ -175,7 +183,7 @@ ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=TeXLiveA
 TEX_LIVE_DOCKER_IMAGE=texlive/texliveA:latest-full
 ```
 
-This is because the name of TeXLive-Full image(for sandbox compile) in each project is persisted in the database. When user switch his project's TeXLive verion, for example, from 2024 to 2025, will the  image name be changed.
+This is because the name of TeXLive-Full image (for sandbox compile) in each project is persisted in the database. When user switch his project's TeXLive verion, for example, from 2024 to 2025, will the  image name be changed.
 
 When CLSI compiles a project, it uses the container image name found in the database to directly compile the project.
 

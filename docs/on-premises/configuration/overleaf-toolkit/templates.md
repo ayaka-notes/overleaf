@@ -33,6 +33,16 @@ The Template Gallery feature is controlled using the following environment varia
 * `ENABLE_CONVERSIONS`: Must be set to `true` to enable thumbnail and preview generation for templates.
 * `OVERLEAF_NON_ADMIN_CAN_PUBLISH_TEMPLATES`: Determines whether non-admin users can publish templates. Defaults to `false`.
 
+### Permissions for Publish
+
+By default, admin in system will have access to publish templates. In the mean time, you can also set a non-admin user who is specifically responsible for publishing the curated list of templates that are visible on your local template gallery `/templates`.
+
+To do this, you'll need to set the environment variable `OVERLEAF_TEMPLATES_USER_ID` in `toolkit/config/variables.env` to the `ID` of the user who will be responsible for template management within your instance, for example:
+
+```dotenv
+OVERLEAF_TEMPLATES_USER_ID=56a8865231faeb5f07d69959
+```
+
 ### Publishing Templates
 
 For each template you want to upload:
@@ -48,7 +58,7 @@ After submission, template details can be edited, or the template can be deleted
 
 Here is an example:
 
-```
+```dotenv
 #################
 #   TEMPLATES   #
 #################
