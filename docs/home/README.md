@@ -21,23 +21,23 @@ metaLinks:
 
 # Home
 
-<h2 align="center">Overleaf Pro Edition (CEP)</h2>
+<h3 align="center"><mark style="color:purple;">\begin</mark> <mark style="color:$info;"><strong>{</strong></mark> <mark style="color:$primary;">Documents</mark> <mark style="color:$info;"><strong>}</strong></mark></h3>
 
-<h3 align="center"><mark style="color:$primary;">{ All In One Document }</mark></h3>
+<h2 align="center">Overleaf Pro Edition</h2>
 
 
 
-<p align="center">A web-based collaborative <span class="math">\LaTeX</span> editor based on Overleaf Community Edition</p>
+<p align="center">Write like a rocket scientist with Overleaf Pro<br>— <em><mark style="color:green;"><strong>no Features Limit</strong></mark></em>, an <em>on-Premise</em> solution that <em>anyone</em> can use.</p>
 
-<p align="center"><em>CE</em> extended with <em><strong>free premium</strong></em> features from Server Pro.</p>
-
-<p align="center"><mark style="color:$primary;"><strong>No Compile Limit | No Storage Limit  | Easy Collaborative | Instant Setup</strong></mark></p>
-
-<p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/installation/using-the-github-codespace" class="button primary" data-icon="rocket-launch">Get Started</a> <a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
+<p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/installation/using-the-github-codespace" class="button primary" data-icon="rocket-launch">Get Started</a>   <a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
 
 <p align="center"></p>
 
-<figure><img src=".gitbook/assets/Effect-Display.jpeg" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Effect-Display.jpeg" alt=""><figcaption></figcaption></figure>
+
+
+
+
 
 ### Features
 
