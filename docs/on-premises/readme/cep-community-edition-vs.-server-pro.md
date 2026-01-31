@@ -1,11 +1,11 @@
 ---
 description: >-
-  CEP and Community Edition are both on premises versions of Overleaf Community.
+  Overleaf Pro and Community Edition are both on premises versions of Overleaf.
   But what are the differences?
 icon: scale-balanced
 ---
 
-# CEP, Community Edition vs. Server Pro
+# Overleaf Pro vs. Server Pro
 
 {% hint style="info" %}
 Overleaf CEP is an enhanced implementation of the Overleaf Community Edition, offering several _<mark style="color:$primary;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), we have no limitations on compilation time, no license requirements on the number of users, and you can fully self-host your own data, ensuring absolute security.

@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-  * [CEP, Community Edition vs. Server Pro](readme/cep-community-edition-vs.-server-pro.md)
+  * [Overleaf Pro vs. Server Pro](readme/cep-community-edition-vs.-server-pro.md)
 
 ## Getting started
 
