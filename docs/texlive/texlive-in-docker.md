@@ -2,24 +2,33 @@
 icon: file-lines
 ---
 
-# TeXLive Full Images
+# TeXLive In Docker
 
-## Why you need TeXLive full
+### Docker
 
-[Ayaka-notes/TeXLive-full](https://github.com/ayaka-notes/texlive-full/) is Overleaf's fullest texlive image designed specially for sandbox compile. It can provide you with extreme excellent experience. You can also use this for your personal TeX-Writing, or mount it to your sharelatex container.
+Docker provides a lightweight and portable way to package and run applications in isolated containers. By bundling the application together with all required dependencies, a container ensures consistent behavior across different machines, from laptops to production servers.
 
-{% hint style="info" %}
+TeX Live is powerful but large and sensitive to system-level differences. Packaging TeX Live inside a Docker image makes the LaTeX toolchain predictable, reproducible, and easy to distribute.
 
+However, some TeX Live packages rely on shell access. For security reasons, the container should run in a restricted environment that prevents users from executing arbitrary shell commands (for example via `\write18` or shell escape). This isolation protects the host system and avoids unintended access to the container’s underlying filesystem or tools such as `bash`.
 
-* This Docker Image **doesn't contain** any sharelatex/overleaf component. It's used for Overleaf/Overleaf Pro's compile.
-* If you want to use Sharelatex CE with inner contained LaTeX compile, refer to Overleaf official to find more tutorials. This repository is for server-pro's Docker Compile.
-* A long time compile bug [link #1](https://github.com/ayaka-notes/texlive-full/issues/1) has been fixed now(2024.4.17), please update your docker image.
-* TeXLive 2025 is in beta!(2025.4.17).
-{% endhint %}
+### TeXLive Full Edition
 
-### Overleaf-CEP Usage
+[TeXLive-Full@ayaka-notes](https://github.com/ayaka-notes/texlive-full/) is a fully-featured **TeXLive Docker image** designed specially for Overleaf Server Pro, Overleaf Pro, and also standalone LaTeX compilation environments, like CI or pipelines.
 
-Texlive-full@Ayaka-notes support [overleaf-cep](https://github.com/yu-i-i/overleaf-cep), you can use the following environment variables to `config/variables.env` file if you are [toolkit user](https://github.com/overleaf/toolkit).
+This image aims to provide an almost complete TeXLive distribution with common fonts and tools preinstalled, in order to minimize compilation failures caused by missing packages or fonts.
+
+Features:
+
+* 📦 Nearly full TeXLive installation
+* 🧩 Preinstalled common fonts and utilities
+* 🐳 Ready to use with Docker and Docker Compose
+* 🧪 Tested with Overleaf Server Pro / Overleaf-CEP
+* 🏷 Multiple version tags (2020 – Latest)
+
+### Server Pro Usage
+
+[TeXLive-Full@ayaka-notes](https://github.com/ayaka-notes/texlive-full/) support **server pro**, you can use the following environment variables to `config/variables.env` file if you are [toolkit user](https://github.com/overleaf/toolkit).
 
 For example:
 
@@ -30,8 +39,6 @@ ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=Texlive 2025, Texlive 2024
 TEX_LIVE_DOCKER_IMAGE=ghcr.io/ayaka-notes/texlive-full:2025.1
 ```
 {% endcode %}
-
-If you need more help, refer to [overleaf-cep documentation](https://github.com/yu-i-i/overleaf-cep/wiki/Extended-CE:-Sandboxed-Compiles)
 
 ### TeXLive Version
 
@@ -73,21 +80,35 @@ Please confirm whether the relevant fonts can be used commercially. We are **not
 
 MIT
 
-### Problem 01: Font Cache Miss Problem
+### Problems
+
+<details>
+
+<summary>Problem 01: Font Cache Miss Problem</summary>
 
 When overleaf compile latex project, if font miss occurs, **you may find the compile progress takes a long time**, that is because when a font is miss, texlive will try to **rebuild the whole font cache**. This is a time-consuming process.
 
 In our image, we have pre-built the font cache, we fix this problem by [this commit](https://github.com/ayaka-notes/texlive-full/commit/0cb66b0dc8b82be628cf6999cfd659d9784e132f)
 
-### Problem 02: Sync Tex Extremely Slow
+</details>
+
+<details>
+
+<summary>Problem 02: Sync Tex Extremely Slow</summary>
 
 When you use this image in sharelatex, you may find that the sync tex is extremely slow.
 
-See: https://github.com/overleaf/overleaf/issues/1150, just disable http 2.0.
+See: [https://github.com/overleaf/overleaf/issues/1150](https://github.com/overleaf/overleaf/issues/1150), just disable http 2.0.
 
-### Problem 03: Re-Compile Error with Official Texlive Image
+</details>
+
+<details>
+
+<summary>Problem 03: Re-Compile Error with Official Texlive Image</summary>
 
 If you use texlive official image on docker hub `texlive/texlive`, you may find that when you re-compile a project, it will report error. However, in our image, this problem is fixed. Becase we use latest ubuntu base image and install all dependencies from ubuntu official repo.
+
+</details>
 
 ### Other Tech Reminder
 
