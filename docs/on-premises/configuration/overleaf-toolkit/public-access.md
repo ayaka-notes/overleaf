@@ -5,10 +5,10 @@ icon: lock-open
 
 # Public Access
 
-You can offer your Overleaf instance to guests in two methods:
+You can offer access to your Overleaf instance in two ways:
 
-* The first is through a project sharing link
-* The second is through public registration
+* Share a project link with guests
+* Allow users to self-register (only available in [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro))
 
 ### Guest Access
 
@@ -16,7 +16,7 @@ You can offer your Overleaf instance to guests in two methods:
 By default, even if a user obtains a project sharing link, they must **log in** before they can join a collaborative project editing session.
 {% endhint %}
 
-By default, even if a user obtains a project sharing link, they must **log in** before they can join a collaborative project editing session. If you want to disable this, there are 2 variables concerned:
+To allow anonymous access for link-shared projects, set both variables below:
 
 {% code title="config/variables.env" %}
 ```dotenv
@@ -25,29 +25,53 @@ OVERLEAF_ALLOW_PUBLIC_ACCESS=true
 ```
 {% endcode %}
 
-After restart your instance with `bin/up`, you should be able to access any shared project without authentication.
+`OVERLEAF_ALLOW_ANONYMOUS_READ_AND_WRITE_SHARING` enables anonymous read/write on link-shared projects.
+
+`OVERLEAF_ALLOW_PUBLIC_ACCESS` prevents non-authenticated users being redirected to the login page.
+
+Recreate containers with `bin/up`. Then open a link-sharing URL in a private window.
 
 ### Public Registration
 
-Public Registration is only available at [ayaka-notes/overleaf](https://github.com/ayaka-notes/overleaf) currently.
+Public registration is only available in [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
 
 {% hint style="danger" %}
-Please note that once you enable public registration, **anyone** with access to your Overleaf instance can register as a user.&#x20;
+Please note that once you enable public registration, **anyone** with access to your Overleaf instance can register as a user.
 
 The registration process does not verify email addresses, so please only use it on an intranet or in a trusted environment, or disable it when you no longer need registration.
 {% endhint %}
 
-By default, neither the Community Edition nor CEP allows public user registration. To allow Public Registration, add this to your `variables.env`
+By default, neither the Community Edition nor Overleaf Pro allows public registration.
 
-{% code title="variables.env" %}
+To enable it, add this to `config/variables.env`:
+
+{% code title="config/variables.env" %}
 ```dotenv
 OVERLEAF_ALLOW_PUBLIC_REGISTRATION=true
 ```
 {% endcode %}
 
-Then, it is necessary that you re-create the Docker containers after changing by running `bin/up`.
+Recreate containers with `bin/up`.
 
-Now you should see registration page if you click **Sign up** visit router `/register`.
+Then click **Sign up** or visit `/register`.
 
-<figure><img src="../../.gitbook/assets/截屏2026-01-19 11.14.29.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+### Registration With Limited Domain
+
+Limited-domain public registration is only available in [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
+
+Before enabling this, configure email delivery so users can receive invites and notifications. See [Email delivery](email-delivery.md).
+
+Then add the following line to `config/variables.env`:
+
+{% code title="config/variables.env" overflow="wrap" %}
+```dotenv
+OVERLEAF_ALLOW_PUBLIC_REGISTRATION=@example.domain
+```
+{% endcode %}
+
+`OVERLEAF_ALLOW_PUBLIC_REGISTRATION` can be set to:
+
+* `true` to allow anyone who can reach the site to register
+* `@example.domain` to restrict registration to emails in that domain
