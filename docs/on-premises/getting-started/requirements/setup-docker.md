@@ -16,6 +16,8 @@ Avoid installing `docker.io` from Ubuntu's default apt repository.\
 Use Docker's official repository so you get a recent Docker version and the `docker compose` plugin.
 {% endhint %}
 
+The official document comes from: [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/).
+
 {% stepper %}
 {% step %}
 ### 1) Remove old/conflicting packages (if present)
@@ -24,7 +26,7 @@ If Docker was previously installed from another source, remove it first:
 
 {% code overflow="wrap" %}
 ```bash
-sudo apt-get remove -y docker.io docker-doc docker-compose podman-docker containerd runc
+sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
 ```
 {% endcode %}
 
@@ -37,8 +39,8 @@ This command is safe if some packages are not installed.
 Install prerequisites:
 
 ```bash
-sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg
+sudo apt update
+sudo apt install -y ca-certificates curl
 ```
 
 Add the Docker GPG key:
@@ -46,8 +48,8 @@ Add the Docker GPG key:
 {% code overflow="wrap" %}
 ```bash
 sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
 {% endcode %}
 
@@ -55,12 +57,16 @@ Add the repository:
 
 {% code overflow="wrap" %}
 ```bash
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo ${VERSION_CODENAME}) stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+# Add the repository to Apt sources:
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
 
-sudo apt-get update
+sudo apt update
 ```
 {% endcode %}
 {% endstep %}
@@ -72,7 +78,7 @@ Install Docker and the Compose plugin:
 
 {% code overflow="wrap" %}
 ```bash
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 {% endcode %}
 

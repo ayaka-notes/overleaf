@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-  * [Overleaf Pro vs. Server Pro](readme/cep-community-edition-vs.-server-pro.md)
+  * [Overleaf Pro vs. Server Pro](readme/community-edition-vs-server-pro.md)
 
 ## Getting started
 
@@ -12,7 +12,7 @@
   * [Software requirements](getting-started/requirements/software-requirements.md)
   * [Setup Docker](getting-started/requirements/setup-docker.md)
 * [Microservices](getting-started/microservices.md)
-* [CEP infrastructure](getting-started/cep-infrastructure.md)
+* [Pro infrastructure](getting-started/cep-infrastructure.md)
 * [What is the Overleaf Toolkit?](getting-started/what-is-the-overleaf-toolkit.md)
 
 ## installation

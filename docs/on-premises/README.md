@@ -72,8 +72,8 @@ For more information on Sandbox Compiles see: [sandboxed-compiles.md](configurat
 
 Therefore, if you are deploying Overleaf in a large organization or team, please take safety and isolation measures seriously.
 
-{% content-ref url="readme/cep-community-edition-vs.-server-pro.md" %}
-[cep-community-edition-vs.-server-pro.md](readme/cep-community-edition-vs.-server-pro.md)
+{% content-ref url="readme/community-edition-vs-server-pro.md" %}
+[community-edition-vs-server-pro.md](readme/community-edition-vs-server-pro.md)
 {% endcontent-ref %}
 
 

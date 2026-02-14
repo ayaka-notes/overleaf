@@ -2,11 +2,11 @@
 icon: rectangle-pro
 ---
 
-# CEP infrastructure
+# Pro infrastructure
 
 #### Services
 
-The CEP infrastructure comprises four primary services: `sharelatex`, `git-bridge` (optional), `mongo` and `redis`. The `sharelatex` service, which runs the main Server Pro application, depends on the `mongo` and `redis` services for its database and caching/real-time functionalities and the `git-bridge` to handle the [Git integration](../configuration/overleaf-toolkit/git-integration.md) (optional). The only port published on the host machine is port 80, which is by the `sharelatex` container.
+The overleaf Pro infrastructure comprises four primary services: `sharelatex`, `git-bridge` (optional), `mongo` and `redis`. The `sharelatex` service, which runs the main Server Pro application, depends on the `mongo` and `redis` services for its database and caching/real-time functionalities and the `git-bridge` to handle the [Git integration](../configuration/overleaf-toolkit/git-integration.md) (optional). The only port published on the host machine is port 80, which is by the `sharelatex` container.
 
 Server Pro also optionally supports [S3 compatible storage](../configuration/overleaf-toolkit/s3.md) for project files and full project history as well as being able to proxy access to the main [Overleaf documentation sitearrow-up-right](https://www.overleaf.com/learn). For more information, see our guide on [Adding LaTeX user help](/broken/pages/93860824e07f7cce5425c6323a277c0a9844e61f) pages.
 

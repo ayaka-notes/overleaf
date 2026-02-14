@@ -8,7 +8,7 @@ icon: scale-balanced
 # Overleaf Pro vs. Server Pro
 
 {% hint style="info" %}
-Overleaf CEP is an enhanced implementation of the Overleaf Community Edition, offering several _<mark style="color:$primary;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), we have no limitations on compilation time, no license requirements on the number of users, and you can fully self-host your own data, ensuring absolute security.
+Overleaf Pro is an enhanced implementation of the Overleaf Community Edition, offering several _<mark style="color:$primary;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), we have no limitations on compilation time, no license requirements on the number of users, and you can fully self-host your own data, ensuring absolute security.
 
 Overleaf Server Pro is a commercial, self-hosted deployment of Overleaf, with official support, For more information on Server Pro, visit [Server Pro](https://www.overleaf.com/for/enterprises/when-to-use-overleaf-on-premises-vs-in-the-cloud).
 {% endhint %}
@@ -23,35 +23,27 @@ For more information on Sandbox Compiles check out our [documentation](../config
 
 ### Benefits for users
 
-| Feature                            | Community Edition | CEP | Server Pro |
-| ---------------------------------- | :---------------: | :-: | :--------: |
-| Powerful LaTeX editor              |         ✓         |  ✓  |      ✓     |
-| Full project history               |         ✓         |  ✓  |      ✓     |
-| Commenting                         |         X         |  ✓  |      ✓     |
-| Real-time track changes            |         X         |  ✓  |      ✓     |
-| Easy internal collaboration        |         X         |  ✓  |      ✓     |
-| Private template management system |         X         |  ✓  |      ✓     |
-| Git integration                    |         X         |  ✓  |      ✓     |
-| Symbol Palette                     |         X         |  ✓  |      ✓     |
+| Feature                            | Community Edition | Overleaf Pro | Server Pro |
+| ---------------------------------- | :---------------: | :----------: | :--------: |
+| Powerful LaTeX editor              |         ✓         |       ✓      |      ✓     |
+| Full project history               |         ✓         |       ✓      |      ✓     |
+| Commenting                         |         X         |       ✓      |      ✓     |
+| Real-time track changes            |         X         |       ✓      |      ✓     |
+| Easy internal collaboration        |         X         |       ✓      |      ✓     |
+| Private template management system |         X         |       ✓      |      ✓     |
+| Git integration                    |         X         |       ✓      |      ✓     |
+| Symbol Palette                     |         X         |       ✓      |      ✓     |
 
 ### Benefits for user admins <a href="#benefits-for-user-admins" id="benefits-for-user-admins"></a>
 
-| Feature                              | Community Edition |        CEP        | Server Pro |
+| Feature                              | Community Edition |    Overleaf Pro   | Server Pro |
 | ------------------------------------ | :---------------: | :---------------: | :--------: |
 | Easy user management via Admin Panel |      Limited      | Under Development |      ✓     |
 | No manual upgrade of users required  |         X         |         ✓         |      ✓     |
 
 ### Benefits for system admins <a href="#benefits-for-system-admins" id="benefits-for-system-admins"></a>
 
-| Feature                                  | Community Edition |        CEP        |     Server Pro     |
-| ---------------------------------------- | :---------------: | :---------------: | :----------------: |
-| Single sign-on (SSO) via SAML 2 and LDAP |         X         |         ✓         |          ✓         |
-| Direct access to all user projects       |         ✓         |         X         |          ✓         |
-| Self-hosted                              |         ✓         |         ✓         |          ✓         |
-| Automatic user registration              |         X         | ✓(LDAP/SAML/OIDC) | ✓ (LDAP or SAML 2) |
-| Sandboxed Compiles                       |         X         |         ✓         |          ✓         |
-| Optimized version of TeX Live            |         X         |     Community     |          ✓         |
-| Early notification for security releases |         X         |     Community     |          ✓         |
+<table><thead><tr><th>Feature</th><th align="center">Community Edition</th><th align="center" valign="middle">Overleaf Pro</th><th align="center">Server Pro</th></tr></thead><tbody><tr><td>Single sign-on (SSO) via SAML 2 and LDAP</td><td align="center">X</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Direct access to all user projects</td><td align="center">✓</td><td align="center" valign="middle">X</td><td align="center">✓</td></tr><tr><td>Self-hosted</td><td align="center">✓</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Automatic user registration</td><td align="center">X</td><td align="center" valign="middle">✓(LDAP/SAML/OIDC)</td><td align="center">✓ (LDAP or SAML 2)</td></tr><tr><td>Sandboxed Compiles</td><td align="center">X</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Optimized version of TeX Live</td><td align="center">X</td><td align="center" valign="middle">Community</td><td align="center">✓</td></tr><tr><td>Early notification for security releases</td><td align="center">X</td><td align="center" valign="middle">Community</td><td align="center">✓</td></tr></tbody></table>
 
 ### CEP Support
 

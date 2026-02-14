@@ -21,7 +21,7 @@ From the perspective of managing their own account, **all** users are treated as
 | Manage sessions                           |               Yes |             Yes |
 
 {% hint style="info" %}
-The Git Bridge integration is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../readme/cep-community-edition-vs.-server-pro.md) for more information.
+The Git Bridge integration is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../readme/community-edition-vs-server-pro.md) for more information.
 {% endhint %}
 
 #### Your Sessions
@@ -126,7 +126,7 @@ For more information on this check out the `OVERLEAF_ALLOW_PUBLIC_ACCESS` and `O
 | View and send chat messages                   |   Yes |    Yes |      Yes |    Yes |                          No |            — |
 
 {% hint style="info" %}
-Commenting and Real-time tracked changes are **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../readme/cep-community-edition-vs.-server-pro.md) for more information.
+Commenting and Real-time tracked changes are **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../readme/community-edition-vs-server-pro.md) for more information.
 
 The in-project chat feature can be disabled by setting `OVERLEAF_DISABLE_CHAT=true`. See the [Environment variables](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46) section for more information on customizing your deployment.
 {% endhint %}
@@ -147,7 +147,7 @@ The in-project chat feature can be disabled by setting `OVERLEAF_DISABLE_CHAT=tr
 | Git: Push to Overleaf           |   Yes |    Yes |       No |     No |                          No |            — |
 
 {% hint style="info" %}
-The Git Bridge integration is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../readme/cep-community-edition-vs.-server-pro.md) for more information.
+The Git Bridge integration is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../readme/community-edition-vs-server-pro.md) for more information.
 {% endhint %}
 
 #### Manage template
@@ -205,7 +205,7 @@ The `Template User` role is **specific** to Server Pro, it is **not** available 
 #### Manage Users
 
 {% hint style="info" %}
-The Admin Portal in the Community Edition **only** supports registering users. Full user management is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../readme/cep-community-edition-vs.-server-pro.md) for more information.
+The Admin Portal in the Community Edition **only** supports registering users. Full user management is **only** available in Server Pro. Check out the [Server Pro vs. Community Edition](../readme/community-edition-vs-server-pro.md) for more information.
 {% endhint %}
 
 **Manage Users -> Users**
