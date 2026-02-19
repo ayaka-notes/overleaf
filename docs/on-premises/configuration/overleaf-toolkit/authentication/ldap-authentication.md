@@ -4,7 +4,17 @@ icon: lock
 
 # LDAP Authentication
 
-Available in Overleaf Extended CE is the ability to use a LDAP server to manage users. It is also possible to use with Active Directory systems. The information in this page is valid for both Overleaf Toolkit Users and legacy `docker-compose.yml` users.
+This feature is developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). Here we offers some documents for your configuration.
+
+{% hint style="warning" %}
+Overleaf uses the **passport-ldapauth** library, which is relatively outdated, LDAP compatibility cannot be fully guaranteed. With certain LDAP identity providers (for example, [https://goauthentik.io/](https://goauthentik.io/)), login failures may occur. Therefore, if possible, it is recommended to use OAuth/SAML methed before.
+{% endhint %}
+
+### What' LDAP
+
+LDAP is an authentication protocol used for external identity verification. Overleaf Server Pro provides a dedicated LDAP login form in the web interface, separate from the standard authentication method. When a user submits their LDAP username and password, the Overleaf backend verifies the credentials against the configured LDAP server, for example `ldap://ldap:10389`.
+
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>A Server Pro example for LDAP</p></figcaption></figure>
 
 ### Configuration
 
@@ -14,22 +24,28 @@ The environment variable `EXTERNAL_AUTH` is required to enable the LDAP authenti
 
 For example: `EXTERNAL_AUTH=ldap saml`
 
-When using Local and LDAP authentication methods, a user enters a `username` and `password` in the login form. If LDAP authentication is enabled, it is attempted first:
+Different from Overleaf CEP, in our ayaka-notes edition, we limit LDAP authentication as a pure authentication method, which is available at `http://your-overleaf.com/ldap/login`.
+
+When using LDAP authentication methods, a user enters a `username` and `password` in the login form, it is attempted:
 
 1. An LDAP user is searched for in the LDAP directory using the filter defined by `OVERLEAF_LDAP_SEARCH_FILTER` and authenticated.
 2. If authentication is successful, the Overleaf users database is checked for a user with the primary email address that matches the email address of the authenticated LDAP user:
    * If a matching user is found, the `hashedPassword` field for this user is deleted (if it exists). This ensures that the user can only log in via LDAP authentication in the future.
    * If no matching user is found, a new Overleaf user is created using the email, first name, and last name retrieved from the LDAP server.
-3. If LDAP authentication fails or is unsuccessful, local authentication is attempted.
+
+{% hint style="danger" %}
+For users who log in via LDAP, we do not store (or remove existed) hashed passwords in Overleaf mongo database.
+{% endhint %}
 
 #### Environment Variables
-
-
 
 * `OVERLEAF_LDAP_URL` **(required)**
   * URL of the LDAP server.
     * Example: `ldaps://ldap.example.com:636` (LDAP over SSL)
     * Example: `ldap://ldap.example.com:389` (unencrypted or STARTTLS, if configured).
+* `OVERLEAF_LDAP_IDENTITY_SERVICE_NAME`
+  * Display name for the LDAP identity service, used on the login page.
+  * Default to `Log in with LDAP Provider`.
 * `OVERLEAF_LDAP_EMAIL_ATT`
   * The email attribute returned by the LDAP server, default `mail`. Each LDAP user must have at least one email address. If multiple addresses are provided, only the first one will be used.
 * `OVERLEAF_LDAP_FIRST_NAME_ATT`

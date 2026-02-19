@@ -4,7 +4,7 @@ icon: id-card-clip
 
 # OIDC Authentication
 
-Available in Overleaf Extended CE is the ability to use a OpenID Connect (OIDC) server to manage users. The information in this page is valid for both Overleaf Toolkit Users and legacy `docker-compose.yml` users.
+This feature is developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). Here we offers some documents for your configuration.
 
 ### Configuration
 

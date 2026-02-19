@@ -4,6 +4,20 @@ icon: paste
 
 # Templates
 
+This feature is initially developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep), and modified and optimized by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
+
+{% columns %}
+{% column %}
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+{% endcolumn %}
+
+{% column %}
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+
+### Configuration
+
 The Template Gallery feature is controlled using the following environment variables:
 
 * `OVERLEAF_TEMPLATE_GALLERY`: Set to `true` to enable the Template Gallery.
@@ -130,3 +144,33 @@ You can find additional information about configuring what TeX Live versions use
 6. Click the **Select a .zip file** button and choose the downloaded template zip file
 
 The user can then use this newly uploaded template within their own account, or, as the templates user, you can publish it for other users to use.
+
+### Q\&A
+
+<details>
+
+<summary><strong>Can I delete the project after publishing the corresponding template?</strong></summary>
+
+Yes, but we do not recommend doing so. When you publish a template, we take a snapshot of the project and save the project as a zip file at the time of publication. This ensures that even if you delete the project corresponding to the template, the template will not be affected.
+
+However, we will also record the ProjectID associated with this template, which makes it easy for you to update the template in the future.
+
+If you delete the corresponding project, you will not see the "Admin: Source Project" button on the template details page (see image below).
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+
+
+</details>
+
+<details>
+
+<summary><strong>For some projects, why is it that releasing a template takes such a long time?</strong></summary>
+
+When you publish the template, we save the project as a zip and a pdf file, which is usually quick. However, we also need to generate thumbnails for the PDF so they can be displayed in the template details.
+
+Thumbnail generation time typically depends on the content of your PDF's first page. To ensure display quality, we currently do not compress the thumbnails, so you can see the highest quality images for PDFs of different sizes.
+
+If the first page of the PDF contains a lot of text, converting the thumbnails may take 40 seconds or more, please be patient.
+
+</details>

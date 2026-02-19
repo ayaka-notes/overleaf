@@ -4,7 +4,7 @@ icon: key
 
 # SAML Authentication
 
-Available in Overleaf Extended CE is the ability to use a SAML server to manage users. The information in this page is valid for both Overleaf Toolkit Users and legacy `docker-compose.yml` users.
+This feature is developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). Here we offers some documents for your configuration.
 
 ### Configuration
 
@@ -165,10 +165,9 @@ Note the certificates, `AssertionConsumerService.Location`, `SingleLogoutService
 
 <details>
 
-<summary><strong>Sample variables.env file</strong></summary>
+<summary><strong>Sample variables.env file (minium)</strong></summary>
 
-```
-OVERLEAF_APP_NAME="Our Overleaf Instance"
+<pre><code>OVERLEAF_APP_NAME="Our Overleaf Instance"
 
 ENABLED_LINKED_FILE_TYPES=project_file,project_output_file,url
 
@@ -210,26 +209,18 @@ OVERLEAF_PROXY_LEARN=true
 NAV_HIDE_POWERED_BY=true
 
 #################
-## SAML for CE ##
+##     SAML    ##
 #################
 
 EXTERNAL_AUTH=saml
-OVERLEAF_SAML_IDENTITY_SERVICE_NAME='Log in with My IdP'
-OVERLEAF_SAML_EMAIL_FIELD=mail
-OVERLEAF_SAML_FIRST_NAME_FIELD=givenName
-OVERLEAF_SAML_LAST_NAME_FIELD=sn
-OVERLEAF_SAML_ENTRYPOINT=https://idp.example.com/simplesamlphp/saml2/idp/SSOService.php
-OVERLEAF_SAML_CALLBACK_URL=https://my-overleaf-instance.com/saml/login/callback
-OVERLEAF_SAML_LOGOUT_URL=https://idp.example.com/simplesamlphp/saml2/idp/SingleLogoutService.php
-OVERLEAF_SAML_LOGOUT_CALLBACK_URL=https://my-overleaf-instance.com/saml/logout/callback
 OVERLEAF_SAML_ISSUER=MyOverleaf
-OVERLEAF_SAML_IDP_CERT=/var/lib/overleaf/certs/idp_cert.pem
-OVERLEAF_SAML_PUBLIC_CERT=/var/lib/overleaf/certs/myol_cert.pem
-OVERLEAF_SAML_PRIVATE_KEY=/var/lib/overleaf/certs/myol_key.pem
-OVERLEAF_SAML_DECRYPTION_CERT=/var/lib/overleaf/certs/myol_decr_cert.pem
-OVERLEAF_SAML_DECRYPTION_PVK=/var/lib/overleaf/certs/myol_decr_key.pem
-OVERLEAF_SAML_IS_ADMIN_FIELD=mail
-OVERLEAF_SAML_IS_ADMIN_FIELD_VALUE=overleaf.admin@example.com
-```
+OVERLEAF_SAML_IDENTITY_SERVICE_NAME='Log in with SAML Provider'
+OVERLEAF_SAML_EMAIL_FIELD=Email
+OVERLEAF_SAML_FIRST_NAME_FIELD=DisplayName
+OVERLEAF_SAML_LAST_NAME_FIELD=DisplayName
+OVERLEAF_SAML_ENTRYPOINT=http://localhost:18000/login/saml/authorize/admin/SAML_Overleaf
+<strong>OVERLEAF_SAML_IDP_CERT=/var/lib/overleaf/certs/idp_cert.pem
+</strong>OVERLEAF_SAML_SIGNATURE_ALGORITHM=
+</code></pre>
 
 </details>

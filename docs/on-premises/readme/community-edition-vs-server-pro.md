@@ -36,18 +36,18 @@ For more information on Sandbox Compiles check out our [documentation](../config
 
 ### Benefits for user admins <a href="#benefits-for-user-admins" id="benefits-for-user-admins"></a>
 
-| Feature                              | Community Edition |    Overleaf Pro   | Server Pro |
-| ------------------------------------ | :---------------: | :---------------: | :--------: |
-| Easy user management via Admin Panel |      Limited      | Under Development |      ✓     |
-| No manual upgrade of users required  |         X         |         ✓         |      ✓     |
+| Feature                              | Community Edition | Overleaf Pro | Server Pro |
+| ------------------------------------ | :---------------: | :----------: | :--------: |
+| Easy user management via Admin Panel |      Limited      |       ✓      |      ✓     |
+| No manual upgrade of users required  |         X         |       ✓      |      ✓     |
 
 ### Benefits for system admins <a href="#benefits-for-system-admins" id="benefits-for-system-admins"></a>
 
-<table><thead><tr><th>Feature</th><th align="center">Community Edition</th><th align="center" valign="middle">Overleaf Pro</th><th align="center">Server Pro</th></tr></thead><tbody><tr><td>Single sign-on (SSO) via SAML 2 and LDAP</td><td align="center">X</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Direct access to all user projects</td><td align="center">✓</td><td align="center" valign="middle">X</td><td align="center">✓</td></tr><tr><td>Self-hosted</td><td align="center">✓</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Automatic user registration</td><td align="center">X</td><td align="center" valign="middle">✓(LDAP/SAML/OIDC)</td><td align="center">✓ (LDAP or SAML 2)</td></tr><tr><td>Sandboxed Compiles</td><td align="center">X</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Optimized version of TeX Live</td><td align="center">X</td><td align="center" valign="middle">Community</td><td align="center">✓</td></tr><tr><td>Early notification for security releases</td><td align="center">X</td><td align="center" valign="middle">Community</td><td align="center">✓</td></tr></tbody></table>
+<table><thead><tr><th>Feature</th><th width="172" align="center">Community Edition</th><th width="198.5" align="center" valign="middle">Overleaf Pro</th><th align="center">Server Pro</th></tr></thead><tbody><tr><td>Single sign-on (SSO) via SAML 2 and LDAP</td><td align="center">X</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Direct access to all user projects</td><td align="center">✓</td><td align="center" valign="middle">X</td><td align="center">✓</td></tr><tr><td>Self-hosted</td><td align="center">✓</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Automatic user registration</td><td align="center">X</td><td align="center" valign="middle"><p>✓</p><p>(LDAP/SAML/OIDC)</p></td><td align="center"><p>✓</p><p>(LDAP or SAML)</p></td></tr><tr><td>Sandboxed Compiles</td><td align="center">X</td><td align="center" valign="middle">✓</td><td align="center">✓</td></tr><tr><td>Optimized version of TeX Live</td><td align="center">X</td><td align="center" valign="middle">Community</td><td align="center">✓</td></tr><tr><td>Early notification for security releases</td><td align="center">X</td><td align="center" valign="middle">Community</td><td align="center">✓</td></tr></tbody></table>
 
-### CEP Support
+### Community Support
 
-For people using a self-hosted CEP instance, support is provided by the community via GitHub [Issues](https://github.com/yu-i-i/overleaf-cep/issues).
+For people using a self-hosted Overleaf instance, support is provided by the community via GitHub [Issues](https://github.com/ayaka-notes/overleaf-pro/issues).
 
 ### Release status (Need Documents)
 

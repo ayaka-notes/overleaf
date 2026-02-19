@@ -15,7 +15,7 @@ Server Pro customers: Please reach out to support before you migrate your data t
 {% endhint %}
 
 {% hint style="success" %}
-**We'd love to hear from you!** If you'd like to share with us how many files you migrated over, their overall volume, and how long the migration took email[`support@overleaf.com`](mailto:support@overleaf.com) .
+**We'd love to hear from you!** If you'd like to share with us how many files you migrated over, their overall volume, and how long the migration took email [`support@overleaf.com`](mailto:support@overleaf.com) .
 {% endhint %}
 
 This guide will walk you through the migration from on-disk storage to an S3-compatible object storage. It refers to sections of the introduction document on the [S3 Setup](../configuration/overleaf-toolkit/s3.md).
