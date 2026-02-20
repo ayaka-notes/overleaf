@@ -55,7 +55,7 @@ Recreate containers with `bin/up`.
 
 Then click **Sign up** or visit `/register`.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 ### Registration With Limited Domain
 

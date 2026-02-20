@@ -44,7 +44,7 @@ When your codespace is ready, run the following command in your bash to Initiali
 You may need to wait for at least 3 mins before we pull all the docker images you need.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -70,7 +70,7 @@ Input your admin account and password, then click Register button.
 
 Now, time to enjoy your $$\LaTeX$$ writing!
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 

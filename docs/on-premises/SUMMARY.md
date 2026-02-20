@@ -1,7 +1,9 @@
 # Table of contents
 
 * [Welcome](README.md)
+  * [Features and Copyright](readme/features-and-copyright.md)
   * [Overleaf Pro vs. Server Pro](readme/community-edition-vs-server-pro.md)
+  * [Hidden Pages](readme/hidden-pages.md)
 
 ## Getting started
 

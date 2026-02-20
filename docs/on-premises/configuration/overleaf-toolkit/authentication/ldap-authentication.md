@@ -14,7 +14,7 @@ Overleaf uses the **passport-ldapauth** library, which is relatively outdated, L
 
 LDAP is an authentication protocol used for external identity verification. Overleaf Server Pro provides a dedicated LDAP login form in the web interface, separate from the standard authentication method. When a user submits their LDAP username and password, the Overleaf backend verifies the credentials against the configured LDAP server, for example `ldap://ldap:10389`.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>A Server Pro example for LDAP</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>A Server Pro example for LDAP</p></figcaption></figure>
 
 ### Configuration
 

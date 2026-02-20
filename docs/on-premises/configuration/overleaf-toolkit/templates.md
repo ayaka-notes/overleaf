@@ -4,15 +4,17 @@ icon: paste
 
 # Templates
 
+{% hint style="info" %}
 This feature is initially developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep), and modified and optimized by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
+{% endhint %}
 
 {% columns %}
 {% column %}
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column %}
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
@@ -149,15 +151,15 @@ The user can then use this newly uploaded template within their own account, or,
 
 <details>
 
-<summary><strong>Can I delete the project after publishing the corresponding template?</strong></summary>
+<summary>Can I delete the project after publishing the corresponding template?</summary>
 
-Yes, but we do not recommend doing so. When you publish a template, we take a snapshot of the project and save the project as a zip file at the time of publication. This ensures that even if you delete the project corresponding to the template, the template will not be affected.
+**Answer:** Yes, but we do not recommend doing so. When you publish a template, we take a snapshot of the project and save the project as a zip file at the time of publication. This ensures that even if you delete the project corresponding to the template, the template will not be affected.
 
 However, we will also record the ProjectID associated with this template, which makes it easy for you to update the template in the future.
 
 If you delete the corresponding project, you will not see the "Admin: Source Project" button on the template details page (see image below).
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -165,12 +167,14 @@ If you delete the corresponding project, you will not see the "Admin: Source Pro
 
 <details>
 
-<summary><strong>For some projects, why is it that releasing a template takes such a long time?</strong></summary>
+<summary>For some projects, why is it that releasing a template takes such a long time?</summary>
 
-When you publish the template, we save the project as a zip and a pdf file, which is usually quick. However, we also need to generate thumbnails for the PDF so they can be displayed in the template details.
+**Answer:** When you publish the template, we save the project as a zip and a pdf file, which is usually quick. However, we also need to generate thumbnails for the PDF so they can be displayed in the template details.
 
-Thumbnail generation time typically depends on the content of your PDF's first page. To ensure display quality, we currently do not compress the thumbnails, so you can see the highest quality images for PDFs of different sizes.
+Thumbnail generation time typically depends on the content of your PDF's first page. To balance bewteen display quality and convert time, we choose `1280px` as width.
 
-If the first page of the PDF contains a lot of text, converting the thumbnails may take 40 seconds or more, please be patient.
+However, if the first page of the PDF contains a lot of text, converting the thumbnails may take 40 seconds or even more, please be patient. Here is an example of large poster, it will take almost 1 minutes.
+
+<figure><img src="../../.gitbook/assets/preview.png" alt="" width="188"><figcaption><p>A large poster</p></figcaption></figure>
 
 </details>

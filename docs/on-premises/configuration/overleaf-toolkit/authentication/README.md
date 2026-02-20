@@ -6,7 +6,7 @@ icon: address-card
 
 This feature is developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). There are 3 authentication methods supported. After configuration, you can login with the following options, as image below shows.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 We highly recommend you use OIDC, since this is the most general method.
 

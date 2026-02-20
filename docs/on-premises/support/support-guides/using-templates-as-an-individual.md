@@ -20,7 +20,7 @@ Navigate to the [Template Gallery](https://www.overleaf.com/latex/templates) on 
 
 Click on the **Open as Template** button.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -28,7 +28,7 @@ Click on the **Open as Template** button.
 
 Click on the project menu and choose **Download Source**.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -50,7 +50,7 @@ From the projects dashboard click **New Project** and choose **Upload Project**.
 
 Click **Select a .zip file** and choose the downloaded template zip file.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 
