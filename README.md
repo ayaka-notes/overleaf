@@ -1,12 +1,12 @@
 # Overleaf
 
-Overleaf Pro Version, Include Git-Bridge.(Based on Overleaf CEP From yu-i-i)
+Overleaf Pro Version, Include Git-Bridge.(Based on Overleaf CEP From yu-i-i) This is only a trial verson, not suggested for prod env.
 
 For documents, visit https://overleaf-pro.ayaka.space/
 
 Repo: https://github.com/ayaka-notes/overleaf-pro
 
-For 6.1.0 and later, see https://github.com/ayaka-notes/overleaf-pro
+For 6.1.0 and later, see https://github.com/ayaka-notes/overleaf-pro, and we will immigrate to the new repo: https://github.com/ayaka-notes/overleaf-pro
 
 QQ Group: 点击链接加入群聊【Overleaf Pro】：https://qm.qq.com/q/a7SJH0fDzi
 
