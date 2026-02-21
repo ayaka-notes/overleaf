@@ -4,4 +4,4 @@ title: Untitled
 
 
 
-<figure><img src="../assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/image (3).png" alt=""><figcaption></figcaption></figure>
