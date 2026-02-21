@@ -4,7 +4,7 @@ icon: square-up
 
 # Upgrading TeX Live
 
-To save bandwidth, both the Overleaf Community Edition and Server Pro images only come with a minimal install of [TeX Live](https://www.tug.org/texlive/). You can install more packages or upgrade to a complete TeX Live installation using the [tlmgr](https://www.tug.org/texlive/tlmgr.html) command in the `sharelatex` container.
+To save bandwidth, both the Overleaf Community Edition and Overleaf Pro images only come with a minimal install of [TeX Live](https://www.tug.org/texlive/). You can install more packages or upgrade to a complete TeX Live installation using the [tlmgr](https://www.tug.org/texlive/tlmgr.html) command in the `sharelatex` container.
 
 {% hint style="warning" %}
 The following instructions **only** apply to Community Edition installations. We highly recommend that Overleaf Pro users enable [Sandboxed Compiles](../configuration/overleaf-toolkit/sandboxed-compiles.md) as this provides users with access to the same TeX Live images used on [overleaf.com](../configuration/overleaf-toolkit/) as well as providing isolation between project compiles for enhanced security.

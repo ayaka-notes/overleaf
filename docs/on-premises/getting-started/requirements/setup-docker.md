@@ -26,7 +26,7 @@ If Docker was previously installed from another source, remove it first:
 
 {% code overflow="wrap" %}
 ```bash
-sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
+ sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
 ```
 {% endcode %}
 

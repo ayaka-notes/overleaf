@@ -42,7 +42,17 @@ The environment variable `EXTERNAL_AUTH` is required to enable the specific auth
 
 ### Suggestions for SSO
 
-I tested saml, ldap, oauth for overleaf. Both saml, oauth works well in overleaf, but ldap, it depends. It can't works well for [https://docs.goauthentik.io/](https://docs.goauthentik.io/), but it works well in openLDAP ([https://github.com/rroemhild/docker-test-openldap](https://github.com/rroemhild/docker-test-openldap))
+I tested saml, ldap, oauth for overleaf. Both saml, oauth works well in overleaf, but ldap, it depends. It can't works well for [https://docs.goauthentik.io/](https://docs.goauthentik.io/), but it works well in openLDAP ([https://github.com/rroemhild/docker-test-openldap](https://github.com/rroemhild/docker-test-openldap)).
+
+{% hint style="info" %}
+We need to update passport-ldapauth, recently I am trying to test overleaf ldap with [https://goauthentik.io/](https://goauthentik.io/) , it failed. After I update "passport-ldapauth" to 3.0.0, everything works well.
+
+```
+"passport-ldapauth": "^3.0.0",
+```
+
+The origianlly one is 2.x.x, which is 6 years ago.
+{% endhint %}
 
 I am not sure what's the reason, because we all depends on an external package to do LDAP (also saml, oauth) auth. If not worked, the situtation can be the same for overleaf server pro, becase we just passed all environment var to internal package, if there are some bugs, we have no idea currently.
 

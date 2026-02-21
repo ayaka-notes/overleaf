@@ -45,8 +45,6 @@ docker cp sharelatex:/var/log/overleaf/{service-name}.log {service-name}.log
 
 ## Persisting logs
 
-See the original docs: https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/logging#persisting-logs
-
 Docker containers are ephemeral, which means files/directories created inside the container during runtime (including log files) will be discarded if the container is recreated (for example, when running `bin/up`). To retain log files between container recreations:
 
 * Set the environment variable `OVERLEAF_LOG_PATH` in the `config/overleaf.rc` file used by the Toolkit. This should be the directory on the host that will be bind-mounted to the log directory inside the `sharelatex` container.

@@ -6,6 +6,10 @@ icon: git-alt
 
 The Git integration is only available at [ayaka-notes/overleaf](https://github.com/ayaka-notes/overleaf) currently.
 
+{% hint style="info" %}
+This feature is initially developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
+{% endhint %}
+
 {% stepper %}
 {% step %}
 ### Enable the git-bridge (For Toolkit user Only)
@@ -20,7 +24,7 @@ GIT_BRIDGE_ENABLED=true
 {% endstep %}
 
 {% step %}
-### Add the git-bridge container (For docker-compose user only)
+### Add the git-bridge container (For Docker-compose user Only)
 
 For users running a custom `docker-compose.yml`, add the following container configuration to your compose file:
 
@@ -58,8 +62,8 @@ You’ll also need to link the `git-bridge` container in the `sharelatex` contai
          GIT_BRIDGE_ENABLED: true
          GIT_BRIDGE_HOST: "git-bridge"
          GIT_BRIDGE_PORT: "8000"
-         # We use v1 now, if you used to set V1_HISTORY_URL, please update now
-<strong>         V1_HISTORY_URL: "http://sharelatex:3054"
+<strong>         # We use v1 now, if you used to set V1_HISTORY_URL, please update now
+</strong><strong>         V1_HISTORY_URL: "http://sharelatex:3054"
 </strong></code></pre>
 {% endstep %}
 

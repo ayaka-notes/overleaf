@@ -54,7 +54,7 @@ Once everyone's email addresses are updated, it's time to flick the switch! You'
 This swaps out the standard Overleaf login form for your new LDAP or SAML one.
 
 {% hint style="info" %}
-You can find the relevant information for enabling LDAP [here](/broken/pages/f4506677de6b63078c05a043c53577eefdcd1ce9), and SAML 2.0 [here](/broken/pages/0678ecc6373795657b07ffa4a4c4674a38832096).
+You can find the relevant information for enabling LDAP [here](../../configuration/overleaf-toolkit/authentication/ldap-authentication.md), and SAML 2.0 [here](../../configuration/overleaf-toolkit/authentication/saml-authentication.md).
 {% endhint %}
 {% endstep %}
 
@@ -110,7 +110,7 @@ Since they may never have had a native Overleaf password, they'll need to create
 * Follow the link in the password-reset email to set a new password.
 
 {% hint style="info" %}
-If you haven't already done so, check out our guide on enabling [Email delivery](/broken/pages/f4f4378313d4e447bdb94a05ae0af0c3d87521e6).
+If you haven't already done so, check out our guide on enabling [Email delivery](../../configuration/overleaf-toolkit/email-delivery.md).
 {% endhint %}
 
 Once that's done, they can log in with their email and their new Overleaf-specific password to access all their projects.

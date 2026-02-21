@@ -74,6 +74,7 @@ After submission, template details can be edited, or the template can be deleted
 
 Here is an example:
 
+{% code overflow="wrap" expandable="true" %}
 ```dotenv
 #################
 #   TEMPLATES   #
@@ -125,6 +126,7 @@ TEMPLATE_ALL_NAME=All templates
 TEMPLATE_ALL_DESCRIPTION=Browse a collection of all available LaTeX templates, categorized by document type, style, and purpose.
 
 ```
+{% endcode %}
 
 ### Transferring templates from overleaf.com <a href="#transferring-templates-from-overleaf.com" id="transferring-templates-from-overleaf.com"></a>
 

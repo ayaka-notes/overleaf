@@ -18,7 +18,7 @@ A minimum base requirement of 2 cores and 3GB memory is required for basic opera
 If you are considering using a NFS (Network File System) based file system for your small instance please have a look at this section in the [Troubleshooting](../../support/troubleshooting.md) section.
 {% endhint %}
 
-\## Scaling
+### Scaling
 
 As a rule of thumb, to provide a high and consistent level of service, 1 CPU core and 1GB of memory should be added to the minimal install for every 5-10 concurrent users.
 
@@ -44,7 +44,7 @@ We advise using [S3 compatible object storage](../what-is-the-overleaf-toolkit.m
 For reference, GitLab is following a similar stance of [not supporting NFS/Amazon EFS](https://docs.gitlab.com/ee/administration/nfs.html) with its self-managed offering.
 {% endhint %}
 
-\## Nginx-specific configuration for large deployments
+### Nginx-specific configuration for large deployments
 
 By default, Overleaf Server instance limit the number of connections to 768. This includes persistent Websocket connections, top-level HTML navigation and ajax requests. Once the limit is hit, the editor might not be able to connect, the editor page might not load entirely and compile requests can fail. Nginx will return status 500 responses and log `worker_connections are not enough while connecting to upstream` into `var/log/nginx/error`.log inside the `sharelatex` container.
 
