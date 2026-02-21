@@ -8,7 +8,7 @@ The Git integration is only available at [ayaka-notes/overleaf](https://github.c
 
 {% stepper %}
 {% step %}
-### Enable the git-bridge (Toolkit)
+### Enable the git-bridge (For Toolkit user Only)
 
 If you’re using the Toolkit, enable the `git-bridge` by setting the following in your `config/overleaf.rc`:
 
@@ -20,11 +20,11 @@ GIT_BRIDGE_ENABLED=true
 {% endstep %}
 
 {% step %}
-### Add the git-bridge container (docker-compose)
+### Add the git-bridge container (For docker-compose user only)
 
 For users running a custom `docker-compose.yml`, add the following container configuration to your compose file:
 
-{% code title="docker-compose.yml (git-bridge service)" %}
+{% code title="docker-compose.yml (git-bridge service)" overflow="wrap" %}
 ```yaml
 git-bridge:
     restart: always
@@ -35,7 +35,8 @@ git-bridge:
     expose:
         - "8000"
     environment:
-        GIT_BRIDGE_API_BASE_URL: "http://sharelatex:3000/api/v0/" # "http://sharelatex/api/v0/" for version 4.1.6 and earlier
+        GIT_BRIDGE_API_BASE_URL: "http://sharelatex:3000/api/v0/" 
+        # "http://sharelatex/api/v0/" for version 4.1.6 and earlier
         GIT_BRIDGE_OAUTH2_SERVER: "http://sharelatex"
         GIT_BRIDGE_POSTBACK_BASE_URL: "http://git-bridge:8000"
         GIT_BRIDGE_ROOT_DIR: "/data/git-bridge"
@@ -57,7 +58,8 @@ You’ll also need to link the `git-bridge` container in the `sharelatex` contai
          GIT_BRIDGE_ENABLED: true
          GIT_BRIDGE_HOST: "git-bridge"
          GIT_BRIDGE_PORT: "8000"
-<strong>         V2_HISTORY_URL: "http://sharelatex:3054"
+         # We use v1 now, if you used to set V1_HISTORY_URL, please update now
+<strong>         V1_HISTORY_URL: "http://sharelatex:3054"
 </strong></code></pre>
 {% endstep %}
 

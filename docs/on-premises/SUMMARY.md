@@ -4,6 +4,8 @@
   * [Features and Copyright](readme/features-and-copyright.md)
   * [Overleaf Pro vs. Server Pro](readme/community-edition-vs-server-pro.md)
   * [Hidden Pages](readme/hidden-pages.md)
+* [Release notes](release-notes/README.md)
+  * [Release notes 6.x.x](release-notes/release-notes-6.x.x.md)
 
 ## Getting started
 
@@ -25,7 +27,7 @@
   * [1. Download the Toolkit](installation/using-the-toolkit/1.-download-the-toolkit.md)
   * [2. Familiarize yourself with the Toolkit](installation/using-the-toolkit/2.-familiarize-yourself-with-the-toolkit.md)
   * [3. Initialize the configuration](installation/using-the-toolkit/3.-initialize-the-configuration.md)
-  * [4. Get Overleaf CEP Images](installation/using-the-toolkit/4.-get-overleaf-cep-images.md)
+  * [4. Get Overleaf Pro Images](installation/using-the-toolkit/4.-get-overleaf-cep-images.md)
   * [5. Personalizing your instance](installation/using-the-toolkit/5.-personalizing-your-instance.md)
   * [6. Post-installation tasks](installation/using-the-toolkit/6.-post-installation-tasks.md)
 * [Air-gapped/offline deployments](installation/air-gapped-offline-deployments.md)
@@ -54,6 +56,7 @@
   * [Password restrictions](configuration/overleaf-toolkit/password-restrictions.md)
   * [Redis](configuration/overleaf-toolkit/redis.md)
   * [S3](configuration/overleaf-toolkit/s3.md)
+  * [Adding LaTeX user help](configuration/overleaf-toolkit/adding-latex-user-help.md)
 
 ## Maintenance
 
