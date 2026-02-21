@@ -11,7 +11,7 @@ Overleaf is a typical open-source project for microservice architecture, with al
 
 * The Official Community Edition source code is on [GitHub Overleaf Official](https://github.com/overleaf/overleaf/tree).&#x20;
 * The source code for Overleaf-CEP is available on [GitHub Yu-i-i/Overleaf](https://github.com/yu-i-i/overleaf-cep).
-* Overleaf @Ayaka-notes Edition is availabe on [GitHub Ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
+* Overleaf Pro Edition is availabe on [GitHub Ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
 
 To set up an Overleaf development environment, you'll need a powerful server; a configuration of at least 8 cores and 16GB of RAM is recommended, as you'll need to run more than 20 containers simultaneously.
 
@@ -40,7 +40,7 @@ First of all let's clone the repo:
 {% code title="bash" %}
 ```bash
 git clone https://github.com/ayaka-notes/overleaf-pro.git
-cd overleaf-cep
+cd overleaf-pro
 ```
 {% endcode %}
 {% endstep %}
@@ -87,7 +87,7 @@ If Docker is running out of RAM while building the services in parallel, create 
 {% endstep %}
 
 {% step %}
-### Start  All Micro Services
+### Start All Micro Services
 
 Then start the services:
 
@@ -172,6 +172,21 @@ When run in _development mode_ most services expose a debugging port to which yo
 To attach to a service using Chrome's _remote debugging_, go to chrome://inspect/ and make sure _Discover network targets_ is checked. Next click _Configure..._ and add an entry `localhost:[service port]` for each of the services you want to attach a debugger to.
 
 After adding an entry, the service will show up as a _Remote Target_ that you can inspect and debug.
+
+### Logging
+
+In develop env, overleaf provide a script `bin/logs`, however, you need to install some dependency:
+
+```bash
+sudo npm install -g bunyan
+# Or sudo apt install node-bunyan 
+```
+
+Or, you can run directly with:
+
+```
+docker compose logs -f [service name]
+```
 
 ### Other Tools
 

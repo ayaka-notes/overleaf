@@ -12,6 +12,8 @@
 * [Setup Develop Environment (Codespace)](environment/setup-develop-environment-codespace.md)
 * [Setup Develop Tools](environment/setup-develop-tools.md)
 * [Setup Sandbox Compiles](environment/setup-sandbox-compiles.md)
+* [Update i18 Translations](environment/update-i18-translations.md)
+* [Setup Develop SSO](environment/setup-develop-sso.md)
 
 ## Data Model
 
