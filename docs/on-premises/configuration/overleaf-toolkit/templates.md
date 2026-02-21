@@ -128,9 +128,9 @@ TEMPLATE_ALL_DESCRIPTION=Browse a collection of all available LaTeX templates, c
 
 ### Transferring templates from overleaf.com <a href="#transferring-templates-from-overleaf.com" id="transferring-templates-from-overleaf.com"></a>
 
-As Overleaf CEP has been architected to work offline, there isn't an automated way to integrate [overleaf.com](https://www.overleaf.com/) gallery templates into your on-premise installation, it is however possible to do this manually on a per template basis.
+As Overleaf Pro has been architected to work offline, there isn't an automated way to integrate [overleaf.com](https://www.overleaf.com/) gallery templates into your on-premise installation, it is however possible to do this manually on a per template basis.
 
-By default, CEP is configured to use a basic scheme version of TeXLive for compiles. This basic version is lightweight and only contains a very limited subset of LaTeX packages which, will most likely result in missing package errors for your users when attempting to use templates from [overleaf.com](https://www.overleaf.com/) on your local on-premise instance.
+By default, Overleaf Pro is configured to use a basic scheme version of TeXLive for compiles. This basic version is lightweight and only contains a very limited subset of LaTeX packages which, will most likely result in missing package errors for your users when attempting to use templates from [overleaf.com](https://www.overleaf.com/) on your local on-premise instance.
 
 Unfortunately, whilst there isn't an automatic way to install missing packages, we do have a configurable setting within Server Pro that will allow your users to compile projects with access to more packages, and in a more secure way. This feature is called [Sandbox Compiles](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles) (also known as Sibling Containers).
 
@@ -171,9 +171,9 @@ If you delete the corresponding project, you will not see the "Admin: Source Pro
 
 **Answer:** When you publish the template, we save the project as a zip and a pdf file, which is usually quick. However, we also need to generate thumbnails for the PDF so they can be displayed in the template details.
 
-Thumbnail generation time typically depends on the content of your PDF's first page. To balance bewteen display quality and convert time, we choose `1280px` as width.
+Thumbnail generation time typically depends on the content of your PDF's first page. To balance bewteen display quality and convert time, we choose a middle one as width.
 
-However, if the first page of the PDF contains a lot of text, converting the thumbnails may take 40 seconds or even more, please be patient. Here is an example of large poster, it will take almost 1 minutes.
+However, if the first page of the PDF contains a lot of text, converting the thumbnails may take 40 seconds or even more, please be patient. Here is an example of large poster, it will take longer time.
 
 <figure><img src="../../.gitbook/assets/preview.png" alt="" width="188"><figcaption><p>A large poster</p></figcaption></figure>
 

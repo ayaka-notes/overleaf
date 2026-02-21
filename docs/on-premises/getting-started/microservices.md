@@ -4,9 +4,9 @@ icon: microchip
 
 # Microservices
 
-The recommended way to deploy and manage Overleaf Server CE and CEP instances is via the use of the Toolkit.
+The recommended way to deploy and manage Overleaf Server CE and Overleaf Pro instances is via the use of the Toolkit.
 
-The Toolkit simplifies the creation of your Overleaf instance through the use of some custom scripts that abstract away the orchestration of required microservices. Simply run the bundled initialization script, provide a few configuration options like your persistent storage paths, and the Toolkit will take care of provisioning and connecting the microservices that make up your Overleaf Server CE or CEP instance.
+The Toolkit simplifies the creation of your Overleaf instance through the use of some custom scripts that abstract away the orchestration of required microservices. Simply run the bundled initialization script, provide a few configuration options like your persistent storage paths, and the Toolkit will take care of provisioning and connecting the microservices that make up your Overleaf Server CE or Pro instance.
 
 This leaves you free to focus on customizing the user experience and implementing the specific features that make up your on-premise instance. The Toolkit handles all the complexity behind the scenes, enabling a simplified deployment of your Overleaf instance.
 
@@ -36,7 +36,7 @@ If you would prefer to connect to an existing MongoDB or Redis instance, you can
 This section provides a broad overview for the handling of documents and the compile process.
 
 {% hint style="info" %}
-This page describes the compile process with Sandboxed Compiles as available in CEP only. In Server CE, the compile process uses simple sub-processes — replace the items referencing a **container** with a single item **run compile in sub-process**.
+This page describes the compile process with Sandboxed Compiles as available in Overleaf Pro only. In Server CE, the compile process uses simple sub-processes — replace the items referencing a **container** with a single item **run compile in sub-process**.
 {% endhint %}
 
 Components / Actors:

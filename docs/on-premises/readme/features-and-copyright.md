@@ -102,7 +102,7 @@ This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-
 
 This feature is mainly developed by [overleaf official](https://github.com/overleaf/overleaf/tree/main/services/clsi), we just add the missing code from [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep) and [ertuil/overleaf](https://github.com/ertuil/overleaf), which is a connector between chat and web service.
 
-<figure><img src="../.gitbook/assets/image.png" alt="" width="563"><figcaption><p>Review panel</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption><p>Review panel</p></figcaption></figure>
 
 #### Features 07: External URL
 
@@ -130,4 +130,10 @@ This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka
 * open user register to any one who have access to your overleaf
 
 <figure><img src="../.gitbook/assets/image (5).png" alt="" width="563"><figcaption><p>Register page</p></figcaption></figure>
+
+#### Features 11: Learn Wiki
+
+This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro). You can see latest learn wiki from overleaf, but we don't own any copyright of those documents! We just download it from overleaf server the first time you enable this feature, and update periodically.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Wiki page</p></figcaption></figure>
 

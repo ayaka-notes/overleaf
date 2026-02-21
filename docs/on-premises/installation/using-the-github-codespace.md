@@ -4,7 +4,7 @@ icon: github
 
 # Using GitHub Codespace
 
-The easiest way to setup your Overleaf CEP is to use GitHub Codespace, where all environment variables are pre-configured to ensure you can use it out of the box.
+The easiest way to setup your Overleaf Pro is to use GitHub Codespace, where all environment variables are pre-configured to ensure you can use it out of the box.
 
 {% hint style="warning" %}
 When you run Docker containers using GitHub Codespaces, the Codespace will not automatically shut down and will continue to be **billed**. For GitHub Codespaces billing rules, please refer to [github codespaces billing rules](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces).

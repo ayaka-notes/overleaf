@@ -16,7 +16,7 @@
   * [Software requirements](getting-started/requirements/software-requirements.md)
   * [Setup Docker](getting-started/requirements/setup-docker.md)
 * [Microservices](getting-started/microservices.md)
-* [Pro infrastructure](getting-started/cep-infrastructure.md)
+* [Pro infrastructure](getting-started/pro-infrastructure.md)
 * [What is the Overleaf Toolkit?](getting-started/what-is-the-overleaf-toolkit.md)
 
 ## installation
@@ -27,7 +27,7 @@
   * [1. Download the Toolkit](installation/using-the-toolkit/1.-download-the-toolkit.md)
   * [2. Familiarize yourself with the Toolkit](installation/using-the-toolkit/2.-familiarize-yourself-with-the-toolkit.md)
   * [3. Initialize the configuration](installation/using-the-toolkit/3.-initialize-the-configuration.md)
-  * [4. Get Overleaf Pro Images](installation/using-the-toolkit/4.-get-overleaf-cep-images.md)
+  * [4. Get Overleaf Pro Images](installation/using-the-toolkit/4.-get-overleaf-pro-images.md)
   * [5. Personalizing your instance](installation/using-the-toolkit/5.-personalizing-your-instance.md)
   * [6. Post-installation tasks](installation/using-the-toolkit/6.-post-installation-tasks.md)
 * [Air-gapped/offline deployments](installation/air-gapped-offline-deployments.md)
@@ -88,4 +88,4 @@
   * [Using templates as an individual](support/support-guides/using-templates-as-an-individual.md)
   * [(v5.0.1 Migration) Doc version recovery](support/support-guides/doc-version-recovery.md)
   * [(v5.5.7 Migration) Binary files migration](support/support-guides/v5.5.7-migration-binary-files-migration.md)
-  * [(v3.5.13 Migration)  Full project history migration](support/support-guides/full-project-history-migration.md)
+  * [(v3.5.13 Migration) Full project history migration](support/support-guides/full-project-history-migration.md)

@@ -32,9 +32,9 @@ Click on the project menu and choose **Download Source**.
 {% endstep %}
 
 {% step %}
-### Log into Overleaf CEP
+### Log into Overleaf Pro
 
-Log into your on-premise Overleaf CEP account.
+Log into your on-premise Overleaf Pro account.
 {% endstep %}
 
 {% step %}
