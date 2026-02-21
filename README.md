@@ -1,6 +1,6 @@
 # Overleaf
 
-Overleaf Pro Version, Include Git-Bridge.(Based on Overleaf CEP From yu-i-i) This is only a trial verson, not suggested for prod env.
+Overleaf Pro Version, Include Git-Bridge.(Based on Overleaf CEP From yu-i-i) This is only a trial verson, not suggested for prod env. For prod, see https://github.com/ayaka-notes/overleaf-pro
 
 For documents, visit https://overleaf-pro.ayaka.space/
 
