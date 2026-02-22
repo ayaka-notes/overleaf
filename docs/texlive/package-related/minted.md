@@ -50,19 +50,19 @@ This example produces the following output:
 
 There are two important commands here. In the preamble the package is imported by writing
 
-```
+```latex
 \usepackage{minted}
 ```
 
 then the tags `\begin{minted}{python}` and `\end{minted}` delimit an environment that print the text verbatim in monospaced fonts and also apply colour to comments, keywords and functions. The parameter `python` is the programming language the source code is written in. `minted` supports over 150 programming and markup languages as well as configuration files, see the [reference guide](https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted#Reference_guide) for a list of supported languages.
 
-**Note**: For `minted` to work with your _local_ LaTeX distribution, an additional program called [Pygments](https://pygments.org/) must be installed. [Overleaf](https://www.overleaf.com/) can save you the trouble of installing it and having to run special commands to compile your document—on Overleaf, documents that use `minted` will work "out of the box".
+**Note**: For `minted` to work with your _local_ LaTeX distribution, an additional program called [Pygments](https://pygments.org/) must be installed. [Overleaf](https://www.overleaf.com/) can save you the trouble of installing it and having to run special commands to compile your document — on Overleaf, documents that use `minted` will work "out of the box".
 
 ### Basic usage
 
 As demonstrated in the following example, the `minted` environment can be configured to modify visual presentation of the typeset code. Here, the `minted` environment uses several comma-separated parameters of the form `key=value`:
 
-```
+```latex
 \documentclass{article}
 \usepackage{minted}
 \usepackage{xcolor} % to access the named colour LightGray
@@ -151,7 +151,7 @@ This example produces the following output:
 
 The command `\inputminted{octave}{BitXorMatrix.m}` imports the code from the file `BitXorMatrix.m`, the parameter `octave` tells LaTeX the programming language of the code. This command can take two extra parameters to import only part of the file; for instance, to import code from the line 2 to the line 12, the command becomes:
 
-```
+```latex
 \inputminted[firstline=2, lastline=12]{octave}{BitXorMatrix.m}
 ```
 
@@ -159,11 +159,13 @@ The command `\inputminted{octave}{BitXorMatrix.m}` imports the code from the fil
 
 If you need to input only a line of code, the command `\mint`, whose syntax is presented in the next example, will do the trick.
 
-```
+{% code overflow="wrap" %}
+```latex
 One-line code formatting also works with \texttt{minted}. For example, a small fragment of HTML like this:
 \mint{html}|<h2>Something <b>here</b></h2>|
 \noindent can be formatted correctly.
 ```
+{% endcode %}
 
 This example produces the following output:
 
@@ -173,7 +175,9 @@ The parameter between braces sets the programming language (`html` markup langua
 
 ### Custom lexers
 
-(Please note that due to changes in `minted` since 2023, the following approach will only work in [TeX Live 2022 or earlier](https://www.overleaf.com/learn/how-to/Using_the_Overleaf_project_menu%23TeX_Live_version).)
+{% hint style="info" %}
+Please note that due to changes in `minted` since 2023, the following approach will only work in [TeX Live 2022 or earlier](https://www.overleaf.com/learn/how-to/Using_the_Overleaf_project_menu%23TeX_Live_version).
+{% endhint %}
 
 By default, `minted` supports only languages with lexers that are already installed or registered with `pygmentize`. If you have written a custom lexer, or want to use a lexer for a language that's not yet been installed on Overleaf, you can still use it in your own Overleaf project using the approach mentioned [here](https://tex.stackexchange.com/questions/18083/how-to-add-custom-c-keywords-to-be-recognized-by-minted#comment930474_42392).
 
@@ -292,7 +296,7 @@ The first page of this example contains the following output:
 
 To print the list with all "listing" elements use `\listoflistings`. In the example above, the default title `List of listings` is changed to `List of source codes` by writing
 
-```
+```latex
 \renewcommand\listoflistingscaption{List of source codes}
 \listoflistings % Now typeset the list
 ```
