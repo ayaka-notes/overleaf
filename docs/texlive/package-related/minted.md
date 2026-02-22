@@ -355,6 +355,6 @@ Main supported programming languages and configuration files
 | tex      | text       | vala        | vgl       |
 | vim      | xml        | xquery      | yaml      |
 
-### Problems With Self Host
+### Problems With SelfHost
 
-If you are using sandbox compile and also arm overleaf server, minted may not work. For detaied infomation, see: [issues/131](https://github.com/yu-i-i/overleaf-cep/issues/131). You need to enable arm instruction profile and some system call for minted to work.
+If you are using sandbox compile and also an overleaf server to deploy overleaf, minted may not work well. For detaied infomation, you can see: [issues/131](https://github.com/yu-i-i/overleaf-cep/issues/131). You need to enable arm instruction profile and some system call for minted to work.

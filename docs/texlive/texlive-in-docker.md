@@ -1,5 +1,5 @@
 ---
-icon: file-lines
+icon: docker
 ---
 
 # TeXLive In Docker
