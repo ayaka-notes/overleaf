@@ -1,3 +1,7 @@
+---
+icon: codepen
+---
+
 # Adding LaTeX dependencies
 
 If you have `.cls`, `.sty`, `.bst` files in your project, Overleaf's compile process will not be able to locate these files unless they are placed at the top level.

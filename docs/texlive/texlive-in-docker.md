@@ -23,12 +23,12 @@ Features:
 * 📦 Nearly full TeXLive installation
 * 🧩 Preinstalled common fonts and utilities
 * 🐳 Ready to use with Docker and Docker Compose
-* 🧪 Tested with Overleaf Server Pro / Overleaf-CEP
+* 🧪 Tested with Overleaf Server Pro / Overleaf Pro/ Overleaf CEP...
 * 🏷 Multiple version tags (2020 – Latest)
 
-### Server Pro Usage
+### Overleaf Pro Usage
 
-[TeXLive-Full@ayaka-notes](https://github.com/ayaka-notes/texlive-full/) support **server pro**, you can use the following environment variables to `config/variables.env` file if you are [toolkit user](https://github.com/overleaf/toolkit).
+[TeXLive-Full@ayaka-notes](https://github.com/ayaka-notes/texlive-full/) support **overleaf pro**, you can use the following environment variables to `config/variables.env` file if you are [toolkit user](https://github.com/overleaf/toolkit).
 
 For example:
 

@@ -1,3 +1,7 @@
+---
+icon: binary
+---
+
 # R code (knitr)
 
 Overleaf provides an integration with **knitr**, which allows you to add R code to your LaTeX document to generate a dynamic output.

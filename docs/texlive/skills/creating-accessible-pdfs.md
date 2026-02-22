@@ -1,3 +1,7 @@
+---
+icon: universal-access
+---
+
 # Creating accessible PDFs
 
 Over time, updates to the capabilities of PDF creation have made PDF accessibility possible. Strides including the [LaTeX Tagging Project](https://latex3.github.io/tagging-project/documentation/) have enabled LaTeX-based PDFs to be accessible as well, and improvements continue to occur.
