@@ -118,7 +118,7 @@ This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-
 
 #### Features 09: ARM supported
 
-we use git action to build and publish docker images with x86 and arm archtecture.
+we use GitHub Action to build and publish docker images with x86 and arm archtecture. When you download the image, it will automatically select the appropriate architecture based on your system.
 
 <figure><img src="../.gitbook/assets/image (2).png" alt="" width="563"><figcaption><p>Github Package</p></figcaption></figure>
 

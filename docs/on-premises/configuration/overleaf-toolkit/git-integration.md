@@ -100,3 +100,13 @@ The Git integration stores a complete git repository on disk for each project th
 | `GIT_BRIDGE_SWAPJOB_LOW_GIB`          | <p>Low watermark for swapping. The swap job will move projects until disk usage is below this value.<br><br><strong>- Default:</strong> 128 GB</p> |
 | `GIT_BRIDGE_SWAPJOB_HIGH_GIB`         | <p>High watermark for swapping. The swap job will start swapping when disk usage reaches this value.<br><br><strong>- Default:</strong> 256 GB</p> |
 | `GIT_BRIDGE_SWAPJOB_INTERVAL_MILLIS`  | <p>The amount of time between checking disk usage and running the swap job.<br><br><strong>- Default:</strong> 3600000 ms = 1 hour</p>             |
+
+### Q\&A
+
+<details>
+
+<summary>If I share my project with someone else, how does the Git Bridge permission model work?</summary>
+
+Users with read-only access can only clone this project; users with read-write access can clone and push projects. Note: Users need to be logged in to join this project.
+
+</details>
