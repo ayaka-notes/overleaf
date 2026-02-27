@@ -4,79 +4,11 @@ icon: gear-code
 
 # Sandboxed Compiles
 
-Overleaf Pro comes with the option to run compiles in a secured sandbox environment for enterprise security. It does this by running every project in its own secured docker environment.
 
-### Improved security
 
-Sandboxed Compiles are the recommended approach for Server Pro due to many LaTeX documents requiring/having the ability to execute arbitrary shell commands as part of the PDF compile process. If you use Sandboxed Compiles, each compile runs in a separate Docker container with limited capabilities that are not shared with any other user or project and has no access to outside resources such as the host network.
+###
 
-{% hint style="warning" %}
-If you attempt to run Overleaf Pro **without** Sandboxed Compiles, the compile runs alongside other concurrent compiles inside the main Docker container and users have full read and write access to the `sharelatex` container resources (filesystem, network and environment variables) when running LaTeX compiles.
-{% endhint %}
-
-### Easier package management
-
-To avoid manually installing packages, we recommend enabling Sandboxed Compiles. This is a configurable setting within Server Pro that will provide your users with access to the same TeX Live environment as that on overleaf.com but within your own on-premise installation. TeX Live images used by Sandboxed Compiles contain the most popular packages and fonts tested against our gallery templates, ensuring maximum compatibility with on-premise projects.
-
-Enabling Sandboxed Compiles allows you to configure which TeX Live versions users are able to choose from within their project along with setting a default TeX Live image version for new projects.
-
-{% hint style="info" %}
-If you attempt to run Overleaf Pro without Sandboxed Compiles, your instance will default to using a basic scheme version of TeX Live for compiles. This basic version is lightweight and only contains a very limited subset of LaTeX packages, which will most likely result in missing package errors for your users, especially if they try to use pre-built templates.
-
-As Overleaf Pro has been architected to work offline, there isn't an automated way to integrate overleaf.com gallery templates into your on-premise installation; it is, however, possible to do this manually on a per-template basis. For more information on how this works, please check out our transferring templates from overleaf.com guide: [#transferring-templates-from-overleaf.com](templates.md#transferring-templates-from-overleaf.com "mention")
-{% endhint %}
-
-{% hint style="info" %}
-Sandboxed Compiles requires that the `sharelatex` container has access to the Docker socket on the host machine (via a bind mount) so it can manage these sibling compile containers.
-{% endhint %}
-
-## How it works
-
-When Sandboxed Compiles are enabled, the Docker socket will be mounted from the host machine into the `sharelatex` container, so that the compiler service in the container can create new Docker containers on the host. Then for each run of the compiler in each project, the LaTeX compiler service (CLSI) will do the following:
-
-* Write out the project files to a location inside the `OVERLEAF_DATA_PATH`.
-* Use the mounted Docker socket to create a new `texlive` container for the compile run.
-* Have the `texlive` container read the project data from the location under `OVERLEAF_DATA_PATH`.
-* Compile the project inside the `texlive` container.
-
-### Toolkit User
-
-To enable sandboxed compiles (also known as "Sibling containers"), set the following configuration options in `overleaf-toolkit/config/overleaf.rc`:
-
-```
-SERVER_PRO=true
-SIBLING_CONTAINERS_ENABLED=true
-```
-
-### Docker-compose User
-
-In the following example, note the following:
-
-* the docker socket volume mounted into the Overleaf container
-* `DOCKER_RUNNER` set to `true`
-* `SANDBOXED_COMPILES` set to `true`
-* `SANDBOXED_COMPILES_HOST_DIR` set to `/data/overleaf_data/data/compiles`, the place on the host where the compile data will be written
-
-{% hint style="warning" %}
-Starting with Overleaf CE/Server Pro `5.0.3` environment variables have been rebranded from `SHARELATEX_*` to `OVERLEAF_*`.
-
-If you're using a `4.x` version (or earlier) please make sure the variables are prefixed accordingly (e.g. `SHARELATEX_MONGO_URL` instead of `OVERLEAF_MONGO_URL`)
-{% endhint %}
-
-<pre class="language-yml"><code class="lang-yml">services:
-    sharelatex:
-        ...
-        volumes:
-            - /data/overleaf_data:/var/lib/overleaf
-<strong>            - /var/run/docker.sock:/var/run/docker.sock
-</strong>        environment:
-            ...
-            DOCKER_RUNNER: "true"
-            SANDBOXED_COMPILES: "true"
-            SANDBOXED_COMPILES_HOST_DIR: "/data/overleaf_data/data/compiles"
-            ...
-        ...
-</code></pre>
+###
 
 ### Changing the TexLive Image
 

@@ -44,6 +44,7 @@
     * [OIDC Authentication](configuration/overleaf-toolkit/authentication/oidc-authentication.md)
     * [SAML Authentication](configuration/overleaf-toolkit/authentication/saml-authentication.md)
     * [LDAP Authentication](configuration/overleaf-toolkit/authentication/ldap-authentication.md)
+  * [Sandboxed Compiles (fix)](configuration/overleaf-toolkit/sandboxed-compiles-fix.md)
   * [Sandboxed Compiles](configuration/overleaf-toolkit/sandboxed-compiles.md)
   * [Git integration](configuration/overleaf-toolkit/git-integration.md)
   * [Templates](configuration/overleaf-toolkit/templates.md)
