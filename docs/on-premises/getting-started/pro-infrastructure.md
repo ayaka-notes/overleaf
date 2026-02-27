@@ -16,7 +16,7 @@ If required, MongoDB and Redis can be externalised using environment variables t
 
 #### Compiling
 
-For [Sandboxed Compiles](../configuration/overleaf-toolkit/sandboxed-compiles.md), the `sharelatex` container will orchestrate the creation of new containers to handle project compiles; it does this via the Docker socket on the host machine. You can read more about the editor and end-to-end compile/caching process [here](microservices.md#editor-and-compile-process).
+For [Sandboxed Compiles](/broken/pages/7f495e34c7e239040c704060deafb9c9858aca72), the `sharelatex` container will orchestrate the creation of new containers to handle project compiles; it does this via the Docker socket on the host machine. You can read more about the editor and end-to-end compile/caching process [here](microservices.md#editor-and-compile-process).
 
 #### Networking
 
@@ -32,7 +32,7 @@ You can view a diagram explaining the flow of requests [here](/broken/pages/fd9e
 
 * Outside the Docker network, only port 80 is accessible and bound to Nginx. **Note:** The `sharelatex` container runs many [servicesarrow-up-right](https://github.com/overleaf/overleaf/tree/main/services) that communicate with each other via HTTP. However, these ports are **not** accessible from outside the Docker network.
 * Inside the Docker network, Overleaf services, MongoDB, Redis and Git Bridge can talk to each other freely.
-* Inside [Sandboxed Compiles](../configuration/overleaf-toolkit/sandboxed-compiles.md) containers, no network is available.
+* Inside [Sandboxed Compiles](/broken/pages/7f495e34c7e239040c704060deafb9c9858aca72) containers, no network is available.
 
 For related topics, see:
 

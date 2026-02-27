@@ -18,7 +18,7 @@ Overleaf Community Edition is intended for use in environments where **all** use
 
 Without sandboxing, LaTeX compiles run with the same privileges as the container, allowing access to its filesystem, network, and environment variables. This creates a risk of data exposure or system compromise. Non-sandboxed compiles should only be used in fully trusted environments; for multi-user or production deployments, Sandbox Compiles are strongly recommended.
 
-For more information on Sandbox Compiles check out our [documentation](../configuration/overleaf-toolkit/sandboxed-compiles.md).
+For more information on Sandbox Compiles check out our [documentation](/broken/pages/7f495e34c7e239040c704060deafb9c9858aca72).
 {% endhint %}
 
 ### Benefits for users
