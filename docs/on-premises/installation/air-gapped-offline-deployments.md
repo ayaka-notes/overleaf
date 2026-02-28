@@ -10,9 +10,9 @@ At a high level, you'll download the required images on a device with internet c
 
 To do this, you'll need to complete the following steps:
 
-* Pull all the required images (`sharelatex`, `overleaf-pro`, `git-bridge`, `mongo`, `redis` + any required [TeX Live images](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles#available-tex-live-images) for use with [Sandboxed Compiles](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles)) on a machine with internet connectivity
-  * `docker pull ghcr.io/ayaka-notes/sharelatex-pro:6.1.2`
-  * `docker pull quay.io/sharelatex/git-bridge:6.1.2` (tag must be the same as `sharelatex-pro`)
+* Pull all the required images ( `overleaf-pro`, `git-bridge`, `mongo`, `redis` + any required [TeX Live images](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles#available-tex-live-images) for use with [Sandboxed Compiles](https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit/server-pro-only-configuration/sandboxed-compiles)) on a machine with internet connectivity
+  * `docker pull ghcr.io/ayaka-notes/overleaf-pro:6.1.2`
+  * `docker pull quay.io/sharelatex/git-bridge:6.1.2` (tag must be the same as `overleaf-pro`)
   * `docker pull mongo:6` (Please change to real version)
   * `docker pull redis:6.2` (Please change to real version)
   * `docker pull ghcr.io/ayaka-notes/texlive-full:2024.1` (Please change to real version)
