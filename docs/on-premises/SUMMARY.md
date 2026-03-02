@@ -46,6 +46,7 @@
     * [LDAP Authentication](configuration/overleaf-toolkit/authentication/ldap-authentication.md)
   * [Sandboxed Compiles](configuration/overleaf-toolkit/sandboxed-compiles.md)
   * [Git integration](configuration/overleaf-toolkit/git-integration.md)
+  * [GitHub Synchronisation](configuration/overleaf-toolkit/github-synchronisation.md)
   * [Templates](configuration/overleaf-toolkit/templates.md)
   * [External URL](configuration/overleaf-toolkit/external-url.md)
   * [Logging](configuration/overleaf-toolkit/logging.md)
