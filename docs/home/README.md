@@ -11,6 +11,8 @@ metaLinks:
 
 <h2 align="center">Overleaf Pro Edition</h2>
 
+<p align="center"><mark style="color:$info;">An AI Powered LaTeX Editor</mark></p>
+
 
 
 <p align="center">Write like a rocket scientist with Overleaf Pro<br>— <em><mark style="color:green;"><strong>unlock all Features</strong></mark></em>, an <em>on-Premise</em> solution that <em>anyone</em> can use.</p>
@@ -19,7 +21,7 @@ metaLinks:
 
 <p align="center"></p>
 
-<figure><img src=".gitbook/assets/Effect-Display.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/screenshot-pro.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -28,6 +30,28 @@ metaLinks:
 ### Features
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><h4><i class="fa-clone">:clone:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-01-templates-system"><mark style="color:$primary;"><strong>Template System</strong></mark></a></td><td><mark style="color:$info;">Publish your</mark>  <span class="math">\LaTeX</span> <mark style="color:$info;">template to your members.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/template.jpeg">template.jpeg</a></td></tr><tr><td><h4><i class="fa-server">:server:</i> </h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-02-sandbox-compile"><mark style="color:$primary;"><strong>Sandbox Compile</strong></mark></a></td><td><mark style="color:$info;">Compile your project in Docker with isolation and any TeXLive version.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/texlive-switch.png">texlive-switch.png</a></td></tr><tr><td><h4><i class="fa-git-alt">:git-alt:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-03-git-intergration"><mark style="color:$primary;"><strong>Git Intergration</strong></mark></a></td><td><mark style="color:$info;">Synchronized your project with GitHub or GitLab.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/git-bridge.png">git-bridge.png</a></td></tr><tr><td><h4><i class="fa-pi">:pi:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-04-symbol-palette"><mark style="color:$primary;"><strong>Symbol</strong></mark> <mark style="color:$primary;"><strong>Palette</strong></mark></a></td><td><mark style="color:$info;">Input your LaTeX symbol easily and more quickly.</mark></td><td></td><td><a href=".gitbook/assets/symbol-palette.jpeg">symbol-palette.jpeg</a></td></tr><tr><td><h4><i class="fa-user">:user:</i> </h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-05-admin-panel"><mark style="color:$primary;"><strong>User Management</strong></mark></a></td><td><mark style="color:$info;">Manage your team and users with admin panel.</mark></td><td></td><td><a href=".gitbook/assets/User-Management.png">User-Management.png</a></td></tr><tr><td><h4><i class="fa-message-pen">:message-pen:</i> </h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-06-review-panel"><mark style="color:$primary;"><strong>Review Panel</strong></mark></a></td><td><mark style="color:$info;">Discuss with your instructor and comments on your thesis.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/review.jpeg">review.jpeg</a></td></tr><tr><td><h4><i class="fa-user-key">:user-key:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-08-sso"><mark style="color:$primary;"><strong>SSO Support</strong></mark></a></td><td><mark style="color:$info;">Connect with OAuth SAML or LDAP provider.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/image (2).png">image (2).png</a></td></tr><tr><td><h4><i class="fa-table-cells-rows">:table-cells-rows:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-10-self-registeration"><mark style="color:$primary;"><strong>Self Register</strong></mark></a></td><td><mark style="color:$info;">Regiser quickly with email and password.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image (1).png">image (1).png</a></td></tr><tr><td><h4><i class="fa-server">:server:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-09-arm-supported"><mark style="color:$primary;"><strong>ARM Supported</strong></mark></a></td><td><mark style="color:$info;">Run your overleaf with Mac mini or arm server.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image.png">image.png</a></td></tr><tr><td><h4><i class="fa-github">:github:</i></h4></td><td><mark style="color:$primary;"><strong>GitHub 2-way Sync</strong></mark></td><td><mark style="color:$info;">Coming Soon.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image (4).png">image (4).png</a></td></tr></tbody></table>
+
+
+
+
+
+{% columns %}
+{% column width="50%" %}
+{% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FvnT8IAADTAThJZZpvM7Q%2Fuploads%2FfCJEXeyRbeQLodXhHrxD%2FQQ20260326-173245.mp4?alt=media&token=86111cae-293e-4ba7-9fc5-ee63500a0f85" %}
+{% endcolumn %}
+
+{% column width="50%" %}
+### <i class="fa-rocket-launch">:rocket-launch:</i> Enjoy AI $$\LaTeX$$ Editor
+
+* Chat with AI agent
+* Reprase with Chat GPT or any LLM
+* Available Soon......
+{% endcolumn %}
+{% endcolumns %}
+
+
+
+
 
 
 
