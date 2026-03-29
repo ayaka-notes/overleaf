@@ -1,5 +1,6 @@
 ---
 description: What new features does Overleaf Pro have compared to the community edition?
+hidden: true
 icon: layer-plus
 ---
 
