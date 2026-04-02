@@ -11,7 +11,7 @@ metaLinks:
 
 <h2 align="center">Overleaf Pro Edition</h2>
 
-<p align="center"><mark style="color:$info;">An AI Powered LaTeX Editor</mark></p>
+<p align="center"><mark style="color:$info;">An AI-Powered LaTeX Editor Based on the Community Edition</mark></p>
 
 
 
@@ -156,7 +156,7 @@ Say goodbye to endless rounds of email feedback.
 {% endcolumn %}
 
 {% column width="50%" %}
-### <i class="fa-file-code">:file-code:</i> Read more about overleaf developer document.
+### <i class="fa-file-code">:file-code:</i> Read more about overleaf developer document by community.
 
 There aren't many Overleaf `developer` resources available online.
 
