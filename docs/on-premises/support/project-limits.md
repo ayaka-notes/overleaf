@@ -10,7 +10,7 @@ icon: list-check
 | Maximum number of files per project              | 2000                                                                                                                                                                    |
 | Maximum size of editable material per project    | **Default:** 7 MB. See [Environment variables](/broken/pages/7db9ebeae897423f645164394c78852702ffcec7) for more information about customizing this value.               |
 | Maximum size of an individual editable text file | 2 MB\*                                                                                                                                                                  |
-| Maximum size of an individual upload             | 50 MB                                                                                                                                                                   |
+| Maximum size of an individual upload             | 50 MB (configurable via `MAX_UPLOAD_SIZE`)                                                                                                                              |
 | Maximum size of project                          | Unlimited†                                                                                                                                                              |
 | Maximum number of projects                       | Unlimited                                                                                                                                                               |
 
