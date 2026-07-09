@@ -83,8 +83,15 @@ A stock Pandoc image works because clsi invokes Pandoc generically (no custom te
 #   1. No `pandoc` ENTRYPOINT — clsi runs Cmd ["pandoc", ...]; with the default
 #      entrypoint that would become `pandoc pandoc ...`.
 #   2. `zip` — the import conversion's second step runs `zip -r` to package the output.
-#   3. a `tex` user at UID 1000 — clsi runs every conversion container as User=tex;
-#      UID 1000 matches the host user so bind-mounted files keep the right permissions.
+#   3. Users matching how clsi runs the conversion container (User=$TEXLIVE_IMAGE_USER):
+#        - `tex` at UID 1000 — dev / microservices default.
+#        - `www-data` at UID 33 — Server Pro sandboxed *sibling* containers set
+#          TEXLIVE_IMAGE_USER=www-data (see /etc/overleaf/env.sh). clsi (running as
+#          www-data) creates the conversion dir owned by 33:33, so the container must run
+#          as www-data(33) to write into it — otherwise pandoc fails with either
+#          "unable to find user www-data" or "permission denied".
+#      Alpine already ships a `www-data` group at GID 82, so we move it to GID 33 to
+#      match the host/texlive image.
 #
 # Build (tag must match PANDOC_IMAGE in develop/dev.env):
 #   docker build -t overleaf-pandoc:local develop/pandoc
@@ -96,8 +103,10 @@ FROM pandoc/core:latest
 ENTRYPOINT []
 
 RUN apk add --no-cache zip \
- && adduser -D -u 1000 tex
-
+ && adduser -D -u 1000 tex \
+ && (delgroup www-data 2>/dev/null || true) \
+ && addgroup -g 33 www-data \
+ && adduser -D -u 33 -G www-data www-data
 ```
 
 Build and tag it so the tag matches `PANDOC_IMAGE`:
