@@ -4,10 +4,8 @@ icon: github
 
 # GitHub Synchronisation
 
-The GitHub integration is only available at [ayaka-notes/overleaf](https://github.com/ayaka-notes/overleaf) currently. We are very proud to bring this feature for everyone to use, which used to be only available at Overleaf SaaS.
-
 {% hint style="info" %}
-This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro), will be introduced from v6.2.0 and later. It's still in beta status. We need your feedback if you have any problem.
+This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro), modified by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). It is introduced from v6.2.0 and later. It's still in beta status. We need your feedback if you have any problem.
 {% endhint %}
 
 {% columns %}
@@ -36,22 +34,30 @@ GIT_BRIDGE_ENABLED=true
 {% endcode %}
 {% endhint %}
 
-Visit [developers settings](https://github.com/settings/developers) to create your GitHub OAuth application, and copy your `CLIENT_ID` and `SECRET`.
+Visit [developers settings](https://github.com/settings/developers) to create your GitHub OAuth application, and copy your `CLIENT_ID` and `SECRET`.&#x20;
+
+**Notes**: your OAuth callback URL is: `${OVERLEAF_SITE_URL}/user/github-sync/oauth2/callback`.
 
 Then, add the following settings to your overleaf env var files.
 
 {% code title="config/variables.env" overflow="wrap" %}
 ```dotenv
 # used to encrypt the user's GitHub access token.
-CIPHER_PASSWORD=0123456789ABCDEFG # changed to yours
+# How to generate: `openssl rand -hex 32`
+GITHUB_TOKEN_CIPHER_PASSWORD=0123456789ABCDEFG # changed to yours
 
 # Github Sync Settings
 GITHUB_SYNC_ENABLED=true
 GITHUB_SYNC_CLIENT_ID=
 GITHUB_SYNC_CLIENT_SECRET=
-GITHUB_SYNC_CALLBACK_URL==http://your.overleaf.com/github-sync/completeRegistration
-GITHUB_SYNC_HOST=github-sync
-# (Optional) GITHUB_SYNC_PROXY_URL=http://10.0.0.1:8888
+
+# OAuth callback is: ${OVERLEAF_SITE_URL}/user/github-sync/oauth2/callback
+# (Optional) GITHUB_SYNC_PROXY_URL=http://10.0.0.1:10808
 ```
 {% endcode %}
 
+If you are located in mainland China, you may need to configure a proxy to access GitHub. Set the following environment variable: `GITHUB_SYNC_PROXY_URL=http://10.0.0.1:10808`.
+
+{% hint style="warning" %}
+Do not use `127.0.0.1` for proxy host. If the proxy is running on host server, use the server’s LAN IP (like `192.168.1.xx`) address and make sure the proxy is configured to accept connections from devices on the local network.
+{% endhint %}

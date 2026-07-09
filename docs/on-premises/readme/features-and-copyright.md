@@ -137,3 +137,43 @@ This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Wiki page</p></figcaption></figure>
 
+#### Features 12: GitHub Sync
+
+This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro), also modified and fixed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep).
+
+<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+
+#### Features 13: Python Runner
+
+This feature is developed by overleaf official. You can run python script in your browser.
+
+<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+
+#### Features 14: Advanced Reference Search
+
+This feature is developed by [davrot](https://github.com/davrot/), fixed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep), also by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).&#x20;
+
+<figure><img src="../.gitbook/assets/截屏2026-07-09 13.48.46.png" alt="" width="563"><figcaption></figcaption></figure>
+
+Search panel:
+
+<figure><img src="../.gitbook/assets/截屏2026-07-09 13.49.50.png" alt="" width="563"><figcaption></figcaption></figure>
+
+#### Features 15: Pandoc Conversitions
+
+This feature allows you to import Word or Markdown documents as LaTeX projects, or export LaTeX projects to Markdown or DOCX.
+
+{% columns %}
+{% column width="50%" %}
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/截屏2026-07-09 13.51.31.png" alt="" width="262"><figcaption></figcaption></figure></div>
+{% endcolumn %}
+
+{% column width="50%" %}
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/截屏2026-07-09 13.51.49.png" alt="" width="383"><figcaption></figcaption></figure></div>
+{% endcolumn %}
+{% endcolumns %}
+
+
+
+
+

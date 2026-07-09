@@ -47,6 +47,7 @@
   * [Sandboxed Compiles](configuration/overleaf-toolkit/sandboxed-compiles.md)
   * [Git integration](configuration/overleaf-toolkit/git-integration.md)
   * [GitHub Synchronisation](configuration/overleaf-toolkit/github-synchronisation.md)
+  * [Zotero Integration](configuration/overleaf-toolkit/zotero-integration.md)
   * [Templates](configuration/overleaf-toolkit/templates.md)
   * [External URL](configuration/overleaf-toolkit/external-url.md)
   * [Logging](configuration/overleaf-toolkit/logging.md)
@@ -58,6 +59,7 @@
   * [Redis](configuration/overleaf-toolkit/redis.md)
   * [S3](configuration/overleaf-toolkit/s3.md)
   * [Adding LaTeX user help](configuration/overleaf-toolkit/adding-latex-user-help.md)
+  * [Pandoc Import and Export](configuration/overleaf-toolkit/pandoc-import-and-export.md)
 
 ## Maintenance
 
