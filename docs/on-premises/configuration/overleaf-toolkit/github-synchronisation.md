@@ -56,6 +56,10 @@ GITHUB_SYNC_CLIENT_SECRET=
 ```
 {% endcode %}
 
+{% hint style="warning" %}
+Before configuring the GitHub OAuth callback URL, make sure `OVERLEAF_SITE_URL` is set correctly.
+{% endhint %}
+
 If you are located in mainland China, you may need to configure a proxy to access GitHub. Set the following environment variable: `GITHUB_SYNC_PROXY_URL=http://10.0.0.1:10808`.
 
 {% hint style="warning" %}
