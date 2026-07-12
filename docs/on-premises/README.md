@@ -33,6 +33,10 @@ The Overleaf website only provides an entrance to contact support for Server Pro
 
 ### Why Overleaf Pro?
 
+{% hint style="info" %}
+Overleaf Pro is _**not**_ affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Overleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
+{% endhint %}
+
 Overleaf Pro is an enhanced implementation of the Overleaf Community Edition, offering _<mark style="color:green;">**all**</mark>**&#x20;**<mark style="color:green;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), or commercial edition server pro, we have
 
 * _**no limitations**_ on compilation time
