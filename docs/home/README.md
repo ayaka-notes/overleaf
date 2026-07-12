@@ -1,5 +1,23 @@
 ---
 description: Welcome to your team’s developer platform
+layout:
+  width: default
+  title:
+    visible: false
+  description:
+    visible: false
+  tableOfContents:
+    visible: false
+  outline:
+    visible: false
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/2AwfWOGBWBxQmyvHedqW/
@@ -11,7 +29,7 @@ metaLinks:
 
 <h2 align="center">Overleaf Pro Edition</h2>
 
-<p align="center"><mark style="color:$info;">An AI-Powered LaTeX Editor Based on the Community Edition</mark></p>
+<p align="center"><mark style="color:$info;">Overleaf Community Edition enhanced with all Pro features</mark><br><mark style="color:$info;">(open source, free to use, self-hostable).</mark></p>
 
 
 
