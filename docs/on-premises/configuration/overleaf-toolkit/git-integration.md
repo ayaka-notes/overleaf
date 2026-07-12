@@ -53,7 +53,7 @@ git-bridge:
 {% step %}
 ### Update the sharelatex container configuration
 
-You’ll also need to link the `git-bridge` container in the `sharelatex` container and define the following environment variables, please pay attention to `V2_HISTORY_URL`:
+You’ll also need to link the `git-bridge` container in the `sharelatex` container and define the following environment variables, please pay attention to `V1_HISTORY_URL`:
 
 <pre class="language-yaml" data-title="docker-compose.yml (sharelatex service)"><code class="lang-yaml">sharelatex:
     links:
