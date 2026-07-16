@@ -147,7 +147,7 @@ The next code will be directly imported from a file:
 
 This example produces the following output:
 
-![Using minted to import a code file](https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/c/c8/OLV2mintedinput.png)
+<img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/c/c8/OLV2mintedinput.png" alt="Using minted to import a code file" height="392" width="600">
 
 The command `\inputminted{octave}{BitXorMatrix.m}` imports the code from the file `BitXorMatrix.m`, the parameter `octave` tells LaTeX the programming language of the code. This command can take two extra parameters to import only part of the file; for instance, to import code from the line 2 to the line 12, the command becomes:
 
@@ -169,7 +169,7 @@ One-line code formatting also works with \texttt{minted}. For example, a small f
 
 This example produces the following output:
 
-![One line code example with minted](https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/d/d9/OLV2mintedHTML.png)
+<img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/d/d9/OLV2mintedHTML.png" alt="One line code example with minted" height="112" width="600">
 
 The parameter between braces sets the programming language (`html` markup language in this case) with the actual text to be formatted being delimited by the '|' character.
 

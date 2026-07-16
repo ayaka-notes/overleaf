@@ -20,11 +20,14 @@ This image aims to provide an almost complete TeXLive distribution with common f
 
 Features:
 
-* 📦 Nearly full TeXLive installation
+* 🚀 Support Both x86\_64 and arm64 server architectures
+* 📦 Full and Optimized TeXLive installation
 * 🧩 Preinstalled common fonts and utilities
 * 🐳 Ready to use with Docker and Docker Compose
-* 🧪 Tested with Overleaf Server Pro / Overleaf Pro/ Overleaf CEP...
-* 🏷 Multiple version tags (2020 – Latest)
+* 🧪 Tested with Overleaf Server Pro / Overleaf Pro
+* 🔄 Regularly Updated with Latest TeXLive Releases
+* 🏷 Multiple TeXLive Version tags (2020 – Latest)
+* 🧑‍🔬 Knitr support for R code in LaTeX documents
 
 ### Overleaf Pro Usage
 
@@ -44,7 +47,8 @@ TEX_LIVE_DOCKER_IMAGE=ghcr.io/ayaka-notes/texlive-full:2025.1
 
 Thanks to Github Action, we can build all tex image parallel, which includes:
 
-* `ghcr.io/ayaka-notes/texlive-full:2025.1` (Also `latest` tag)
+* `ghcr.io/ayaka-notes/texlive-full:2026.1` (Also `latest` tag)
+* `ghcr.io/ayaka-notes/texlive-full:2025.1`
 * `ghcr.io/ayaka-notes/texlive-full:2024.1`
 * `ghcr.io/ayaka-notes/texlive-full:2023.1`
 * `ghcr.io/ayaka-notes/texlive-full:2022.1`
@@ -52,7 +56,7 @@ Thanks to Github Action, we can build all tex image parallel, which includes:
 * `ghcr.io/ayaka-notes/texlive-full:2020.1`
 * `ghcr.io/ayaka-notes/texlive-full:base`
 
-We use mirror archive from [utah university](https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/), which includes almost all texlive image ranging from 1996 to 2024. And thankes to Overleaf's Dockerfile, we can build this project faster.
+We use mirror archive from [texlive info](https://texlive.info/tlnet-archive/), which includes almost all texlive image ranging from 1996 to 2026. And thankes to Overleaf's Dockerfile, we can build this project faster.
 
 > Why texlive 2019 and earlier are not supported ?
 >
@@ -62,8 +66,10 @@ We use mirror archive from [utah university](https://ftp.math.utah.edu/pub/tex/h
 
 The following packages are contained in the docker image.
 
+* All TeXLive packages(in that year)
+* R packages(only selected)
 * fontconfig inkscape pandoc python3-pygments wget python3
-* gnupg gnuplot perl-modules perl ca-certificates git
+* gnupg gnuplot perl-modules perl ca-certificates
 * ghostscript qpdf r-base-core tar
 
 The following fonts are contained in the docker image.
