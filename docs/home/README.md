@@ -225,5 +225,13 @@ Start Your introduction here...
 
 
 
+{% hint style="info" %}
+Overleaf Pro is not affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Overleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
+{% endhint %}
+
+
+
+
+
 
 
