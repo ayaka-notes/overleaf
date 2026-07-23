@@ -17,8 +17,8 @@ Before you delve into development, We hope you can understand the folloing thing
 ### Commit Rules
 
 * Please do not make extensive modifications to the existing Overleaf code. Concentrate as much functionality as possible in the `services/web/modules` folder. This will minimize our workload when merging and updating the code later.
-* Vibe coding is indeed very an easy way, but it can easily make a mess of our project, making it unmaintainable later on, so please use it with caution. **We don't accept any pull requests based solely on AI programming/Vibe Coding.(For Example** [**#1430**](https://github.com/overleaf/overleaf/issues/1430)**)**
-* We don't accept any translation fixes for Overleaf, you can report it to upstream or contact overleaf support. Also, Please do not update any translation-related content during development; use existing translations whenever possible.
+* Vibe coding is indeed very an easy way, but it can easily make a mess of our project, making it unmaintainable later on, so please use it with caution.
+* Please do not add any translation-related content during development; use existing translations whenever possible.
 * Avoid introducing environment variables unless absolutely necessary. If required, ensure they are as consistent as possible with those in the Overleaf toolkit or [docs.overleaf.com](https://docs.overleaf.com/).
 
 ### Branch Rules
