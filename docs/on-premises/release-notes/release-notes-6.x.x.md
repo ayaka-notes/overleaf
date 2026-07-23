@@ -6,6 +6,12 @@ Our Overleaf Pro license allows you to run the application in **any environment*
 
 We publish our release info on GitHub. Please visit [here](https://github.com/ayaka-notes/overleaf-pro/releases).
 
+### Overleaf Pro 6.2.2
+
+**Release date:** 2026.07.23
+
+See: [https://github.com/ayaka-notes/overleaf-pro/releases/tag/pro-v6.2.2](https://github.com/ayaka-notes/overleaf-pro/releases/tag/pro-v6.2.2)
+
 ### Overleaf Pro 6.2.1
 
 **Release date:** 2026.07.18
