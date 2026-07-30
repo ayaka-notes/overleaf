@@ -130,7 +130,7 @@ No downloads, no setup, and no need to know $$\LaTeX$$ before you start.
 * Detailed guidance and LaTeX learning
 * Stellar support from real-life TeXperts
 
-<p align="right"><a href="https://www.overleaf.com/" class="button primary" data-icon="leaf">Go Overleaf Official</a><a href="https://www.overleaf.com/learn" class="button secondary" data-icon="book-open">Learn LaTeX</a></p>
+<p align="right"><a href="https://www.overleaf.com/learn" class="button secondary" data-icon="book-open">Learn LaTeX</a></p>
 {% endcolumn %}
 {% endcolumns %}
 
