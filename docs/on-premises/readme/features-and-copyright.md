@@ -1,5 +1,5 @@
 ---
-description: What new features does Overleaf Pro have compared to the community edition?
+description: What new features does Ayakaleaf Pro have compared to the community edition?
 icon: layer-plus
 ---
 
@@ -88,11 +88,11 @@ This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-
 {% column %}
 <figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column %}
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
@@ -151,7 +151,7 @@ This feature is developed by overleaf official. You can run python script in you
 
 #### Features 14: Advanced Reference Search
 
-This feature is developed by [davrot](https://github.com/davrot/), fixed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep), also by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).&#x20;
+This feature is developed by [davrot](https://github.com/davrot/), fixed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep), also by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
 
 <figure><img src="../.gitbook/assets/截屏2026-07-09 13.48.46.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -172,8 +172,3 @@ This feature allows you to import Word or Markdown documents as LaTeX projects, 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/截屏2026-07-09 13.51.49.png" alt="" width="383"><figcaption></figcaption></figure></div>
 {% endcolumn %}
 {% endcolumns %}
-
-
-
-
-
