@@ -169,16 +169,16 @@ Say goodbye to endless rounds of email feedback.
 
 
 {% columns %}
-{% column width="50%" %}
-<div align="left" data-with-frame="true"><figure><img src=".gitbook/assets/技术文档与编码工具.png" alt="" width="375"><figcaption></figcaption></figure></div>
+{% column width="41.66666666666667%" %}
+<div align="left" data-with-frame="true"><figure><img src=".gitbook/assets/截屏2026-07-30 09.26.49.png" alt="" width="375"><figcaption></figcaption></figure></div>
 {% endcolumn %}
 
-{% column width="50%" %}
-### <i class="fa-file-code">:file-code:</i> Read more about overleaf developer document by community.
+{% column width="58.33333333333333%" %}
+### <i class="fa-file-code">:file-code:</i> Read more about  developer document by community.
 
-There aren't many Overleaf `developer` resources available online.
+There aren't many  `developer` resources available online.
 
-Here you can find the most of Overleaf's architecture and developer tools, also some debug skills.
+Here you can find the most of Ayakaleaf's architecture and developer tools, also some debug skills.
 
 <p align="right"><a href="https://app.gitbook.com/o/aXieu2C3Ngt9u0fFRG9K/s/I2qEfJyb19sFvDmuZcCm/" class="button secondary" data-icon="book">Developer Documentation</a> </p>
 {% endcolumn %}
