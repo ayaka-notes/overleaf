@@ -27,7 +27,7 @@
   * [1. Download the Toolkit](installation/using-the-toolkit/1.-download-the-toolkit.md)
   * [2. Familiarize yourself with the Toolkit](installation/using-the-toolkit/2.-familiarize-yourself-with-the-toolkit.md)
   * [3. Initialize the configuration](installation/using-the-toolkit/3.-initialize-the-configuration.md)
-  * [4. Get Overleaf Pro Images](installation/using-the-toolkit/4.-get-overleaf-pro-images.md)
+  * [4. Get Ayakaleaf Pro Images](installation/using-the-toolkit/4.-get-overleaf-pro-images.md)
   * [5. Personalizing your instance](installation/using-the-toolkit/5.-personalizing-your-instance.md)
   * [6. Post-installation tasks](installation/using-the-toolkit/6.-post-installation-tasks.md)
 * [Air-gapped/offline deployments](installation/air-gapped-offline-deployments.md)
