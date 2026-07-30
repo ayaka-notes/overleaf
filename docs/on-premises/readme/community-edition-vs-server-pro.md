@@ -2,6 +2,7 @@
 description: >-
   Overleaf Pro and Community Edition are both on premises versions of Overleaf.
   But what are the differences?
+hidden: true
 icon: scale-balanced
 ---
 

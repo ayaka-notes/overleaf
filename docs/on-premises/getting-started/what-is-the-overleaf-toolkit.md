@@ -130,8 +130,7 @@ Example output (truncated/illustrative):
 If any dependencies are missing, the doctor will print warnings. If you run into problems, first run `bin/doctor` and check its output for warnings.
 
 {% hint style="info" %}
-* Users of the free Community Edition should open an issue on GitHub: https://github.com/overleaf/toolkit/issues
-* Users of Server Pro should contact support: mailto:support+serverpro@overleaf.com
+* Users of the Ayakaleaf Pro Edition can open an issue on GitHub: [https://github.com/ayaka-notes/toolkit/issues](https://github.com/ayaka-notes/toolkit/issues)&#x20;
 
 In both cases, include the output of `bin/doctor` in your message.
 {% endhint %}

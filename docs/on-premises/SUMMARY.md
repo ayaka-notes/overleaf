@@ -35,7 +35,7 @@
 
 ## Configuration
 
-* [Overleaf Toolkit](configuration/overleaf-toolkit/README.md)
+* [Ayakaleaf Toolkit](configuration/overleaf-toolkit/README.md)
   * [Files and locations](configuration/overleaf-toolkit/files-and-locations.md)
   * [Toolkit settings](configuration/overleaf-toolkit/toolkit-settings.md)
   * [Environment variables](configuration/overleaf-toolkit/environment-variables.md)
