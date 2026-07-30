@@ -1,7 +1,7 @@
 ---
 description: >-
-  This is where you'll find all the technical documentation for Overleaf Pro, an
-  on-premises and enhanced versions of Overleaf based on Overleaf Community
+  This is where you'll find all the technical documentation for Ayakaleaf Pro,
+  an on-premises and enhanced versions of Overleaf based on Overleaf Community
   Edition.
 icon: hand-wave
 ---
@@ -31,13 +31,13 @@ The Overleaf website only provides an entrance to contact support for Server Pro
 * For educations, 20 user 2640 Euro per year, 50 user 6050 Euro, 100 user 9963 Euro.
 * Server Pro is only available in select regions (e.g., excluding mainland China).
 
-### Why Overleaf Pro?
+### Why Ayakaleaf Pro?
 
 {% hint style="info" %}
 Overleaf Pro is _**not**_ affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Overleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
 {% endhint %}
 
-Overleaf Pro is an enhanced implementation of the Overleaf Community Edition, offering _<mark style="color:green;">**all**</mark>**&#x20;**<mark style="color:green;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), or commercial edition server pro, we have
+Ayakaleaf Pro is an enhanced implementation of the Overleaf Community Edition, offering _<mark style="color:green;">**all**</mark>**&#x20;**<mark style="color:green;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), or commercial edition server pro, we have
 
 * _**no limitations**_ on compilation time
 * _**no license**_ requirements on the number of users
@@ -49,6 +49,3 @@ And you can fully self-host your own data, ensuring absolute security! To find o
 [features-and-copyright.md](readme/features-and-copyright.md)
 {% endcontent-ref %}
 
-{% content-ref url="readme/community-edition-vs-server-pro.md" %}
-[community-edition-vs-server-pro.md](readme/community-edition-vs-server-pro.md)
-{% endcontent-ref %}
