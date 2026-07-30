@@ -27,13 +27,13 @@ metaLinks:
 
 <h3 align="center"><mark style="color:purple;">\begin</mark> <mark style="color:$info;"><strong>{</strong></mark> <mark style="color:$primary;">Documents</mark> <mark style="color:$info;"><strong>}</strong></mark></h3>
 
-<h2 align="center">Overleaf Pro Edition</h2>
+<h2 align="center">AyakaLeaf Pro Edition</h2>
 
 <p align="center"><mark style="color:$info;">Overleaf Community Edition enhanced with all Pro features</mark><br><mark style="color:$info;">(open source, free to use, self-hostable).</mark></p>
 
 
 
-<p align="center">Write like a rocket scientist with Overleaf Pro<br>— <em><mark style="color:green;"><strong>unlock all Features</strong></mark></em>, an <em>on-Premise</em> solution that <em>anyone</em> can use.</p>
+<p align="center">Write like a rocket scientist with Ayakaleaf Pro<br>— <em><mark style="color:green;"><strong>unlock all Features</strong></mark></em>, an <em>on-Premise</em> solution that <em>anyone</em> can use.</p>
 
 <p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/installation/using-the-github-codespace" class="button primary" data-icon="rocket-launch">Get Started</a>   <a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
 
@@ -79,7 +79,7 @@ metaLinks:
 {% column width="50%" %}
 ### <i class="fa-github">:github:</i>  Get On Premises in 5 minutes
 
-Setting up your own Ovlereaf Pro and your online $$\LaTeX$$ environment with **GitHub Codespace** immediately!
+Setting up your own Ayakaleaf Pro and your online $$\LaTeX$$ environment with **GitHub Codespace** immediately!
 
 You don't need any skill with Linux or server management, just <mark style="color:$primary;">**One Click Deployment**</mark> on GitHub!
 
@@ -170,7 +170,7 @@ Say goodbye to endless rounds of email feedback.
 
 {% columns %}
 {% column width="50%" %}
-<div align="left" data-with-frame="true"><figure><img src=".gitbook/assets/技术文档与编码工具.png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left" data-with-frame="true"><figure><img src=".gitbook/assets/技术文档与编码工具.png" alt="" width="375"><figcaption></figcaption></figure></div>
 {% endcolumn %}
 
 {% column width="50%" %}
@@ -226,7 +226,7 @@ Start Your introduction here...
 
 
 {% hint style="info" %}
-Overleaf Pro is not affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Overleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
+Ayakaleaf Pro is not affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Overleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
 {% endhint %}
 
 
