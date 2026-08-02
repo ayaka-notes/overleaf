@@ -14,7 +14,6 @@
   * [Skills needed](getting-started/requirements/skills-needed.md)
   * [Hardware requirements](getting-started/requirements/hardware-requirements.md)
   * [Software requirements](getting-started/requirements/software-requirements.md)
-  * [Setup Docker](getting-started/requirements/setup-docker.md)
 * [Microservices](getting-started/microservices.md)
 * [Pro infrastructure](getting-started/pro-infrastructure.md)
 * [What is the Overleaf Toolkit?](getting-started/what-is-the-overleaf-toolkit.md)
@@ -22,6 +21,7 @@
 ## installation
 
 * [Introduction](installation/introduction.md)
+* [Setup Docker](installation/setup-docker.md)
 * [Using GitHub Codespace](installation/using-the-github-codespace.md)
 * [Using the Toolkit](installation/using-the-toolkit/README.md)
   * [1. Download the Toolkit](installation/using-the-toolkit/1.-download-the-toolkit.md)

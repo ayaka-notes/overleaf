@@ -10,7 +10,7 @@ This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka
 
 {% columns %}
 {% column %}
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
@@ -34,7 +34,7 @@ GIT_BRIDGE_ENABLED=true
 {% endcode %}
 {% endhint %}
 
-Visit [developers settings](https://github.com/settings/developers) to create your GitHub OAuth application, and copy your `CLIENT_ID` and `SECRET`.&#x20;
+Visit [developers settings](https://github.com/settings/developers) to create your GitHub OAuth application, and copy your `CLIENT_ID` and `SECRET`.
 
 **Notes**: your OAuth callback URL is: `${OVERLEAF_SITE_URL}/user/github-sync/oauth2/callback`.
 

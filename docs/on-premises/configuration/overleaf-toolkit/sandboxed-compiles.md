@@ -39,7 +39,7 @@ When Sandboxed Compiles are enabled, the Docker socket will be mounted from the 
 * Have the `texlive` container read the project data from the location under `OVERLEAF_DATA_PATH`.
 * Compile the project inside the `texlive` container.
 
-### Enabling Sandboxed Compiles&#xD;
+### Enabling Sandboxed Compiles
 
 #### For Toolkit User
 
@@ -79,7 +79,7 @@ services:
 ### Changing the TexLive Image
 
 {% hint style="info" %}
-For China mainland user, you can use `ghcr.nju.edu.cn` to accelerate your download.&#x20;
+For China mainland user, you can use `ghcr.nju.edu.cn` to accelerate your download.
 {% endhint %}
 
 Overleaf Pro uses three environment variables to determine which TeX Live images to use for Sandboxed Compiles:
@@ -106,7 +106,7 @@ It's highly recommended to set **at least 2 texlive-full images**. For detailed 
 
 ### Available TeX Live images
 
-These are a series of TeX Live images that are specially optimized for Overleaf, also can be added to `TEX_LIVE_DOCKER_IMAGE` and `ALL_TEX_LIVE_DOCKER_IMAGES`:&#x20;
+These are a series of TeX Live images that are specially optimized for Overleaf, also can be added to `TEX_LIVE_DOCKER_IMAGE` and `ALL_TEX_LIVE_DOCKER_IMAGES`:
 
 * `ghcr.io/ayaka-notes/texlive-full:2025.1` (Also `latest` tag)
 * `ghcr.io/ayaka-notes/texlive-full:2024.1`
@@ -121,7 +121,7 @@ There is a strict schema concerning how images **must** be tagged (the following
 
 ### Can I Using Other Image Registry
 
-> Some people may wonder if I can replace `ghcr.io` with another mirror site, or switch texlive to  other image from docker hub?
+> Some people may wonder if I can replace `ghcr.io` with another mirror site, or switch texlive to other image from docker hub?
 
 No, we don't recommend it because the configuration is relatively complicated. If you are downloading from a mirror site, you can rename your image to `ghcr.io/ayaka-notes/texlive-full`.
 
@@ -195,17 +195,20 @@ if (process.env.SANDBOXED_COMPILES === 'true') {
 >
 > {% code overflow="wrap" %}
 > ```
-> {"name":"clsi","level":50,"err":{"message":"(HTTP code 404) no such container - No such image: texlive/texlive:latest-full ","name":"Error","stack":"Error: (HTTP code 404) no such container - No such image: texlive/texlive:latest-full ... 
 > ```
 > {% endcode %}
->
+
+> ```
+> {"name":"clsi","level":50,"err":{"message":"(HTTP code 404) no such container - No such image: texlive/texlive:latest-full ","name":"Error","stack":"Error: (HTTP code 404) no such container - No such image: texlive/texlive:latest-full ... 
+> ```
+
 > It seems that the updated settings in `variables.env` are not taking effect. Compile still tries to run the `texlive/texlive:latest-full` image, not the new image.
 >
 > I tried rebooting, deleting the containers and re-run, but still the same issue.
 >
 > Any solutions?
 
-Due to some technical limitations, if you only set up a single Docker TeXLive image, such as `texlive-fullA:latest`&#x20;
+Due to some technical limitations, if you only set up a single Docker TeXLive image, such as `texlive-fullA:latest`
 
 ```
 ALL_TEX_LIVE_DOCKER_IMAGES=texlive/texliveA:latest-full

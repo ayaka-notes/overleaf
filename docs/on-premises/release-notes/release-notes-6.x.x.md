@@ -1,7 +1,7 @@
 # Release notes 6.x.x
 
 {% hint style="success" %}
-Our Ayakaleaf Pro license allows you to run the application in **any environment** without limit; it is highly recommended that you provision a non-production environment for testing.
+Our Ayakaleaf Pro license allows you to run the application in **any environment** without **any limit**; it is highly recommended that you provision a non-production environment for testing.
 {% endhint %}
 
 We publish our release info on GitHub. Please visit [here](https://github.com/ayaka-notes/overleaf-pro/releases).

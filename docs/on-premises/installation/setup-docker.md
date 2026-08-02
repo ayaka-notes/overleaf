@@ -132,4 +132,4 @@ This is expected for typical Overleaf installs, and especially relevant if you e
 
 ### Next step
 
-Once Docker is working, continue with the Toolkit installation steps in [Using the Toolkit](../../installation/using-the-toolkit/).
+Once Docker is working, continue with the Toolkit installation steps in [Using the Toolkit](using-the-toolkit/).

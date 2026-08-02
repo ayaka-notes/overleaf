@@ -7,7 +7,7 @@ icon: layer-plus
 
 We respect copyright, so we list here all the features and the code used in this project. In this page, we provide information on new features of Overleaf Pro and related code copyrights.
 
-Unless otherwise specified, we use OpenAI’s Codex for code review and PR review. During this process, we fixed many security issues, and we express our sincere gratitude to them. For details, see [ayaka-notes/overleaf-pro/pull](https://github.com/ayaka-notes/overleaf-pro/pulls).
+Unless otherwise specified, we use OpenAI’s Codex for code review and PR review. During this process, we fixed many security issues, and we express our sincere gratitude to them. For details, see [ayaka-notes/ayakaleaf-pro/pull](https://github.com/ayaka-notes/ayakaleaf-pro/pulls).
 
 ### Overview
 
@@ -133,13 +133,13 @@ This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka
 
 #### Features 11: Learn Wiki
 
-This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro). You can see latest learn wiki from overleaf, but we don't own any copyright of those documents! We just download it from overleaf server the first time you enable this feature, and update periodically.
+This feature is developed by [ayaka-notes/ayakaleaf-pro](https://github.com/ayaka-notes/ayakaleaf-pro). You can see latest learn wiki from overleaf, but we don't own any copyright of those documents! We just download it from overleaf server the first time you enable this feature, and update periodically.
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Wiki page</p></figcaption></figure>
 
 #### Features 12: GitHub Sync
 
-This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro), also modified and fixed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep).
+This feature is developed by [ayaka-notes/ayakaleaf-pro](https://github.com/ayaka-notes/ayakaleaf-pro), also modified and fixed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep).
 
 <figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
@@ -151,7 +151,7 @@ This feature is developed by overleaf official. You can run python script in you
 
 #### Features 14: Advanced Reference Search
 
-This feature is developed by [davrot](https://github.com/davrot/), fixed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep), also by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro).
+This feature is developed by [davrot](https://github.com/davrot/), fixed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep), also by [ayaka-notes/ayakaleaf-pro](https://github.com/ayaka-notes/ayakaleaf-pro).
 
 <figure><img src="../.gitbook/assets/截屏2026-07-09 13.48.46.png" alt="" width="563"><figcaption></figcaption></figure>
 

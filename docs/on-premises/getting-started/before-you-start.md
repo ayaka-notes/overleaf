@@ -4,7 +4,7 @@ icon: star-shooting
 
 # Before you start
 
-Before you install Overleaf, it's important to familiarize yourself with the requirements, installation process, configuration options, and upgrade sections of this documentation. It's also crucial to have a solid understanding of your organization's requirements for using Overleaf and the necessary underlying infrastructure needed for its successful operation.
+Before you install Ayakaleaf, it's important to familiarize yourself with the requirements, installation process, configuration options, and upgrade sections of this documentation. It's also crucial to have a solid understanding of your organization's requirements for using Overleaf and the necessary underlying infrastructure needed for its successful operation.
 
 ### What can I do to prepare? <a href="#what-can-i-do-to-prepare" id="what-can-i-do-to-prepare"></a>
 
