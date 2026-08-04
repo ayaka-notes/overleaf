@@ -2,7 +2,7 @@
 
 * [Welcome](README.md)
   * [Features and Copyright](readme/features-and-copyright.md)
-  * [Overleaf Pro vs. Server Pro](readme/community-edition-vs-server-pro.md)
+  * [Overleaf Server Pro vs. Ayakaleaf Pro](readme/ayakaleaf-pro-vs-server-pro.md)
   * [Hidden Pages](readme/hidden-pages.md)
 * [Release notes](release-notes/README.md)
   * [Release notes 6.x.x](release-notes/release-notes-6.x.x.md)
