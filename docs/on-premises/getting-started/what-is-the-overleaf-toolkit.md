@@ -2,9 +2,9 @@
 icon: toolbox
 ---
 
-# What is the Overleaf Toolkit?
+# What is the Ayakaleaf Toolkit?
 
-The Overleaf Toolkit is the recommended deployment method for on-premises installations of the Community Edition, Server Pro or Overleaf Pro, it has been designed to work with the most common environment: a single physical server or virtual machine. The Toolkit uses `docker compose` to manage your server's Docker containers and provides a set of scripts which wrap `docker` commands to assist with the more technical side of managing an on-premises version of Overleaf.
+The ayakaleaf toolkit is the recommended deployment method for on-premises installations of the Community Edition, Ayakaleaf Pro, it has been designed to work with the most common environment: a single physical server or virtual machine. The Toolkit uses `docker compose` to manage your server's Docker containers and provides a set of scripts which wrap `docker` commands to assist with the more technical side of managing an on-premises version of Overleaf.
 
 #### The `bin/docker-compose` wrapper
 
@@ -130,7 +130,7 @@ Example output (truncated/illustrative):
 If any dependencies are missing, the doctor will print warnings. If you run into problems, first run `bin/doctor` and check its output for warnings.
 
 {% hint style="info" %}
-* Users of the Ayakaleaf Pro Edition can open an issue on GitHub: [https://github.com/ayaka-notes/toolkit/issues](https://github.com/ayaka-notes/toolkit/issues)&#x20;
+* Users of the Ayakaleaf Pro Edition can open an issue on GitHub: [https://github.com/ayaka-notes/toolkit/issues](https://github.com/ayaka-notes/toolkit/issues)
 
 In both cases, include the output of `bin/doctor` in your message.
 {% endhint %}
