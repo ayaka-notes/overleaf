@@ -42,6 +42,12 @@ If you are using a subnet from `172.16.0.0/12` (default subnet for Docker networ
 If the `OVERLEAF_TRUSTED_PROXY_IPS` is not set manually it defaults to `loopback`. If setting manually, you must ensure you include one of `loopback`, `localhost` or `127.0.0.1`, which trusts the **nginx** instance running inside the **sharelatex** container.
 {% endhint %}
 
+If you have configured the trusted proxy IPs correctly, you should see your public IP address on the `/user/sessions` page like this:
+
+<figure><img src="../../.gitbook/assets/QQ_1786353887353.png" alt="" width="375"><figcaption></figcaption></figure>
+
+If the IP address shown above is still something like `127.0.0.1` or a private/local network IP address, please check your trusted proxy configuration, especially the value of `OVERLEAF_TRUSTED_PROXY_IPS`.
+
 In order to run the proxy, change the value of the `NGINX_ENABLED` variable in `config/overleaf.rc` from `false` to `true` and re-run `bin/up`.
 
 By default, the HTTPS web interface will be available on `https://127.0.1.1:443`. Connections to `http://127.0.1.1:80` will be redirected to `https://127.0.1.1:443`. To change the IP address that NGINX listens on, set the `NGINX_HTTP_LISTEN_IP` and `NGINX_TLS_LISTEN_IP` variables. The ports can be changed via the `NGINX_HTTP_PORT` and `TLS_PORT` variables.
@@ -58,26 +64,26 @@ participant sharelatex as sharelatex
 participant git-bridge as git-bridge
 %% User connects to external host HTTP
 user->>+ external: HTTP
-note over external: NGINX\_HTTP\_LISTEN\_IP:NGINX\_HTTP\_PORT
+note over external: NGINX_HTTP_LISTEN_IP:NGINX_HTTP_PORT
 external->>+ nginx: HTTP
 note over nginx: nginx:80
 nginx-->>-external: 301
 %% User connects to external host HTTPS
 user->>+ external: HTTPS
-note over external: NGINX\_TLS\_LISTEN\_IP:TLS\_PORT
+note over external: NGINX_TLS_LISTEN_IP:TLS_PORT
 external->>+ nginx: HTTPS
 note over nginx: nginx:443
 nginx->>+ sharelatex: HTTP
 note over sharelatex: sharlatex:80
 %% User connects to localhost HTTP
 user->>+ internal: HTTP
-note over internal: OVERLEAF\_LISTEN\_IP:OVERLEAF\_PORT
+note over internal: OVERLEAF_LISTEN_IP:OVERLEAF_PORT
 internal->>+sharelatex: HTTP
 note over sharelatex: sharlatex:80
 %% sharelatex connects to git-bridge
 sharelatex->>+git-bridge: HTTP /git/
 note over git-bridge: git-bridge:8000
-note over sharelatex: GIT\_BRIDGE\_HOST:GIT\_BRIDGE\_PORT
+note over sharelatex: GIT_BRIDGE_HOST:GIT_BRIDGE_PORT
 git-bridge->>+sharelatex: WEB/WEB-API:3000
 git-bridge->>+sharelatex: HISTORY-V1:3100
 ```
