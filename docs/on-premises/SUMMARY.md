@@ -31,7 +31,7 @@
   * [5. Personalizing your instance](installation/using-the-toolkit/5.-personalizing-your-instance.md)
   * [6. Post-installation tasks](installation/using-the-toolkit/6.-post-installation-tasks.md)
 * [Air-gapped/offline deployments](installation/air-gapped-offline-deployments.md)
-* [Migrate from Existing Instance](installation/migrate-from-existing-instance.md)
+* [Migrate from Existing](installation/migrate-from-existing.md)
 * [Upgrading TeX Live](installation/upgrading-tex-live.md)
 
 ## Configuration
