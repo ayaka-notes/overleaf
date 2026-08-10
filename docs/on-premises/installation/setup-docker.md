@@ -7,7 +7,7 @@ icon: docker
 Overleaf runs on Docker. You must install:
 
 * Docker Engine (Docker CE)
-* Docker Compose **plugin** (`docker compose`, v2)
+* Docker Compose plugin (`docker compose`, v2)
 
 These steps target a recent Ubuntu LTS (20.04/22.04/24.04).
 
@@ -26,7 +26,7 @@ If Docker was previously installed from another source, remove it first:
 
 {% code overflow="wrap" %}
 ```bash
- sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
+sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
 ```
 {% endcode %}
 
