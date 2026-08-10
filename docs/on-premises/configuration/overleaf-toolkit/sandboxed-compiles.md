@@ -126,7 +126,8 @@ It's highly recommended to set **at least 2 texlive-full images**. For detailed 
 
 These are a series of TeX Live images that are specially optimized for Overleaf, also can be added to `TEX_LIVE_DOCKER_IMAGE` and `ALL_TEX_LIVE_DOCKER_IMAGES`:
 
-* `ghcr.io/ayaka-notes/texlive-full:2025.1` (Also `latest` tag)
+* `ghcr.io/ayaka-notes/texlive-full:2026.1` (Also `latest` tag)
+* `ghcr.io/ayaka-notes/texlive-full:2025.1`
 * `ghcr.io/ayaka-notes/texlive-full:2024.1`
 * `ghcr.io/ayaka-notes/texlive-full:2023.1`
 * `ghcr.io/ayaka-notes/texlive-full:2022.1`
