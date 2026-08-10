@@ -92,13 +92,31 @@ When starting your Overleaf Pro instance using the `bin/up` command, the Toolkit
 
 Here's an example where we default to TeX Live 2025 for new projects, and keep 2024 in use for existing projects.
 
+{% tabs %}
+{% tab title="common installation" %}
+The following configuration installs all full TeX Live Docker images from 2025 to 2026. We recommend having at least 80 GB of available storage before using this configuration.
+
 {% code title="config/variables.env" overflow="wrap" %}
 ```dotenv
-ALL_TEX_LIVE_DOCKER_IMAGES=ghcr.io/ayaka-notes/texlive-full:2025.1, ghcr.io/ayaka-notes/texlive-full:2024.1
-ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=Texlive 2025, Texlive 2024
-TEX_LIVE_DOCKER_IMAGE=ghcr.io/ayaka-notes/texlive-full:2025.1
+ALL_TEX_LIVE_DOCKER_IMAGES=ghcr.io/ayaka-notes/texlive-full:2026.1, ghcr.io/ayaka-notes/texlive-full:2025.1
+ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=Texlive 2026, Texlive 2025
+TEX_LIVE_DOCKER_IMAGE=ghcr.io/ayaka-notes/texlive-full:2026.1
 ```
 {% endcode %}
+{% endtab %}
+
+{% tab title="full installation" %}
+The following configuration installs all full TeX Live Docker images from 2020 to 2026. We recommend having at least 256 GB of available storage before using this configuration.
+
+{% code title="config/variables.env" overflow="wrap" %}
+```dotenv
+ALL_TEX_LIVE_DOCKER_IMAGES=ghcr.io/ayaka-notes/texlive-full:2026.1,ghcr.io/ayaka-notes/texlive-full:2025.1,ghcr.io/ayaka-notes/texlive-full:2024.1,ghcr.io/ayaka-notes/texlive-full:2023.1,ghcr.io/ayaka-notes/texlive-full:2022.1,ghcr.io/ayaka-notes/texlive-full:2021.1,ghcr.io/ayaka-notes/texlive-full:2020.1
+ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=Texlive 2026,Texlive 2025,Texlive 2024,Texlive 2023,Texlive 2022,Texlive 2021,Texlive 2020
+TEX_LIVE_DOCKER_IMAGE=ghcr.io/ayaka-notes/texlive-full:2026.1
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 {% hint style="danger" %}
 It's highly recommended to set **at least 2 texlive-full images**. For detailed reason, see [#known-issues](sandboxed-compiles.md#known-issues "mention")
