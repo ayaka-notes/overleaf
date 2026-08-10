@@ -195,6 +195,8 @@ if (process.env.SANDBOXED_COMPILES === 'true') {
 
 ### Known Issues
 
+This is a real case from overleaf community:
+
 > Using `6.0.1-ext-v3.3`, I have these settings in `variables.env`:
 >
 > ```dotenv
@@ -213,13 +215,10 @@ if (process.env.SANDBOXED_COMPILES === 'true') {
 >
 > {% code overflow="wrap" %}
 > ```
-> ```
-> {% endcode %}
-
-> ```
 > {"name":"clsi","level":50,"err":{"message":"(HTTP code 404) no such container - No such image: texlive/texlive:latest-full ","name":"Error","stack":"Error: (HTTP code 404) no such container - No such image: texlive/texlive:latest-full ... 
 > ```
-
+> {% endcode %}
+>
 > It seems that the updated settings in `variables.env` are not taking effect. Compile still tries to run the `texlive/texlive:latest-full` image, not the new image.
 >
 > I tried rebooting, deleting the containers and re-run, but still the same issue.
