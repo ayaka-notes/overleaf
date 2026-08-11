@@ -5,7 +5,7 @@ icon: code-branch
 # Release notes
 
 {% hint style="success" %}
-Our Overleaf Pro license allows you to run the application in **any environment** without limit; it is highly recommended that you provision a non-production environment for testing.
+Our Overleaf Pro license allows you to run the application in **any environment** without **any limit**; it is highly recommended that you provision a non-production environment for testing.
 {% endhint %}
 
 ### Understanding Overleaf Version Numbers
@@ -18,4 +18,3 @@ Overleaf uses semantic-style version numbers in the form **6.X.y**.
 ### Overleaf Pro Version
 
 Our Overleaf Pro version numbers are fully aligned with the official Overleaf releases. Unless otherwise specified, all published releases are full-feature Server Pro edition images.
-

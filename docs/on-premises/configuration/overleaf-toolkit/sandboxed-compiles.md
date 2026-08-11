@@ -4,14 +4,14 @@ icon: gear-code
 
 # Sandboxed Compiles
 
-Overleaf Pro comes with the option to run compiles in a secured sandbox environment for enterprise security. It does this by running every project in its own secured docker environment.
+Ayakaleaf Pro comes with the option to run compiles in a secured sandbox environment for enterprise security. It does this by running every project in its own secured docker environment.
 
 ### Improved security
 
-Sandboxed Compiles are the recommended approach for Server Pro due to many LaTeX documents requiring/having the ability to execute arbitrary shell commands as part of the PDF compile process. If you use Sandboxed Compiles, each compile runs in a separate Docker container with limited capabilities that are not shared with any other user or project and has no access to outside resources such as the host network.
+Sandboxed Compiles are the recommended approach for Ayakaleaf Pro due to many LaTeX documents requiring/having the ability to execute arbitrary shell commands as part of the PDF compile process. If you use Sandboxed Compiles, each compile runs in a separate Docker container with limited capabilities that are not shared with any other user or project and has no access to outside resources such as the host network.
 
 {% hint style="warning" %}
-If you attempt to run Overleaf Pro **without** Sandboxed Compiles, the compile runs alongside other concurrent compiles inside the main Docker container and users have full read and write access to the `sharelatex` container resources (filesystem, network and environment variables) when running LaTeX compiles.
+If you attempt to run Ayakaleaf Pro **without** Sandboxed Compiles, the compile runs alongside other concurrent compiles inside the main Docker container and users have full read and write access to the `sharelatex` container resources (filesystem, network and environment variables) when running LaTeX compiles.
 {% endhint %}
 
 ### Easier package management
@@ -21,10 +21,10 @@ To avoid manually installing packages, we recommend enabling Sandboxed Compiles.
 Enabling Sandboxed Compiles allows you to configure which TeX Live versions users are able to choose from within their project along with setting a default TeX Live image version for new projects.
 
 {% hint style="info" %}
-If you attempt to run Overleaf Pro without Sandboxed Compiles, your instance will default to using a basic scheme version of TeX Live for compiles. This basic version is lightweight and only contains a very limited subset of LaTeX packages, which will most likely result in missing package errors for your users, especially if they try to use pre-built templates.
+If you attempt to run Ayakaleaf Pro without Sandboxed Compiles, your instance will default to using a basic scheme version of TeX Live for compiles. This basic version is lightweight and only contains a very limited subset of LaTeX packages, which will most likely result in missing package errors for your users, especially if they try to use pre-built templates.
 {% endhint %}
 
-As Overleaf Pro has been architected to work offline, there isn't an automated way to integrate overleaf.com gallery templates into your on-premise installation; it is, however, possible to do this manually on a per-template basis. For more information on how this works, please check out our transferring templates from overleaf.com guide: [#transferring-templates-from-overleaf.com](templates.md#transferring-templates-from-overleaf.com "mention").
+As Ayakaleaf Pro has been architected to work offline, there isn't an automated way to integrate overleaf.com gallery templates into your on-premise installation; it is, however, possible to do this manually on a per-template basis. For more information on how this works, please check out our transferring templates from overleaf.com guide: [#transferring-templates-from-overleaf.com](templates.md#transferring-templates-from-overleaf.com "mention").
 
 {% hint style="info" %}
 Sandboxed Compiles requires that the `sharelatex` container has access to the Docker socket on the host machine (via a bind mount) so it can manage these sibling compile containers.
@@ -76,25 +76,25 @@ services:
         #...
 </code></pre>
 
-### Changing the TexLive Image
+### Setup the TexLive Image
 
 {% hint style="info" %}
-For China mainland user, you can use `ghcr.nju.edu.cn` to accelerate your download.
+For China mainland users, you can replace `ghcr.io` with `ghcr.nju.edu.cn` to speed up the download. But **DO NOT** use `ghcr.nju.edu.cn` directly in your toolkit env settings. You should keep `ghcr.io` as your only choice.
 {% endhint %}
 
-Overleaf Pro uses three environment variables to determine which TeX Live images to use for Sandboxed Compiles:
+Ayakaleaf Pro uses three environment variables to determine which TeX Live images to use for Sandboxed Compiles:
 
 * `TEX_LIVE_DOCKER_IMAGE` **(required),** The default TeX Live image used for compiling new projects. This image must be included in `ALL_TEX_LIVE_DOCKER_IMAGES`.
 * `ALL_TEX_LIVE_DOCKER_IMAGE_NAMES` **(required),** A comma-separated list of friendly names for the images, used for frontend options.
 * `ALL_TEX_LIVE_DOCKER_IMAGES` **(required),** A comma-separated list of TeX Live images to use. If the Overleaf Toolkit is used for deployment, these images will be downloaded or updated. To skip downloading, set `SIBLING_CONTAINERS_PULL=false` in `config/overleaf.rc`.
 
-When starting your Overleaf Pro instance using the `bin/up` command, the Toolkit will automatically pull all of the images listed in `ALL_TEX_LIVE_DOCKER_IMAGES`.
+When starting your Ayakaleaf Pro instance using the `bin/up` command, the Toolkit will automatically pull all of the images listed in `ALL_TEX_LIVE_DOCKER_IMAGES`.
 
-Here's an example where we default to TeX Live 2025 for new projects, and keep 2024 in use for existing projects.
+Here's an example where we default to TeX Live 2026 for new projects, and keep 2025 in use for old projects.
 
 {% tabs %}
-{% tab title="common installation" %}
-The following configuration installs all full TeX Live Docker images from 2025 to 2026. We recommend having at least 80 GB of available storage before using this configuration.
+{% tab title="Minium installation" %}
+The following configuration installs all full TeX Live Docker images from 2025 to 2026. We recommend having at least **64 GB** of available storage before using this configuration.
 
 {% code title="config/variables.env" overflow="wrap" %}
 ```dotenv
@@ -105,8 +105,8 @@ TEX_LIVE_DOCKER_IMAGE=ghcr.io/ayaka-notes/texlive-full:2026.1
 {% endcode %}
 {% endtab %}
 
-{% tab title="full installation" %}
-The following configuration installs all full TeX Live Docker images from 2020 to 2026. We recommend having at least 256 GB of available storage before using this configuration.
+{% tab title="Full installation" %}
+The following configuration installs all full TeX Live Docker images from 2020 to 2026. We recommend having at least **150 GB** of available storage before using this configuration.
 
 {% code title="config/variables.env" overflow="wrap" %}
 ```dotenv
@@ -248,7 +248,7 @@ When CLSI compiles a project, it uses the container image name found in the data
 
 If you only provide one Docker image, users will not be able to modify the image used to compile the project. In this case, you need to write a script to **manually modify** the TeXLive image for all user projects in mongoDB.
 
-### Debug
+### Debug and Report
 
 Run the following command to check clsi log from toolkit:
 
@@ -257,3 +257,9 @@ Run the following command to check clsi log from toolkit:
 bin/logs clsi
 ```
 {% endcode %}
+
+If you encounter any issues compiling with the TeX Live images, please submit an issue here:
+
+[https://github.com/ayaka-notes/texlive-full/issues/new?template=texlive-image-bug.yml](https://github.com/ayaka-notes/texlive-full/issues/new?template=texlive-image-bug.yml)
+
+To help us reproduce and troubleshoot the problem, you may be asked to upload your project to Overleaf. We will then pull the project and run compilation tests with GitHub Action.
