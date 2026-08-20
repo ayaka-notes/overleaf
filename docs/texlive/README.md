@@ -1,5 +1,5 @@
 ---
-icon: atom-simple
+icon: compact-disc
 ---
 
 # TeXLive
