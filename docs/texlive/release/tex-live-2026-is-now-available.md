@@ -1,3 +1,7 @@
+---
+icon: box-isometric
+---
+
 # TeX Live 2026 is now available
 
 {% hint style="info" %}
