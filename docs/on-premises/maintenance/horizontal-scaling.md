@@ -4,9 +4,11 @@ icon: distribute-spacing-horizontal
 
 # Horizontal scaling
 
-Starting with version 3.5.6 Server Pro supports horizontal scaling.
+{% hint style="success" %}
+Ayakaleaf Pro supports horizontal scaling. We have tested and verified that it runs correctly with multiple replicas.
+{% endhint %}
 
-This document lists the technical requirements and provides guidelines for running Server Pro in more than one node.
+This document lists the technical requirements and provides guidelines for running Ayakaleaf Pro in more than one node.
 
 {% hint style="danger" %}
 Starting with Server CE/Server Pro `5.0.3` environment variables have been rebranded from `SHARELATEX_*` to `OVERLEAF_*`.
@@ -23,6 +25,8 @@ We can help troubleshoot errors in the Server Pro containers that might be the r
 Resolving technical issues specific to your hardware/software to provide the external components are not covered by our support terms.
 
 ### Requirements
+
+<figure><img src="../.gitbook/assets/水平扩缩容_架构图源码.jpg" alt=""><figcaption></figcaption></figure>
 
 #### External, central data storage
 
