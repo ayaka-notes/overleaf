@@ -15,7 +15,7 @@ If you are using official overleaf toolkit, just add a file named `docker-compos
 ---
 services:
     sharelatex:
-        image: ghcr.io/ayaka-notes/overleaf-pro:latest # or X.x.x
+        image: ghcr.io/ayaka-notes/overleaf-pro:X.x.x # change to specific version
 ```
 {% endcode %}
 

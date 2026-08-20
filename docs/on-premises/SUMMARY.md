@@ -30,6 +30,7 @@
   * [4. Get Ayakaleaf Pro Images](installation/using-the-toolkit/4.-get-overleaf-pro-images.md)
   * [5. Personalizing your instance](installation/using-the-toolkit/5.-personalizing-your-instance.md)
   * [6. Post-installation tasks](installation/using-the-toolkit/6.-post-installation-tasks.md)
+* [Using Claude or Codex](installation/using-claude-or-codex.md)
 * [Air-gapped/offline deployments](installation/air-gapped-offline-deployments.md)
 * [Migrate from Existing](installation/migrate-from-existing.md)
 * [Upgrading TeX Live](installation/upgrading-tex-live.md)
