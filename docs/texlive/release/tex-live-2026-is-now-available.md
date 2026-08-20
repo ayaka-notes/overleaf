@@ -5,7 +5,7 @@ icon: box-isometric
 # TeX Live 2026 is now available
 
 {% hint style="info" %}
-This document is a mirror of [overleaf blog](https://www.overleaf.com/blog/tex-live-2026-is-now-available). Overleaf released its TeX Live 2026 on August 18 2026, and we have also updated our [ayaka-notes/texlive-full](https://github.com/ayaka-notes/texlive-full) 2026 now.
+This document comes from the [Overleaf blog](https://www.overleaf.com/blog/tex-live-2026-is-now-available). Overleaf released TeX Live 2026 on August 18, 2026. We have also updated [ayaka-notes/texlive-full](https://github.com/ayaka-notes/texlive-full) to TeX Live 2026.
 {% endhint %}
 
 Here's what's changed, what to check before switching, and how to fix the most common new errors. The most notable update in this release is that the features that produce accessible PDFs are ready to use in production workflows, and have graduated from the prototype phase. This update also gives you access to new and updated TeX-related programs, fonts, and macro packages. This blog post covers all the key information and important changes you need to know about.
