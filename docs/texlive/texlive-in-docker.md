@@ -14,11 +14,11 @@ However, some TeX Live packages rely on shell access. For security reasons, the 
 
 ### TeXLive Full Edition
 
-[TeXLive-Full@ayaka-notes](https://github.com/ayaka-notes/texlive-full/) is a fully-featured **TeXLive Docker image** designed specially for Overleaf Server Pro, Overleaf Pro, and also standalone LaTeX compilation environments, like CI or pipelines.
+[TeXLive-Full@ayaka-notes](https://github.com/ayaka-notes/texlive-full/) is a fully-featured **TeXLive Docker image** designed for sandboxed LaTeX compilation in [Ayakaleaf Pro](https://github.com/ayaka-notes/ayakaleaf-pro), [Overleaf CEP](https://github.com/yu-i-i/overleaf-cep), or standalone LaTeX compilation environments.
 
-This image aims to provide an almost complete TeXLive distribution with common fonts and tools preinstalled, in order to minimize compilation failures caused by missing packages or fonts.
+This image aims to provide an almost complete TeXLive distribution with common fonts and tools preinstalled, in order to minimize compilation failures caused by missing packages or fonts. Notes: This Docker Image **doesn't contain** any sharelatex/overleaf component. It's used for Overleaf/Overleaf Pro's compile.
 
-Features:
+#### Features:
 
 * 🚀 Support Both x86\_64 and arm64 server architectures
 * 📦 Full and Optimized TeXLive installation
@@ -29,21 +29,21 @@ Features:
 * 🏷 Multiple TeXLive Version tags (2020 – Latest)
 * 🧑‍🔬 Knitr support for R code in LaTeX documents
 
-### Overleaf Pro Usage
+### Ayakaleaf Pro Usage
 
-[TeXLive-Full@ayaka-notes](https://github.com/ayaka-notes/texlive-full/) support **overleaf pro**, you can use the following environment variables to `config/variables.env` file if you are [toolkit user](https://github.com/overleaf/toolkit).
+TeX Live Full by Ayaka-notes is specially designed for [ayakaleaf-pro](https://github.com/ayaka-notes/ayakaleaf-pro), you can use the following environment variables to `config/variables.env` file if you are [toolkit user](https://github.com/overleaf/toolkit).
 
 For example:
 
 {% code title="config/variables.env" overflow="wrap" %}
 ```dotenv
-ALL_TEX_LIVE_DOCKER_IMAGES=ghcr.io/ayaka-notes/texlive-full:2025.1, ghcr.io/ayaka-notes/texlive-full:2024.1
-ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=Texlive 2025, Texlive 2024
-TEX_LIVE_DOCKER_IMAGE=ghcr.io/ayaka-notes/texlive-full:2025.1
+ALL_TEX_LIVE_DOCKER_IMAGES=ghcr.io/ayaka-notes/texlive-full:2026.1, ghcr.io/ayaka-notes/texlive-full:2025.1
+ALL_TEX_LIVE_DOCKER_IMAGE_NAMES=Texlive 2026, Texlive 2025
+TEX_LIVE_DOCKER_IMAGE=ghcr.io/ayaka-notes/texlive-full:2026.1
 ```
 {% endcode %}
 
-### TeXLive Version
+### TeX Live Version
 
 Thanks to Github Action, we can build all tex image parallel, which includes:
 
@@ -56,11 +56,11 @@ Thanks to Github Action, we can build all tex image parallel, which includes:
 * `ghcr.io/ayaka-notes/texlive-full:2020.1`
 * `ghcr.io/ayaka-notes/texlive-full:base`
 
-We use mirror archive from [texlive info](https://texlive.info/tlnet-archive/), which includes almost all texlive image ranging from 1996 to 2026. And thankes to Overleaf's Dockerfile, we can build this project faster.
+We use mirror archive from [texlive info](https://texlive.info/tlnet-archive/), which includes almost all texlive image ranging from 1996 to 2025. And thanks to Overleaf's Dockerfile, we can build this project faster.
 
-> Why texlive 2019 and earlier are not supported ?
+> Why TeX Live 2019 and earlier are not supported ?
 >
-> To maintain such images is more than difficult. And we believe you may not use it any more since it's too old. If you need, open a issue to let me know.
+> Maintaining these old images is extremely difficult. Also, the [texlive.info](https://texlive.info/) website does not provide information for TeX Live versions released before 2019, so we are unable to build images for those versions. If you need a specific old version, please open an issue and let us know.
 
 ### Contained Component
 
