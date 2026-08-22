@@ -2,6 +2,7 @@
 
 * [Welcome](README.md)
   * [Features and Copyright](readme/features-and-copyright.md)
+  * [Trust and Security](readme/trust-and-security.md)
   * [Overleaf Server Pro vs. Ayakaleaf Pro](readme/ayakaleaf-pro-vs-server-pro.md)
   * [Hidden Pages](readme/hidden-pages.md)
 * [Release notes](release-notes/README.md)
