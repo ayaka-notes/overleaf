@@ -13,6 +13,8 @@ Ayakaleaf Pro is a self-hosted Overleaf Pro enhancement, and our source code is 
 
 Security depends on your configuration and operations. Protect administrator access, enable HTTPS, and maintain backups.
 
+Thanks to OpenAI for their kind support. We will regularly use [Codex Security](https://chatgpt.com/codex/cloud/security/findings) to scan our repository for security issues and publicly share the results of vulnerability fixes.
+
 ### Where does my data go?
 
 By default, application data remains within your deployment:
