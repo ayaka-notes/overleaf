@@ -51,6 +51,7 @@
   * [Git integration](configuration/overleaf-toolkit/git-integration.md)
   * [GitHub Synchronisation](configuration/overleaf-toolkit/github-synchronisation.md)
   * [Zotero Integration](configuration/overleaf-toolkit/zotero-integration.md)
+  * [Mendeley Integration](configuration/overleaf-toolkit/mendeley-integration.md)
   * [Templates](configuration/overleaf-toolkit/templates.md)
   * [External URL](configuration/overleaf-toolkit/external-url.md)
   * [Logging](configuration/overleaf-toolkit/logging.md)
