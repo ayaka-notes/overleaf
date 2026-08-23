@@ -51,6 +51,14 @@ The remaining feature requests reach the following destinations. Each request or
 
 <details>
 
+<summary><strong>Mendeley integration</strong></summary>
+
+**Mendeley integration** contacts `api.mendeley.com` for both authorization and library data. It is enabled per user by linking a Mendeley account. The OAuth handshake requests Mendeley's `all` scope — the only scope its API offers — but Ayakaleaf only ever performs reads: reference libraries and group libraries are pulled in as BibTeX, and no project content is uploaded. Access tokens are refreshed automatically; when Mendeley revokes a grant, the stored credential is discarded and the user is asked to link the account again.
+
+</details>
+
+<details>
+
 <summary><strong>Documentation pages</strong></summary>
 
 **Documentation pages** are retrieved from `https://learnwiki.overleaf.com`, configurable with `WIKI_URL`. Requests are made by the web service, not by the user's browser, so the upstream wiki sees your server and never your users' addresses. Only the requested page title is sent, and responses are cached on disk. Point `WIKI_URL` at your own mirror, or block the destination, if outbound documentation traffic is not acceptable.
@@ -67,7 +75,7 @@ The remaining feature requests reach the following destinations. Each request or
 
 <details>
 
-<summary><strong>Two optional checks (PWD)</strong></summary>
+<summary><strong>Two optional checks (PWD/reCAPTCHA)</strong></summary>
 
 **Two optional checks are disabled by default.** The compromised password check is inactive unless `HAVE_I_BEEN_PWNED_ENABLED` is set; when enabled it sends the first characters of a SHA-1 hash of the password to `api.pwnedpasswords.com`, never the password itself. CAPTCHA verification is inactive unless a reCAPTCHA site key is configured, and contacts `www.google.com` when active.
 
@@ -85,7 +93,7 @@ The remaining feature requests reach the following destinations. Each request or
 
 <summary><strong>Third-party credentials</strong></summary>
 
-**Third-party credentials** — OAuth tokens and API keys — are held in MongoDB on the user record, encrypted with AES-256-CTR under a per-record salt and initialization vector. They are never stored in plaintext and never written to logs. The encryption key comes from `ZOTERO_CIPHER_PASSWORD` if set; otherwise one is generated on first use and persisted inside your data volume with owner-only permissions. Back up that key together with your data volume: if it is lost, stored credentials cannot be decrypted and every user must link their accounts again.
+**Third-party credentials** — OAuth tokens and API keys — are held in MongoDB on the user record, encrypted with AES-256-CTR under a per-record salt and initialization vector. They are never stored in plaintext and never written to logs. The encryption key comes from `${PROVIDER}_CIPHER_PASSWORD` if set (like Zotero and Mendey); otherwise one is generated on first use and persisted inside your data volume with owner-only permissions. Back up that key together with your data volume: if it is lost, stored credentials cannot be decrypted and every user must link their accounts again.
 
 </details>
 
@@ -97,7 +105,7 @@ The remaining feature requests reach the following destinations. Each request or
 
 </details>
 
-If your policy requires an outbound allow-list, permit only the hosts whose features you have enabled — `github.com` and `api.github.com` for GitHub, `www.zotero.org` and `api.zotero.org` for Zotero, `learnwiki.overleaf.com` or your own `WIKI_URL` for documentation, `api.pwnedpasswords.com` for the password check, `www.google.com` for CAPTCHA, plus your own mail server and identity provider. Deny the rest. No other feature requires outbound access. Where egress must be inspected or logged centrally, the GitHub and Zotero integrations can each be routed through an HTTP proxy by setting `GITHUB_SYNC_PROXY_URL` and `ZOTERO_PROXY_URL`. Files linked from a URL cannot be constrained to a host list, since the destination is chosen by the user at the time of the request; restrict that feature through the proxy component's own allowed-resource setting, or leave it disabled.
+If your policy requires an outbound allow-list, permit only the hosts whose features you have enabled — `github.com` and `api.github.com` for GitHub, `www.zotero.org` and `api.zotero.org` for Zotero, `api.mendeley.com` for Mendeley, `learnwiki.overleaf.com` or your own `WIKI_URL` for documentation, `api.pwnedpasswords.com` for the password check, `www.google.com` for CAPTCHA, plus your own mail server and identity provider. Deny the rest. No other feature requires outbound access. Where egress must be inspected or logged centrally, the GitHub, Zotero and Mendeley integrations can each be routed through an HTTP proxy by setting `GITHUB_SYNC_PROXY_URL` , `MENDELEY_PROXY_URL` and `ZOTERO_PROXY_URL`. Files linked from a URL cannot be constrained to a host list, since the destination is chosen by the user at the time of the request; restrict that feature through the proxy component's own allowed-resource setting, or leave it disabled.
 
 ### Are project compiles isolated?
 
