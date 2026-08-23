@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Blog In 2026](README.md)
+* [Blog](README.md)
 
 ## 2026
 

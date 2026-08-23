@@ -17,6 +17,13 @@ layout:
     visible: true
   actions:
     visible: true
+tags:
+  - performance
+  - benchmark
+  - latex
+  - overleaf
+  - scale
+  - research
 ---
 
 # Overleaf Benchmark: A Deep Research of Concurrent  Compilation in Overleaf (SaaS and Self-host)
@@ -35,40 +42,40 @@ We further identify two implementation-level effects invisible to capacity plann
 
 Finally, we show that concurrency in this system buys nothing but time-sharing, and that the workload is bounded by clock alone. A fitted degradation law $$T(N)=T_1\max(1,N/C)^{b}$$ yields $$b=0.914$$, close to perfect proportional slowdown, and a clock sweep over the machine’s full 1.0–5.5 GHz range collapses thirty measurements onto $$T=(k/f)\max(1,N/C)$$ with $$k=27.9 GHz·s$$ and a residual spread of 5.1%. A 5.5× clock buys a 5.5× speed-up with no diminishing return, which is the sense in which clock and cores buy different things: clock makes every user’s compile faster, cores only admit more users.
 
-## Introduction
+## 1. Introduction
 
 Overleaf is the dominant collaborative LaTeX editor, and its on-premises distribution is widely deployed by universities and research groups that cannot send unpublished manuscripts to a third-party cloud. Sizing such a deployment is a recurring practical question: given a fixed hardware budget, how many people can actually press “Recompile” at the same time?
 
 The official guidance is a linear rule — roughly one core and one gigabyte per five to ten concurrent users — which presumes that capacity scales smoothly and jointly in both resources. Our measurements contradict this in three ways.
 
-### Capacity is governed by two independent walls, not one
+### 1.1 Capacity is governed by two independent walls, not one
 
 A configuration fails either because memory is exhausted, in which case the Overleaf stack itself dies and returns HTTP 502, or because compiles exceed the server-side timeout, in which case CLSI reports `timedout` while gigabytes of memory sit unused. These two regimes have entirely different scaling behaviour and different remedies. Adding cores to a memory-bound configuration is not merely inefficient, it is occasionally counterproductive: we measure configurations where increasing core count _reduces_ capacity, because more cores make concurrent compiles advance in lockstep so their peak memory demands coincide instead of interleaving.
 
-### Software parameters dominate hardware
+### 1.2 Software parameters dominate hardware
 
 The compile timeout is a per-user field in MongoDB whose default of 180 s silently caps CPU-bound configurations. Raising it to 300 s multiplies measured capacity by up to 4.2 on unchanged hardware. Independently, CLSI refuses more than 65 simultaneous compiles by a hard-coded constant. Any capacity study — and any deployment — that does not account for both is measuring the software, not the machine.
 
-### Concurrency is time-sharing, not parallelism
+### 1.3 Concurrency is time-sharing, not parallelism
 
 Because a LaTeX compile is single-threaded, serving $$N$$ simultaneous users on $$C$$ cores does not make the system finish sooner; it makes every user wait proportionally longer. The question “how many concurrent users are supported” is therefore ill-posed until one fixes how long a user is willing to wait. We make this dependency explicit and quantify it.
 
-### Contributions
+### 1.4 Contributions
 
 * A capacity matrix over 21 CPU/memory configurations measured under clock-locked, repeat-verified conditions, with the binding constraint identified per configuration from its failure signature.
 * Two fitted models: a capacity model separating a super-linear memory wall from a CPU ceiling, and a latency model establishing pure time-sharing behaviour.
 * Identification and experimental confirmation of two implementation issues in the deployed system, including a container memory limit that has been inoperative since 2018.
 * A quantification of the compile-timeout/capacity trade-off, which we argue must be stated alongside any concurrency figure.
 
-## Background
+## 2. Background
 
-### Compilation path
+### 2.1 Compilation path
 
 An Overleaf compile request travels `web` $$\rightarrow$$ `clsi` $$\rightarrow$$ a compile container. In a sandboxed-compiles deployment (`SIBLING_CONTAINERS_ENABLED=true`) CLSI does not run `latexmk` in-process; it asks the host Docker daemon, reachable through a bind-mounted socket, to start a fresh container from a TeX Live image with the project directory bind-mounted at `/compile`. One compile is therefore one short-lived container running one `latexmk` process.
 
 Three consequences follow, and all three shape the measurements in this paper. First, the unit of work is a single-threaded process: XeLaTeX does not parallelise. Second, per-compile resource isolation is whatever the Docker runner requests — we show in §6.2 that it effectively requests nothing. Third, the working set is dominated not by the document but by the TeX Live tree, a read-only corpus of roughly 32 GiB that every concurrent compile reads from and therefore shares through the host page cache. This sharing is the origin of the super-linear memory scaling we observe.
 
-### Enabling sandboxed compiles
+### 2.2 Enabling sandboxed compiles
 
 Community-edition Overleaf runs `latexmk` inside the application container itself. Ayakaleaf Pro, like Overleaf Server Pro, can instead run each compile in a _sibling_ container — a container started by the application on the _host’s_ Docker daemon rather than nested inside the application container. Two toolkit settings switch this on:
 
@@ -103,7 +110,7 @@ Sibling containers make the measurement clean — each compile is an observable,
 
 **Figure 3.** Shard selection in `clsi-cache`. A project is mapped by $$\operatorname{crc32}(\text{projectId}\text{-}i)\bmod|\text{shards}|$$, i.e. the hash space is cut into as many equal sectors as there are shards. This is _modulo_ hashing, not ring-based consistent hashing: growing the fleet from three shards to four repartitions the entire space and remaps essentially every project (a, b). That is precisely why the implementation needs an explicit online resharding ramp, moving a linearly growing fraction of projects from `currentShards` to `desiredShards` over a time window, rather than the $$K/n$$ movement a consistent-hashing ring would give. When a shard’s circuit breaker is tripped, the salt $$i$$ is incremented and the shard removed from the candidate list, so the lookup probes onwards instead of failing (c).
 
-### The two failure modes
+### 2.3 The two failure modes
 
 Every configuration we measured fails in exactly one of two ways, and the distinction is visible in the response status rather than inferred:
 
@@ -112,25 +119,25 @@ Every configuration we measured fails in exactly one of two ways, and the distin
 
 We classify each configuration by this signature rather than by a heuristic on resource ratios, which makes the “which wall did we hit” question answerable from the data itself.
 
-## Methodology
+## 3. Methodology
 
-### Testbed and clock control
+### 3.1 Testbed and clock control
 
 All guests run under QEMU/KVM on a single Intel Core i9-14900K host with 62 GiB of RAM and NVMe storage. The guest is Ubuntu 24.04 with Docker 29.7 and the Overleaf Toolkit deploying Ayakaleaf Pro v6.2.2 with sandboxed compiles against `texlive-full:2025.1`.
 
 A commodity desktop CPU is a poor proxy for a server unless its clock is controlled. KVM offers no mechanism to set a virtual clock: a vCPU is a host thread and runs at whatever frequency the host core runs at. We therefore constrain the host directly, disabling turbo and pinning `scaling_max_freq` to 3.0 GHz on every core, and pin the guest’s vCPUs to physical P-cores with `taskset`. The distinction matters on a hybrid-core CPU: the E-cores of this part have a base clock of 2.4 GHz and _cannot_ reach 3.0 GHz once turbo is disabled, so a run that strays onto them silently measures a slower machine. Under full load we verify 3000 MHz exactly on all sixteen pinned threads. A guard script asserts this invariant before every benchmark and refuses to start otherwise; it caught one silent reset of the governor during the study.
 
-### A second testbed: one large runner
+### 3.2 A second testbed: one large runner
 
 The QEMU matrix isolates one variable at a time, but it caps out at sixteen pinned threads. To ask whether the same laws still hold an order of magnitude higher, we repeated the concurrency sweep on a single large server: one AMD EPYC 7773X (Milan-X, 64 cores / 128 threads, 768 MiB of L3) with 995 GiB of RAM, running the same Ayakaleaf Pro v6.2.2 image against the same `texlive-full:2025.1`. Unlike the QEMU guests this machine is not clock-pinned: it is a production-class server and we measure it as one.
 
 Two operational precautions were necessary and are worth stating, because without them the experiment measures the harness rather than the server. First, every container was confined to a `systemd` slice with `MemoryMax=940 GiB`, so that a runaway sweep exhausts a cgroup rather than the host. Second, sandboxed compiles are created by the host daemon and each dirties its own copy-on-write layer — measured at 116 MiB per container even though the 20.6 GiB base image is shared — so the Docker data root was moved to a dedicated NVMe device. A sweep at $$N=1024$$ writes roughly 119 GiB of scratch layers, which does not fit on a stock root filesystem.
 
-### Workload
+### 3.3 Workload
 
 The document is a real 63-page master’s thesis (SJTU template) compiled with XeLaTeX via `latexmk`, containing TikZ figures, `biblatex` bibliography processing, and embedded PDF assets — that is, a realistic rather than synthetic load. A single compile on an unloaded guest takes 8.6–9.8 s across all configurations, which we use as the free-flight baseline $$T_1$$.
 
-### Load generation
+### 3.4 Load generation
 
 We create 512 real user accounts and give each its own copy of the project, so that concurrent compiles contend exactly as independent users would rather than sharing a project lock. Requests are issued from the host against the guest’s forwarded port, so that load generation consumes no guest CPU.
 
@@ -138,7 +145,7 @@ Concurrency is _simultaneous_, not staggered. Every session is established first
 
 Four practical obstacles had to be removed before that burst could be delivered faithfully. Each is worth recording, because each silently degrades the experiment into a measurement of the harness rather than of the server.
 
-#### Two rate limiters, not one
+#### 3.4.1 Two rate limiters, not one
 
 Overleaf throttles logins per source address — 20 attempts per minute — and all of our traffic originates from a single host. Assigning each simulated user a distinct `X-Forwarded-For` address removes that limit but immediately runs into a second, coarser one: a per-subnet budget of roughly 200 per minute. Spreading users across a contiguous block therefore fails at the 201st account. We instead derive the synthetic address from the user index so that consecutive users land in different `/24`s,
 
@@ -149,51 +156,49 @@ $$
 
 which keeps both limiters slack for the full population of 1024.
 
-#### The injected header is discarded by default
+#### 3.4.2 The injected header is discarded by default
 
 Setting the header is not sufficient. Express only honours `X-Forwarded-For` for peers it has been told to trust, and Overleaf’s `trustedProxyIps` defaults to `loopback`. Because the load generator reaches the application through the container’s bridge rather than over the loopback interface, the header is parsed and then thrown away, and every simulated user collapses back onto one address. The symptom is a wave of `HTTP 429` at exactly the twentieth login, which is easy to misread as server overload. The gateway network must be added to the trust chain explicitly; in the clustered deployment of §4.3 the pod and service CIDRs must be added as well.
 
-#### A load balancer will overwrite the header it was asked to preserve
+#### 3.4.3 A load balancer will overwrite the header it was asked to preserve
 
 When the instance sits behind a proxy, the conventional `option forwardfor` _appends_ the real client address to the chain, which is the correct behaviour for production and precisely wrong here: the synthetic address is displaced by the load generator’s own. The directive must be qualified as `option forwardfor if-none`, so the proxy adds a value only when the client supplied none.
 
-#### The client runs out of file descriptors before the server runs out of capacity
+#### 3.4.4 The client runs out of file descriptors before the server runs out of capacity
 
 At $$N=1024$$ the generator holds more than a thousand simultaneous sockets, and the default soft limit of 1024 descriptors is reached during session setup rather than during the measurement. The failure is quiet: three sessions fail to establish and the run reports 1021 rather than 1024, while a sampling thread that shells out for container counts dies with `EMFILE` and silently truncates the telemetry. The soft limit must be raised on the generator — the hard limit on our host was already 1048576 — and the run repeated. We report both runs in §4.3: the corrected one completes 1024 of 1024 with a median within 1.2 s of the truncated one, which is why we treat the first as usable but not authoritative.
 
-### Measurement protocol
+### 3.5 Measurement protocol
 
 Several methodological choices proved necessary for reproducibility.
 
-#### Warm-up
+#### 3.5.1 Warm-up
 
 On a freshly booted guest the page cache is empty and the first compiles measure cold-start I/O rather than steady-state capacity: the same 2 vCPU / 2 GiB configuration yields 36.5 s cold and 9.8 s warm, a factor of 3.7. Each configuration therefore performs two discarded single-compile warm-ups after boot.
 
-#### Pass criterion
+#### 3.5.2 Pass criterion
 
 A concurrency level passes only if _every_ compile succeeds and the level survives a repeat. This is stricter than a success-rate threshold and it matters: at 4 vCPU / 16 GiB a level of 32 passed once at 80.2 s median and then timed out on all 32 compiles when repeated, so we report 31.
 
-#### Search
+#### 3.5.3 Search
 
 Levels are located by exponential bracketing from a model-predicted seed followed by exact integer bisection. Since the criterion is all-or-nothing, a level is settled by its first failure, so we abandon the remaining in-flight requests once one fails — except at small levels, where the abandoned compiles pin a small guest badly enough that it never recovers.
 
-#### Isolation between levels
+#### 3.5.4 Isolation between levels
 
 Compile containers are drained, and the web application is polled until it answers again, before the next level starts. Without this a level following a crash records a spurious zero-session failure.
 
-#### Host hygiene
+#### 3.5.5 Host hygiene
 
 Unrelated virtual machines on the host were shut down: with 24 GiB of host memory committed elsewhere, the same guest configuration reported a load average of 11.7 instead of 3.2 at identical concurrency. Host memory pressure propagates into the guest and invalidates the measurement.
 
-## Results
+## 4. Results
 
-### The capacity matrix
+### 4.1 The capacity matrix
 
 Table 1 and Figure 4 give the measured ceiling for every configuration. Reading it across a row is the first surprise. At 4 GiB the 2, 4 and 8 vCPU guests all reach exactly 9 — quadrupling the cores changes nothing at all. At 16 GiB they reach 54, 45 and 57: going from 4 to 16 cores buys 6%, and the 8-core guest is actually _worse_ than the 4-core one (§5.2). Only at 48 GiB does core count separate the configurations decisively: 143, 268 and 331.
 
 <figure><img src="../.gitbook/assets/fig1_capacity.png" alt=""><figcaption></figcaption></figure>
-
-
 
 **Figure 4.** Measured capacity across the configuration matrix. (a) Every configuration as a bar, grouped by memory and coloured by core count; solid bars are memory-bound (the guest dies with memory exhausted) and hatched bars are CPU-bound (compiles time out with memory to spare). Reading a group left to right shows how little core count buys below 16 GiB; reading across groups shows the super-linear return on memory. (b) The same points against the fitted model $$N_{\max}=\min(0.69R^{1.60},\,26.4C)$$; the dashed line is the memory wall and the dotted horizontals are the per-core-count CPU ceilings. A configuration is bound by whichever of the two it meets first.
 
@@ -211,7 +216,7 @@ Reading down a column is the second: at fixed cores, capacity grows super-linear
 
 **Table 1.** Maximum simultaneous compiles that complete successfully, measured at a 300 s compile timeout with the CLSI concurrency ceiling lifted. **Bold** marks a CPU-bound configuration (compiles time out with memory to spare); the rest are memory-bound (the stack dies with HTTP 502). The 2 GiB row carries the correction discussed in §5.2.
 
-### Concurrency is time-sharing
+### 4.2 Concurrency is time-sharing
 
 Figure 5 sweeps every concurrency level on a fixed 8 vCPU / 16 GiB guest. Two regimes are separated by a sharp knee at exactly one compile per core. Below it, mean compile time is flat — it moves from 8.7 s at $$N=1$$ to 9.1 s at $$N=C=8$$, a change of 5%. Above it, time grows in strict proportion to $$N/C$$: at $$N=16,24$$ we measure 18.5 s and 27.1 s, i.e. a ratio of $$1:2.13:3.12$$ against an ideal $$1:2:3$$.
 
@@ -225,7 +230,7 @@ Figure 5 sweeps every concurrency level on a fixed 8 vCPU / 16 GiB guest. Two re
 
 Fitting $$T(N)=T_1\max(1,N/C)^{b}$$ over all successful measurements in the study gives $$b=0.914$$ ($$R^2_{\log}=0.904$$, $$n=81$$). An exponent indistinguishable from unity is the quantitative statement that a compile is a single-threaded, CPU-bound unit of work and that concurrency neither helps nor hurts beyond dividing the cores. The practical corollary is uncomfortable for capacity planning: a configuration can absorb an arbitrary number of users without _failing_ while making every one of them wait proportionally longer. At $$N=56$$ on this guest all compiles still succeed, but each user waits 64.8 s instead of 8.7 s.
 
-### Vertical scaling to 1024 concurrent compiles
+### 4.3 Vertical scaling to 1024 concurrent compiles
 
 Table 2 and Figure 7 report the sweep on the large runner. Every level is a _cold_ compile: before each level we clear the compile directory and the CLSI cache of every participating project via `DELETE /project/:id/output`, so no level benefits from work done by the level below it. The single-compile baseline on this machine is 28.8 s, which is the cold figure and should not be compared against the 8.6–9.8 s steady-state baseline used earlier; the cold baseline on the QEMU guests is 28.3 s, so per-thread the two machines are within two percent of each other for this workload.
 
@@ -242,23 +247,21 @@ Table 2 and Figure 7 report the sweep on the large runner. Every level is a _col
 
 <figure><img src="../.gitbook/assets/fig6_large_runner.png" alt=""><figcaption></figcaption></figure>
 
-
-
 **Figure 7.** Vertical scaling on one large runner. (a) Latency against offered concurrency; the shaded region marks the regime past the knee. (b) The number of sandboxes actually alive never tracks the number requested — it saturates near 200 — while the compile cgroup never uses more than a fifth of its cap.
 
-#### The machine never fails
+#### 4.3.1 The machine never fails
 
 Every level completes at 100%, including $$N=1024$$ — eight times the thread count. We did not find this machine’s capacity ceiling; we ran out of patience before it ran out of headroom. This is the first configuration in the study where the binding constraint is not memory: at $$N=1024$$ the compile cgroup peaks at 184 GiB, one fifth of its 940 GiB cap, while the CPU sits at 100% utilisation with a load average of 166.
 
-#### Degradation is sub-linear because admission is rate-limited
+#### 4.3.2 Degradation is sub-linear because admission is rate-limited
 
 Naive time-sharing predicts that $$8\times$$ the threads costs $$8\times$$ the latency. The measured cost is $$9.7\times$$ relative to a single compile, but only $$3.8\times$$ relative to $$N=128$$ — for an eightfold increase in offered load. The reason is visible in Figure 7(b) and in the last column of Table 2: although 1024 requests are issued simultaneously, the number of sandboxes actually alive never exceeds 205. The daemon cannot create containers as fast as the clients ask, so requests queue at admission instead of contending inside the CPU. Queueing is what saves the tail here, and it does so accidentally.
 
-#### The knee is at 512, not at the failure point
+#### 4.3.3 The knee is at 512, not at the failure point
 
 Between $$N=256$$ and $$N=512$$ the $$p_{95}$$ latency rises by $$2.9\times$$ for a doubling of load; every earlier doubling cost between $$1.2\times$$ and $$1.4\times$$. Capacity stated as “the largest $$N$$ that does not fail” would report 1024 and be useless to an operator: at that point the tail wait is nearly eight minutes.
 
-### Compile time is inversely proportional to clock
+### 4.4 Compile time is inversely proportional to clock
 
 Since the workload is CPU-bound, its cost should scale as $$1/f$$. We test this directly by sweeping the host clock across the machine’s entire range, 1.0–5.5 GHz in ten steps, on an otherwise unchanged guest (Figure 8). Single-compile time moves from 26.5 s to 4.8 s: a 5.5× clock buys a 5.5× speed-up with no diminishing return anywhere in the range. The product $$T\!\cdot\!f$$ is constant to within 2% across all ten clocks.
 
@@ -274,15 +277,13 @@ with a residual spread of 5.1% over a range in which the clock itself varies by 
 
 <figure><img src="../.gitbook/assets/fig5_frequency.png" alt=""><figcaption></figcaption></figure>
 
-
-
 **Figure 8.** Clock sweep. (a) $$T=k/f$$ with the fitted hyperbola. (b) After dividing by $$\max(1,N/C)$$ all points collapse onto one constant, confirming Equation (1).
 
 Equation (1) has a direct procurement consequence that is easy to state and easy to get wrong: _clock improves the experience of every individual user, core count only admits more of them_. A machine with a 20% higher clock compiles 20% faster for everybody, with no diminishing return; twice the cores make nobody’s compile faster at all.
 
-## Analysis
+## 5. Analysis
 
-### Two walls, fitted separately
+### 5.1 Two walls, fitted separately
 
 Each configuration is classified by its failure signature (§2.3), and the memory wall and CPU ceiling are then fitted only on the configurations that actually hit them:
 
@@ -296,19 +297,17 @@ The memory-wall exponent is consistently super-linear, $$p>1$$: the marginal mem
 
 <figure><img src="../.gitbook/assets/fig3_3d.png" alt=""><figcaption></figcaption></figure>
 
-
-
 **Figure 9.** The same data as two surfaces over the $$(C,R)$$ plane. (a) Capacity: the fitted surface is a ridge, not a plane — it climbs steeply with memory and is nearly flat along the core axis until memory stops binding, which is why the 48 GiB row is the only one where core count separates the configurations. (b) Latency against concurrency for every configuration, with the fitted $$T=12.6\,(N/C)^{0.91}$$ shown dashed and the 180 s timeout drawn as a plane. A configuration fails where its solid curve pierces that plane, which makes visible how directly the timeout setting determines the reported capacity.
 
-### Where more cores make things worse
+### 5.2 Where more cores make things worse
 
 Equation (2) is a minimum of two terms and therefore monotone in $$C$$, but the measurements are not. We observe two inversions in which adding cores _reduced_ capacity: at 16 GiB (54 vs. 45) and at 32 GiB (145 vs. 135). Both occur in the memory-bound regime, and the mechanism is the same in each: with more cores, concurrent compiles advance in lockstep and reach their peak resident size at the same moment, whereas with fewer cores the scheduler interleaves them and the peaks are staggered. On a guest whose memory headroom is already marginal, staggering is what keeps it alive. A capacity model built on average resource use cannot express this; it is a property of the _coincidence_ of peaks.
 
 A third apparent inversion, at 2 GiB, we now discount. The search records capacity 2 at 2 vCPU but 1 at 4 and 8 vCPU, which reads as the same effect. Re-examining the raw sweeps shows something simpler: at 2 GiB the level $$N=2$$ succeeded on first attempt at all three core counts and then failed its confirmation run at two of the three. The level is not a capacity but a coin flip, and the 2 vCPU entry is the toss that happened to land. We therefore report the reproducible value, 1, at all three core counts and draw no conclusion from the difference. We record the correction here rather than silently restating the table, because the discarded reading is the kind that would have supported an interesting claim.
 
-## Implementation findings
+## 6. Implementation findings
 
-### A hard-coded concurrency ceiling
+### 6.1 A hard-coded concurrency ceiling
 
 On sufficiently large guests, capacity stopped at exactly 65 simultaneous compiles regardless of requested concurrency: at $$N=66,80,96,128$$ we measured $$65$$ successes and $$1,15,31,63$$ immediate `unavailable` responses, with the container count pinned at 65, several gigabytes of memory unused, and median compile time steady at 77 s — far below any timeout.
 
@@ -325,7 +324,7 @@ throw new Errors.TooManyCompileRequestsError(...)
 
 The comparison is non-strict, so the effective ceiling is $$64+1=65$$, matching the measurement exactly. The excess requests receive **HTTP 503** — they are _rejected_, not queued, so from the user’s side the compile button simply fails. Unlike every other tunable in the same file, this one reads no environment variable; it was introduced upstream in August 2024 and can only be changed by modifying the image. With the limit raised, the same 16 vCPU / 32 GiB guest that reported `success=65, unavailable=15` at $$N=80$$ instead reported `success=80`.
 
-### An inoperative container memory limit
+### 6.2 An inoperative container memory limit
 
 Inspecting a live compile container shows no resource isolation whatsoever:
 
@@ -347,7 +346,7 @@ The consequence is visible in our low-memory measurements. Because compiles are 
 
 The one limit that does take effect is `RLIMIT_CPU`, set to $$\text{timeout}+5$$ seconds. It bounds _CPU_ time, not wall-clock time, and a single compile consumes only about 9 s of CPU, so it never binds at any concurrency; it guards against pathological input such as a runaway macro. It is, however, a useful oracle: observing `Soft:305` confirms that a 300 s timeout setting has actually propagated to the container.
 
-### The compile timeout is the dominant tunable
+### 6.3 The compile timeout is the dominant tunable
 
 The per-user field `features.compileTimeout` defaults to 180 s. For any CPU-bound configuration this is not a safety margin but a capacity setting, because a machine that is still computing correctly is declared failed. Raising it to 300 s — a single MongoDB update — changes measured capacity by up to a factor of 4.2 (Table 3). The ceiling is 600 s, enforced by `RequestParser.MAX_TIMEOUT`, above which the value is silently truncated.
 
@@ -366,39 +365,39 @@ The per-user field `features.compileTimeout` defaults to 180 s. For any CPU-boun
 
 The last two rows are the counter-intuitive half of the result and the reason we re-measured every configuration under one timeout. For _memory_-bound configurations a longer timeout _reduces_ capacity, because each compile holds its resident set for longer and more of them overlap. A capacity figure is therefore meaningless without stating the timeout it was measured under, and the two cannot be mixed within one table.
 
-## Related work
+## 7. Related work
 
-### Vendor guidance
+### 7.1 Vendor guidance
 
 Overleaf’s own hardware documentation states the qualitative facts we quantify here: that LaTeX is single-threaded, that single-core performance therefore governs compile time, and that “more cores will only help if you are trying to compile more documents than you have free CPU cores” \[1]. It then gives the linear sizing rule — a 2 core/3 GiB base plus one core and one gigabyte per five to ten concurrent users — that motivated this study. Our contribution is to turn these statements into measured laws (Equations (1) and (2)), and to show where the linear rule breaks: it has no term for the shared page cache that makes the memory wall super-linear, and no term for the two software parameters that dominate the result.
 
-### Build and CI capacity studies
+### 7.2 Build and CI capacity studies
 
 Measurement of build systems under concurrency is well established outside the LaTeX setting. LightSys reports that conventional CI systems compiling inside Docker containers degrade in I/O as pull-request arrival rate rises, with a bottleneck appearing around eleven concurrent requests \[17]; TAOS-CI observes that compilation dominates CI wall-clock time, accounting for 60–67% of total pipeline duration on large projects \[18]. Our system differs in one respect that turns out to be decisive: a LaTeX compile is interactive. A CI job that takes twice as long is an inconvenience; a compile that takes twice as long is observed directly by a user waiting on a preview pane, which is why we treat the timeout not as a failure threshold but as a capacity parameter.
 
-### Container overheads
+### 7.3 Container overheads
 
 Recent work decomposes Docker container startup latency across storage tiers \[19] and characterises container performance at the edge \[20]. In our setting per-compile container startup is amortised: it is a small constant relative to a 9 s compile, and the free-flight time $$T_1$$ we fit absorbs it. The container property that does matter is the _absence_ of resource limits (§6.2), which converts a per-compile memory overrun into a whole-host failure.
 
-### LaTeX as untrusted input
+### 7.4 LaTeX as untrusted input
 
 Sandboxed compilation exists because TeX is a programming language and documents are untrusted input \[21, 22]. That design choice is what makes this study possible — each compile is an isolated container with observable resource behaviour — and also what makes the missing memory limit consequential, since isolation is assumed by operators who deploy it.
 
-### The compiler as an object of study
+### 7.5 The compiler as an object of study
 
 TeX itself is well documented as a language \[16], but its behaviour as a _build target_ has attracted attention only recently. Tan and Rigger \[8] compile a large corpus of arXiv sources across engines and distribution versions and find that engine choice is not substitutable: only a fraction of a percent of documents produce byte-identical output under XeTeX and pdfTeX. That result bears directly on our methodology. Capacity is a property of a document _and_ an engine, so a benchmark that does not fix both is not reproducible; we therefore pin one document, one engine, and one distribution (`texlive-full:2025.1`) throughout, and we report the engine in every figure caption. It also bounds the generality of our numbers in a way worth stating plainly: they characterise XeLaTeX on this document, not TeX in the abstract.
 
 Work on LaTeX build _systems_ is largely practitioner-driven. The LaTeX3 project’s `l3build` \[13] standardises regression testing and packaging, and independent benchmarks compare wrapper tools — a survey of 26 build systems finds a precompiled preamble worth roughly 20% over a plain run and 40% over `latexmk` \[14]. These optimise the _single_ compile. They are orthogonal to, and compose with, what we measure: a preamble cache shortens $$T_1$$, and every capacity figure in this paper scales with $$T_1$$.
 
-### Concurrency control in the editor, not the compiler
+### 7.6 Concurrency control in the editor, not the compiler
 
 The collaborative half of Overleaf rests on a well-established line of work. Operational transformation originates with Ellis and Gibbs \[9] and was made practical for high-latency clients by the Jupiter system \[10], whose design is recognisable in `document-updater`: a server that orders operations and a per-document buffer that clients synchronise against. Conflict-free replicated data types \[11] solve the same problem without a central sequencer. This distinction is what makes §4.3’s topology work at all: because the pending-update buffer lives in shared Redis rather than in an instance’s memory, a compile routed to any replica observes the latest keystrokes, and compile affinity can be chosen for cache locality rather than for correctness.
 
-### Capacity models
+### 7.7 Capacity models
 
 Amdahl’s law \[24] bounds speedup from parallelism and Little’s law \[23] relates occupancy to arrival rate and service time; both are used above. Gunther’s universal scalability law \[12] extends the first with a retrograde term for coherency delay, predicting that throughput peaks and then declines. We note that our system does _not_ exhibit that retrograde regime up to $$N=1024$$: throughput saturates and latency grows, but nothing collapses. The reason is structural rather than fortunate — compiles share no state to keep coherent, so the term the law adds is close to zero, and the admission plateau of §4.3 caps contention before it can matter.
 
-## Recommendations for operators
+## 8. Recommendations for operators
 
 {% stepper %}
 {% step %}
@@ -463,43 +462,43 @@ One detail in this costs an afternoon if missed. A slice named `docker-capped.sl
 
 **Figure 10.** Reference topology for a horizontally scaled deployment, drawn from the configuration we verified. Application replicas are interchangeable and hold nothing durable, so they may be added and removed freely. Three components are not: Redis, whose document buffer is what lets a compile routed to any replica see the latest keystrokes; the object store, which becomes mandatory rather than optional at more than one replica; and `git-bridge`, which keeps repositories on local disk with no replication path and must run as a singleton beside one designated replica.
 
-## A reference multi-machine deployment
+## 9. A reference multi-machine deployment
 
 Everything above measures one machine. This section states the distributed form in enough detail to build, and — because the question an operator actually faces is not _how_ but _whether_ — states first the point at which it becomes worth the trouble.
 
-### When the distributed form is warranted
+### 9.1 When the distributed form is warranted
 
 A single machine is cheaper to operate in every respect that matters: one failure domain, no shared state to keep consistent, no routing to get wrong. Our data puts three thresholds on when to leave it.
 
-#### Below 65 concurrent compiles, do not
+#### 9.1.1 Below 65 concurrent compiles, do not
 
 The per-instance ceiling is a software constant, not a hardware one (§6.1). Until the offered load approaches it, a second machine adds failure modes and buys nothing. The 64 core host served 256 concurrent compiles at full success only after `compileConcurrencyLimit` was lifted; an operator who has not yet changed that one value is not hardware-bound and should not be shopping for hardware.
 
-#### Between 65 and roughly 500, scale up first
+#### 9.1.2 Between 65 and roughly 500, scale up first
 
 Vertical scaling remained linear across our whole range and never entered a retrograde regime. One large host reached 1024 simultaneous cold compiles at 100% success (§4.3); the knee in latency appeared at 512, not before. Within that band a bigger machine is strictly simpler than several smaller ones and, per §4.4, a faster one improves every user’s experience rather than merely admitting more of them.
 
-#### Go distributed for availability, not throughput
+#### 9.1.3 Go distributed for availability, not throughput
 
 The honest reason to run more than one application replica below the ceiling is that one machine is one power supply, one kernel, one upgrade window. That is a legitimate reason and it is the one we would give; it is simply not a capacity argument, and conflating the two leads operators to buy replicas when they needed memory.
 
-### Tiers and their sizing
+### 9.2 Tiers and their sizing
 
 Figure 10 shows the topology. It has four tiers, and they scale on different quantities — which is the whole point of separating them.
 
-#### Edge
+#### 9.2.1 Edge
 
 One load balancer, or two for availability. It terminates TLS and does nothing expensive; it scales with connection count, not compile count, and a small instance suffices for the loads studied here. Its configuration, not its size, is what matters (§9.3).
 
-#### Application replicas
+#### 9.2.2 Application replicas
 
 These carry the compile load and are the only tier that scales with concurrency. Size each one by the rules of §8 — memory before cores, then clock — and then set the replica count to cover peak concurrency divided by the per-replica ceiling. Replicas hold nothing durable: their local disk carries compile scratch and an output cache, both reconstructible. This is what makes them safe to add and remove freely, and it is worth verifying rather than assuming, because a single misconfigured `filestore` path silently converts the tier into a stateful one.
 
-#### State
+#### 9.2.3 State
 
 Redis, MongoDB and an S3-compatible object store, on separate hosts. Redis is the load-bearing one and the least obvious: it holds the session store and the live document buffer, which is what allows a compile routed to any replica to observe keystrokes typed against a different replica. An operator who treats Redis as a cache and sizes it for eviction will produce compiles of stale documents that are extremely hard to diagnose, because nothing fails — the output is merely wrong. MongoDB scales with project count rather than compile rate. The object store is optional at one replica and mandatory beyond it.
 
-#### The singleton
+#### 9.2.4 The singleton
 
 `git-bridge` keeps repositories on local disk, maintains a local index, and has no replication path. It must run as exactly one instance, pinned beside one designated replica, and it is the component that makes the deployment not-quite-stateless. Plan its host accordingly: its disk is the one that needs backing up.
 
@@ -514,7 +513,7 @@ Redis, MongoDB and an S3-compatible object store, on separate hosts. Redis is th
 
 **Table 4.** Reference tiers. Only the application tier scales with concurrency; sizing it is the subject of §8.
 
-### Routing is the part that is easy to get wrong
+### 9.3 Routing is the part that is easy to get wrong
 
 Three classes of request must reach three different places, and the default single-rule configuration satisfies at most two of them.
 
@@ -524,25 +523,25 @@ Session traffic is different. When WebSocket upgrade fails and `socket.io` falls
 
 Finally, `/git/` must reach the replica beside which `git-bridge` runs. It is routed to that replica rather than to `git-bridge` directly because the bridge authenticates its callbacks against the application’s OAuth endpoints and resolves blob URLs through it; bypassing the replica breaks authentication rather than improving anything.
 
-### Scale-in needs a drain buffer
+### 9.4 Scale-in needs a drain buffer
 
 Removing a replica is not symmetric with adding one: a compile in flight is lost, and the user sees a failure they did not cause. The workable sequence is to stop new traffic first, wait, and only then terminate. We implemented this as a pre-stop hook holding the pod for a configurable interval while the balancer marks the backend draining — short enough to test in minutes, and in production long enough for a session’s natural end, hours rather than seconds. The interval is the tuning knob that decides whether elasticity is invisible or infuriating.
 
 One further constraint we found by measurement rather than by design: autoscaling on CPU does not work for this workload. The application pod’s own utilisation sat at 22 m core against a node total of 3997 m core, because the compile work happens in sibling containers the pod does not account for. Any signal used to scale this tier must count running compile containers, not pod CPU.
 
-## Implications beyond Overleaf
+## 10. Implications beyond Overleaf
 
 Nothing in §4.2 or §4.3 is specific to Overleaf’s code. The measured laws follow from three properties that any hosted LaTeX service shares: the unit of work is a single-threaded process, it is isolated in a container, and its working set is a large read-only tree that the page cache must hold. Three consequences transfer directly to anyone building such a service.
 
-### Provision memory, then cores
+### 10.1 Provision memory, then cores
 
 The strongest result of the matrix is negative: below 16 GiB the core count is nearly irrelevant, and only at 48 GiB do 4, 8 and 16 vCPU configurations separate at all (143, 268, 331). An operator who reads the conventional rule as “add a core per five users” buys the wrong resource. The mechanism is the shared page cache over the distribution tree, and it is a property of TeX Live’s size rather than of any particular front-end.
 
-### The admission rate is a resource, and it is usually forgotten
+### 10.2 The admission rate is a resource, and it is usually forgotten
 
 At $$N=1024$$ our server never held more than 205 live sandboxes (Figure 7b) even though every request arrived at once. Container creation, not compilation, was the limiter — consistent with measurement studies that attribute container startup cost to runtime overhead rather than to image size \[19, 20]. A service that sizes only CPU and memory will find its burst behaviour governed by a quantity it never measured. The practical form of this is the recommendation of §8: cap admission deliberately, because a queue you choose is better than a queue you discover.
 
-### A sandbox that outlives its compile invalidates the model
+### 10.3 A sandbox that outlives its compile invalidates the model
 
 Every capacity figure here assumes the container is created, does one compile, and exits — a lifetime of tens of seconds and a duty cycle near one only while it runs. Two recent design patterns break that assumption, and they break it in the same way.
 
@@ -552,25 +551,25 @@ The second, and newer, is the AI agent that shares the sandbox with the compiler
 
 We did not measure such a platform and make no claim about any specific product. What we can say is what our numbers imply for the design: an architecture that gives each user a long-lived multi-core sandbox should be sized as a reservation system, not by the concurrency figures reported here, and the capacity it can expect is closer to its core count divided by cores-per-user than to anything in Table 1.
 
-## Threats to validity
+## 11. Threats to validity
 
-### Single document
+### 11.1 Single document
 
 All measurements use one 63-page XeLaTeX document. Absolute capacities will differ for other documents; the scaling laws, which are ratios, should not. A document with a substantially larger resident set would move the memory wall without changing its super-linear character.
 
-### Virtualised host
+### 11.2 Virtualised host
 
 Guests run under KVM on one physical machine, so absolute numbers include virtualisation overhead and the guests share a host page cache and NVMe device. We mitigated the largest confounder by shutting down unrelated guests after observing that host memory pressure inflates in-guest load averages by more than $$3\times$$ at identical concurrency.
 
-### Simultaneous arrival
+### 11.3 Simultaneous arrival
 
 Every compile is issued at one instant, which is the worst case. Real users arrive as a stochastic process, so a deployment sized by our numbers has margin rather than deficit — but the peak at the end of a submission deadline is closer to our model than to a Poisson one.
 
-### Edge configurations
+### 11.4 Edge configurations
 
 At 2 GiB the system is close enough to collapse that repeated runs of the same configuration can differ by one compile. We report the conservative value and do not draw conclusions from differences of $$\pm 1$$ in that regime.
 
-## Availability
+## 12. Availability
 
 The system under test, the deployment tooling, and the upstream project from which it derives are all public:
 
@@ -582,13 +581,13 @@ The system under test, the deployment tooling, and the upstream project from whi
 
 Every source location we cite is given as a repository-relative path with a line number against Ayakaleaf Pro v6.2.2, and the two upstream commits we date (`9a519f0d3d`, `5d472e9b38`) are reachable in the Overleaf history.
 
-## Contributions
+## 13. Contributions
 
 Musicminion designed the study, provided and operated the testbeds, directed the line of investigation, and verified every measurement reported here. Claude Opus 5 (Anthropic) built and operated the benchmark harness, automated the deployments, performed the source-code archaeology, produced the figures, and drafted the manuscript. Both authors reviewed the final text. Where a run is reported as contaminated — the 1021-session sweep of §4.3 and the anomalous $$N=256$$ level of §4.1 — the defect was found during review and the run was repeated before publication rather than being silently dropped.
 
 Readers should note that authorship policies at ACM, IEEE and the ICMJE currently reserve authorship for parties able to take accountability for a work, and would require the second author’s contribution to be recorded as a disclosure rather than a byline. We state the division of labour explicitly here so that the record is accurate under either convention.
 
-## Conclusion
+## 14. Conclusion
 
 Capacity planning for self-hosted Overleaf is not a matter of scaling one resource. Three findings should change how it is done.
 
