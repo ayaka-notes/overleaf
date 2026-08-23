@@ -1,5 +1,5 @@
 ---
-description: Welcome to your team’s developer platform
+description: Welcome to ayaka-notes overleaf pro (ayakaleaf pro), the ultimate drop-in replacement for Overleaf Community Edition and a powerful self-hosted alternative to Overleaf’s paid plans.
 layout:
   width: default
   title:
