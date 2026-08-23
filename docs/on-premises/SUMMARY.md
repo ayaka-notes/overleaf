@@ -4,7 +4,7 @@
   * [Features and Copyright](readme/features-and-copyright.md)
   * [Trust and Security](readme/trust-and-security.md)
   * [Overleaf Server Pro vs. Ayakaleaf Pro](readme/ayakaleaf-pro-vs-server-pro.md)
-  * [Q\&A](readme/q-and-a.md)
+  * [Question and Answer](readme/question-and-answer.md)
   * [Hidden Pages](readme/hidden-pages.md)
 * [Release notes](release-notes/README.md)
   * [Release notes 6.x.x](release-notes/release-notes-6.x.x.md)
