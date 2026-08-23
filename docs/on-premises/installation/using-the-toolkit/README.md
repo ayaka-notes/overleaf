@@ -1,4 +1,5 @@
 ---
+description: Deploy an on-premises AyakaLeaf Pro instance with the Toolkit.
 icon: toolbox
 ---
 
@@ -7,4 +8,3 @@ icon: toolbox
 The [Toolkit](https://github.com/ayaka-notes/toolkit) is the recommended way to deploy Ayakaleaf Pro instances.
 
 In this section we will guide you through downloading the Toolkit from GitHub, familiarizing yourself with some of the Toolkit's commands, and configuring some basic settings. By the end of this page you should have a running on-premises instance of Overleaf.
-

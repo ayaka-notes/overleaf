@@ -1,4 +1,7 @@
 ---
+description: >-
+  Deploy AyakaLeaf Pro offline by exporting, transferring, and loading Docker
+  images.
 icon: block-brick
 ---
 

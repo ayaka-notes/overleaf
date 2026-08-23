@@ -1,4 +1,7 @@
 ---
+description: >-
+  Deploy AyakaLeaf Pro with guidance on migration, requirements, and LaTeX
+  performance.
 icon: map-location
 ---
 

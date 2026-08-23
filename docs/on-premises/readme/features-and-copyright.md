@@ -1,5 +1,7 @@
 ---
-description: What new features does Ayakaleaf Pro have compared to the community edition?
+description: >-
+  What new features does Ayakaleaf Pro have compared to the Overleaf Community
+  Edition?
 icon: layer-plus
 ---
 

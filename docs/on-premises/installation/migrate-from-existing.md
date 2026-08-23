@@ -1,4 +1,5 @@
 ---
+description: Migrate an existing Overleaf Toolkit deployment to AyakaLeaf Pro.
 icon: u-turn-up-right
 ---
 
@@ -26,4 +27,3 @@ bin/up
 ```
 
 That's it! You're all set.
-

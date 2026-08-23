@@ -1,4 +1,7 @@
 ---
+description: >-
+  Upgrade TeX Live or install packages in an Overleaf Community Edition
+  deployment.
 icon: square-up
 ---
 

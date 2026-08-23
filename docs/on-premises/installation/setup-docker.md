@@ -1,4 +1,7 @@
 ---
+description: >-
+  Install Docker Engine and the Compose plugin on Ubuntu for an Overleaf
+  deployment.
 icon: docker
 ---
 
