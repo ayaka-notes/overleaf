@@ -33,7 +33,9 @@ The Overleaf website only provides an entrance to contact support for Server Pro
 
 Based on the information currently available, Overleaf Server Pro appears to cost around $300 per user per year, with a minimum purchase of 10 licenses, making it a very expensive option. Moreover, Server Pro offers significantly fewer features than Ayakaleaf Pro. We are deeply grateful to the community developers whose contributions over the years have made it possible for us to build Ayakaleaf Pro and ultimately surpass Overleaf Server Pro in both functionality and capabilities.
 
-<details>
+The following public records show documented Overleaf Server Pro purchases and pricing. Smaller U.S. contracts indicate annual costs of roughly $320–$370 per user. Large institutional agreements can receive lower per-user pricing. For example, the Max Planck Society's three-year agreement averages about €51 per user each year. Contract terms, support, and deployment scope may differ. These records are not an official Overleaf price list.
+
+<details open>
 
 <summary>Publicly Documented Overleaf Server Pro Purchases and Price</summary>
 
