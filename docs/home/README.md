@@ -1,5 +1,8 @@
 ---
-description: Welcome to ayaka-notes overleaf pro (ayakaleaf pro), the ultimate drop-in replacement for Overleaf Community Edition and a powerful self-hosted alternative to Overleaf’s paid plans.
+description: >-
+  Welcome to ayaka-notes overleaf pro (ayakaleaf pro), the ultimate drop-in
+  replacement for Overleaf Community Edition and a powerful self-hosted
+  alternative to Overleaf’s paid plans.
 layout:
   width: default
   title:
@@ -18,9 +21,7 @@ layout:
     visible: true
   actions:
     visible: true
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/2AwfWOGBWBxQmyvHedqW/
+metaLinks: {}
 ---
 
 # Home
@@ -29,15 +30,11 @@ metaLinks:
 
 <h2 align="center"><mark style="color:$primary;">AyakaLeaf Pro Edition</mark></h2>
 
-<p align="center"> <mark style="color:$info;">An Online LaTeX Editor enhanced with all Overleaf Pro features</mark><br><mark style="color:$info;">(open source, free to use, self-hostable).</mark></p>
-
-
+<p align="center"><mark style="color:$info;">An Online LaTeX Editor enhanced with all Overleaf Pro features</mark><br><mark style="color:$info;">(open source, free to use, self-hostable).</mark></p>
 
 <p align="center">Write like a rocket scientist with Ayakaleaf Pro<br>— <em><mark style="color:purple;"><strong>unlock all Features</strong></mark></em>, an <em>on-Premise</em> solution that <em>anyone</em> can use.</p>
 
-<p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/installation/using-the-github-codespace" class="button primary" data-icon="rocket-launch">Get Started</a>   <a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
-
-<p align="center"></p>
+<p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/installation/introduction" class="button primary" data-icon="rocket-launch">Get Started</a> <a href="https://app.gitbook.com/o/aXieu2C3Ngt9u0fFRG9K/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
 
 <figure><img src=".gitbook/assets/e81e3c9b-88b2-4c80-85dc-1057b79e8c15.png" alt=""><figcaption></figcaption></figure>
 
@@ -45,15 +42,9 @@ metaLinks:
 
 <table data-search="false"><thead><tr><th>Feature</th><th align="center">Overleaf Community</th><th align="center">Overleaf Server Pro</th><th align="center">Ayakaleaf Pro (ours)</th></tr></thead><tbody><tr><td>Powerful LaTeX editor</td><td align="center">✓</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>Full project history</td><td align="center">✓</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>Commenting</td><td align="center">X</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>Real-time track changes</td><td align="center">X</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>Easy internal collaboration</td><td align="center">X</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>Private template management system</td><td align="center">X</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>Git integration</td><td align="center">X</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>Symbol Palette</td><td align="center">X</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>Admin Panel</td><td align="center">X</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>SSO integration</td><td align="center">X</td><td align="center">✓</td><td align="center">✓</td></tr><tr><td>GitHub integration</td><td align="center">X</td><td align="center">X</td><td align="center">✓</td></tr><tr><td>Zotero integration</td><td align="center">X</td><td align="center">X</td><td align="center">✓</td></tr><tr><td>Advanced Reference Search</td><td align="center">X</td><td align="center">X</td><td align="center">✓</td></tr><tr><td>Pandoc Import/Export</td><td align="center">X</td><td align="center">X</td><td align="center">✓</td></tr><tr><td>Python Script Runner</td><td align="center">X</td><td align="center">X</td><td align="center">✓</td></tr><tr><td><em><strong>Price</strong></em></td><td align="center"><em>Free</em></td><td align="center"><em>Per user/year pricing</em></td><td align="center"><em><strong>Permanent Free</strong></em></td></tr></tbody></table>
 
-
-
 ### Features
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><h4><i class="fa-clone" style="color:$primary;">:clone:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-01-templates-system"><mark style="color:$primary;"><strong>Template System</strong></mark></a></td><td><mark style="color:$info;">Publish your</mark>  <span class="math">\LaTeX</span> <mark style="color:$info;">template to your members.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/template.jpeg">template.jpeg</a></td></tr><tr><td><h4><i class="fa-server" style="color:$primary;">:server:</i> </h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-02-sandbox-compile"><mark style="color:$primary;"><strong>Sandbox Compile</strong></mark></a></td><td><mark style="color:$info;">Compile your project in Docker with isolation and any TeXLive version.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/texlive-switch.png">texlive-switch.png</a></td></tr><tr><td><h4><i class="fa-git-alt" style="color:$primary;">:git-alt:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-03-git-intergration"><mark style="color:$primary;"><strong>Git Intergration</strong></mark></a></td><td><mark style="color:$info;">Synchronized your project with GitHub or GitLab.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/git-bridge.png">git-bridge.png</a></td></tr><tr><td><h4><i class="fa-pi" style="color:$primary;">:pi:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-04-symbol-palette"><mark style="color:$primary;"><strong>Symbol</strong></mark> <mark style="color:$primary;"><strong>Palette</strong></mark></a></td><td><mark style="color:$info;">Input your LaTeX symbol easily and more quickly.</mark></td><td></td><td><a href=".gitbook/assets/symbol-palette.jpeg">symbol-palette.jpeg</a></td></tr><tr><td><h4><i class="fa-user" style="color:$primary;">:user:</i> </h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-05-admin-panel"><mark style="color:$primary;"><strong>User Management</strong></mark></a></td><td><mark style="color:$info;">Manage your team and users with admin panel.</mark></td><td></td><td><a href=".gitbook/assets/User-Management.png">User-Management.png</a></td></tr><tr><td><h4><i class="fa-message-pen" style="color:$primary;">:message-pen:</i> </h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-06-review-panel"><mark style="color:$primary;"><strong>Review Panel</strong></mark></a></td><td><mark style="color:$info;">Discuss with your instructor and comments on your thesis.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/review.jpeg">review.jpeg</a></td></tr><tr><td><h4><i class="fa-user-key" style="color:$primary;">:user-key:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-08-sso"><mark style="color:$primary;"><strong>SSO Support</strong></mark></a></td><td><mark style="color:$info;">Connect with OAuth SAML or LDAP provider.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/image (2).png">image (2).png</a></td></tr><tr><td><h4><i class="fa-table-cells-rows" style="color:$primary;">:table-cells-rows:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-10-self-registeration"><mark style="color:$primary;"><strong>Self Register</strong></mark></a></td><td><mark style="color:$info;">Regiser quickly with email and password.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image (1).png">image (1).png</a></td></tr><tr><td><h4><i class="fa-server" style="color:$primary;">:server:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-09-arm-supported"><mark style="color:$primary;"><strong>ARM Supported</strong></mark></a></td><td><mark style="color:$info;">Run your overleaf with Mac mini or arm server.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image.png">image.png</a></td></tr><tr><td><h4><i class="fa-github" style="color:$primary;">:github:</i></h4></td><td><mark style="color:$primary;"><strong>GitHub 2-way Sync</strong></mark></td><td><mark style="color:$info;">Connect your project with  GitHub repository.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image (4).png">image (4).png</a></td></tr><tr><td><h4><i class="fa-mendeley" style="color:$primary;">:mendeley:</i></h4></td><td><mark style="color:$primary;"><strong>Reference Management</strong></mark></td><td><mark style="color:$info;">Connect your project with Zotero/Mendeley.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/截屏2026-08-23 10.22.39.png">截屏2026-08-23 10.22.39.png</a></td></tr></tbody></table>
-
-
-
-
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><h4><i class="fa-clone" style="color:$primary;">:clone:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-01-templates-system"><mark style="color:$primary;"><strong>Template System</strong></mark></a></td><td><mark style="color:$info;">Publish your</mark> <span class="math">\LaTeX</span> <mark style="color:$info;">template to your members.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/template.jpeg">template.jpeg</a></td></tr><tr><td><h4><i class="fa-server" style="color:$primary;">:server:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-02-sandbox-compile"><mark style="color:$primary;"><strong>Sandbox Compile</strong></mark></a></td><td><mark style="color:$info;">Compile your project in Docker with isolation and any TeXLive version.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/texlive-switch.png">texlive-switch.png</a></td></tr><tr><td><h4><i class="fa-git-alt" style="color:$primary;">:git-alt:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-03-git-intergration"><mark style="color:$primary;"><strong>Git Intergration</strong></mark></a></td><td><mark style="color:$info;">Synchronized your project with GitHub or GitLab.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/git-bridge.png">git-bridge.png</a></td></tr><tr><td><h4><i class="fa-pi" style="color:$primary;">:pi:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-04-symbol-palette"><mark style="color:$primary;"><strong>Symbol</strong></mark> <mark style="color:$primary;"><strong>Palette</strong></mark></a></td><td><mark style="color:$info;">Input your LaTeX symbol easily and more quickly.</mark></td><td></td><td><a href=".gitbook/assets/symbol-palette.jpeg">symbol-palette.jpeg</a></td></tr><tr><td><h4><i class="fa-user" style="color:$primary;">:user:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-05-admin-panel"><mark style="color:$primary;"><strong>User Management</strong></mark></a></td><td><mark style="color:$info;">Manage your team and users with admin panel.</mark></td><td></td><td><a href=".gitbook/assets/User-Management.png">User-Management.png</a></td></tr><tr><td><h4><i class="fa-message-pen" style="color:$primary;">:message-pen:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-06-review-panel"><mark style="color:$primary;"><strong>Review Panel</strong></mark></a></td><td><mark style="color:$info;">Discuss with your instructor and comments on your thesis.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/review.jpeg">review.jpeg</a></td></tr><tr><td><h4><i class="fa-user-key" style="color:$primary;">:user-key:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-08-sso"><mark style="color:$primary;"><strong>SSO Support</strong></mark></a></td><td><mark style="color:$info;">Connect with OAuth SAML or LDAP provider.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/image (2).png">image (2).png</a></td></tr><tr><td><h4><i class="fa-table-cells-rows" style="color:$primary;">:table-cells-rows:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-10-self-registeration"><mark style="color:$primary;"><strong>Self Register</strong></mark></a></td><td><mark style="color:$info;">Regiser quickly with email and password.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image (1).png">image (1).png</a></td></tr><tr><td><h4><i class="fa-server" style="color:$primary;">:server:</i></h4></td><td><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/readme/features-and-copyright#features-09-arm-supported"><mark style="color:$primary;"><strong>ARM Supported</strong></mark></a></td><td><mark style="color:$info;">Run your overleaf with Mac mini or arm server.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image.png">image.png</a></td></tr><tr><td><h4><i class="fa-github" style="color:$primary;">:github:</i></h4></td><td><mark style="color:$primary;"><strong>GitHub 2-way Sync</strong></mark></td><td><mark style="color:$info;">Connect your project with GitHub repository.</mark></td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/image (4).png">image (4).png</a></td></tr><tr><td><h4><i class="fa-mendeley" style="color:$primary;">:mendeley:</i></h4></td><td><mark style="color:$primary;"><strong>Reference Management</strong></mark></td><td><mark style="color:$info;">Connect your project with Zotero/Mendeley.</mark></td><td></td><td data-object-fit="fill"><a href=".gitbook/assets/截屏2026-08-23 10.22.39.png">截屏2026-08-23 10.22.39.png</a></td></tr></tbody></table>
 
 {% columns %}
 {% column width="50%" %}
@@ -69,17 +60,9 @@ metaLinks:
 {% endcolumn %}
 {% endcolumns %}
 
-
-
-
-
-
-
-
-
 {% columns %}
 {% column width="50%" %}
-### <i class="fa-github">:github:</i>  Get On Premises in 5 minutes
+### <i class="fa-github">:github:</i> Get On Premises in 5 minutes
 
 Setting up your own Ayakaleaf Pro and your online $$\LaTeX$$ environment with **GitHub Codespace** immediately!
 
@@ -109,21 +92,13 @@ cd toolkit && bin/init
 {% endcolumn %}
 {% endcolumns %}
 
-
-
-
-
-
-
-
-
 {% columns %}
 {% column width="41.66666666666667%" %}
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FvnT8IAADTAThJZZpvM7Q%2Fuploads%2FMVJjuRaBQnhqbqkw8YpL%2Fvisual-editor.mp4?alt=media&token=13e11fa4-e682-460f-9555-ad9b419fe953" %}
 {% endcolumn %}
 
 {% column width="58.33333333333333%" %}
-### <i class="fa-globe">:globe:</i>  Enjoy Online $$\LaTeX$$ Editor
+### <i class="fa-globe">:globe:</i> Enjoy Online $$\LaTeX$$ Editor
 
 No downloads, no setup, and no need to know $$\LaTeX$$ before you start.
 
@@ -135,14 +110,6 @@ No downloads, no setup, and no need to know $$\LaTeX$$ before you start.
 <p align="right"><a href="https://www.overleaf.com/learn" class="button secondary" data-icon="book-open">Learn LaTeX</a></p>
 {% endcolumn %}
 {% endcolumns %}
-
-
-
-
-
-
-
-
 
 {% columns %}
 {% column width="50%" valign="middle" %}
@@ -159,16 +126,8 @@ Say goodbye to endless rounds of email feedback.
 
 {% column width="50%" %}
 <figure><img src="https://cdn.overleaf.com/img/website-redesign/commenting.png" alt=""><figcaption></figcaption></figure>
-
-
 {% endcolumn %}
 {% endcolumns %}
-
-
-
-
-
-
 
 {% columns %}
 {% column width="41.66666666666667%" %}
@@ -176,19 +135,13 @@ Say goodbye to endless rounds of email feedback.
 {% endcolumn %}
 
 {% column width="58.33333333333333%" %}
-### <i class="fa-file-code">:file-code:</i> Read more about  developer document by community.
+### <i class="fa-file-code">:file-code:</i> Read more about developer document by community.
 
-There aren't many  `developer` resources available online. Here you can find the most of Ayakaleaf's architecture and developer tools, also some debug skills.
+There aren't many `developer` resources available online. Here you can find the most of Ayakaleaf's architecture and developer tools, also some debug skills.
 
-<p align="right"><a href="https://app.gitbook.com/o/aXieu2C3Ngt9u0fFRG9K/s/I2qEfJyb19sFvDmuZcCm/" class="button secondary" data-icon="book">Developer Documentation</a> </p>
+<p align="right"><a href="https://app.gitbook.com/o/aXieu2C3Ngt9u0fFRG9K/s/I2qEfJyb19sFvDmuZcCm/" class="button secondary" data-icon="book">Developer Documentation</a></p>
 {% endcolumn %}
 {% endcolumns %}
-
-
-
-
-
-
 
 {% columns %}
 {% column width="50%" %}
@@ -198,7 +151,7 @@ Overleaf uses <mark style="color:blue;">**Docker**</mark> containers to compile 
 
 Therefore, we provide a $$\TeX$$ Live image (from 2019 to latest) that allows for free switching between versions, including all fonts and $$\LaTeX$$ packages.
 
-<a href="https://app.gitbook.com/o/aXieu2C3Ngt9u0fFRG9K/s/0bsEVRuqHiTwccEZfTnf/" class="button secondary" data-icon="docker">TeXLive Full Image</a>&#x20;
+<a href="https://app.gitbook.com/o/aXieu2C3Ngt9u0fFRG9K/s/0bsEVRuqHiTwccEZfTnf/" class="button secondary" data-icon="docker">TeXLive Full Image</a>
 {% endcolumn %}
 
 {% column width="50%" %}
@@ -219,19 +172,6 @@ Start Your introduction here...
 {% endcolumn %}
 {% endcolumns %}
 
-
-
-
-
-
-
 {% hint style="info" %}
 Ayakaleaf Pro is not affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Ayakaleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
 {% endhint %}
-
-
-
-
-
-
-
