@@ -72,6 +72,7 @@
 * [Data and backups](maintenance/data-and-backups/README.md)
   * [Exporting projects](maintenance/data-and-backups/exporting-projects.md)
 * [Extending TeX Live](maintenance/extending-tex-live.md)
+* [Updating TeX Live Full Images Automatically](maintenance/updating-tex-live-full-images-automatically.md)
 * [Horizontal scaling](maintenance/horizontal-scaling.md)
 * [S3 migration](maintenance/s3-migration.md)
 * [Updating MongoDB](maintenance/updating-mongodb.md)
