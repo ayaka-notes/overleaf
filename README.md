@@ -1,4 +1,4 @@
-# Overleaf
+# Overleaf Pro
 
 Moved to: https://github.com/ayaka-notes/ayakaleaf-pro
 
