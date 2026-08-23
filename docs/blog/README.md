@@ -1,2 +1,25 @@
-# Page
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: false
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: false
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
+# Blog In 2026
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Overleaf Benchmark: A Deep Research of Concurrent <span class="math">\LaTeX</span> Compilation in Overleaf (SaaS and Self-host)</h4></td><td><a href="https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&#x26;cs=srgb&#x26;fm=jpg&#x26;ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwxfHxTZXJ2ZXIlMjBQZXJmb3JtYW5jZXxlbnwwfHx8fDE3ODc1MDA0ODh8MA&#x26;ixlib=rb-4.1.0&#x26;q=85">https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&#x26;cs=srgb&#x26;fm=jpg&#x26;ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwxfHxTZXJ2ZXIlMjBQZXJmb3JtYW5jZXxlbnwwfHx8fDE3ODc1MDA0ODh8MA&#x26;ixlib=rb-4.1.0&#x26;q=85</a></td><td><a href="2026/overleaf-benchmark-a-deep-research-of-concurrent-compilation-in-overleaf-saas-and-self-host.md">overleaf-benchmark-a-deep-research-of-concurrent-compilation-in-overleaf-saas-and-self-host.md</a></td></tr></tbody></table>
 
