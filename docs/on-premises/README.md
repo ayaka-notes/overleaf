@@ -22,7 +22,7 @@ Without sandboxing, LaTeX compiles run with the same privileges as the container
 For more information on Sandbox Compiles see: [sandboxed-compiles.md](configuration/overleaf-toolkit/sandboxed-compiles.md "mention")
 {% endhint %}
 
-### Information about Server Pro
+### Information and Price about Overleaf Server Pro
 
 The Overleaf website only provides an entrance to contact support for Server Pro, so information about Server Pro is very limited. But based on the information we have collected in the community, the **quota for Server Pro is**:
 
