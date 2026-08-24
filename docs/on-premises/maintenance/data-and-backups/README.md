@@ -106,6 +106,7 @@ new-server$ bin/up
 
 #### Docker Compose
 
+{% code overflow="wrap" %}
 ```bash
 # Gracefully shutdown the old instance
 old-server$ docker stop sharelatex
@@ -132,6 +133,7 @@ new-server$ tar --extract --file backup-old-server.tar
 new-server$ docker start mongo redis
 new-server$ docker start sharelatex
 ```
+{% endcode %}
 
 Depending on your **docker-compose.yml** file, you may need to adjust the paths of the `mongo`, `redis`, `overleaf` volumes.
 
