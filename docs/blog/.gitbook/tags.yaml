@@ -18,3 +18,11 @@
   label: Product Update
 - tag: server-pro
   label: Server Pro
+- tag: compare
+  label: Compare
+- tag: product
+  label: Product
+- tag: recommendation
+  label: Recommendation
+- tag: enterprise
+  label: Enterprise
