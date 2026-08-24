@@ -26,7 +26,7 @@ tags:
   - research
 ---
 
-# Overleaf Benchmark: A Deep Research of Concurrent  Compilation in Overleaf (SaaS and Self-host)
+# Overleaf Benchmark: A Deep Research of Concurrent LaTeX Compilation in Overleaf (SaaS and Self-host)
 
 {% file src="../.gitbook/assets/Overleaf-Benchmark.pdf" %}
 
@@ -269,8 +269,7 @@ Normalising by the core share collapses all thirty measurements — three concur
 
 $$
 T(N,f) \;=\; \frac{k}{f}\,\max\!\left(1,\frac{N}{C}\right),
-  \qquad k = 27.9 GHz·s,
-  \label{eq:combined}
+  \qquad k = 27.9\ \mathrm{GHz\cdot s}
 $$
 
 with a residual spread of 5.1% over a range in which the clock itself varies by 5.5×. The absence of any curvature is itself the result: had the workload been memory-bandwidth- or I/O-bound, $$T$$ would flatten at high clock as the CPU outran the other resource.
