@@ -10,3 +10,11 @@
   label: Scale
 - tag: research
   label: Research
+- tag: release
+  label: Release
+- tag: ayakaleaf
+  label: Ayakaleaf
+- tag: product-update
+  label: Product Update
+- tag: server-pro
+  label: Server Pro
