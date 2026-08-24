@@ -16,6 +16,8 @@ Like the Overleaf Server Pro, our Ayakaleaf Pro comes as a Docker container and 
 
 ### Hardware requirements
 
+We conducted relevant tests and found that, if you run Overleaf on a 2-core, 2 GB RAM server, its core components—primarily based on Node.js—will consume approximately 1 GB of memory. Redis and MongoDB may require an additional 0.5 GB, while starting a sandboxed Docker container for compilation can consume another 0.3 GB. This means that a 2-core, 2 GB server can realistically handle only about one concurrent compilation at a time.
+
 * The minimum hardware requirements for installing AyakaLeaf Pro are a 2-core CPU and 3 GB of RAM.
 * Due to the size of our TeX Live image, at least 40 GB of storage is required to enable sandboxed compilation.
 * If you want to install the complete set of TeX Live images from 2020 through 2026, please make sure you have at least 150 GB of free disk space available.
@@ -44,3 +46,5 @@ LaTeX is a single threaded program, meaning it can only utilize one CPU core at 
 Using the [ThuThesis template](https://www.overleaf.com/latex/templates/thuthesis-tsinghua-university-thesis-latex-template/cfwgcxtvkbsx) as an example, the compilation time is about 6 seconds on an Intel Core i9-14900K (5.6 Ghz), while it takes about 13 seconds on a Azure Standard D2as v5 instance (2 vCPUs, 8 GiB RAM) powered by an AMD EPYC 7763 (3.2Ghz).
 
 Of course, actual compilation performance depends on your hardware configuration. Most server CPUs do not run at such high clock speeds as 14900K, so you will need to make a trade-off between cost and compilation speed.
+
+Meanwhile, we have also conducted an in-depth analysis of LaTeX compilation performance. If you are interested, please refer to our blog [Overleaf Benchmark: A Deep Research of Concurrent LaTeX Compilation in Overleaf (SaaS and Self-host)](https://app.gitbook.com/s/ykgtg1oSTKbEk3s3qtSU/2026/overleaf-benchmark "mention").
