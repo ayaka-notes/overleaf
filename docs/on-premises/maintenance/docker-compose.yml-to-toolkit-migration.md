@@ -1,4 +1,5 @@
 ---
+description: Migrate an Overleaf Docker Compose deployment to the Toolkit.
 icon: right-left
 ---
 
