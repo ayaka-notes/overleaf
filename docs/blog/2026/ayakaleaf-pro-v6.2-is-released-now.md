@@ -59,7 +59,7 @@ features include:
 
 Keep your LaTeX projects synchronized with GitHub repositories for a seamless development workflow. Push and pull changes directly from the editor, collaborate through pull requests, and integrate with existing CI/CD pipelines. Version control makes it easy to track revisions, review changes, and maintain reproducible academic or technical documents.
 
-See: https://overleaf-pro.ayaka.space/on-premises/configuration/overleaf-toolkit/github-synchronisation
+See: [GitHub Synchronisation](https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/configuration/overleaf-toolkit/github-synchronisation "mention").
 
 ![](https://github.com/user-attachments/assets/5137e708-77cb-4fdf-b081-4aa04b4b762e)
 
@@ -67,7 +67,7 @@ See: https://overleaf-pro.ayaka.space/on-premises/configuration/overleaf-toolkit
 
 Import Microsoft Word and Markdown documents into fully editable LaTeX projects, or export LaTeX projects back to Markdown and DOCX with a single click. Powered by Pandoc, this feature enables seamless interoperability between academic writing, collaborative editing, and publishing workflows while preserving document structure as much as possible.
 
-See: https://overleaf-pro.ayaka.space/on-premises/configuration/overleaf-toolkit/pandoc-import-and-export
+See: [Pandoc Import and Export](https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/configuration/overleaf-toolkit/pandoc-import-and-export "mention").
 
 <img src="https://github.com/user-attachments/assets/085a94a0-c673-46fe-9da4-7a5a68e46589" alt="" width="563">
 
@@ -87,7 +87,7 @@ Execute Python code directly inside your project without leaving the editor. Per
 
 Connect your Zotero library directly to your writing workflow and manage references without leaving the editor. Search your personal Zotero collections, insert citations with a single click, and automatically generate and synchronize BibTeX entries. This integration keeps your bibliography up to date, streamlining literature management for academic papers, theses, and technical documents.
 
-See: https://overleaf-pro.ayaka.space/on-premises/configuration/overleaf-toolkit/zotero-integration
+See: [Zotero Integration](https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/configuration/overleaf-toolkit/zotero-integration "mention").
 
 ![截屏2026-07-10 00 01 22](https://github.com/user-attachments/assets/90d18615-69e7-409c-a9a8-a1a1d2ea0afc)
 
