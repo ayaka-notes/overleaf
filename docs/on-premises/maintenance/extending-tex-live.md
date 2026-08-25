@@ -1,4 +1,7 @@
 ---
+description: >-
+  Extend TeX Live Docker images with packages and fonts for supported compile
+  environments.
 icon: rectangle-pro
 ---
 
@@ -11,7 +14,7 @@ Here we offer some guidelines to install new packages or fonts, but the configur
 The TeX Live images receive infrequent updates. We suggest rebuilding custom images when upgrading Server Pro.
 
 {% hint style="danger" %}
-The following sections apply to Server Pro and [Sandboxed Compiles](/broken/pages/7f495e34c7e239040c704060deafb9c9858aca72) only.
+The following sections apply to Server Pro and [Sandboxed Compiles](../configuration/overleaf-toolkit/sandboxed-compiles.md) only.
 {% endhint %}
 
 ### Installing and updating new packages
