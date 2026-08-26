@@ -1,15 +1,15 @@
 ---
 description: >-
-  Deploy AyakaLeaf Pro offline by exporting, transferring, and loading Docker
+  Deploy Ayakaleaf Pro offline by exporting, transferring, and loading Docker
   images.
 icon: block-brick
 ---
 
 # Air-gapped/offline deployments
 
-In general, we do not recommend deploying AyakaLeaf Pro in an offline environment, as many of its features, such as GitHub Sync and Zotero integration, require an internet connection.
+In general, we do not recommend deploying Ayakaleaf Pro in an offline environment, as many of its features, such as GitHub Sync and Zotero integration, require an internet connection.
 
-But if you want to work offline, which means that it may not always be possible to reach the `ghcr.io` registry to pull the required `ayakaleaf-pro` and TeX Live images. This is not a problem as Docker provides tooling for exporting and importing images that will help you with an offline/air-gapped deployment.
+If you want to work offline, it may not always be possible to reach the `ghcr.io` registry to pull the required `ayakaleaf-pro` and TeX Live images. This is not a problem, as Docker provides tooling for exporting and importing images that will help you with an offline/air-gapped deployment.
 
 At a high level, you'll download the required images on a device with internet connectivity, export them to a portable device (or transfer them using SCP/Rsync), and import them on the air-gapped server.
 

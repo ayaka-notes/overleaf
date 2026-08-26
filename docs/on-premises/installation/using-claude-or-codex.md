@@ -64,7 +64,7 @@ After deployment, verify that the service is healthy and summarize the changes.
 ```
 {% endcode %}
 
-The agent should guide you through Docker setup, Toolkit configuration, image retrieval, and startup. Follow the [using-the-toolkit](using-the-toolkit/ "mention") for the canonical workflow.
+The agent should guide you through Docker setup, Toolkit configuration, image retrieval, and startup. Follow the [using-the-toolkit](using-the-toolkit/ "mention") guide for the canonical workflow.
 
 ### Choose optional features
 
@@ -84,4 +84,4 @@ After the agent completes the steps:
 2. Open the configured Ayakaleaf Pro URL in your browser.
 3. Complete the [6.-post-installation-tasks.md](using-the-toolkit/6.-post-installation-tasks.md "mention").
 
-For an existing Community Edition installation, use the [migrate-from-existing.md](migrate-from-existing.md "mention") instead of a fresh deployment.
+For an existing Community Edition installation, use the [migrate-from-existing.md](migrate-from-existing.md "mention") guide instead of a fresh deployment.

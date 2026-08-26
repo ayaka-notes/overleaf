@@ -1,5 +1,5 @@
 ---
-description: Migrate an existing Overleaf Toolkit deployment to AyakaLeaf Pro.
+description: Migrate an existing Overleaf Toolkit deployment to Ayakaleaf Pro.
 icon: u-turn-up-right
 ---
 
@@ -13,7 +13,7 @@ It is important to ensure that you take a [consistent backup](../maintenance/dat
 
 #### Case 01: From Overleaf Toolkit
 
-If you are using official overleaf toolkit for overleaf community, just add a file named `docker-compose.override.yml` with the following or similar content into the `overleaf-toolkit/config` directory:
+If you are using the official Overleaf Toolkit for Overleaf Community, just add a file named `docker-compose.override.yml` with the following or similar content into the `overleaf-toolkit/config` directory:
 
 {% code title="docker-compose.override.yml" %}
 ```yml
@@ -30,7 +30,7 @@ To start your instance run:
 bin/up
 ```
 
-That's it! You're all set. Next, you can verify that your ayakaleaf instance is running correctly and you can access the web interface. Once everything is working, continue with the [configuration](../configuration/overleaf-toolkit/) steps below to enable the advanced features like:
+That's it! You're all set. Next, you can verify that your Ayakaleaf instance is running correctly and you can access the web interface. Once everything is working, continue with the [configuration](../configuration/overleaf-toolkit/) steps below to enable the advanced features like:
 
 * [sandboxed-compiles.md](../configuration/overleaf-toolkit/sandboxed-compiles.md "mention")
 * [authentication](../configuration/overleaf-toolkit/authentication/ "mention")
@@ -43,7 +43,7 @@ If you use a standalone `docker-compose.yml`, first migrate it to the Overleaf T
 
 Follow the [docker-compose.yml-to-toolkit-migration.md](../maintenance/docker-compose.yml-to-toolkit-migration.md "mention") to convert your existing deployment. Preserve your current configuration and data-volume paths during this migration.
 
-After the Toolkit deployment is running, follow [#from-overleaf-toolkit](migrate-from-existing.md#from-overleaf-toolkit "mention") to switch its image to AyakaLeaf Pro. Start the instance with `bin/up`, then verify that you can access the web interface.
+After the Toolkit deployment is running, follow [#from-overleaf-toolkit](migrate-from-existing.md#from-overleaf-toolkit "mention") to switch its image to Ayakaleaf Pro. Start the instance with `bin/up`, then verify that you can access the web interface.
 
 ***
 
@@ -68,7 +68,7 @@ Unfortunately, migrating from the Overleaf SaaS platform to a self-hosted Ayakal
 * All project history and previous revisions
 * All comments and tracked changes
 * All Git metadata and commit history
-* All GitHub synchronization link and settings
+* All GitHub synchronization links and settings
 * All links between BibTeX files and third-party reference-management platforms
 
 ***

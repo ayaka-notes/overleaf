@@ -14,7 +14,7 @@ To manage your GitHub Codespaces, please visit [https://github.com/codespaces](h
 
 We have **pre-configured** the following features:
 
-* [x] Sandboxed LaTeX compilation with TeXLive **Basic** (2026-2024)
+* [x] Sandboxed LaTeX compilation with TeXLive **Basic** (2024-2026)
 * [x] Pandoc Import/Export (Features in SaaS Platform)
 * [x] Python Script Runner (Features in SaaS Platform)
 * [x] Git-Bridge Support (Features in Server Pro)
@@ -34,7 +34,7 @@ GitHub Sync, LDAP, OAuth, SSO, Zotero Integration, and other features are _<mark
 {% step %}
 ### Create Your GitHub Codespace
 
-Click the following button to create you GitHub Codespace. In terms of server configuration, **2 cores with 8 GB of RAM** are generally sufficient for test case. If you plan to use [**TeX Live Full**](https://github.com/ayaka-notes/texlive-full), we recommend choosing a configuration with **8 cores 64GB**.
+Click the following button to create your GitHub Codespace. In terms of server configuration, **2 cores with 8 GB of RAM** are generally sufficient for a test case. If you plan to use [**TeX Live Full**](https://github.com/ayaka-notes/texlive-full), we recommend choosing a configuration with **8 cores 64GB**.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ayaka-notes/ayakaleaf-pro-playground)
 {% endstep %}
@@ -58,9 +58,9 @@ You may need to wait for at least 3 mins before we pull all the docker images yo
 {% endstep %}
 
 {% step %}
-### Make 80 Port Available
+### Make Port 80 Available
 
-Switch to the **Ports** tab, and then follow these steps to make the 80 port public.
+Switch to the **Ports** tab, and then follow these steps to make port 80 public.
 
 <figure><img src="../.gitbook/assets/截屏2026-01-18 11.47.15.png" alt=""><figcaption></figcaption></figure>
 
@@ -86,7 +86,7 @@ Now, time to enjoy your $$\LaTeX$$ writing!
 
 #### Use TeXLive Full Image
 
-If you have acces to 8core/64GB GitHub Codespaces, you can use TeXLive Full image in this playground. You can change the following environment variables in `toolkit/config/variables.env` file to use TeXLive Full image instead of TeXLive Basic image.
+If you have access to 8-core/64 GB GitHub Codespaces, you can use the TeXLive Full image in this playground. You can change the following environment variables in `toolkit/config/variables.env` file to use TeXLive Full image instead of TeXLive Basic image.
 
 {% code overflow="wrap" %}
 ```dotenv

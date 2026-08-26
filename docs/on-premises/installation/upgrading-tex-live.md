@@ -8,7 +8,7 @@ icon: square-up
 # Upgrading TeX Live
 
 {% hint style="danger" %}
-The following instructions **only** apply to **Community Edition** installations. We highly recommend that our Ayakaleaf Pro users enable [Sandboxed Compiles](../configuration/overleaf-toolkit/sandboxed-compiles.md) as this provides users with access to the almost-same TeX Live images used on [overleaf.com](../configuration/overleaf-toolkit/) as well as providing isolation between project compiles for enhanced security.
+The following instructions **only** apply to **Community Edition** installations. We highly recommend that our Ayakaleaf Pro users enable [Sandboxed Compiles](../configuration/overleaf-toolkit/sandboxed-compiles.md) as this provides users with access to almost the same TeX Live images used on [overleaf.com](https://www.overleaf.com) as well as providing isolation between project compiles for enhanced security.
 {% endhint %}
 
 To save bandwidth, both the Overleaf Community Edition and Ayakaleaf Pro images only come with a minimal install of [TeX Live](https://www.tug.org/texlive/). You can install more packages or upgrade to a complete TeX Live installation using the [tlmgr](https://www.tug.org/texlive/tlmgr.html) command in the `sharelatex` container.

@@ -1,5 +1,5 @@
 ---
-description: Deploy an on-premises AyakaLeaf Pro instance with the Toolkit.
+description: Deploy an on-premises Ayakaleaf Pro instance with the Toolkit.
 icon: toolbox
 ---
 
