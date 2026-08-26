@@ -72,7 +72,7 @@ If you've enabled SAML 2.0, users will see a button that when clicked, will redi
 ![SAML Log in page](<../../.gitbook/assets/image (5)>)
 
 {% hint style="info" %}
-See the [Environment Variables](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46) page for information on customizing the login page experience.
+See the [Environment Variables](../../configuration/overleaf-toolkit/environment-variables.md) page for information on customizing the login page experience.
 
 And if you ever need to roll-back, just comment out the LDAP/SAML configuration and recreate the **sharelatex** container using the `bin/up -d` command. Users will then be able to log in using their current email address and Overleaf-specific password.
 {% endhint %}

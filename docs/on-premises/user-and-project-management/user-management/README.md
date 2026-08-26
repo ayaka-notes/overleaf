@@ -47,9 +47,9 @@ If you use internal accounts for authentication and need to elevate an existing 
 
 ## Deleting users
 
-As explained in our guide on [understanding license usage](/broken/pages/67a3d6166ad54d8b596d81da20ce20e3269c0955), it is generally advisable not to delete accounts unless they are no longer required. Deleting an account removes the account and causes collaborators to lose access to projects. There is currently no way to deactivate accounts — they either exist with their data retained or are deleted.
+It is generally advisable not to delete accounts unless they are no longer required. Deleting an account removes the account and causes collaborators to lose access to projects. There is currently no way to deactivate accounts — they either exist with their data retained or are deleted.
 
-By default, accounts are soft-deleted. For information about permanently removing users from your instance see `ENABLE_CRON_RESOURCE_DELETION` in the [Environment variables](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46) guide.
+By default, accounts are soft-deleted. For information about permanently removing users from your instance see `ENABLE_CRON_RESOURCE_DELETION` in the [Environment variables](../../configuration/overleaf-toolkit/environment-variables.md) guide.
 
 {% hint style="info" %}
 Accounts are soft-deleted by default. See `ENABLE_CRON_RESOURCE_DELETION` for permanent deletion behavior.
