@@ -64,7 +64,7 @@ Switch to the **Ports** tab, and then follow these steps to make the 80 port pub
 
 <figure><img src="../.gitbook/assets/截屏2026-01-18 11.47.15.png" alt=""><figcaption></figcaption></figure>
 
-After that, you can click the **Forwarede Address** to visit your overleaf instance. You may need to add `/launchpad` to visit overleaf welcome page.
+After that, you can click the **Forwarded Address** to visit your overleaf instance. You may need to add `/launchpad` to visit the overleaf welcome page.
 {% endstep %}
 
 {% step %}
