@@ -70,7 +70,7 @@ environment:
     …
 ```
 
-Copy these variables into the Toolkit’s [**config/variables.env**](/broken/pages/f85467fdca000c0dbac697fb58e52f29cb74dc46) file, ensuring the following form (use `=` instead of `:`):
+Copy these variables into the Toolkit’s [**config/variables.env**](../configuration/overleaf-toolkit/environment-variables.md) file, ensuring the following form (use `=` instead of `:`):
 
 ```env
 OVERLEAF_APP_NAME=Overleaf Community Edition

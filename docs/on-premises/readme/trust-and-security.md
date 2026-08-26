@@ -9,7 +9,7 @@ Ayakaleaf Pro runs in your infrastructure. You control its data, access, and net
 
 ### Is Ayakaleaf Pro reliable and secure?
 
-Ayakaleaf Pro is a self-hosted Overleaf Pro enhancement, and our source code is available at [ayaka-notes/ayakaleaf](https://github.com/ayaka-notes/ayakaleaf-pro). Your deployment controls where services run and data resides.
+Ayakaleaf Pro is a self-hosted Overleaf Pro enhancement, and our source code is available at [ayaka-notes/ayakaleaf-pro](https://github.com/ayaka-notes/ayakaleaf-pro). Your deployment controls where services run and data resides.
 
 Security depends on your configuration and operations. Protect administrator access, enable HTTPS, and maintain backups.
 
