@@ -93,7 +93,7 @@ The remaining feature requests reach the following destinations. Each request or
 
 <summary><strong>Third-party credentials</strong></summary>
 
-**Third-party credentials** — OAuth tokens and API keys — are held in MongoDB on the user record, encrypted with AES-256-CTR under a per-record salt and initialization vector. They are never stored in plaintext and never written to logs. The encryption key comes from `${PROVIDER}_CIPHER_PASSWORD` if set (like Zotero and Mendey); otherwise one is generated on first use and persisted inside your data volume with owner-only permissions. Back up that key together with your data volume: if it is lost, stored credentials cannot be decrypted and every user must link their accounts again.
+**Third-party credentials** — OAuth tokens and API keys — are held in MongoDB on the user record, encrypted with AES-256-CTR under a per-record salt and initialization vector. They are never stored in plaintext and never written to logs. The encryption key comes from `${PROVIDER}_CIPHER_PASSWORD` if set (like Zotero and Mendeley); otherwise one is generated on first use and persisted inside your data volume with owner-only permissions. Back up that key together with your data volume: if it is lost, stored credentials cannot be decrypted and every user must link their accounts again.
 
 </details>
 
