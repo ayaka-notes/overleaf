@@ -1,7 +1,7 @@
 ---
 description: >-
   This is where you'll find all the technical documentation for Ayakaleaf Pro,
-  an on-premises and enhanced versions of Overleaf based on Overleaf Community
+  an on-premises and enhanced version of Overleaf based on Overleaf Community
   Edition.
 icon: hand-wave
 ---
@@ -10,7 +10,7 @@ icon: hand-wave
 
 ### Overview of Overleaf
 
-Overleaf is a collaborative LaTeX editor loved by researchers and tech teams. Their cloud version is available at [overleaf.com](https://www.overleaf.com/). It provides a full-featured online LaTeX editor. Howevery, Overleaf Common (SaaS version) has numerous feature limitations, and you have to tolerate _<mark style="color:red;">**10-second compilation times limit**</mark>_ and expensive membership fees.
+Overleaf is a collaborative LaTeX editor loved by researchers and tech teams. Their cloud version is available at [overleaf.com](https://www.overleaf.com/). It provides a full-featured online LaTeX editor. However, Overleaf Common (SaaS version) has numerous feature limitations, and you have to tolerate a _<mark style="color:red;">**10-second compilation time limit**</mark>_ and expensive membership fees.
 
 Although Overleaf offers an open-source community version (available on [GitHub: Overleaf](https://github.com/overleaf/overleaf)), it also has many limitations, for example:
 
@@ -28,7 +28,7 @@ The Overleaf website only provides an entrance to contact support for Server Pro
 
 * You need to purchase licenses for _at least_ 10 people.
 * A 10-person license costs about €3,477.61. (2024)
-* For educations, 20 user 2640 Euro per year, 50 user 6050 Euro, 100 user 9963 Euro.
+* For education, 20 users cost 2640 Euro per year, 50 users 6050 Euro, and 100 users 9963 Euro.
 * Server Pro is only available in select regions (e.g., excluding mainland China).
 
 Based on the information currently available, Overleaf Server Pro appears to cost around $300 per user per year, with a minimum purchase of 10 licenses, making it a very expensive option. Moreover, Server Pro offers significantly fewer features than Ayakaleaf Pro. We are deeply grateful to the community developers whose contributions over the years have made it possible for us to build Ayakaleaf Pro and ultimately surpass Overleaf Server Pro in both functionality and capabilities.
@@ -61,7 +61,7 @@ The following public records show documented Overleaf Server Pro purchases and p
 ### Why Ayakaleaf Pro?
 
 {% hint style="info" %}
-Ayakaleaf Pro is _**not**_ affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Overleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
+Ayakaleaf Pro is _**not**_ affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Ayakaleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
 {% endhint %}
 
 Ayakaleaf Pro is an enhanced implementation of the Overleaf Community Edition, offering _<mark style="color:green;">**all**</mark>_ _<mark style="color:green;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), or commercial edition server pro, we have

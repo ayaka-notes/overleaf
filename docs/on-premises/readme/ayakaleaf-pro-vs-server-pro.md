@@ -10,7 +10,7 @@ icon: scale-balanced
 {% hint style="info" %}
 Ayakaleaf Pro is an enhanced implementation of the Overleaf Community Edition, offering all _<mark style="color:$primary;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), we have no limitations on compilation time, no license requirements on the number of users, and you can fully self-host your own data, ensuring absolute security.
 
-Overleaf Server Pro is a commercial, self-hosted deployment of Overleaf, with official support, For more information on Server Pro, visit [Server Pro](https://www.overleaf.com/for/enterprises/when-to-use-overleaf-on-premises-vs-in-the-cloud).
+Overleaf Server Pro is a commercial, self-hosted deployment of Overleaf, with official support. For more information on Server Pro, visit [Server Pro](https://www.overleaf.com/for/enterprises/when-to-use-overleaf-on-premises-vs-in-the-cloud).
 {% endhint %}
 
 {% hint style="warning" %}

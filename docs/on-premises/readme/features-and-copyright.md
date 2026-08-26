@@ -7,13 +7,13 @@ icon: layer-plus
 
 # Features and Copyright
 
-We respect copyright, so we list here all the features and the code used in this project. In this page, we provide information on new features of Overleaf Pro and related code copyrights.
+We respect copyright, so we list here all the features and the code used in this project. In this page, we provide information on new features of Ayakaleaf Pro and related code copyrights.
 
 Unless otherwise specified, we use OpenAI’s Codex for code review and PR review. During this process, we fixed many security issues, and we express our sincere gratitude to them. For details, see [ayaka-notes/ayakaleaf-pro/pull](https://github.com/ayaka-notes/ayakaleaf-pro/pulls).
 
 ### Overview
 
-Over the years, we have many community developers who have made significant efforts to improve the Overleaf Community Edition, they are:
+Over the years, many community developers have made significant efforts to improve the Overleaf Community Edition. They are:
 
 * [https://github.com/ertuil/overleaf](https://github.com/ertuil/overleaf)
 * [https://github.com/AllanChain/lcpu-overleaf](https://github.com/AllanChain/lcpu-overleaf)
@@ -27,7 +27,7 @@ We may have used related code in our project, and we would like to express our g
 
 #### Features 01: Templates System
 
-This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). we modified some code for enhancement. So that you can:
+This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). We modified some code for enhancement, so that you can:
 
 * Download Templates directly on the template pages.
 * Open project corresponding to the Template.
@@ -45,15 +45,15 @@ This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-
 
 #### Features 02: Sandbox Compile
 
-This feature is impled by [overleaf official](https://github.com/overleaf/overleaf/tree/main/services/clsi), we add some code to enable this feature. Also, we provide you with [texlive-full](https://github.com/ayaka-notes/texlive-full) image built specially for overleaf pro.
+This feature is implemented by [overleaf official](https://github.com/overleaf/overleaf/tree/main/services/clsi); we added some code to enable it. We also provide a [texlive-full](https://github.com/ayaka-notes/texlive-full) image built specially for Ayakaleaf Pro.
 
 <figure><img src="../.gitbook/assets/image (6).png" alt="" width="563"><figcaption><p>Sandbox Compile</p></figcaption></figure>
 
-#### Features 03: ​Git Intergration​
+#### Features 03: ​Git Integration​
 
 This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro). Overleaf provides an official component called git-bridge, it's available at [here](https://github.com/overleaf/overleaf/tree/main/services/git-bridge).
 
-We just implied a connector between git-bridge and overleaf, which is the same as what overleaf does in their SaaS platform.
+We just implemented a connector between git-bridge and Overleaf, which is the same as what Overleaf does on their SaaS platform.
 
 {% columns %}
 {% column %}
@@ -67,7 +67,7 @@ We just implied a connector between git-bridge and overleaf, which is the same a
 
 #### Features 04: Symbol Palette
 
-This feature is impled by [overleaf official](https://github.com/overleaf/overleaf/tree/main/services/clsi), we just add the missing code, align with upstream update.
+This feature is implemented by [overleaf official](https://github.com/overleaf/overleaf/tree/main/services/clsi); we just added the missing code to align with upstream updates.
 
 <figure><img src="../.gitbook/assets/image (12).png" alt="" width="563"><figcaption><p>Symbol Palette</p></figcaption></figure>
 
@@ -77,10 +77,10 @@ This feature is impled by [overleaf official](https://github.com/overleaf/overle
 When your system has 1000 users or projects, the admin panel will only display the latest 1000 users or projects. Please use the search panel to search for specific users or projects.
 {% endhint %}
 
-This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). we modified some code for enhancement. So that you can:
+This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). We modified some code for enhancement, so that you can:
 
-* Search users with backend when you have more then 1000+ users.
-* Search projects with backend when you have more then 1000+ projects.
+* Search users with the backend when you have more than 1000 users.
+* Search projects with the backend when you have more than 1000 projects.
 * Open projects directly on project admin panel.
 * View and adjust user's compile time limit on admin panel.
 * Reset user's password directly on admin panel.
@@ -108,23 +108,23 @@ This feature is mainly developed by [overleaf official](https://github.com/overl
 
 #### Features 07: External URL
 
-This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). CEP implied an external service called linked-url-proxy, which can be safely used to fetch external files with domain/ip limit.
+This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). CEP implemented an external service called linked-url-proxy, which can be safely used to fetch external files with domain/IP limits.
 
 <figure><img src="../.gitbook/assets/image (4).png" alt="" width="563"><figcaption><p>External URL</p></figcaption></figure>
 
 #### Features 08: SSO
 
-This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). CEP implied a sub modules to connect passport with overleaf web authentication.
+This feature is mainly developed by [yu-i-i/overleaf-cep](https://github.com/yu-i-i/overleaf-cep). CEP implemented a submodule to connect passport with Overleaf web authentication.
 
 <figure><img src="../.gitbook/assets/image (3).png" alt="" width="563"><figcaption><p>Login Page</p></figcaption></figure>
 
 #### Features 09: ARM supported
 
-we use GitHub Action to build and publish docker images with x86 and arm archtecture. When you download the image, it will automatically select the appropriate architecture based on your system.
+We use GitHub Actions to build and publish Docker images for the x86 and arm architectures. When you download the image, it will automatically select the appropriate architecture based on your system.
 
 <figure><img src="../.gitbook/assets/image (2).png" alt="" width="563"><figcaption><p>Github Package</p></figcaption></figure>
 
-#### Features 10: Self Registeration
+#### Features 10: Self Registration
 
 This feature is developed by [ayaka-notes/overleaf-pro](https://github.com/ayaka-notes/overleaf-pro). You can:
 
@@ -147,7 +147,7 @@ This feature is developed by [ayaka-notes/ayakaleaf-pro](https://github.com/ayak
 
 #### Features 13: Python Runner
 
-This feature is developed by overleaf official. You can run python script in your browser.
+This feature is developed by overleaf official. You can run Python scripts in your browser.
 
 <figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
@@ -161,7 +161,7 @@ Search panel:
 
 <figure><img src="../.gitbook/assets/截屏2026-07-09 13.49.50.png" alt="" width="563"><figcaption></figcaption></figure>
 
-#### Features 15: Pandoc Conversitions
+#### Features 15: Pandoc Conversions
 
 This feature allows you to import Word or Markdown documents as LaTeX projects, or export LaTeX projects to Markdown or DOCX.
 

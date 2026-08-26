@@ -16,7 +16,7 @@ It’s fair to say that, whether for individual students or entire research inst
 
 And in the age of AI, instead of bringing the promised transformation, Overleaf has continued to rely on its old technology while squeezing more and more out of end users.
 
-Over the years, we have many community developers who have made significant efforts to improve the Overleaf Community Edition, they are:
+Over the years, many community developers have made significant efforts to improve the Overleaf Community Edition. They are:
 
 * [https://github.com/ertuil/overleaf](https://github.com/ertuil/overleaf)
 * [https://github.com/AllanChain/lcpu-overleaf](https://github.com/AllanChain/lcpu-overleaf)
@@ -28,7 +28,7 @@ Over the years, we have many community developers who have made significant effo
 
 Some of them initiated pull requests (PRs), but unfortunately, in the open-source community, these PRs are mostly ignored. Therefore, we often question what kind of open source Overleaf's so-called open source actually is.
 
-In January 2026, openAI announced the release of [Prism](https://prism.openai.com/). On numerous communities, people have stated that Prism has killed Overleaf.&#x20;
+In January 2026, OpenAI announced the release of [Prism](https://prism.openai.com/). On numerous communities, people have stated that Prism has killed Overleaf.&#x20;
 
 _**This tells us that if a company relies only on repackaged APIs and layer upon layer of feature restrictions to keep users locked in, it will ultimately be overtaken by a growing number of competitors, in the AI era.**_
 
