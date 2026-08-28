@@ -2,7 +2,7 @@
 icon: compact-disc
 ---
 
-# TeXLive
+# TeX Live
 
 [TeX Live](https://www.tug.org/texlive/) is a free software distribution published annually by the [TeX Users Group](https://www.tug.org/). It provides the LaTeX packages, fonts, TeX engines, and numerous software tools required to support LaTeX-based typesetting on all standard operating systems.
 

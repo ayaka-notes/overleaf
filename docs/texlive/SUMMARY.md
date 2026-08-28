@@ -1,7 +1,7 @@
 # Table of contents
 
-* [TeXLive](README.md)
-* [TeXLive In Docker](texlive-in-docker.md)
+* [TeX Live](README.md)
+* [TeX Live in Docker](texlive-in-docker.md)
 
 ## Release
 
