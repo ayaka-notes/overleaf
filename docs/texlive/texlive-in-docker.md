@@ -2,7 +2,7 @@
 icon: docker
 ---
 
-# TeXLive In Docker
+# TeX Live in Docker
 
 ### Docker
 
