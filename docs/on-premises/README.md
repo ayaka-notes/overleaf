@@ -10,7 +10,7 @@ icon: hand-wave
 
 ### Overview of Overleaf
 
-Overleaf is a collaborative LaTeX editor loved by researchers and tech teams. Their cloud version is available at [overleaf.com](https://www.overleaf.com/). It provides a full-featured online LaTeX editor. However, Overleaf Common (SaaS version) has numerous feature limitations, and you have to tolerate a _<mark style="color:red;">**10-second compilation time limit**</mark>_ and expensive membership fees.
+Overleaf is a collaborative LaTeX editor loved by researchers and tech teams. Their cloud version is available at [overleaf.com](https://www.overleaf.com/). It provides a full-featured online LaTeX editor. However, Overleaf Common (SaaS version) has numerous feature limitations, and you have to tolerate a _<mark style="color:$danger;">**10-second compilation time limit**</mark>_ and expensive membership fees.
 
 Although Overleaf offers an open-source community version (available on [GitHub: Overleaf](https://github.com/overleaf/overleaf)), it also has many limitations, for example:
 
@@ -61,10 +61,10 @@ The following public records show documented Overleaf Server Pro purchases and p
 ### Why Ayakaleaf Pro?
 
 {% hint style="info" %}
-Ayakaleaf Pro is _**not**_ affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. Ayakaleaf Pro is an independent project developed and maintained by the [ayaka-notes](https://github.com/ayaka-notes).
+Ayakaleaf Pro is _**not**_ affiliated with Overleaf, Inc. or its parent company, Digital Science. It is also _not Server Pro_ Edition, which is a commercial product offered by Overleaf, Inc. [ayaka-notes](https://github.com/ayaka-notes) develops and maintains Ayakaleaf Pro as an independent project.
 {% endhint %}
 
-Ayakaleaf Pro is an enhanced implementation of the Overleaf Community Edition, offering _<mark style="color:green;">**all**</mark>_ _<mark style="color:green;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), or commercial edition server pro, we have
+Ayakaleaf Pro is an enhanced implementation of the Overleaf Community Edition, offering _<mark style="color:$success;">**all**</mark>_ _<mark style="color:$success;">**free premium**</mark>_ features from server pro. Unlike Overleaf Common available at [https://www.overleaf.com/](https://www.overleaf.com/), or commercial edition server pro, we have
 
 * _**no limitations**_ on compilation time
 * _**no license**_ requirements on the number of users

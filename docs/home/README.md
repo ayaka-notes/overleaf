@@ -26,13 +26,13 @@ metaLinks: {}
 
 # Home
 
-<h3 align="center"><mark style="color:purple;">\begin</mark> <mark style="color:$info;"><strong>{</strong></mark> <mark style="color:$primary;">Documents</mark> <mark style="color:$info;"><strong>}</strong></mark></h3>
+<h3 align="center"><mark style="color:$primary;">\begin</mark> <mark style="color:$info;"><strong>{</strong></mark> <mark style="color:$primary;">Documents</mark> <mark style="color:$info;"><strong>}</strong></mark></h3>
 
 <h2 align="center"><mark style="color:$primary;">AyakaLeaf Pro Edition</mark></h2>
 
 <p align="center"><mark style="color:$info;">An Online LaTeX Editor enhanced with all Overleaf Pro features</mark><br><mark style="color:$info;">(open source, free to use, self-hostable).</mark></p>
 
-<p align="center">Write like a rocket scientist with Ayakaleaf Pro<br>— <em><mark style="color:purple;"><strong>unlock all Features</strong></mark></em>, an <em>on-Premise</em> solution that <em>anyone</em> can use.</p>
+<p align="center">Write like a rocket scientist with Ayakaleaf Pro<br>— <em><mark style="color:$primary;"><strong>unlock all Features</strong></mark></em>, an <em>on-Premise</em> solution that <em>anyone</em> can use.</p>
 
 <p align="center"><a href="https://app.gitbook.com/s/yLFrF2L1FakWXkhqpOnS/installation/introduction" class="button primary" data-icon="rocket-launch">Get Started</a> <a href="https://app.gitbook.com/o/aXieu2C3Ngt9u0fFRG9K/s/yLFrF2L1FakWXkhqpOnS/" class="button secondary" data-icon="book">Read Documents</a></p>
 
@@ -181,7 +181,7 @@ There aren't many `developer` resources available online. Here you can find the 
 {% column width="50%" %}
 ### <i class="fa-docker">:docker:</i> $$\TeX$$ Live in Docker build by @Ayaka-Notes
 
-Overleaf uses <mark style="color:blue;">**Docker**</mark> containers to compile your $$\LaTeX$$ projects. Your project is compiled in an isolated Docker sandbox, ensuring absolute <mark style="color:$primary;">**security**</mark>.
+Overleaf uses <mark style="color:$info;">**Docker**</mark> containers to compile your $$\LaTeX$$ projects. Your project is compiled in an isolated Docker sandbox, ensuring absolute <mark style="color:$primary;">**security**</mark>.
 
 Therefore, we provide a $$\TeX$$ Live image (from 2019 to latest) that allows for free switching between versions, including all fonts and $$\LaTeX$$ packages.
 
