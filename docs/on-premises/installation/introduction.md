@@ -9,10 +9,11 @@ icon: map-location
 
 Like the Overleaf Server Pro, our Ayakaleaf Pro comes as a Docker container and is a direct drop-in replacement which additionally includes features such as SSO provided via LDAP and SAML2, improved security, tracked changes, comments, our optimized version of TeX Live, templates and administration panel.
 
-* If you just want to test Ayakaleaf Pro's features or try out the demo, you can follow our [using-the-github-codespace.md](using-the-github-codespace.md "mention") tutorial.
+* If you just want to test Ayakaleaf Pro's features or try out the demo, you can follow our [using-the-github-codespace.md](using-the-github-codespace.md "mention") tutorial. The demo environment uses a minimal TeX Live installation, so some of your projects may not compile successfully.
 * If you have never deployed any version of Overleaf before, please refer to [Setup Docker](setup-docker.md) to install Docker Engine first, and then install Overleaf [using-the-toolkit](using-the-toolkit/ "mention").
 * If you have already deployed the Community Edition of Overleaf, please refer to [migrate-from-existing.md](migrate-from-existing.md "mention") to migrate to Ayakaleaf Pro.
 * If you prefer using agents like Claude or Codex, you can refer to: [using-claude-or-codex.md](using-claude-or-codex.md "mention").
+* If you need to deploy in an offline or air-gapped environment, please refer to: [air-gapped-offline-deployments.md](air-gapped-offline-deployments.md "mention").
 * If you are an existing Server Pro user, please open an issue to let us know before migrating to Ayakaleaf Pro, as the template data is stored in a slightly different format. We’d be very happy to help you migrate from Server Pro to Ayakaleaf Pro free of charge.
 * Sometimes, if you ever get tired of our Ayakaleaf Pro and want to switch back to the official Overleaf Community Edition, that is fully supported. None of your data will be lost. For users of the official Overleaf Toolkit, simply remove your override YAML file. For users of the ayaka-notes toolkit, disable the `SERVER_PRO` option. Everything will then fall back to the standard Community Edition.
 
