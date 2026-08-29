@@ -107,6 +107,12 @@ The remaining feature requests reach the following destinations. Each request or
 
 If your policy requires an outbound allow-list, permit only the hosts whose features you have enabled — `github.com` and `api.github.com` for GitHub, `www.zotero.org` and `api.zotero.org` for Zotero, `api.mendeley.com` for Mendeley, `learnwiki.overleaf.com` or your own `WIKI_URL` for documentation, `api.pwnedpasswords.com` for the password check, `www.google.com` for CAPTCHA, plus your own mail server and identity provider. Deny the rest. No other feature requires outbound access. Where egress must be inspected or logged centrally, the GitHub, Zotero and Mendeley integrations can each be routed through an HTTP proxy by setting `GITHUB_SYNC_PROXY_URL` , `MENDELEY_PROXY_URL` and `ZOTERO_PROXY_URL`. Files linked from a URL cannot be constrained to a host list, since the destination is chosen by the user at the time of the request; restrict that feature through the proxy component's own allowed-resource setting, or leave it disabled.
 
+{% hint style="warning" %}
+If you deploy Ayakaleaf Pro with [s3.md](../configuration/overleaf-toolkit/s3.md "mention") storage enabled, is the data stored in S3 encrypted?
+
+_<mark style="color:red;">**No.**</mark>_ The data is not encrypted. All history chunks, template files, PDFs, and other files are stored in plaintext. If you use a third-party external S3 storage provider, please pay close attention to data security and privacy.
+{% endhint %}
+
 ### Are project compiles isolated?
 
 Ayakaleaf Pro supports sandboxed compiles. Each compile runs in a separate container. Sandbox containers have no network access by default. This reduces exposure to internal network resources.
